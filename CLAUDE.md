@@ -50,6 +50,12 @@ content and config values only; never touch the theme).
   then stop and report what's known and the options.
 - Don't push to main while a release run is going (the release must tag
   main's head).
+- The release runs after *any* CI run on main completes, and builds the
+  commit that CI run tested. Raise VERSION only in a commit you want
+  released.
+- While `scripts/record-results.sh` runs, don't `git pull --autostash` or
+  stash in this repo: it rewrites test/results under the running tests and
+  the log ends up in a deleted file.
 - Finding codes in `analyze.go` are a public interface: never rename one.
   Add new codes instead, and document them in README.md.
 
@@ -62,6 +68,10 @@ resume, sample report gallery. Before release, an independent review
 found dialogs hanging the audit, a lone OK button taken for a banner, false
 sensitive words, redirecting start addresses crawling one page, image names
 read as emails and substring search matches; all fixed with tests.
+Released as v0.1.0 on 2026-10-25 (tag on b5d2b33; the commits after it only add
+test results, the release workflow and a README wording change). The
+released Linux binary was downloaded, checked against SHA256SUMS and run
+for a real audit.
 
 ## Gaps and to-do
 
