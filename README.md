@@ -212,7 +212,7 @@ an error, and 130 when interrupted.
   conversion APIs and server-side tag managers, never passes through the
   browser.
 - **Pages behind a login,** and anything that happens only after a click
-  PXTA doesn't make. Version 0.1 doesn't sign in or submit forms.
+  PXTA doesn't make. PXTA doesn't sign in or submit forms.
 - **Trackers it doesn't know**, beyond the unclassified-beacon rule above.
 
 The report says this in its Method section, so a clean report is never read
