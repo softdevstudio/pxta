@@ -58,15 +58,17 @@ content and config values only; never touch the theme).
 0.1.0 (2026-10-25): audit with three consent passes, ten trackers,
 four consent platforms plus generic and iframe banners, data rules,
 Consent Mode, report.html/findings.json/requests.har, crash restart and
-resume, sample report gallery.
+resume, sample report gallery. Before release, an independent review
+found dialogs hanging the audit, a lone OK button taken for a banner, false
+sensitive words, redirecting start addresses crawling one page, image names
+read as emails and substring search matches; all fixed with tests.
 
 ## Gaps and to-do
 
 Known gaps, not planned yet:
 
-- No `pxta check` (CI exit codes and a rules file) or `pxta diff` yet:
-  planned for 0.2 with `--redact` and a GitHub Action wrapper.
-- No logged-in pages or form submission (0.3 in the plan).
+- No `pxta check`, `pxta diff` or logged-in pages yet (see Next).
+- No form submission.
 - No `pxta browser install`: users need Chrome, Chromium or Edge installed.
 - Server-side tracking is invisible to a browser by design.
 - Sensitive-word lists are English with a few other languages, built in;
@@ -78,4 +80,16 @@ Known gaps, not planned yet:
 
 ## Next
 
-To be decided and approved with the owner before it goes here.
+Approved by the owner on 2026-10-25, in this order:
+
+1. `pxta check`: CI exit codes and a rules file, so a build fails when a
+   tag fires before consent or personal data goes out. Ship a GitHub
+   Action wrapper with it, and `--redact` for reports that get shared.
+2. `pxta diff`: compare two audits (findings.json) and list what's new,
+   what's gone and which trackers changed behaviour.
+3. Logged-in pages: sign in with a recorded session or cookie file and
+   audit pages behind a login (form submission stays out unless the
+   owner asks).
+
+Each is its own release, through the normal workflow above. Ask the owner
+before starting each one.
