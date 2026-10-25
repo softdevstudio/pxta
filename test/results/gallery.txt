@@ -1,4 +1,4 @@
-cedar-valley-clinic: banner=cookiebot passes=none,reject,accept pages=5 high=20 medium=20 low=16 info=7 trackers=google-analytics-4,linkedin-insight,tiktok-pixel
+cedar-valley-clinic: banner=cookiebot passes=none,reject,accept pages=5 high=20 medium=20 low=15 info=7 trackers=google-analytics-4,linkedin-insight,tiktok-pixel
 harbor-pine-outfitters: banner=onetrust passes=none,reject,accept pages=6 high=24 medium=26 low=12 info=9 trackers=google-analytics-4,meta-pixel,pinterest-tag
 marlow-home-loans: banner=usercentrics passes=none,reject,accept pages=5 high=14 medium=15 low=9 info=6 trackers=google-analytics-4,microsoft-uet,x-pixel
 tidewater-bakery: banner=didomi passes=none,reject,accept pages=3 high=0 medium=0 low=1 info=2 trackers=google-analytics-4,meta-pixel

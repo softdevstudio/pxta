@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "catalog": "2026.10.25",
   "site": "https://www.cedarvalleyclinic.test/",
-  "started": "2026-10-25T15:07:26.149168019Z",
-  "finished": "2026-10-25T15:08:32.755288282Z",
+  "started": "2026-10-25T16:05:55.958907546Z",
+  "finished": "2026-10-25T16:07:03.264684008Z",
   "browser": "Chrome/153.0.8010.12",
   "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 pxta/0.1.0 (+https://pxta.com)",
   "banner": {
@@ -27,7 +27,7 @@
       "url": "https://www.cedarvalleyclinic.test/",
       "final_url": "https://www.cedarvalleyclinic.test/",
       "title": "Cedar Valley Clinic",
-      "started": "2026-10-25T15:07:26.597987993Z",
+      "started": "2026-10-25T16:05:56.501328926Z",
       "requests": 7
     },
     {
@@ -36,7 +36,7 @@
       "url": "https://www.cedarvalleyclinic.test/conditions/anxiety",
       "final_url": "https://www.cedarvalleyclinic.test/conditions/anxiety",
       "title": "Anxiety treatment | Cedar Valley Clinic",
-      "started": "2026-10-25T15:07:31.003682024Z",
+      "started": "2026-10-25T16:06:01.032846554Z",
       "requests": 7
     },
     {
@@ -45,7 +45,7 @@
       "url": "https://www.cedarvalleyclinic.test/conditions/diabetes",
       "final_url": "https://www.cedarvalleyclinic.test/conditions/diabetes",
       "title": "Diabetes care | Cedar Valley Clinic",
-      "started": "2026-10-25T15:07:34.981889908Z",
+      "started": "2026-10-25T16:06:05.119028959Z",
       "requests": 7
     },
     {
@@ -54,7 +54,7 @@
       "url": "https://www.cedarvalleyclinic.test/book?service=therapy",
       "final_url": "https://www.cedarvalleyclinic.test/book?service=therapy",
       "title": "Book an appointment | Cedar Valley Clinic",
-      "started": "2026-10-25T15:07:39.05381241Z",
+      "started": "2026-10-25T16:06:09.139873222Z",
       "requests": 6
     },
     {
@@ -63,7 +63,7 @@
       "url": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
       "final_url": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
       "title": "Search | Cedar Valley Clinic",
-      "started": "2026-10-25T15:07:43.068867489Z",
+      "started": "2026-10-25T16:06:13.21891759Z",
       "requests": 6
     },
     {
@@ -72,7 +72,7 @@
       "url": "https://www.cedarvalleyclinic.test/",
       "final_url": "https://www.cedarvalleyclinic.test/",
       "title": "Cedar Valley Clinic",
-      "started": "2026-10-25T15:07:49.778151104Z",
+      "started": "2026-10-25T16:06:20.012420056Z",
       "requests": 6
     },
     {
@@ -81,7 +81,7 @@
       "url": "https://www.cedarvalleyclinic.test/conditions/anxiety",
       "final_url": "https://www.cedarvalleyclinic.test/conditions/anxiety",
       "title": "Anxiety treatment | Cedar Valley Clinic",
-      "started": "2026-10-25T15:07:53.684768591Z",
+      "started": "2026-10-25T16:06:24.024872405Z",
       "requests": 7
     },
     {
@@ -90,7 +90,7 @@
       "url": "https://www.cedarvalleyclinic.test/conditions/diabetes",
       "final_url": "https://www.cedarvalleyclinic.test/conditions/diabetes",
       "title": "Diabetes care | Cedar Valley Clinic",
-      "started": "2026-10-25T15:07:57.676967067Z",
+      "started": "2026-10-25T16:06:28.000990453Z",
       "requests": 7
     },
     {
@@ -99,7 +99,7 @@
       "url": "https://www.cedarvalleyclinic.test/book?service=therapy",
       "final_url": "https://www.cedarvalleyclinic.test/book?service=therapy",
       "title": "Book an appointment | Cedar Valley Clinic",
-      "started": "2026-10-25T15:08:01.714868086Z",
+      "started": "2026-10-25T16:06:32.02330416Z",
       "requests": 6
     },
     {
@@ -108,7 +108,7 @@
       "url": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
       "final_url": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
       "title": "Search | Cedar Valley Clinic",
-      "started": "2026-10-25T15:08:05.774539422Z",
+      "started": "2026-10-25T16:06:35.939152394Z",
       "requests": 6
     },
     {
@@ -117,7 +117,7 @@
       "url": "https://www.cedarvalleyclinic.test/",
       "final_url": "https://www.cedarvalleyclinic.test/",
       "title": "Cedar Valley Clinic",
-      "started": "2026-10-25T15:08:12.537995681Z",
+      "started": "2026-10-25T16:06:42.820247161Z",
       "requests": 8
     },
     {
@@ -126,7 +126,7 @@
       "url": "https://www.cedarvalleyclinic.test/conditions/anxiety",
       "final_url": "https://www.cedarvalleyclinic.test/conditions/anxiety",
       "title": "Anxiety treatment | Cedar Valley Clinic",
-      "started": "2026-10-25T15:08:16.42454773Z",
+      "started": "2026-10-25T16:06:46.821417916Z",
       "requests": 9
     },
     {
@@ -135,7 +135,7 @@
       "url": "https://www.cedarvalleyclinic.test/conditions/diabetes",
       "final_url": "https://www.cedarvalleyclinic.test/conditions/diabetes",
       "title": "Diabetes care | Cedar Valley Clinic",
-      "started": "2026-10-25T15:08:20.490311156Z",
+      "started": "2026-10-25T16:06:50.849789215Z",
       "requests": 9
     },
     {
@@ -144,7 +144,7 @@
       "url": "https://www.cedarvalleyclinic.test/book?service=therapy",
       "final_url": "https://www.cedarvalleyclinic.test/book?service=therapy",
       "title": "Book an appointment | Cedar Valley Clinic",
-      "started": "2026-10-25T15:08:24.530816173Z",
+      "started": "2026-10-25T16:06:54.952141881Z",
       "requests": 8
     },
     {
@@ -153,7 +153,7 @@
       "url": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
       "final_url": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
       "title": "Search | Cedar Valley Clinic",
-      "started": "2026-10-25T15:08:28.607281518Z",
+      "started": "2026-10-25T16:06:59.097766155Z",
       "requests": 8
     }
   ],
@@ -170,7 +170,7 @@
     "respect_robots": true
   },
   "browser_restarts": 0,
-  "har_sha256": "94e91a79bc1d2818102201f29b5ce28c76409887fa5e0713e97ee82aee93ea0f",
+  "har_sha256": "43afc2a5d141ec3172a08972ab1b5a7cf64413f978ff4f8b04c7318311c4e6d8",
   "findings": [
     {
       "code": "sensitive-page",
@@ -182,9 +182,9 @@
       "sentence": "On /book?service=therapy, the LinkedIn Insight Tag sent the address of a page about health (/book?service=therapy) before the consent banner was answered.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fbook%3Fservice%3Dtherapy\u0026time=1792940859304",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fbook%3Fservice%3Dtherapy\u0026time=1792944369448",
         "method": "GET",
-        "time": "2026-10-25T15:07:39.312Z",
+        "time": "2026-10-25T16:06:09.457Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -215,7 +215,7 @@
           },
           {
             "key": "time",
-            "value": "1792940859304",
+            "value": "1792944369448",
             "source": "query"
           }
         ],
@@ -242,7 +242,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:07:39.306Z",
+        "time": "2026-10-25T16:06:09.453Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -299,7 +299,7 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:07:39.303Z",
+            "value": "2026-10-25T16:06:09.446Z",
             "source": "json"
           }
         ],
@@ -312,7 +312,7 @@
             "category": "health: therapy"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:39.303Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/book?service=therapy\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:09.446Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/book?service=therapy\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -325,9 +325,9 @@
       "sentence": "On /conditions/anxiety, the LinkedIn Insight Tag sent the address of a page about health (/conditions/anxiety) before the consent banner was answered.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fanxiety\u0026time=1792940851238",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fanxiety\u0026time=1792944361368",
         "method": "GET",
-        "time": "2026-10-25T15:07:31.245Z",
+        "time": "2026-10-25T16:06:01.373Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -353,7 +353,7 @@
           },
           {
             "key": "time",
-            "value": "1792940851238",
+            "value": "1792944361368",
             "source": "query"
           }
         ],
@@ -363,7 +363,7 @@
             "key": "url",
             "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
             "what": "the address of a page about health",
-            "category": "health: conditions"
+            "category": "health: anxiety"
           }
         ]
       }
@@ -380,7 +380,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:07:31.242Z",
+        "time": "2026-10-25T16:06:01.373Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -432,7 +432,7 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:07:31.237Z",
+            "value": "2026-10-25T16:06:01.362Z",
             "source": "json"
           }
         ],
@@ -442,10 +442,10 @@
             "key": "context.page.url",
             "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
             "what": "the address of a page about health",
-            "category": "health: conditions"
+            "category": "health: anxiety"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:31.237Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/anxiety\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:01.362Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/anxiety\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -458,9 +458,9 @@
       "sentence": "On /conditions/diabetes, the LinkedIn Insight Tag sent the address of a page about health (/conditions/diabetes) before the consent banner was answered.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fdiabetes\u0026time=1792940855308",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fdiabetes\u0026time=1792944365390",
         "method": "GET",
-        "time": "2026-10-25T15:07:35.310Z",
+        "time": "2026-10-25T16:06:05.394Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -486,7 +486,7 @@
           },
           {
             "key": "time",
-            "value": "1792940855308",
+            "value": "1792944365390",
             "source": "query"
           }
         ],
@@ -496,7 +496,7 @@
             "key": "url",
             "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
             "what": "the address of a page about health",
-            "category": "health: conditions"
+            "category": "health: diabetes"
           }
         ]
       }
@@ -513,7 +513,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:07:35.305Z",
+        "time": "2026-10-25T16:06:05.394Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -565,7 +565,7 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:07:35.290Z",
+            "value": "2026-10-25T16:06:05.383Z",
             "source": "json"
           }
         ],
@@ -575,10 +575,10 @@
             "key": "context.page.url",
             "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
             "what": "the address of a page about health",
-            "category": "health: conditions"
+            "category": "health: diabetes"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:35.290Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/diabetes\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:05.383Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/diabetes\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -591,9 +591,9 @@
       "sentence": "On /search?q=anxiety+medication, the LinkedIn Insight Tag sent the address of a page about health (/search?q=anxiety+medication) before the consent banner was answered.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792940863361",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792944373551",
         "method": "GET",
-        "time": "2026-10-25T15:07:43.365Z",
+        "time": "2026-10-25T16:06:13.562Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -624,7 +624,7 @@
           },
           {
             "key": "time",
-            "value": "1792940863361",
+            "value": "1792944373551",
             "source": "query"
           }
         ],
@@ -651,7 +651,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:07:43.365Z",
+        "time": "2026-10-25T16:06:13.536Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -708,7 +708,7 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:07:43.358Z",
+            "value": "2026-10-25T16:06:13.526Z",
             "source": "json"
           }
         ],
@@ -721,7 +721,7 @@
             "category": "health: anxiety"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:43.358Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:13.526Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -734,9 +734,9 @@
       "sentence": "On /book?service=therapy, the LinkedIn Insight Tag sent the address of a page about health (/book?service=therapy) after the visitor rejected tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fbook%3Fservice%3Dtherapy\u0026time=1792940882024",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fbook%3Fservice%3Dtherapy\u0026time=1792944392173",
         "method": "GET",
-        "time": "2026-10-25T15:08:02.025Z",
+        "time": "2026-10-25T16:06:32.174Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -767,7 +767,7 @@
           },
           {
             "key": "time",
-            "value": "1792940882024",
+            "value": "1792944392173",
             "source": "query"
           }
         ],
@@ -794,7 +794,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:08:02.023Z",
+        "time": "2026-10-25T16:06:32.173Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -851,7 +851,7 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:08:02.013Z",
+            "value": "2026-10-25T16:06:32.169Z",
             "source": "json"
           }
         ],
@@ -864,7 +864,7 @@
             "category": "health: therapy"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:02.013Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/book?service=therapy\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:32.169Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/book?service=therapy\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -877,9 +877,9 @@
       "sentence": "On /conditions/anxiety, the LinkedIn Insight Tag sent the address of a page about health (/conditions/anxiety) after the visitor rejected tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fanxiety\u0026time=1792940873902",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fanxiety\u0026time=1792944384254",
         "method": "GET",
-        "time": "2026-10-25T15:07:53.920Z",
+        "time": "2026-10-25T16:06:24.256Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -905,7 +905,7 @@
           },
           {
             "key": "time",
-            "value": "1792940873902",
+            "value": "1792944384254",
             "source": "query"
           }
         ],
@@ -915,7 +915,7 @@
             "key": "url",
             "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
             "what": "the address of a page about health",
-            "category": "health: conditions"
+            "category": "health: anxiety"
           }
         ]
       }
@@ -932,7 +932,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:07:53.905Z",
+        "time": "2026-10-25T16:06:24.256Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -984,7 +984,7 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:07:53.896Z",
+            "value": "2026-10-25T16:06:24.244Z",
             "source": "json"
           }
         ],
@@ -994,10 +994,10 @@
             "key": "context.page.url",
             "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
             "what": "the address of a page about health",
-            "category": "health: conditions"
+            "category": "health: anxiety"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:53.896Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/anxiety\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:24.244Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/anxiety\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -1010,9 +1010,9 @@
       "sentence": "On /conditions/diabetes, the LinkedIn Insight Tag sent the address of a page about health (/conditions/diabetes) after the visitor rejected tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fdiabetes\u0026time=1792940877960",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fdiabetes\u0026time=1792944388272",
         "method": "GET",
-        "time": "2026-10-25T15:07:57.961Z",
+        "time": "2026-10-25T16:06:28.275Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1038,7 +1038,7 @@
           },
           {
             "key": "time",
-            "value": "1792940877960",
+            "value": "1792944388272",
             "source": "query"
           }
         ],
@@ -1048,7 +1048,7 @@
             "key": "url",
             "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
             "what": "the address of a page about health",
-            "category": "health: conditions"
+            "category": "health: diabetes"
           }
         ]
       }
@@ -1065,7 +1065,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:07:57.959Z",
+        "time": "2026-10-25T16:06:28.275Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -1117,7 +1117,7 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:07:57.953Z",
+            "value": "2026-10-25T16:06:28.269Z",
             "source": "json"
           }
         ],
@@ -1127,10 +1127,10 @@
             "key": "context.page.url",
             "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
             "what": "the address of a page about health",
-            "category": "health: conditions"
+            "category": "health: diabetes"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:57.953Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/diabetes\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:28.269Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/diabetes\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -1143,9 +1143,9 @@
       "sentence": "On /search?q=anxiety+medication, the LinkedIn Insight Tag sent the address of a page about health (/search?q=anxiety+medication) after the visitor rejected tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792940886090",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792944396247",
         "method": "GET",
-        "time": "2026-10-25T15:08:06.090Z",
+        "time": "2026-10-25T16:06:36.262Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1176,7 +1176,7 @@
           },
           {
             "key": "time",
-            "value": "1792940886090",
+            "value": "1792944396247",
             "source": "query"
           }
         ],
@@ -1203,7 +1203,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:08:06.088Z",
+        "time": "2026-10-25T16:06:36.249Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -1260,7 +1260,7 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:08:06.082Z",
+            "value": "2026-10-25T16:06:36.236Z",
             "source": "json"
           }
         ],
@@ -1273,7 +1273,7 @@
             "category": "health: anxiety"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:06.082Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:36.236Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -1286,9 +1286,9 @@
       "sentence": "On /search?q=anxiety+medication, the LinkedIn Insight Tag sent the search term “anxiety medication” before the consent banner was answered.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792940863361",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792944373551",
         "method": "GET",
-        "time": "2026-10-25T15:07:43.365Z",
+        "time": "2026-10-25T16:06:13.562Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1319,7 +1319,7 @@
           },
           {
             "key": "time",
-            "value": "1792940863361",
+            "value": "1792944373551",
             "source": "query"
           }
         ],
@@ -1346,7 +1346,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:07:43.365Z",
+        "time": "2026-10-25T16:06:13.536Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -1403,7 +1403,7 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:07:43.358Z",
+            "value": "2026-10-25T16:06:13.526Z",
             "source": "json"
           }
         ],
@@ -1416,7 +1416,7 @@
             "in_page_address": true
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:43.358Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:13.526Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -1429,9 +1429,9 @@
       "sentence": "On /search?q=anxiety+medication, the LinkedIn Insight Tag sent the search term “anxiety medication” after the visitor rejected tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792940886090",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792944396247",
         "method": "GET",
-        "time": "2026-10-25T15:08:06.090Z",
+        "time": "2026-10-25T16:06:36.262Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1462,7 +1462,7 @@
           },
           {
             "key": "time",
-            "value": "1792940886090",
+            "value": "1792944396247",
             "source": "query"
           }
         ],
@@ -1489,7 +1489,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:08:06.088Z",
+        "time": "2026-10-25T16:06:36.249Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -1546,7 +1546,7 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:08:06.082Z",
+            "value": "2026-10-25T16:06:36.236Z",
             "source": "json"
           }
         ],
@@ -1559,7 +1559,7 @@
             "in_page_address": true
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:06.082Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:36.236Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -1572,9 +1572,9 @@
       "sentence": "On /, the LinkedIn Insight Tag sent a request after the visitor rejected tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2F\u0026time=1792940869929",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2F\u0026time=1792944380256",
         "method": "GET",
-        "time": "2026-10-25T15:07:49.930Z",
+        "time": "2026-10-25T16:06:20.258Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1600,7 +1600,7 @@
           },
           {
             "key": "time",
-            "value": "1792940869929",
+            "value": "1792944380256",
             "source": "query"
           }
         ]
@@ -1618,7 +1618,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:07:49.924Z",
+        "time": "2026-10-25T16:06:20.257Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -1670,11 +1670,11 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:07:49.918Z",
+            "value": "2026-10-25T16:06:20.251Z",
             "source": "json"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:49.918Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:20.251Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -1687,9 +1687,9 @@
       "sentence": "On /book?service=therapy, the LinkedIn Insight Tag sent a request after the visitor rejected tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fbook%3Fservice%3Dtherapy\u0026time=1792940882024",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fbook%3Fservice%3Dtherapy\u0026time=1792944392173",
         "method": "GET",
-        "time": "2026-10-25T15:08:02.025Z",
+        "time": "2026-10-25T16:06:32.174Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1720,7 +1720,7 @@
           },
           {
             "key": "time",
-            "value": "1792940882024",
+            "value": "1792944392173",
             "source": "query"
           }
         ]
@@ -1738,7 +1738,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:08:02.023Z",
+        "time": "2026-10-25T16:06:32.173Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -1795,11 +1795,11 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:08:02.013Z",
+            "value": "2026-10-25T16:06:32.169Z",
             "source": "json"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:02.013Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/book?service=therapy\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:32.169Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/book?service=therapy\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -1812,9 +1812,9 @@
       "sentence": "On /conditions/anxiety, the LinkedIn Insight Tag sent a request after the visitor rejected tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fanxiety\u0026time=1792940873902",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fanxiety\u0026time=1792944384254",
         "method": "GET",
-        "time": "2026-10-25T15:07:53.920Z",
+        "time": "2026-10-25T16:06:24.256Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1840,7 +1840,7 @@
           },
           {
             "key": "time",
-            "value": "1792940873902",
+            "value": "1792944384254",
             "source": "query"
           }
         ]
@@ -1858,7 +1858,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:07:53.905Z",
+        "time": "2026-10-25T16:06:24.256Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -1910,11 +1910,11 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:07:53.896Z",
+            "value": "2026-10-25T16:06:24.244Z",
             "source": "json"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:53.896Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/anxiety\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:24.244Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/anxiety\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -1927,9 +1927,9 @@
       "sentence": "On /conditions/diabetes, the LinkedIn Insight Tag sent a request after the visitor rejected tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fdiabetes\u0026time=1792940877960",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fdiabetes\u0026time=1792944388272",
         "method": "GET",
-        "time": "2026-10-25T15:07:57.961Z",
+        "time": "2026-10-25T16:06:28.275Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1955,7 +1955,7 @@
           },
           {
             "key": "time",
-            "value": "1792940877960",
+            "value": "1792944388272",
             "source": "query"
           }
         ]
@@ -1973,7 +1973,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:07:57.959Z",
+        "time": "2026-10-25T16:06:28.275Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -2025,11 +2025,11 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:07:57.953Z",
+            "value": "2026-10-25T16:06:28.269Z",
             "source": "json"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:57.953Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/diabetes\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:28.269Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/diabetes\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -2042,9 +2042,9 @@
       "sentence": "On /search?q=anxiety+medication, the LinkedIn Insight Tag sent a request after the visitor rejected tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792940886090",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792944396247",
         "method": "GET",
-        "time": "2026-10-25T15:08:06.090Z",
+        "time": "2026-10-25T16:06:36.262Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2075,7 +2075,7 @@
           },
           {
             "key": "time",
-            "value": "1792940886090",
+            "value": "1792944396247",
             "source": "query"
           }
         ]
@@ -2093,7 +2093,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:08:06.088Z",
+        "time": "2026-10-25T16:06:36.249Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -2150,11 +2150,11 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:08:06.082Z",
+            "value": "2026-10-25T16:06:36.236Z",
             "source": "json"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:06.082Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:36.236Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -2167,9 +2167,9 @@
       "sentence": "On /, the LinkedIn Insight Tag sent a request before the consent banner was answered.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2F\u0026time=1792940847216",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2F\u0026time=1792944357247",
         "method": "GET",
-        "time": "2026-10-25T15:07:27.233Z",
+        "time": "2026-10-25T16:05:57.250Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2195,7 +2195,7 @@
           },
           {
             "key": "time",
-            "value": "1792940847216",
+            "value": "1792944357247",
             "source": "query"
           }
         ]
@@ -2213,7 +2213,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:07:27.200Z",
+        "time": "2026-10-25T16:05:57.185Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -2265,11 +2265,11 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:07:27.171Z",
+            "value": "2026-10-25T16:05:57.152Z",
             "source": "json"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:27.171Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:05:57.152Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -2282,9 +2282,9 @@
       "sentence": "On /book?service=therapy, the LinkedIn Insight Tag sent a request before the consent banner was answered.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fbook%3Fservice%3Dtherapy\u0026time=1792940859304",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fbook%3Fservice%3Dtherapy\u0026time=1792944369448",
         "method": "GET",
-        "time": "2026-10-25T15:07:39.312Z",
+        "time": "2026-10-25T16:06:09.457Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2315,7 +2315,7 @@
           },
           {
             "key": "time",
-            "value": "1792940859304",
+            "value": "1792944369448",
             "source": "query"
           }
         ]
@@ -2333,7 +2333,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:07:39.306Z",
+        "time": "2026-10-25T16:06:09.453Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -2390,11 +2390,11 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:07:39.303Z",
+            "value": "2026-10-25T16:06:09.446Z",
             "source": "json"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:39.303Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/book?service=therapy\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:09.446Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/book?service=therapy\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -2407,9 +2407,9 @@
       "sentence": "On /conditions/anxiety, the LinkedIn Insight Tag sent a request before the consent banner was answered.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fanxiety\u0026time=1792940851238",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fanxiety\u0026time=1792944361368",
         "method": "GET",
-        "time": "2026-10-25T15:07:31.245Z",
+        "time": "2026-10-25T16:06:01.373Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2435,7 +2435,7 @@
           },
           {
             "key": "time",
-            "value": "1792940851238",
+            "value": "1792944361368",
             "source": "query"
           }
         ]
@@ -2453,7 +2453,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:07:31.242Z",
+        "time": "2026-10-25T16:06:01.373Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -2505,11 +2505,11 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:07:31.237Z",
+            "value": "2026-10-25T16:06:01.362Z",
             "source": "json"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:31.237Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/anxiety\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:01.362Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/anxiety\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -2522,9 +2522,9 @@
       "sentence": "On /conditions/diabetes, the LinkedIn Insight Tag sent a request before the consent banner was answered.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fdiabetes\u0026time=1792940855308",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fdiabetes\u0026time=1792944365390",
         "method": "GET",
-        "time": "2026-10-25T15:07:35.310Z",
+        "time": "2026-10-25T16:06:05.394Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2550,7 +2550,7 @@
           },
           {
             "key": "time",
-            "value": "1792940855308",
+            "value": "1792944365390",
             "source": "query"
           }
         ]
@@ -2568,7 +2568,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:07:35.305Z",
+        "time": "2026-10-25T16:06:05.394Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -2620,11 +2620,11 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:07:35.290Z",
+            "value": "2026-10-25T16:06:05.383Z",
             "source": "json"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:35.290Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/diabetes\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:05.383Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/diabetes\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -2637,9 +2637,9 @@
       "sentence": "On /search?q=anxiety+medication, the LinkedIn Insight Tag sent a request before the consent banner was answered.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792940863361",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792944373551",
         "method": "GET",
-        "time": "2026-10-25T15:07:43.365Z",
+        "time": "2026-10-25T16:06:13.562Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2670,7 +2670,7 @@
           },
           {
             "key": "time",
-            "value": "1792940863361",
+            "value": "1792944373551",
             "source": "query"
           }
         ]
@@ -2688,7 +2688,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:07:43.365Z",
+        "time": "2026-10-25T16:06:13.536Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -2745,95 +2745,11 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:07:43.358Z",
+            "value": "2026-10-25T16:06:13.526Z",
             "source": "json"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:43.358Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
-      }
-    },
-    {
-      "code": "sensitive-page",
-      "severity": "low",
-      "pass": "accept",
-      "page": "/",
-      "tracker": "google-analytics-4",
-      "tracker_name": "Google Analytics 4",
-      "sentence": "On /, Google Analytics 4 sent the title of a page about health (Cedar Valley Clinic) after the visitor accepted tracking.",
-      "count": 1,
-      "evidence": {
-        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-CVC2026\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.cedarvalleyclinic.test%2F\u0026dt=Cedar+Valley+Clinic\u0026dr=\u0026en=page_view",
-        "method": "POST",
-        "time": "2026-10-25T15:08:12.689Z",
-        "type": "Ping",
-        "target": "page",
-        "phase": "load",
-        "params": [
-          {
-            "key": "v",
-            "value": "2",
-            "source": "query"
-          },
-          {
-            "key": "tid",
-            "value": "G-CVC2026",
-            "meaning": "measurement ID",
-            "kind": "account",
-            "source": "query"
-          },
-          {
-            "key": "gcs",
-            "value": "G111",
-            "meaning": "Consent Mode state",
-            "kind": "consent",
-            "source": "query"
-          },
-          {
-            "key": "cid",
-            "value": "1111111111.2222222222",
-            "meaning": "client ID (_ga cookie)",
-            "kind": "client_id",
-            "source": "query"
-          },
-          {
-            "key": "dl",
-            "value": "https://www.cedarvalleyclinic.test/",
-            "meaning": "page address",
-            "kind": "page_url",
-            "source": "query"
-          },
-          {
-            "key": "dt",
-            "value": "Cedar Valley Clinic",
-            "meaning": "page title",
-            "kind": "title",
-            "source": "query"
-          },
-          {
-            "key": "dr",
-            "value": "",
-            "meaning": "referring page",
-            "kind": "referrer",
-            "source": "query"
-          },
-          {
-            "key": "en",
-            "value": "page_view",
-            "meaning": "event name",
-            "kind": "event",
-            "source": "query"
-          }
-        ],
-        "leaks": [
-          {
-            "rule": "sensitive_page",
-            "key": "dt",
-            "value": "Cedar Valley Clinic",
-            "what": "the title of a page about health",
-            "category": "health: clinic"
-          }
-        ],
-        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:13.526Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -2848,7 +2764,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-CVC2026\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fbook%3Fservice%3Dtherapy\u0026dt=Book+an+appointment+%7C+Cedar+Valley+Clinic\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T15:08:24.854Z",
+        "time": "2026-10-25T16:06:55.347Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -2935,9 +2851,9 @@
       "sentence": "On /book?service=therapy, the LinkedIn Insight Tag sent the address of a page about health (/book?service=therapy) after the visitor accepted tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fbook%3Fservice%3Dtherapy\u0026time=1792940904838",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fbook%3Fservice%3Dtherapy\u0026time=1792944415334",
         "method": "GET",
-        "time": "2026-10-25T15:08:24.841Z",
+        "time": "2026-10-25T16:06:55.336Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2968,7 +2884,7 @@
           },
           {
             "key": "time",
-            "value": "1792940904838",
+            "value": "1792944415334",
             "source": "query"
           }
         ],
@@ -2995,7 +2911,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:08:24.839Z",
+        "time": "2026-10-25T16:06:55.336Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -3052,7 +2968,7 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:08:24.828Z",
+            "value": "2026-10-25T16:06:55.324Z",
             "source": "json"
           }
         ],
@@ -3065,7 +2981,7 @@
             "category": "health: therapy"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:24.828Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/book?service=therapy\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:55.324Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/book?service=therapy\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -3080,7 +2996,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-CVC2026\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fanxiety\u0026dt=Anxiety+treatment+%7C+Cedar+Valley+Clinic\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T15:08:16.739Z",
+        "time": "2026-10-25T16:06:47.115Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -3146,7 +3062,7 @@
             "key": "dl",
             "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
             "what": "the address of a page about health",
-            "category": "health: conditions"
+            "category": "health: anxiety"
           }
         ],
         "consent_mode": "G111: ad_storage granted, analytics_storage granted"
@@ -3162,9 +3078,9 @@
       "sentence": "On /conditions/anxiety, the LinkedIn Insight Tag sent the address of a page about health (/conditions/anxiety) after the visitor accepted tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fanxiety\u0026time=1792940896732",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fanxiety\u0026time=1792944407024",
         "method": "GET",
-        "time": "2026-10-25T15:08:16.739Z",
+        "time": "2026-10-25T16:06:47.043Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -3190,7 +3106,7 @@
           },
           {
             "key": "time",
-            "value": "1792940896732",
+            "value": "1792944407024",
             "source": "query"
           }
         ],
@@ -3200,7 +3116,7 @@
             "key": "url",
             "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
             "what": "the address of a page about health",
-            "category": "health: conditions"
+            "category": "health: anxiety"
           }
         ]
       }
@@ -3217,7 +3133,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:08:16.737Z",
+        "time": "2026-10-25T16:06:47.026Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -3269,7 +3185,7 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:08:16.725Z",
+            "value": "2026-10-25T16:06:47.020Z",
             "source": "json"
           }
         ],
@@ -3279,10 +3195,10 @@
             "key": "context.page.url",
             "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
             "what": "the address of a page about health",
-            "category": "health: conditions"
+            "category": "health: anxiety"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:16.725Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/anxiety\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:47.020Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/anxiety\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -3297,7 +3213,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-CVC2026\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fdiabetes\u0026dt=Diabetes+care+%7C+Cedar+Valley+Clinic\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T15:08:20.794Z",
+        "time": "2026-10-25T16:06:51.218Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -3363,7 +3279,7 @@
             "key": "dl",
             "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
             "what": "the address of a page about health",
-            "category": "health: conditions"
+            "category": "health: diabetes"
           }
         ],
         "consent_mode": "G111: ad_storage granted, analytics_storage granted"
@@ -3379,9 +3295,9 @@
       "sentence": "On /conditions/diabetes, the LinkedIn Insight Tag sent the address of a page about health (/conditions/diabetes) after the visitor accepted tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fdiabetes\u0026time=1792940900784",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fdiabetes\u0026time=1792944411138",
         "method": "GET",
-        "time": "2026-10-25T15:08:20.794Z",
+        "time": "2026-10-25T16:06:51.162Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -3407,7 +3323,7 @@
           },
           {
             "key": "time",
-            "value": "1792940900784",
+            "value": "1792944411138",
             "source": "query"
           }
         ],
@@ -3417,7 +3333,7 @@
             "key": "url",
             "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
             "what": "the address of a page about health",
-            "category": "health: conditions"
+            "category": "health: diabetes"
           }
         ]
       }
@@ -3434,7 +3350,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:08:20.787Z",
+        "time": "2026-10-25T16:06:51.160Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -3486,7 +3402,7 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:08:20.773Z",
+            "value": "2026-10-25T16:06:51.133Z",
             "source": "json"
           }
         ],
@@ -3496,10 +3412,10 @@
             "key": "context.page.url",
             "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
             "what": "the address of a page about health",
-            "category": "health: conditions"
+            "category": "health: diabetes"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:20.773Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/diabetes\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:51.133Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/diabetes\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -3514,7 +3430,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-CVC2026\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026dt=Search+%7C+Cedar+Valley+Clinic\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T15:08:28.921Z",
+        "time": "2026-10-25T16:06:59.445Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -3601,9 +3517,9 @@
       "sentence": "On /search?q=anxiety+medication, the LinkedIn Insight Tag sent the address of a page about health (/search?q=anxiety+medication) after the visitor accepted tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792940908916",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792944419390",
         "method": "GET",
-        "time": "2026-10-25T15:08:28.921Z",
+        "time": "2026-10-25T16:06:59.392Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -3634,7 +3550,7 @@
           },
           {
             "key": "time",
-            "value": "1792940908916",
+            "value": "1792944419390",
             "source": "query"
           }
         ],
@@ -3661,7 +3577,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:08:28.921Z",
+        "time": "2026-10-25T16:06:59.388Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -3718,7 +3634,7 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:08:28.907Z",
+            "value": "2026-10-25T16:06:59.382Z",
             "source": "json"
           }
         ],
@@ -3731,7 +3647,7 @@
             "category": "health: anxiety"
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:28.907Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:59.382Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -3746,7 +3662,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-CVC2026\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026dt=Search+%7C+Cedar+Valley+Clinic\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T15:08:28.921Z",
+        "time": "2026-10-25T16:06:59.445Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -3833,9 +3749,9 @@
       "sentence": "On /search?q=anxiety+medication, the LinkedIn Insight Tag sent the search term “anxiety medication” after the visitor accepted tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792940908916",
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792944419390",
         "method": "GET",
-        "time": "2026-10-25T15:08:28.921Z",
+        "time": "2026-10-25T16:06:59.392Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -3866,7 +3782,7 @@
           },
           {
             "key": "time",
-            "value": "1792940908916",
+            "value": "1792944419390",
             "source": "query"
           }
         ],
@@ -3893,7 +3809,7 @@
       "evidence": {
         "url": "https://analytics.tiktok.com/api/v2/pixel",
         "method": "POST",
-        "time": "2026-10-25T15:08:28.921Z",
+        "time": "2026-10-25T16:06:59.388Z",
         "type": "Fetch",
         "target": "page",
         "phase": "load",
@@ -3950,7 +3866,7 @@
           },
           {
             "key": "timestamp",
-            "value": "2026-10-25T15:08:28.907Z",
+            "value": "2026-10-25T16:06:59.382Z",
             "source": "json"
           }
         ],
@@ -3963,7 +3879,7 @@
             "in_page_address": true
           }
         ],
-        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:28.907Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T16:06:59.382Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
       }
     },
     {
@@ -4222,7 +4138,7 @@
   "counts": {
     "high": 20,
     "info": 7,
-    "low": 16,
+    "low": 15,
     "medium": 20
   }
 }

@@ -1,0 +1,157 @@
+name: Release
+
+# Runs after CI finishes on main. If VERSION names a version that has no tag
+# yet, it builds pxta for Linux, macOS and Windows, smoke-tests every build
+# (including a real audit in the runner's Chrome), and only then tags the
+# commit and publishes. Archive names carry no version, so
+# releases/latest/download links never change.
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Rebuild the assets of an existing tag (for example v0.1.0)"
+        required: false
+
+permissions:
+  contents: write
+
+# One release run at a time, so two quick pushes cannot race to publish.
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.workflow_run.conclusion == 'success' &&
+       github.event.workflow_run.event == 'push' &&
+       github.event.workflow_run.head_repository.full_name == github.repository)
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.v.outputs.version }}
+      sha: ${{ steps.v.outputs.sha }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.tag || github.event.workflow_run.head_sha || github.sha }}
+          fetch-depth: 0
+      - id: v
+        env:
+          REBUILD_TAG: ${{ github.event.inputs.tag }}
+        run: |
+          v=$(tr -d '[:space:]' < VERSION)
+          sha=$(git rev-parse HEAD)
+          if [ -z "$REBUILD_TAG" ] && git ls-remote --exit-code --tags origin "refs/tags/v$v" >/dev/null; then
+            echo "v$v is already released; nothing to do"
+            v=""
+          fi
+          echo "version=$v" >> "$GITHUB_OUTPUT"
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: plan
+    if: needs.plan.outputs.version != ''
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - { os: ubuntu-latest,    goos: linux,   goarch: amd64, ext: "",     archive: tar.gz, smoke: true }
+          - { os: ubuntu-24.04-arm, goos: linux,   goarch: arm64, ext: "",     archive: tar.gz, smoke: false }
+          - { os: macos-latest,     goos: darwin,  goarch: arm64, ext: "",     archive: tar.gz, smoke: true }
+          - { os: macos-latest,     goos: darwin,  goarch: amd64, ext: "",     archive: tar.gz, smoke: false }
+          - { os: windows-latest,   goos: windows, goarch: amd64, ext: ".exe", archive: zip,    smoke: true }
+    runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.plan.outputs.sha }}
+      - uses: actions/setup-go@v5
+        with:
+          go-version: stable
+      - name: Build
+        run: |
+          set -eux
+          mkdir -p stage
+          CGO_ENABLED=0 GOOS=${{ matrix.goos }} GOARCH=${{ matrix.goarch }} \
+            go build -trimpath -ldflags "-s -w" -o stage/pxta${{ matrix.ext }} ./cmd/pxta
+          cp LICENSE NOTICE THIRD_PARTY_LICENSES.md README.md CHANGELOG.md stage/
+      - name: Smoke test
+        if: matrix.smoke
+        run: |
+          set -eux
+          out=$(stage/pxta${{ matrix.ext }} version)
+          [ "$(echo "$out" | tr -d '\r')" = "pxta ${{ needs.plan.outputs.version }}" ] || { echo "::error::version printed $out"; exit 1; }
+          stage/pxta${{ matrix.ext }} catalog | grep -q meta-pixel || { echo "::error::catalog does not list meta-pixel"; exit 1; }
+          # A real audit, in the runner's own Chrome, of a page served locally.
+          (cd testdata/smoke && python3 -m http.server 8123 --bind 127.0.0.1 >/dev/null 2>&1 &)
+          sleep 2
+          stage/pxta${{ matrix.ext }} audit http://127.0.0.1:8123/ --pages 1 --idle 1s --delay 0 --out smoke-out > smoke.txt 2>&1 || { sed 's/^/::error::/' smoke.txt | head -20; exit 1; }
+          cat smoke.txt
+          grep -q "No consent banner found" smoke.txt || { echo "::error::unexpected audit output"; exit 1; }
+          for f in report.html findings.json requests.har; do [ -s "smoke-out/$f" ] || { echo "::error::smoke audit wrote no $f"; exit 1; }; done
+      - name: Package
+        run: |
+          set -eux
+          mkdir -p dist
+          name=pxta_${{ matrix.goos }}_${{ matrix.goarch }}
+          if [ "${{ matrix.archive }}" = zip ]; then
+            (cd stage && 7z a -tzip ../dist/$name.zip * >/dev/null)
+          else
+            tar -czf dist/$name.tar.gz -C stage .
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pxta_${{ matrix.goos }}_${{ matrix.goarch }}
+          path: dist/*
+
+  publish:
+    needs: [plan, build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.plan.outputs.sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          path: dist
+          merge-multiple: true
+      - name: Check the archives
+        run: |
+          set -eu
+          n=$(ls dist | wc -l)
+          [ "$n" = 5 ] || { echo "::error::expected 5 archives, found $n: $(ls dist | tr '\n' ' ')"; exit 1; }
+          for f in dist/*.tar.gz; do tar -tzf "$f" | grep -q '^./pxta$' || { echo "::error::$f has no pxta binary"; exit 1; }; done
+          unzip -l dist/pxta_windows_amd64.zip | grep -q 'pxta.exe' || { echo "::error::zip has no pxta.exe"; exit 1; }
+      - name: Checksums
+        run: |
+          set -eux
+          cd dist
+          sha256sum * > SHA256SUMS
+          cat SHA256SUMS
+      - name: Publish the GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -u
+          v=${{ needs.plan.outputs.version }}
+          awk "/^## $v/{f=1;next} /^## /{f=0} f" CHANGELOG.md > notes.md
+          # Job logs can't be read from the maintainer's sessions, so any
+          # failure is repeated as annotations.
+          fail() { echo "::error::$1"; sed 's/^/::error::/' out.txt | head -20; exit 1; }
+          if gh release view "v$v" > out.txt 2>&1; then
+            gh release upload "v$v" dist/* --clobber > out.txt 2>&1 || fail "gh release upload failed"
+          else
+            git tag "v$v" "${{ needs.plan.outputs.sha }}"
+            git push origin "refs/tags/v$v" > out.txt 2>&1 || fail "git push of tag v$v failed"
+            gh release create "v$v" dist/* --verify-tag \
+              --title "PXTA v$v" --notes-file notes.md > out.txt 2>&1 || fail "gh release create failed"
+          fi
+          cat out.txt
