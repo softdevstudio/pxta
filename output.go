@@ -260,7 +260,8 @@ func RenderHTML(r *Result) ([]byte, error) {
 			}
 			return string([]rune(s)[:n]) + "…"
 		},
-		"count": func(m map[string]int, k string) int { return m[k] },
+		"count":    func(m map[string]int, k string) int { return m[k] },
+		"platform": PlatformName,
 	}
 	tm, err := template.New("report").Funcs(funcs).Parse(reportTemplate)
 	if err != nil {

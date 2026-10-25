@@ -35,7 +35,8 @@ func auditFixture(t *testing.T, f *fixture, start string, mod func(*Options)) *R
 	if mod != nil {
 		mod(&o)
 	}
-	ctx, cancel := context.WithTimeout(context.Background(), 8*time.Minute)
+	// About four seconds a page per pass is plenty; long crawls get longer.
+	ctx, cancel := context.WithTimeout(context.Background(), 8*time.Minute+time.Duration(o.MaxPages)*12*time.Second)
 	defer cancel()
 	r, err := Audit(ctx, o)
 	if err != nil {

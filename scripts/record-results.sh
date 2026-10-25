@@ -23,7 +23,7 @@ cat "$res/environment.txt"
 
 echo "== all tests (unit and browser)"
 PXTA_REQUIRE_BROWSER=1 PXTA_RECORD_DIR="$res" PXTA_CRASH_PAGES="${PXTA_CRASH_PAGES:-500}" \
-  go test -count=1 -v -timeout 90m ./... 2>&1 | grep -v 'TLS handshake error' > "$res/tests.txt" || true
+  go test -count=1 -v -timeout 150m ./... 2>&1 | grep -v 'TLS handshake error' > "$res/tests.txt" || true
 grep -E "^(--- |ok|FAIL)" "$res/tests.txt" | grep -v "^--- PASS" || true
 if grep -qE "^(--- FAIL|FAIL)" "$res/tests.txt"; then echo "::error::tests failed"; exit 1; fi
 echo "passed: $(grep -c '^\s*--- PASS' "$res/tests.txt") tests and subtests, $(grep -c '^\s*--- SKIP' "$res/tests.txt") skipped"

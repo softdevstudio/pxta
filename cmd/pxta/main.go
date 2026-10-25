@@ -181,7 +181,7 @@ func printSummary(w io.Writer, r *pxta.Result, out string) {
 	case !r.Banner.Found:
 		fmt.Fprintln(w, "No consent banner found.")
 	default:
-		fmt.Fprintf(w, "Consent banner: %s\n", r.Banner.Platform)
+		fmt.Fprintf(w, "Consent banner from %s\n", pxta.PlatformName(r.Banner.Platform))
 	}
 	shown := 0
 	for _, f := range r.Findings {

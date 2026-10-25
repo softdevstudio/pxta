@@ -1,0 +1,133 @@
+=== RUN   TestBrowserShop
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://www.harborpine.test/
+    browser_test.go:51:   [none 2/2] https://www.harborpine.test/shop/rain-shell
+    browser_test.go:51:   [none 3/3] https://www.harborpine.test/search?q=wool+socks
+    browser_test.go:51:   [none 4/4] https://www.harborpine.test/newsletter
+    browser_test.go:51:   [none 5/5] https://www.harborpine.test/cart
+    browser_test.go:51:   [none 6/6] https://www.harborpine.test/checkout/confirm?order=10442&email=jane%40example.com
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/6] https://www.harborpine.test/
+    browser_test.go:51:   [reject 2/6] https://www.harborpine.test/shop/rain-shell
+    browser_test.go:51:   [reject 3/6] https://www.harborpine.test/search?q=wool+socks
+    browser_test.go:51:   [reject 4/6] https://www.harborpine.test/newsletter
+    browser_test.go:51:   [reject 5/6] https://www.harborpine.test/cart
+    browser_test.go:51:   [reject 6/6] https://www.harborpine.test/checkout/confirm?order=10442&email=jane%40example.com
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/6] https://www.harborpine.test/
+    browser_test.go:51:   [accept 2/6] https://www.harborpine.test/shop/rain-shell
+    browser_test.go:51:   [accept 3/6] https://www.harborpine.test/search?q=wool+socks
+    browser_test.go:51:   [accept 4/6] https://www.harborpine.test/newsletter
+    browser_test.go:51:   [accept 5/6] https://www.harborpine.test/cart
+    browser_test.go:51:   [accept 6/6] https://www.harborpine.test/checkout/confirm?order=10442&email=jane%40example.com
+--- PASS: TestBrowserShop (62.79s)
+=== RUN   TestBrowserClinic
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://www.cedarvalleyclinic.test/
+    browser_test.go:51:   [none 2/2] https://www.cedarvalleyclinic.test/conditions/anxiety
+    browser_test.go:51:   [none 3/3] https://www.cedarvalleyclinic.test/conditions/diabetes
+    browser_test.go:51:   [none 4/4] https://www.cedarvalleyclinic.test/book?service=therapy
+    browser_test.go:51:   [none 5/5] https://www.cedarvalleyclinic.test/search?q=anxiety+medication
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/5] https://www.cedarvalleyclinic.test/
+    browser_test.go:51:   [reject 2/5] https://www.cedarvalleyclinic.test/conditions/anxiety
+    browser_test.go:51:   [reject 3/5] https://www.cedarvalleyclinic.test/conditions/diabetes
+    browser_test.go:51:   [reject 4/5] https://www.cedarvalleyclinic.test/book?service=therapy
+    browser_test.go:51:   [reject 5/5] https://www.cedarvalleyclinic.test/search?q=anxiety+medication
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/5] https://www.cedarvalleyclinic.test/
+    browser_test.go:51:   [accept 2/5] https://www.cedarvalleyclinic.test/conditions/anxiety
+    browser_test.go:51:   [accept 3/5] https://www.cedarvalleyclinic.test/conditions/diabetes
+    browser_test.go:51:   [accept 4/5] https://www.cedarvalleyclinic.test/book?service=therapy
+    browser_test.go:51:   [accept 5/5] https://www.cedarvalleyclinic.test/search?q=anxiety+medication
+--- PASS: TestBrowserClinic (50.77s)
+=== RUN   TestBrowserBakery
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://www.tidewaterbakery.test/
+    browser_test.go:51:   [none 2/2] https://www.tidewaterbakery.test/menu
+    browser_test.go:51:   [none 3/3] https://www.tidewaterbakery.test/order
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/3] https://www.tidewaterbakery.test/
+    browser_test.go:51:   [reject 2/3] https://www.tidewaterbakery.test/menu
+    browser_test.go:51:   [reject 3/3] https://www.tidewaterbakery.test/order
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/3] https://www.tidewaterbakery.test/
+    browser_test.go:51:   [accept 2/3] https://www.tidewaterbakery.test/menu
+    browser_test.go:51:   [accept 3/3] https://www.tidewaterbakery.test/order
+--- PASS: TestBrowserBakery (33.42s)
+=== RUN   TestBrowserLoans
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://www.marlowhomeloans.test/
+    browser_test.go:51:   [none 2/2] https://www.marlowhomeloans.test/loans/debt-consolidation
+    browser_test.go:51:   [none 3/3] https://www.marlowhomeloans.test/calculators/mortgage
+    browser_test.go:51:   [none 4/4] https://www.marlowhomeloans.test/apply
+    browser_test.go:51:   [none 5/5] https://www.marlowhomeloans.test/search?q=bankruptcy
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/5] https://www.marlowhomeloans.test/
+    browser_test.go:51:   [reject 2/5] https://www.marlowhomeloans.test/loans/debt-consolidation
+    browser_test.go:51:   [reject 3/5] https://www.marlowhomeloans.test/calculators/mortgage
+    browser_test.go:51:   [reject 4/5] https://www.marlowhomeloans.test/apply
+    browser_test.go:51:   [reject 5/5] https://www.marlowhomeloans.test/search?q=bankruptcy
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/5] https://www.marlowhomeloans.test/
+    browser_test.go:51:   [accept 2/5] https://www.marlowhomeloans.test/loans/debt-consolidation
+    browser_test.go:51:   [accept 3/5] https://www.marlowhomeloans.test/calculators/mortgage
+    browser_test.go:51:   [accept 4/5] https://www.marlowhomeloans.test/apply
+    browser_test.go:51:   [accept 5/5] https://www.marlowhomeloans.test/search?q=bankruptcy
+--- PASS: TestBrowserLoans (49.79s)
+=== RUN   TestBrowserConsentPlatforms
+=== RUN   TestBrowserConsentPlatforms/onetrust-good
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://cmp-onetrust-good.test/
+    browser_test.go:51:   [none 2/2] https://cmp-onetrust-good.test/about
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/2] https://cmp-onetrust-good.test/
+    browser_test.go:51:   [reject 2/2] https://cmp-onetrust-good.test/about
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/2] https://cmp-onetrust-good.test/
+    browser_test.go:51:   [accept 2/2] https://cmp-onetrust-good.test/about
+=== RUN   TestBrowserConsentPlatforms/onetrust-bad
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://cmp-onetrust-bad.test/
+    browser_test.go:51:   [none 2/2] https://cmp-onetrust-bad.test/about
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/2] https://cmp-onetrust-bad.test/
+    browser_test.go:51:   [reject 2/2] https://cmp-onetrust-bad.test/about
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/2] https://cmp-onetrust-bad.test/
+    browser_test.go:51:   [accept 2/2] https://cmp-onetrust-bad.test/about
+=== RUN   TestBrowserConsentPlatforms/cookiebot-good
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://cmp-cookiebot-good.test/
+    browser_test.go:51:   [none 2/2] https://cmp-cookiebot-good.test/about
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/2] https://cmp-cookiebot-good.test/
+    browser_test.go:51:   [reject 2/2] https://cmp-cookiebot-good.test/about
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/2] https://cmp-cookiebot-good.test/
+    browser_test.go:51:   [accept 2/2] https://cmp-cookiebot-good.test/about
+=== RUN   TestBrowserConsentPlatforms/cookiebot-bad
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://cmp-cookiebot-bad.test/
+    browser_test.go:51:   [none 2/2] https://cmp-cookiebot-bad.test/about
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/2] https://cmp-cookiebot-bad.test/
+    browser_test.go:51:   [reject 2/2] https://cmp-cookiebot-bad.test/about
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/2] https://cmp-cookiebot-bad.test/
+    browser_test.go:51:   [accept 2/2] https://cmp-cookiebot-bad.test/about
+=== RUN   TestBrowserConsentPlatforms/didomi-good
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://cmp-didomi-good.test/
+    browser_test.go:51:   [none 2/2] https://cmp-didomi-good.test/about
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/2] https://cmp-didomi-good.test/
+    browser_test.go:51:   [reject 2/2] https://cmp-didomi-good.test/about
+signal: terminated
+FAIL	github.com/softdevstudio/pxta	305.702s
+=== RUN   TestCLI
+--- PASS: TestCLI (0.02s)
+PASS
+ok  	github.com/softdevstudio/pxta/cmd/pxta	0.068s
+?   	github.com/softdevstudio/pxta/scripts/findbrowser	[no test files]
+FAIL

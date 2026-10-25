@@ -227,6 +227,23 @@ const fillFormsJS = `((email) => {
   return n;
 })`
 
+// PlatformName is how a consent platform's name is written.
+func PlatformName(id string) string {
+	switch id {
+	case "onetrust":
+		return "OneTrust"
+	case "cookiebot":
+		return "Cookiebot"
+	case "didomi":
+		return "Didomi"
+	case "usercentrics":
+		return "Usercentrics"
+	case "generic":
+		return "an unrecognised platform"
+	}
+	return id
+}
+
 // ProbeEmail is the address PXTA types into email fields.
 const ProbeEmail = "pxta-probe@example.com"
 

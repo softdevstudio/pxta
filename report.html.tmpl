@@ -41,7 +41,7 @@ footer{margin-top:40px;color:var(--muted);font-size:12.5px}
 </div>
 
 <div class="note">
-{{if .Banner.Found}}PXTA found a consent banner{{if and .Banner.Platform (ne .Banner.Platform "generic")}} from <b>{{.Banner.Platform}}</b>{{end}}{{if eq .Banner.Frame "iframe"}} inside an iframe{{end}}, and visited each page {{len .Passes}} time{{if ne (len .Passes) 1}}s{{end}}: {{range $i, $p := .Passes}}{{if $i}}, {{end}}{{index $.PassTitle $p | printf "%s"}}{{end}}.
+{{if .Banner.Found}}PXTA found a consent banner{{if .Banner.Platform}} from <b>{{platform .Banner.Platform}}</b>{{end}}{{if eq .Banner.Frame "iframe"}} inside an iframe{{end}}, and visited each page {{len .Passes}} time{{if ne (len .Passes) 1}}s{{end}}: {{range $i, $p := .Passes}}{{if $i}}, {{end}}{{index $.PassTitle $p | printf "%s"}}{{end}}.
 {{range $p, $a := .Banner.Actions}} For the {{$p}} pass it {{$a}}.{{end}}
 {{range $p, $m := .Banner.Problems}} <b>The {{$p}} pass is missing:</b> {{$m}}.{{end}}
 {{else}}PXTA found no consent banner, so each page was visited once and everything below happened without the visitor being asked.{{end}}

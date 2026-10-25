@@ -114,8 +114,9 @@ var sensitiveWords = map[string][]string{
 		"counseling", "counselling", "dermatology", "cardiology", "urology", "gynecology", "gynaecology", "chemotherapy", "dementia",
 		"alzheimers", "epilepsy", "hepatitis", "transplant", "dialysis", "disability", "suicide", "eating-disorder", "mental-health",
 		"sexual-health", "patient", "patients", "clinic", "condition", "conditions"},
-	"finance": {"loan", "loans", "debt", "debts", "bankruptcy", "mortgage", "mortgages", "overdraft", "payday", "foreclosure",
-		"collections", "credit-score", "credit-report", "insolvency", "debt-relief"},
+	"finance": {"debt", "debts", "bankruptcy", "bankrupt", "overdraft", "overdrawn", "payday", "foreclosure", "repossession",
+		"collections", "arrears", "insolvency", "debt-relief", "debt-consolidation", "credit-repair", "bad-credit", "eviction",
+		"iva", "defaulted"},
 	"account": {"checkout", "order-confirmation", "order-confirmed", "order-complete", "thank-you", "thankyou", "receipt",
 		"my-account", "account", "invoice", "password-reset", "reset-password", "confirmation"},
 }
@@ -193,13 +194,23 @@ func lastKeyPart(key string) string {
 // page addresses apart from other URLs.
 func FindLeaks(ps []Param, pageURL string, emails *Emails) []Leak {
 	var out []Leak
-	seen := map[string]bool{}
+	seen := map[string]int{}
 	add := func(l Leak) {
 		sig := l.Rule + "\x00" + strings.ToLower(l.Value)
-		if seen[sig] {
+		if l.Rule == RuleSensitive {
+			// One sensitive-page leak per category: a page's address and its
+			// title saying the same thing are one finding.
+			sig = l.Rule + "\x00" + strings.SplitN(l.Category, ":", 2)[0]
+		}
+		if i, ok := seen[sig]; ok {
+			// Keep the most telling version: inside the page address beats
+			// somewhere in a blob.
+			if l.InURL && !out[i].InURL {
+				out[i] = l
+			}
 			return
 		}
-		seen[sig] = true
+		seen[sig] = len(out)
 		out = append(out, l)
 	}
 	kinds := map[string]string{}
