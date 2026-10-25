@@ -67,8 +67,9 @@ read as emails and substring search matches; all fixed with tests.
 
 Known gaps, not planned yet:
 
-- No `pxta check`, `pxta diff` or logged-in pages yet (see Next).
-- No form submission.
+- No `pxta check` or `pxta diff` yet (see Next).
+- No logged-in pages or form submission: the owner left these out of the
+  plan on 2026-10-25.
 - No `pxta browser install`: users need Chrome, Chromium or Edge installed.
 - Server-side tracking is invisible to a browser by design.
 - Sensitive-word lists are English with a few other languages, built in;
@@ -87,9 +88,6 @@ Approved by the owner on 2026-10-25, in this order:
    Action wrapper with it, and `--redact` for reports that get shared.
 2. `pxta diff`: compare two audits (findings.json) and list what's new,
    what's gone and which trackers changed behaviour.
-3. Logged-in pages: sign in with a recorded session or cookie file and
-   audit pages behind a login (form submission stays out unless the
-   owner asks).
 
 Each is its own release, through the normal workflow above. Ask the owner
 before starting each one.
