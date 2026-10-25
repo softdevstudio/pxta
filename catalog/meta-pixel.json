@@ -1,0 +1,33 @@
+{
+  "id": "meta-pixel",
+  "name": "Meta Pixel",
+  "vendor": "Meta",
+  "scripts": [
+    {"host": "connect.facebook.net", "path": "/*/fbevents.js"},
+    {"host": "connect.facebook.net", "path": "/signals/"}
+  ],
+  "endpoints": [
+    {"host": "facebook.com", "path": "/tr"}
+  ],
+  "params": {
+    "id": {"meaning": "pixel ID", "kind": "account"},
+    "ev": {"meaning": "event name", "kind": "event"},
+    "dl": {"meaning": "page address", "kind": "page_url"},
+    "rl": {"meaning": "referring page", "kind": "referrer"},
+    "fbp": {"meaning": "browser ID (_fbp cookie)", "kind": "client_id"},
+    "fbc": {"meaning": "ad click ID (_fbc cookie)", "kind": "client_id"},
+    "ud[em]": {"meaning": "email address (hashed)", "kind": "email_hash"},
+    "ud[ph]": {"meaning": "phone number (hashed)", "kind": "phone_hash"},
+    "ud[fn]": {"meaning": "first name (hashed)", "kind": "name_hash"},
+    "ud[ln]": {"meaning": "last name (hashed)", "kind": "name_hash"},
+    "ud[external_id]": {"meaning": "customer ID (hashed)", "kind": "user_hash"}
+  },
+  "prefixes": {
+    "ud[": {"meaning": "customer data (hashed)", "kind": "user_hash"},
+    "cd[": {"meaning": "custom event data", "kind": "custom"}
+  },
+  "sample": {
+    "method": "GET",
+    "url": "https://www.facebook.com/tr/?id=1234567890&ev=PageView&dl=https%3A%2F%2Fshop.example%2Fcheckout%2Fconfirm%3Femail%3Djane%2540example.com&rl=&if=false&ts=1761400000000&ud[em]=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d&v=2.9.200"
+  }
+}

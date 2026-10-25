@@ -1,0 +1,25 @@
+{
+  "id": "x-pixel",
+  "name": "X (Twitter) Pixel",
+  "vendor": "X",
+  "scripts": [
+    {"host": "static.ads-twitter.com", "path": "/uwt.js"},
+    {"host": "static.ads-twitter.com", "path": "/oct.js"}
+  ],
+  "endpoints": [
+    {"host": "analytics.twitter.com", "path": "/i/adsct"},
+    {"host": "t.co", "path": "/i/adsct"},
+    {"host": "ads-twitter.com", "path": "/i/adsct"}
+  ],
+  "params": {
+    "txn_id": {"meaning": "pixel ID", "kind": "account"},
+    "p_id": {"meaning": "pixel type", "kind": "other"},
+    "events": {"meaning": "events", "kind": "event"},
+    "tw_document_href": {"meaning": "page address", "kind": "page_url"},
+    "tw_document_referrer": {"meaning": "referring page", "kind": "referrer"}
+  },
+  "sample": {
+    "method": "GET",
+    "url": "https://analytics.twitter.com/i/adsct?txn_id=o1abc&p_id=Twitter&tw_document_href=https%3A%2F%2Fshop.example%2Fsearch%3Fq%3Dpregnancy%2Btest&events=%5B%5B%22pageview%22%2Cnull%5D%5D"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "id": "microsoft-uet",
+  "name": "Microsoft Advertising UET tag",
+  "vendor": "Microsoft",
+  "scripts": [
+    {"host": "bat.bing.com", "path": "/bat.js"}
+  ],
+  "endpoints": [
+    {"host": "bat.bing.com", "path": "/action/"}
+  ],
+  "params": {
+    "ti": {"meaning": "UET tag ID", "kind": "account"},
+    "evt": {"meaning": "event type", "kind": "event"},
+    "ea": {"meaning": "event action", "kind": "event"},
+    "p": {"meaning": "page address", "kind": "page_url"},
+    "r": {"meaning": "referring page", "kind": "referrer"},
+    "tl": {"meaning": "page title", "kind": "title"},
+    "mid": {"meaning": "machine ID", "kind": "client_id"},
+    "vid": {"meaning": "visitor ID", "kind": "client_id"},
+    "sid": {"meaning": "session ID", "kind": "client_id"},
+    "em": {"meaning": "email address (hashed)", "kind": "email_hash"},
+    "ph": {"meaning": "phone number (hashed)", "kind": "phone_hash"}
+  },
+  "sample": {
+    "method": "GET",
+    "url": "https://bat.bing.com/action/0?ti=5555555&evt=pageLoad&p=https%3A%2F%2Fbank.example%2Floans%2Fdebt-consolidation&tl=Debt%20consolidation%20loans&mid=1-2-3"
+  }
+}

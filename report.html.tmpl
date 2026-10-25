@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PXTA report: {{.Host}}</title>
+<style>
+:root{--ink:#16202b;--muted:#5b6774;--line:#dfe4ea;--bg:#fff;--soft:#f5f7f9;--high:#b3261e;--medium:#b25e09;--low:#4a6a8a;--info:#6b7280;--accent:#0e7c86;--mark:#fff1c2}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+main{max-width:1040px;margin:0 auto;padding:28px 18px 60px}
+h1{font-size:26px;margin:0 0 4px}h2{font-size:19px;margin:36px 0 10px;padding-top:10px;border-top:2px solid var(--ink)}h3{font-size:15px;margin:18px 0 6px}
+.sub{color:var(--muted);margin:0 0 18px}.mono,code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:18px 0}
+.tile{border:1px solid var(--line);border-radius:8px;padding:10px 12px}.tile b{display:block;font-size:24px}.tile span{color:var(--muted);font-size:13px}
+.tile.sev-high b{color:var(--high)}.tile.sev-medium b{color:var(--medium)}.tile.sev-low b{color:var(--low)}.tile.sev-info b{color:var(--info)}
+.note{background:var(--soft);border-left:4px solid var(--accent);padding:10px 14px;border-radius:4px;margin:14px 0}
+.finding{border:1px solid var(--line);border-left:5px solid var(--info);border-radius:6px;padding:12px 14px;margin:10px 0;break-inside:avoid}
+.finding.sev-high{border-left-color:var(--high)}.finding.sev-medium{border-left-color:var(--medium)}.finding.sev-low{border-left-color:var(--low)}
+.finding p{margin:0 0 6px;font-size:15.5px}.meta{color:var(--muted);font-size:13px}
+.badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border-radius:10px;color:#fff;background:var(--info);margin-right:6px;vertical-align:1px}
+.badge.sev-high{background:var(--high)}.badge.sev-medium{background:var(--medium)}.badge.sev-low{background:var(--low)}
+details{margin-top:8px}summary{cursor:pointer;color:var(--accent);font-size:13.5px}
+.ev{margin-top:8px;font-size:13px}.ev .url{word-break:break-all;background:var(--soft);padding:6px 8px;border-radius:4px}
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin:6px 0}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:6px 8px}
+th{background:var(--soft);font-weight:600}td.v{word-break:break-all}tr.hit td{background:var(--mark)}
+.wrap{overflow-x:auto}.bad{color:var(--high);font-weight:600}.ok{color:#1d7a3a;font-weight:600}
+footer{margin-top:40px;color:var(--muted);font-size:12.5px}
+@media print{details{display:block}details>*{display:block}summary{display:none}main{padding:0}}
+</style>
+</head>
+<body>
+<main>
+<h1>Tracking audit of {{.Host}}</h1>
+<p class="sub">{{.Started.Format "2 January 2006, 15:04 UTC"}} · {{.PageCount}} page{{if ne .PageCount 1}}s{{end}} · PXTA {{.Version}}, tracker catalog {{.Catalog}}</p>
+
+<div class="tiles">
+<div class="tile sev-high"><b>{{count .Counts "high"}}</b><span>high</span></div>
+<div class="tile sev-medium"><b>{{count .Counts "medium"}}</b><span>medium</span></div>
+<div class="tile sev-low"><b>{{count .Counts "low"}}</b><span>low</span></div>
+<div class="tile sev-info"><b>{{count .Counts "info"}}</b><span>for information</span></div>
+</div>
+
+<div class="note">
+{{if .Banner.Found}}PXTA found a consent banner{{if and .Banner.Platform (ne .Banner.Platform "generic")}} from <b>{{.Banner.Platform}}</b>{{end}}{{if eq .Banner.Frame "iframe"}} inside an iframe{{end}}, and visited each page {{len .Passes}} time{{if ne (len .Passes) 1}}s{{end}}: {{range $i, $p := .Passes}}{{if $i}}, {{end}}{{index $.PassTitle $p | printf "%s"}}{{end}}.
+{{range $p, $a := .Banner.Actions}} For the {{$p}} pass it {{$a}}.{{end}}
+{{range $p, $m := .Banner.Problems}} <b>The {{$p}} pass is missing:</b> {{$m}}.{{end}}
+{{else}}PXTA found no consent banner, so each page was visited once and everything below happened without the visitor being asked.{{end}}
+There is no score: each finding names the page, the tracker and the data, with the request that carried it.
+</div>
+
+<h2>Findings</h2>
+{{if not (or .High .Other)}}<p>No tracker sent data that the rules flag.</p>{{end}}
+{{range .High}}{{template "finding" .}}{{end}}
+{{range .Other}}{{template "finding" .}}{{end}}
+
+<h2>Trackers on the site</h2>
+{{if .Rows}}
+<div class="wrap"><table>
+<tr><th>Tracker</th><th>Vendor</th>{{range .PassNames}}<th>{{index $.PassTitle .}}</th>{{end}}</tr>
+{{range .Rows}}<tr><td>{{.Name}}</td><td>{{.Vendor}}</td>{{range .Cells}}<td>{{.}}</td>{{end}}</tr>{{end}}
+</table></div>
+{{else}}<p>PXTA saw no known tracker and no unclassified beacon.</p>{{end}}
+
+{{if .Behaviour}}
+<h2>Consent behaviour</h2>
+<div class="wrap"><table>
+<tr><th>Tracker</th><th>Before an answer</th><th>After reject</th><th>After accept</th><th>In short</th></tr>
+{{range .Behaviour}}<tr><td>{{.Name}}</td><td>{{.BeforeAnswer}}</td><td>{{.AfterReject}}</td><td>{{.AfterAccept}}</td><td class="{{if .Bad}}bad{{else}}ok{{end}}">{{.Verdict}}</td></tr>{{end}}
+</table></div>
+{{end}}
+
+<h2>Pages visited</h2>
+<div class="wrap"><table>
+<tr><th>Pass</th><th>#</th><th>Page</th><th>Requests</th></tr>
+{{range .Pages}}<tr><td>{{index $.PassTitle .Pass}}</td><td>{{.Page}}</td><td class="v">{{.URL}}{{if .Error}} <span class="bad">({{.Error}})</span>{{end}}</td><td>{{.Requests}}</td></tr>{{end}}
+</table></div>
+
+<h2>Method</h2>
+<p>PXTA loaded each page in headless {{.Browser}} with a fresh browser profile for each pass, waited until no new request had started for {{.Settings.Idle}} (at most {{.Settings.PageWait}} per page), scrolled to the bottom{{if .FilledForms}}, typed the marker address <code>pxta-probe@example.com</code> into email fields without submitting anything{{end}}, then left the page so beacons sent on unload were recorded too. Requests from iframes and workers are included.</p>
+<p>User agent: <code>{{.UserAgent}}</code>. Robots.txt {{if .Settings.RespectRobot}}was respected{{else}}was ignored at the operator's request{{end}}. Up to {{.Settings.MaxPages}} pages, {{.Settings.MaxDepth}} links deep{{if .Settings.Sitemap}}, seeded from {{.Settings.Sitemap}}{{end}}.{{if .Restarts}} The browser was restarted {{.Restarts}} time{{if ne .Restarts 1}}s{{end}} during the audit.{{end}}</p>
+{{if .Emails}}<p>Email addresses whose SHA-256 and MD5 hashes were looked for: {{range $i, $e := .Emails}}{{if $i}}, {{end}}<code>{{$e}}</code>{{end}}.</p>{{end}}
+<p><b>What PXTA cannot see.</b> Data a site sends from its own servers (server-side tagging, conversion APIs) never passes through the browser. Pages behind a login were not visited. A tracker that fires only after a click PXTA didn't make is not in this report.</p>
+<p><b>What this report is.</b> A record of network traffic. It draws no legal conclusion about whether the site complies with any law.</p>
+<p>The raw capture is in <code>requests.har</code>, SHA-256 <code class="v">{{.HARSHA256}}</code>, and every finding is in <code>findings.json</code>.</p>
+<footer>Made with PXTA {{.Version}}, Pixel Tracking Audit · pxta.com · {{.Finished.Format "2006-01-02 15:04 UTC"}}</footer>
+</main>
+</body>
+</html>
+{{define "finding"}}
+<div class="finding {{sevClass .Severity}}">
+<p><span class="badge {{sevClass .Severity}}">{{upper .Severity}}</span>{{.Sentence}}</p>
+<div class="meta"><code>{{.Code}}</code> · {{.Name}}{{if gt .Count 1}} · seen {{.Count}} times{{end}}</div>
+{{if .Evidence.URL}}
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">{{.Evidence.Method}} {{.Evidence.URL}}</div>
+<p class="meta">{{.Evidence.Time}} · {{.Evidence.Type}} from the {{.Evidence.Target}} · while the page was {{if eq .Evidence.Phase "load"}}loading{{else if eq .Evidence.Phase "interact"}}being scrolled and filled in{{else}}being left{{end}}{{if .Evidence.ConsentMode}} · Consent Mode {{.Evidence.ConsentMode}}{{end}}</p>
+{{$hit := leakSet .Evidence.Highlight}}
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+{{range .Evidence.Params}}<tr{{if index $hit .Key}} class="hit"{{end}}><td class="mono">{{.Key}}</td><td class="v mono">{{short .Value 300}}</td><td>{{.Meaning}}</td></tr>{{end}}
+</table></div>
+{{range .Evidence.Highlight}}<p class="meta">Flagged: {{.What}}{{if .Category}} ({{.Category}}){{end}} in <code>{{.Key}}</code>.</p>{{end}}
+{{if .Repro}}<p class="meta">Reproduce: <code>{{.Repro}}</code></p>{{end}}
+</div>
+</details>
+{{end}}
+</div>
+{{end}}

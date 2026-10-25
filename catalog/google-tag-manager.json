@@ -1,0 +1,17 @@
+{
+  "id": "google-tag-manager",
+  "name": "Google Tag Manager",
+  "vendor": "Google",
+  "scripts": [
+    {"host": "www.googletagmanager.com", "path": "/gtm.js"}
+  ],
+  "endpoints": [],
+  "params": {
+    "id": {"meaning": "container ID", "kind": "account"}
+  },
+  "sample": {
+    "method": "GET",
+    "url": "https://www.googletagmanager.com/gtm.js?id=GTM-ABC1234",
+    "script": true
+  }
+}

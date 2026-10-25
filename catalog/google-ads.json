@@ -1,0 +1,31 @@
+{
+  "id": "google-ads",
+  "name": "Google Ads conversion tag",
+  "vendor": "Google",
+  "scripts": [
+    {"host": "www.googleadservices.com", "path": "/pagead/conversion_async.js"}
+  ],
+  "endpoints": [
+    {"host": "googleadservices.com", "path": "/pagead/conversion/"},
+    {"host": "googleads.g.doubleclick.net", "path": "/pagead/viewthroughconversion/"},
+    {"host": "www.google.com", "path": "/pagead/1p-conversion/"},
+    {"host": "www.google.com", "path": "/pagead/1p-user-list/"},
+    {"host": "www.google.com", "path": "/ccm/collect"}
+  ],
+  "consent_mode": true,
+  "params": {
+    "url": {"meaning": "page address", "kind": "page_url"},
+    "ref": {"meaning": "referring page", "kind": "referrer"},
+    "tiba": {"meaning": "page title", "kind": "title"},
+    "label": {"meaning": "conversion label", "kind": "account"},
+    "oid": {"meaning": "order ID", "kind": "custom"},
+    "value": {"meaning": "conversion value", "kind": "custom"},
+    "em": {"meaning": "customer data for enhanced conversions (hashed)", "kind": "user_hash"},
+    "gcs": {"meaning": "Consent Mode state", "kind": "consent"},
+    "gcd": {"meaning": "Consent Mode defaults and updates", "kind": "consent"}
+  },
+  "sample": {
+    "method": "GET",
+    "url": "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/987654321/?label=abcDEF&value=49.00&oid=10442&gcs=G111&url=https%3A%2F%2Fshop.example%2Fcheckout%2Fconfirm&em=tv.1~em.8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d"
+  }
+}

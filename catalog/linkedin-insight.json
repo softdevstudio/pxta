@@ -1,0 +1,25 @@
+{
+  "id": "linkedin-insight",
+  "name": "LinkedIn Insight Tag",
+  "vendor": "LinkedIn",
+  "scripts": [
+    {"host": "snap.licdn.com", "path": "/li.lms-analytics/"}
+  ],
+  "endpoints": [
+    {"host": "px.ads.linkedin.com", "path": "/collect"},
+    {"host": "px.ads.linkedin.com", "path": "/wa/"},
+    {"host": "px.ads.linkedin.com", "path": "/attribution_trigger"}
+  ],
+  "params": {
+    "pid": {"meaning": "partner ID", "kind": "account"},
+    "pids": {"meaning": "partner IDs", "kind": "account"},
+    "url": {"meaning": "page address", "kind": "page_url"},
+    "pageUrl": {"meaning": "page address", "kind": "page_url"},
+    "referrer": {"meaning": "referring page", "kind": "referrer"},
+    "conversionId": {"meaning": "conversion ID", "kind": "event"}
+  },
+  "sample": {
+    "method": "GET",
+    "url": "https://px.ads.linkedin.com/collect/?pid=123456&fmt=gif&url=https%3A%2F%2Fclinic.example%2Fbook%3Fservice%3Dtherapy&time=1761400000000"
+  }
+}

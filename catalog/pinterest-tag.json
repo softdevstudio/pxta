@@ -1,0 +1,27 @@
+{
+  "id": "pinterest-tag",
+  "name": "Pinterest Tag",
+  "vendor": "Pinterest",
+  "scripts": [
+    {"host": "s.pinimg.com", "path": "/ct/"}
+  ],
+  "endpoints": [
+    {"host": "ct.pinterest.com", "path": "/v3/"},
+    {"host": "ct.pinterest.com", "path": "/user/"}
+  ],
+  "params": {
+    "tid": {"meaning": "tag ID", "kind": "account"},
+    "event": {"meaning": "event name", "kind": "event"},
+    "pd.em": {"meaning": "email address (hashed)", "kind": "email_hash"},
+    "ad.loc": {"meaning": "page address", "kind": "page_url"},
+    "ad.ref": {"meaning": "referring page", "kind": "referrer"}
+  },
+  "prefixes": {
+    "pd.": {"meaning": "partner data", "kind": "user_hash"},
+    "ed.": {"meaning": "event data", "kind": "custom"}
+  },
+  "sample": {
+    "method": "GET",
+    "url": "https://ct.pinterest.com/v3/?event=checkout&tid=2612345678901&pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D&ad=%7B%22loc%22%3A%22https%3A%2F%2Fshop.example%2Fcheckout%2Fconfirm%22%7D"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "id": "tiktok-pixel",
+  "name": "TikTok Pixel",
+  "vendor": "TikTok",
+  "scripts": [
+    {"host": "analytics.tiktok.com", "path": "/i18n/pixel/"}
+  ],
+  "endpoints": [
+    {"host": "analytics.tiktok.com", "path": "/api/v2/pixel"},
+    {"host": "analytics.tiktok.com", "path": "/api/v1/pixel"}
+  ],
+  "params": {
+    "pixel_code": {"meaning": "pixel ID", "kind": "account"},
+    "event": {"meaning": "event name", "kind": "event"},
+    "context.page.url": {"meaning": "page address", "kind": "page_url"},
+    "context.page.referrer": {"meaning": "referring page", "kind": "referrer"},
+    "context.user.anonymous_id": {"meaning": "browser ID (_ttp cookie)", "kind": "client_id"},
+    "context.user.email": {"meaning": "email address (hashed)", "kind": "email_hash"},
+    "context.user.phone_number": {"meaning": "phone number (hashed)", "kind": "phone_hash"},
+    "context.user.external_id": {"meaning": "customer ID (hashed)", "kind": "user_hash"}
+  },
+  "prefixes": {
+    "properties.": {"meaning": "event data", "kind": "custom"}
+  },
+  "sample": {
+    "method": "POST",
+    "url": "https://analytics.tiktok.com/api/v2/pixel",
+    "body": "{\"event\":\"ViewContent\",\"pixel_code\":\"C1234567890\",\"context\":{\"page\":{\"url\":\"https://clinic.example/conditions/anxiety\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"abc\",\"email\":\"8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d\"}},\"properties\":{\"content_name\":\"Anxiety treatment\"}}"
+  }
+}

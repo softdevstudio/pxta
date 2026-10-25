@@ -1,0 +1,26 @@
+{
+  "id": "snap-pixel",
+  "name": "Snap Pixel",
+  "vendor": "Snap",
+  "scripts": [
+    {"host": "sc-static.net", "path": "/scevent.min.js"}
+  ],
+  "endpoints": [
+    {"host": "tr.snapchat.com", "path": "/p"},
+    {"host": "tr.snapchat.com", "path": "/gateway/p"},
+    {"host": "tr.snapchat.com", "path": "/cm/"}
+  ],
+  "params": {
+    "pid": {"meaning": "pixel ID", "kind": "account"},
+    "ev": {"meaning": "event name", "kind": "event"},
+    "pl": {"meaning": "page address", "kind": "page_url"},
+    "rf": {"meaning": "referring page", "kind": "referrer"},
+    "u_hem": {"meaning": "email address (hashed)", "kind": "email_hash"},
+    "u_hpn": {"meaning": "phone number (hashed)", "kind": "phone_hash"}
+  },
+  "sample": {
+    "method": "POST",
+    "url": "https://tr.snapchat.com/p",
+    "body": "pid=abc-123&ev=PAGE_VIEW&pl=https%3A%2F%2Fshop.example%2F&u_hem=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "id": "google-analytics-4",
+  "name": "Google Analytics 4",
+  "vendor": "Google",
+  "scripts": [
+    {"host": "www.googletagmanager.com", "path": "/gtag/js"}
+  ],
+  "endpoints": [
+    {"host": "google-analytics.com", "path": "/g/collect"},
+    {"host": "analytics.google.com", "path": "/g/collect"},
+    {"host": "stats.g.doubleclick.net", "path": "/g/collect"}
+  ],
+  "consent_mode": true,
+  "params": {
+    "tid": {"meaning": "measurement ID", "kind": "account"},
+    "en": {"meaning": "event name", "kind": "event"},
+    "dl": {"meaning": "page address", "kind": "page_url"},
+    "dr": {"meaning": "referring page", "kind": "referrer"},
+    "dt": {"meaning": "page title", "kind": "title"},
+    "cid": {"meaning": "client ID (_ga cookie)", "kind": "client_id"},
+    "uid": {"meaning": "user ID set by the site", "kind": "user_id"},
+    "sid": {"meaning": "session ID", "kind": "client_id"},
+    "gcs": {"meaning": "Consent Mode state", "kind": "consent"},
+    "gcd": {"meaning": "Consent Mode defaults and updates", "kind": "consent"}
+  },
+  "prefixes": {
+    "ep.": {"meaning": "event parameter", "kind": "custom"},
+    "epn.": {"meaning": "numeric event parameter", "kind": "custom"},
+    "up.": {"meaning": "user property", "kind": "custom"},
+    "upn.": {"meaning": "numeric user property", "kind": "custom"}
+  },
+  "sample": {
+    "method": "POST",
+    "url": "https://region1.google-analytics.com/g/collect?v=2&tid=G-ABC123&gcs=G100&cid=123.456&dl=https%3A%2F%2Fshop.example%2Fsearch%3Fq%3Dflu%2Bsymptoms&dt=Search",
+    "body": "en=page_view&_ee=1\nen=search&ep.search_term=flu%20symptoms"
+  }
+}
