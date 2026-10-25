@@ -101,6 +101,15 @@ func dumpFindings(t *testing.T, r *Result) {
 	for _, f := range r.Findings {
 		t.Logf("  [%s %s %s] %s", f.Severity, f.Pass, f.Code, f.Sentence)
 	}
+	for i, q := range r.requests {
+		if i == 25 {
+			break
+		}
+		t.Logf("  request %s/%d %s %s %s", q.Pass, q.Page, q.Target, q.Type, q.URL)
+	}
+	for _, p := range r.Pages {
+		t.Logf("  page %s %d %s final=%q title=%q", p.Pass, p.Page, p.URL, p.FinalURL, p.Title)
+	}
 }
 
 func fired(r *Result, tracker, pass string) bool {
@@ -139,6 +148,11 @@ func TestBrowserShop(t *testing.T) {
 	checkOutputs(t, out)
 	if !r.Banner.Found || r.Banner.Platform != "onetrust" {
 		dumpFindings(t, r)
+		for i, h := range f.Hits() {
+			if i < 25 {
+				t.Logf("  fixture hit %s", h)
+			}
+		}
 		t.Fatalf("banner %+v", r.Banner)
 	}
 	if len(r.Passes) != 3 {
