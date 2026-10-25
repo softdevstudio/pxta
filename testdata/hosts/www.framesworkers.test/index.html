@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Frames and workers test</title><style>body{font:16px/1.5 Georgia,serif;max-width:760px;margin:0 auto;padding:20px;color:#222}nav a{margin-right:14px}footer{margin-top:40px;color:#777;font-size:13px}</style>
+<script>
+new Worker('/worker.js');
+window.addEventListener('pagehide', function () {
+  navigator.sendBeacon('https://beacon.exitmetrics.test/v1/leave', JSON.stringify({ page: location.href, visitor: 'v-7781', seconds: 12 }));
+});
+</script>
+</head><body>
+<header><strong>Frames and workers test</strong><nav></nav></header>
+<main><h1>Frames and workers</h1><iframe src="https://widget.framesembed.test/" width="400" height="120"></iframe></main>
+<footer>Frames and workers test is a fictional business made for PXTA's tests.</footer>
+</body></html>
