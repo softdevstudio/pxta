@@ -40,7 +40,7 @@ jobs:
         run: |
           set -o pipefail
           go test -count=1 -race -timeout 40m ./... 2>&1 | tee test.log || {
-            grep -E -- "--- FAIL|panic:|_test.go:[0-9]+:|Error Trace|browser" test.log | head -40 | sed 's/^/::error::/'
+            echo "::error::$(grep -E -- "--- FAIL|panic:|_test.go:[0-9]+:" test.log | head -120 | awk '{gsub(/%/,"%25"); printf "%s%%0A", $0}')"
             exit 1
           }
       - name: Keep the test log
@@ -64,6 +64,6 @@ jobs:
         run: |
           set -o pipefail
           go test -count=1 -timeout 30m -run 'Test(Catalog|Match|Email|Other|Sensitive|Consent|Robots|Normalize|Analyze|Render|CDP|Dial|CLI|BrowserShop)' ./... 2>&1 | tee test.log || {
-            grep -E -- "--- FAIL|panic:|_test.go:[0-9]+:" test.log | head -80 | sed 's/^/::error::/'
+            echo "::error::$(grep -E -- "--- FAIL|panic:|_test.go:[0-9]+:" test.log | head -120 | awk '{gsub(/%/,"%25"); printf "%s%%0A", $0}')"
             exit 1
           }
