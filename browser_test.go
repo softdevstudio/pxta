@@ -92,7 +92,12 @@ func mustNotFind(t *testing.T, r *Result, code, pass, tracker string) {
 
 func dumpFindings(t *testing.T, r *Result) {
 	t.Helper()
-	t.Logf("banner %+v, passes %v", r.Banner, r.Passes)
+	t.Logf("banner %+v, passes %v, browser %s", r.Banner, r.Passes, r.Browser)
+	for _, p := range r.Pages {
+		if p.Error != "" {
+			t.Logf("  page %s %d %s: %s", p.Pass, p.Page, p.URL, p.Error)
+		}
+	}
 	for _, f := range r.Findings {
 		t.Logf("  [%s %s %s] %s", f.Severity, f.Pass, f.Code, f.Sentence)
 	}
@@ -133,6 +138,7 @@ func TestBrowserShop(t *testing.T) {
 	r := auditFixture(t, f, "https://www.harborpine.test/", func(o *Options) { out = o.OutDir })
 	checkOutputs(t, out)
 	if !r.Banner.Found || r.Banner.Platform != "onetrust" {
+		dumpFindings(t, r)
 		t.Fatalf("banner %+v", r.Banner)
 	}
 	if len(r.Passes) != 3 {

@@ -427,6 +427,7 @@ func (a *auditor) runPass(ctx context.Context, pass string, discover bool, recor
 		}
 		if err != nil {
 			v.Error = err.Error()
+			a.logf("    error: %s", v.Error)
 		}
 		if err := record(reqs); err != nil {
 			return err
