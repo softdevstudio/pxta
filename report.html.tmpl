@@ -65,7 +65,7 @@ There is no score: each finding names the page, the tracker and the data, with t
 <h2>Consent behaviour</h2>
 <div class="wrap"><table>
 <tr><th>Tracker</th><th>Before an answer</th><th>After reject</th><th>After accept</th><th>In short</th></tr>
-{{range .Behaviour}}<tr><td>{{.Name}}</td><td>{{.BeforeAnswer}}</td><td>{{.AfterReject}}</td><td>{{.AfterAccept}}</td><td class="{{if .Bad}}bad{{else}}ok{{end}}">{{.Verdict}}</td></tr>{{end}}
+{{range .Behaviour}}<tr><td>{{.Name}}</td><td>{{.BeforeAnswer}}</td><td>{{.AfterReject}}</td><td>{{.AfterAccept}}</td><td class="{{if .Bad}}bad{{else if .Incomplete}}{{else}}ok{{end}}">{{.Verdict}}</td></tr>{{end}}
 </table></div>
 {{end}}
 

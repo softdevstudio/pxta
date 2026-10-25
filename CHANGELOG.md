@@ -24,3 +24,11 @@ First release.
 - Writes a self-contained `report.html`, `findings.json` and `requests.har`.
 - Restarts the browser if it crashes mid-crawl; `--resume` carries on an
   interrupted audit.
+- Answers `alert()`, `confirm()`, `prompt()` and leave-page dialogs, and
+  gives every page one deadline, so a page can't stall the audit.
+- Follows a start address that redirects (to `www.`, or from http to https)
+  and keeps crawling the site where it landed.
+- Keeps at most 5,000 requests per page load and 256 KB of each request
+  body, so a hostile page can't fill memory.
+- The unanswered pass always runs, since it finds the pages; `--passes`
+  picks which passes are reported.

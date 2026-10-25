@@ -17,16 +17,23 @@ var skipExt = map[string]bool{".pdf": true, ".jpg": true, ".jpeg": true, ".png":
 	".xls": true, ".xlsx": true, ".ppt": true, ".pptx": true, ".exe": true, ".dmg": true, ".msi": true, ".csv": true, ".xml": true,
 	".json": true, ".txt": true, ".ics": true, ".woff": true, ".woff2": true, ".css": true, ".js": true}
 
-// normalizeLink keeps same-origin http(s) pages and drops fragments, files
-// and links that would sign the visitor out.
+// bareHost is a host without a leading "www.", so example.com and
+// www.example.com count as one site.
+func bareHost(h string) string { return strings.TrimPrefix(strings.ToLower(h), "www.") }
+
+// normalizeLink keeps http(s) pages of the same site and drops fragments,
+// files and links that would sign the visitor out. A link to the site's
+// other spelling (with or without "www.", http or https) is rewritten to the
+// origin's, so one page isn't visited twice under two addresses.
 func normalizeLink(raw string, origin *url.URL) (string, bool) {
 	u, err := url.Parse(strings.TrimSpace(raw))
 	if err != nil || (u.Scheme != "http" && u.Scheme != "https") {
 		return "", false
 	}
-	if !strings.EqualFold(u.Host, origin.Host) || u.Scheme != origin.Scheme {
+	if bareHost(u.Hostname()) != bareHost(origin.Hostname()) || (u.Port() != origin.Port() && u.Port() != "" && origin.Port() != "") {
 		return "", false
 	}
+	u.Scheme, u.Host = origin.Scheme, origin.Host
 	u.Fragment = ""
 	u.RawFragment = ""
 	if skipExt[strings.ToLower(path.Ext(u.Path))] {

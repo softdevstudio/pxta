@@ -211,6 +211,11 @@ func TestOtherRules(t *testing.T) {
 func TestSensitiveCategory(t *testing.T) {
 	cases := map[string]string{
 		"https://clinic.example/conditions/anxiety":          "health",
+		"https://shop.example/collections/summer-dresses":    "",
+		"https://shop.example/pages/terms-and-conditions":    "",
+		"https://audio.example/blog/hearing-aids-review":     "",
+		"Opening hours | Cedar Valley Clinic":                "",
+		"https://agency.example/debt-collections/help":       "finance",
 		"https://clinic.example/book?service=mental-health":  "health",
 		"https://bank.example/loans/debt-consolidation":      "finance",
 		"https://shop.example/checkout/order-confirmation":   "account",
@@ -272,7 +277,8 @@ func TestNormalizeLink(t *testing.T) {
 		"https://shop.example/a#top":      "https://shop.example/a",
 		"https://shop.example":            "https://shop.example/",
 		"https://other.example/a":         "",
-		"http://shop.example/a":           "",
+		"http://shop.example/a":           "https://shop.example/a",
+		"https://www.shop.example/b":      "https://shop.example/b",
 		"https://shop.example/menu.pdf":   "",
 		"https://shop.example/logout":     "",
 		"mailto:a@shop.example":           "",
@@ -551,5 +557,26 @@ func TestDialRejectsNonWebSocket(t *testing.T) {
 	l.Close()
 	if _, err := DialCDP(ctx, "ws://"+addr+"/x"); err == nil {
 		t.Fatal("dialled a closed port")
+	}
+}
+
+func TestIsEmail(t *testing.T) {
+	for in, want := range map[string]bool{"jane@example.com": true, "hero@2x.png": false, "logo@3x.webp": false,
+		"bundle@1.2.3.js": false, "a.b@shop.co.uk": true} {
+		if got := isEmail(in); got != want {
+			t.Errorf("%s: got %v", in, got)
+		}
+	}
+}
+
+func TestContainsWords(t *testing.T) {
+	for _, c := range []struct {
+		s, p string
+		want bool
+	}{{"configured", "red", false}, {"red shoes", "red", true}, {"q=red", "red", true}, {"wool socks sale", "wool socks", true},
+		{"woolsocks", "wool socks", false}, {"über alles", "über", true}} {
+		if got := containsWords(c.s, c.p); got != c.want {
+			t.Errorf("%q in %q: got %v", c.p, c.s, got)
+		}
 	}
 }

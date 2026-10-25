@@ -183,7 +183,8 @@ pxta audit <url> [options]
   --pages n             most pages to visit (default 20)
   --depth n             links deep from the start page (default 3)
   --sitemap url         add pages from a sitemap
-  --passes list         consent passes: none,reject,accept (default all three)
+  --passes list         consent passes to report: none,reject,accept (default
+                        all three); the unanswered pass always runs, to find pages
   --email address       an address whose hashes to look for (repeatable)
   --no-fill             don't type the marker address into email fields
   --wait 15s            longest time on one page

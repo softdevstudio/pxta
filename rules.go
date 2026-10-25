@@ -8,6 +8,8 @@ import (
 	"regexp"
 	"sort"
 	"strings"
+	"unicode"
+	"unicode/utf8"
 )
 
 // Leak is a piece of personal or sensitive data found in a request.
@@ -42,6 +44,23 @@ var (
 	wordRe  = regexp.MustCompile(`[\p{L}\p{N}]+`)
 )
 
+// fileTLDs are "domains" that are really file extensions: hero@2x.png is an
+// image name, not an address.
+var fileTLDs = map[string]bool{"png": true, "jpg": true, "jpeg": true, "gif": true, "webp": true, "svg": true, "avif": true,
+	"ico": true, "bmp": true, "tif": true, "tiff": true, "js": true, "mjs": true, "css": true, "map": true, "json": true,
+	"woff": true, "woff2": true, "ttf": true, "otf": true, "eot": true, "mp4": true, "webm": true, "mp3": true, "pdf": true,
+	"html": true, "htm": true, "php": true, "txt": true, "xml": true}
+
+// isEmail reports whether s matches the address pattern and doesn't end in
+// a file extension.
+func isEmail(s string) bool {
+	if !emailRe.MatchString(s) {
+		return false
+	}
+	i := strings.LastIndexByte(s, '.')
+	return i < 0 || !fileTLDs[strings.ToLower(s[i+1:])]
+}
+
 // Emails is the set of email addresses PXTA knows about on a site: given on
 // the command line, typed into forms by PXTA, or seen on its pages. Their
 // hashes are recognised in tracker requests.
@@ -59,7 +78,7 @@ func NewEmails() *Emails {
 // lower case).
 func (e *Emails) Add(addr string) {
 	a := strings.ToLower(strings.TrimSpace(addr))
-	if a == "" || e.addr[a] || !emailRe.MatchString(a) {
+	if a == "" || e.addr[a] || !isEmail(a) {
 		return
 	}
 	e.addr[a] = true
@@ -103,19 +122,39 @@ func SearchTerms(pageURL string) []string {
 	return out
 }
 
+// containsWords reports whether phrase appears in s as whole words: "red"
+// is in "red shoes" but not in "Configured".
+func containsWords(s, phrase string) bool {
+	isWord := func(r rune) bool { return unicode.IsLetter(r) || unicode.IsDigit(r) }
+	for i := 0; ; {
+		j := strings.Index(s[i:], phrase)
+		if j < 0 {
+			return false
+		}
+		j += i
+		end := j + len(phrase)
+		before, _ := utf8.DecodeLastRuneInString(s[:j])
+		after, _ := utf8.DecodeRuneInString(s[end:])
+		if (j == 0 || !isWord(before)) && (end == len(s) || !isWord(after)) {
+			return true
+		}
+		i = j + 1
+	}
+}
+
 // Sensitive words, matched against whole words of a page address or title.
 // Two-word phrases are written with a hyphen and match "mental-health",
 // "mental_health" and "mental health" alike.
 var sensitiveWords = map[string][]string{
 	"health": {"symptom", "symptoms", "diagnosis", "diagnose", "treatment", "treatments", "therapy", "therapist", "cancer", "oncology",
-		"hiv", "aids", "std", "stds", "sti", "stis", "pregnancy", "pregnant", "fertility", "ivf", "abortion", "contraception", "miscarriage",
+		"hiv", "std", "stds", "sti", "stis", "pregnancy", "pregnant", "fertility", "ivf", "abortion", "contraception", "miscarriage",
 		"depression", "anxiety", "bipolar", "schizophrenia", "adhd", "autism", "addiction", "rehab", "overdose", "diabetes", "insulin",
 		"prescription", "prescriptions", "pharmacy", "medication", "medications", "psychiatry", "psychiatrist", "psychologist",
 		"counseling", "counselling", "dermatology", "cardiology", "urology", "gynecology", "gynaecology", "chemotherapy", "dementia",
 		"alzheimers", "epilepsy", "hepatitis", "transplant", "dialysis", "disability", "suicide", "eating-disorder", "mental-health",
-		"sexual-health", "patient", "patients", "clinic", "condition", "conditions"},
+		"sexual-health", "patient", "patients", "medical-condition", "medical-conditions", "health-conditions"},
 	"finance": {"debt", "debts", "bankruptcy", "bankrupt", "overdraft", "overdrawn", "payday", "foreclosure", "repossession",
-		"collections", "arrears", "insolvency", "debt-relief", "debt-consolidation", "credit-repair", "bad-credit", "eviction",
+		"debt-collection", "debt-collections", "collection-agency", "arrears", "insolvency", "debt-relief", "debt-consolidation", "credit-repair", "bad-credit", "eviction",
 		"iva", "defaulted"},
 	"account": {"checkout", "order-confirmation", "order-confirmed", "order-complete", "thank-you", "thankyou", "receipt",
 		"my-account", "account", "invoice", "password-reset", "reset-password", "confirmation"},
@@ -236,6 +275,9 @@ func FindLeaks(ps []Param, pageURL string, emails *Emails) []Leak {
 		lk := lastKeyPart(p.Key)
 		// Plain email addresses, in any URL encoding.
 		for _, m := range emailRe.FindAllString(uv, 3) {
+			if !isEmail(m) {
+				continue
+			}
 			emails.Add(m)
 			add(Leak{Rule: RuleEmail, Key: p.Key, Value: strings.ToLower(m), What: "an email address", InURL: inURL(p)})
 		}
@@ -276,7 +318,7 @@ func FindLeaks(ps []Param, pageURL string, emails *Emails) []Leak {
 		}
 		spaced := strings.ToLower(strings.ReplaceAll(uv, "+", " "))
 		for _, t := range terms {
-			if strings.Contains(spaced, strings.ToLower(t)) {
+			if containsWords(spaced, strings.ToLower(t)) {
 				add(Leak{Rule: RuleSearch, Key: p.Key, Value: t, What: "the search term “" + t + "”", InURL: inURL(p)})
 			}
 		}

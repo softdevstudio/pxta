@@ -539,3 +539,66 @@ func TestGallery(t *testing.T) {
 		})
 	}
 }
+
+// alert(), confirm(), prompt() and a beforeunload prompt must not stop the
+// audit.
+func TestBrowserDialogs(t *testing.T) {
+	needBrowser(t)
+	f := startFixtures(t)
+	start := time.Now()
+	r := auditFixture(t, f, "https://www.dialogs.test/", nil)
+	if len(r.Pages) != 2 {
+		dumpFindings(t, r)
+		t.Fatalf("visited %d pages, want 2", len(r.Pages))
+	}
+	for _, p := range r.Pages {
+		if p.Error != "" {
+			t.Errorf("%s: %s", p.URL, p.Error)
+		}
+	}
+	if d := time.Since(start); d > 2*time.Minute {
+		t.Errorf("the audit took %s", d)
+	}
+}
+
+// An "OK" button next to a footer link to the privacy policy is not a
+// consent banner.
+func TestBrowserNotABanner(t *testing.T) {
+	needBrowser(t)
+	f := startFixtures(t)
+	r := auditFixture(t, f, "https://www.okbutton.test/", nil)
+	if r.Banner.Found {
+		t.Fatalf("found a %q banner on a page without one (%v)", r.Banner.Platform, r.Banner.Actions)
+	}
+}
+
+// A start address that redirects to www still crawls the site.
+func TestBrowserRedirectedStart(t *testing.T) {
+	needBrowser(t)
+	f := startFixtures(t)
+	r := auditFixture(t, f, "https://redirect.test/", nil)
+	if len(r.Pages) != 4 {
+		for _, p := range r.Pages {
+			t.Log(p.URL, p.FinalURL)
+		}
+		t.Fatalf("visited %d pages, want 4", len(r.Pages))
+	}
+}
+
+// --passes reject,accept leaves the unanswered pass out of the report.
+func TestBrowserPassesOption(t *testing.T) {
+	needBrowser(t)
+	f := startFixtures(t)
+	r := auditFixture(t, f, "https://cmp-onetrust-bad.test/", func(o *Options) { o.Passes = []string{PassReject, PassAccept} })
+	if contains(r.Passes, PassNone) {
+		t.Fatalf("passes %v include the unanswered pass", r.Passes)
+	}
+	for _, fd := range r.Findings {
+		if fd.Pass == PassNone {
+			t.Errorf("finding from the unanswered pass: %s", fd.Sentence)
+		}
+	}
+	if len(r.Findings) == 0 {
+		t.Error("no findings from the reject pass on a site that ignores reject")
+	}
+}

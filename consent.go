@@ -60,17 +60,39 @@ const consentJS = `(async (action) => {
     "j'accepte", 'aceptar todo', 'aceptar', 'accetta tutto', 'accetta', 'alles accepteren', 'accepteren', 'acceptera alla',
     'zaakceptuj wszystkie', 'aceitar'];
   const clean = (t) => (t || '').replace(/\s+/g, ' ').trim().toLowerCase();
-  const consentContext = (el) => {
-    for (let n = el, i = 0; n && i < 8; n = n.parentElement || (n.getRootNode && n.getRootNode().host), i++) {
-      const t = clean(n.innerText || n.textContent || '');
-      const idc = clean((n.id || '') + ' ' + (typeof n.className === 'string' ? n.className : ''));
-      if (/cookie|consent|privacy|gdpr|tracking|datenschutz|confidentialit|privacidad/.test(t + ' ' + idc)) return true;
+  // A generic banner is a button whose nearby container talks about cookies
+  // or consent and looks like a banner: fixed or sticky on screen, a dialog,
+  // named like a cookie notice, or a whole frame of its own. A lone "OK"
+  // button next to a footer link to the privacy policy is not a banner.
+  const up = (n) => n.parentElement || (n.getRootNode && n.getRootNode().host) || null;
+  const bannerish = (n) => {
+    if (window !== window.top) return true;
+    for (let m = n, i = 0; m && m.nodeType === 1 && i < 8; m = up(m), i++) {
+      const idc = clean((m.id || '') + ' ' + (typeof m.className === 'string' ? m.className : '') + ' ' + (m.getAttribute('aria-label') || ''));
+      if (/cookie|consent|gdpr|\bcmp\b|privacy/.test(idc)) return true;
+      const role = (m.getAttribute('role') || '').toLowerCase();
+      if (role === 'dialog' || role === 'alertdialog' || m.getAttribute('aria-modal') === 'true' || m.tagName === 'DIALOG') return true;
+      const pos = getComputedStyle(m).position;
+      if (pos === 'fixed' || pos === 'sticky') return true;
     }
     return false;
   };
+  const consentContext = (el) => {
+    for (let n = el, i = 0; n && i < 5; n = up(n), i++) {
+      const t = clean(n.innerText || n.textContent || '');
+      if (t.length > 3000) return false;
+      const idc = clean((n.id || '') + ' ' + (typeof n.className === 'string' ? n.className : ''));
+      if (/cookie|consent|gdpr|datenschutz|confidentialit|privacidad|privacy/.test(t + ' ' + idc)) return bannerish(n);
+    }
+    return false;
+  };
+  // Words too common outside banners to trust on their own in the generic
+  // search; the known platforms still use them.
+  const weakWords = new Set(['ok', 'allow', 'agree']);
   const generic = (words) => {
     const els = all('button, a, [role="button"], input[type="button"], input[type="submit"]').filter(visible);
     for (const w of words) {
+      if (weakWords.has(w)) continue;
       const el = els.find((e) => clean(e.innerText || e.value || e.getAttribute('aria-label')) === w && consentContext(e));
       if (el) return el;
     }

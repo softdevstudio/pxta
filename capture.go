@@ -59,6 +59,23 @@ type pageRecorder struct {
 	loadOnce sync.Once
 	work     chan func()
 	done     chan struct{}
+	dropped  int // requests past maxRequestsPerPage
+}
+
+// Limits that keep a hostile page from filling memory: requests recorded
+// per page load, and bytes kept of each request body.
+const (
+	maxRequestsPerPage = 5000
+	maxBodyBytes       = 256 << 10
+)
+
+// truncateBody keeps the first maxBodyBytes of a request body and marks the
+// cut.
+func truncateBody(b string) string {
+	if len(b) <= maxBodyBytes {
+		return b
+	}
+	return b[:maxBodyBytes] + "\n[pxta: body truncated]"
 }
 
 func newPageRecorder(b *Browser, pass string, page int, root string) *pageRecorder {
@@ -133,7 +150,13 @@ func (r *pageRecorder) onEvent(ev Event) {
 			}
 			body = sb.String()
 		}
+		body = truncateBody(body)
 		r.mu.Lock()
+		if len(r.order) >= maxRequestsPerPage {
+			r.dropped++
+			r.mu.Unlock()
+			return
+		}
 		typ := r.sessions[ev.SessionID]
 		key := ev.SessionID + "/" + p.RequestID
 		if _, dup := r.reqs[key]; dup {
@@ -156,13 +179,22 @@ func (r *pageRecorder) onEvent(ev Event) {
 				}
 				if r.b.cdp.Call(ctx, sess, "Network.getRequestPostData", map[string]any{"requestId": id}, &res) == nil {
 					r.mu.Lock()
-					req.Body = res.PostData
+					req.Body = truncateBody(res.PostData)
 					r.mu.Unlock()
 				}
 			})
 		}
 	case "Page.loadEventFired":
 		r.loadOnce.Do(func() { close(r.loaded) })
+	case "Page.javascriptDialogOpening":
+		// alert(), confirm(), prompt() and beforeunload dialogs block the
+		// page until someone answers them. Answer straight away.
+		sess := ev.SessionID
+		r.queue(func() {
+			ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+			defer cancel()
+			_ = r.b.cdp.Call(ctx, sess, "Page.handleJavaScriptDialog", map[string]any{"accept": true}, nil)
+		})
 	case "Runtime.executionContextCreated":
 		var p struct {
 			Context struct {
@@ -247,7 +279,7 @@ func (r *pageRecorder) setupChild(sess, typ string) {
 	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
 	defer cancel()
 	c := r.b.cdp
-	_ = c.Call(ctx, sess, "Network.enable", map[string]any{"maxPostDataSize": 1 << 20}, nil)
+	_ = c.Call(ctx, sess, "Network.enable", map[string]any{"maxPostDataSize": maxBodyBytes}, nil)
 	if typ == "iframe" || typ == "page" {
 		_ = c.Call(ctx, sess, "Runtime.enable", nil, nil)
 		_ = c.Call(ctx, sess, "Page.enable", nil, nil)
@@ -373,7 +405,7 @@ func (b *Browser) openTab(ctx context.Context, browserCtx, pass string, page int
 	}{
 		{"Page.enable", nil},
 		{"Runtime.enable", nil},
-		{"Network.enable", map[string]any{"maxPostDataSize": 1 << 20}},
+		{"Network.enable", map[string]any{"maxPostDataSize": maxBodyBytes}},
 		{"Network.setCacheDisabled", map[string]any{"cacheDisabled": true}},
 		{"Target.setAutoAttach", map[string]any{"autoAttach": true, "waitForDebuggerOnStart": true, "flatten": true}},
 	}

@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Dialogs</title></head><body>
+<h1>A page that shows dialogs</h1>
+<p><a href="/two">Next page</a></p>
+<script>
+alert('Welcome!');
+setTimeout(function () { confirm('Still there?'); }, 300);
+window.addEventListener('beforeunload', function (e) { e.preventDefault(); e.returnValue = ''; });
+</script>
+<footer>Dialogs is a fictional site made for PXTA's tests.</footer>
+</body></html>

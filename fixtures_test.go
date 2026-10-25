@@ -144,6 +144,9 @@ func serveDynamic(w http.ResponseWriter, r *http.Request, host string) bool {
 		name := strings.TrimSuffix(strings.TrimPrefix(host, "cmp-"), ".test") // e.g. onetrust-good
 		platform, mode, _ := strings.Cut(name, "-")
 		page(w, consentSite(platform, mode, r.URL.Path))
+	case host == "redirect.test":
+		// The bare domain sends everything to www, as many sites do.
+		http.Redirect(w, r, "https://www.redirect.test"+r.URL.RequestURI(), http.StatusMovedPermanently)
 	case host == "www.bigsite.test":
 		n, _ := strconv.Atoi(strings.TrimPrefix(r.URL.Path, "/p/"))
 		var links strings.Builder

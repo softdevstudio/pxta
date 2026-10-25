@@ -177,6 +177,7 @@ type inventoryRow struct {
 }
 
 type behaviourRow struct {
+	Incomplete                                            bool
 	Name, BeforeAnswer, AfterReject, AfterAccept, Verdict string
 	Bad                                                   bool
 }
@@ -238,6 +239,11 @@ func RenderHTML(r *Result) ([]byte, error) {
 				b.Verdict, b.Bad = "fires before an answer", true
 			case b.AfterReject == "quiet" && b.AfterAccept == "sends data":
 				b.Verdict = "respects the choice"
+			case b.BeforeAnswer != "sends data" && b.AfterReject != "sends data" && b.AfterAccept != "sends data" &&
+				(b.BeforeAnswer == "not tested" || b.AfterReject == "not tested" || b.AfterAccept == "not tested"):
+				b.Verdict, b.Incomplete = "no data sent in the passes tested", true
+			case b.BeforeAnswer == "not tested" || b.AfterReject == "not tested" || b.AfterAccept == "not tested":
+				b.Verdict, b.Incomplete = "incomplete: a pass was not tested", true
 			default:
 				b.Verdict = "no data sent"
 			}

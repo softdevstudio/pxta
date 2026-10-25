@@ -118,7 +118,8 @@ type auditor struct {
 	cat      *Catalog
 	b        *Browser
 	ua       string
-	origin   *url.URL
+	origin   *url.URL // the address the audit was started with
+	base     *url.URL // where the start page landed after redirects; links are kept relative to it
 	robots   *Robots
 	emails   *Emails
 	res      *Result
@@ -141,6 +142,7 @@ type checkpoint struct {
 	Restarts int             `json:"restarts"`
 	Passes   []string        `json:"passes"`
 	Frontier []frontierEntry `json:"frontier,omitempty"`
+	Base     string          `json:"base,omitempty"`
 }
 
 type frontierEntry struct {
@@ -173,7 +175,7 @@ func Audit(ctx context.Context, o Options) (*Result, error) {
 	if err := os.MkdirAll(o.OutDir, 0o755); err != nil {
 		return nil, err
 	}
-	a := &auditor{o: o, cat: cat, origin: start, emails: NewEmails()}
+	a := &auditor{o: o, cat: cat, origin: start, base: start, emails: NewEmails()}
 	for _, e := range o.KnownEmails {
 		a.emails.Add(e)
 	}
@@ -243,7 +245,14 @@ func Audit(ctx context.Context, o Options) (*Result, error) {
 	}
 	passes := []string{PassNoBanner}
 	if a.state.Banner.Found {
-		passes = []string{PassNone}
+		// The unanswered pass always runs, since it finds the pages, but it
+		// is reported only when it was asked for.
+		passes = nil
+		for _, p := range o.Passes {
+			if p == PassNone {
+				passes = append(passes, PassNone)
+			}
+		}
 		for _, p := range o.Passes {
 			if p == PassReject || p == PassAccept {
 				if err := a.runPass(ctx, p, false, record); err != nil {
@@ -268,6 +277,26 @@ func Audit(ctx context.Context, o Options) (*Result, error) {
 			a.state.Visits[i].Pass = PassNoBanner
 		}
 	}
+	// Leave out the requests and visits of passes that aren't reported: one
+	// the operator didn't ask for, or one whose consent choice failed.
+	keep := map[string]bool{}
+	for _, p := range passes {
+		keep[p] = true
+	}
+	kr := reqs[:0]
+	for _, r := range reqs {
+		if keep[r.Pass] {
+			kr = append(kr, r)
+		}
+	}
+	reqs = kr
+	var kv []Visit
+	for _, v := range a.state.Visits {
+		if keep[v.Pass] {
+			kv = append(kv, v)
+		}
+	}
+	a.state.Visits = kv
 	a.res.Passes = passes
 	a.res.Banner = a.state.Banner
 	a.res.Pages = a.state.Visits
@@ -320,27 +349,44 @@ func (a *auditor) passContext(ctx context.Context, pass string) (string, error) 
 	if pass != PassReject && pass != PassAccept {
 		return bc, nil
 	}
+	parent := ctx
+	ctx, cancel := context.WithTimeout(parent, a.o.PageWait+2*a.o.BannerWait+20*time.Second)
+	defer cancel()
+	notHandled := func(msg string) (string, error) {
+		if a.state.Banner.Problems == nil {
+			a.state.Banner.Problems = map[string]string{}
+		}
+		a.state.Banner.Problems[pass] = msg
+		return bc, errBannerNotHandled
+	}
 	t, err := a.b.openTab(ctx, bc, pass, -1, a.ua)
 	if err != nil {
 		return "", err
 	}
 	defer t.close()
 	if err := t.navigate(ctx, a.origin.String()); err != nil {
+		if parent.Err() == nil && a.b.Alive() {
+			return notHandled("the start page did not load: " + err.Error())
+		}
 		return "", err
 	}
 	select {
 	case <-t.rec.loaded:
 	case <-time.After(a.o.PageWait):
 	case <-ctx.Done():
-		return "", ctx.Err()
+		if parent.Err() != nil {
+			return "", parent.Err()
+		}
 	}
 	st := t.answerBanner(ctx, pass, a.o.BannerWait)
 	if st.Done == "" {
-		if a.state.Banner.Problems == nil {
-			a.state.Banner.Problems = map[string]string{}
+		if parent.Err() != nil {
+			return "", parent.Err()
 		}
-		a.state.Banner.Problems[pass] = st.Error
-		return bc, errBannerNotHandled
+		if st.Error == "" {
+			st.Error = "the banner did not answer in time"
+		}
+		return notHandled(st.Error)
 	}
 	if a.state.Banner.Actions == nil {
 		a.state.Banner.Actions = map[string]string{}
@@ -418,7 +464,15 @@ func (a *auditor) runPass(ctx context.Context, pass string, discover bool, recor
 				return err
 			}
 			bc, err = a.passContext(ctx, pass)
-			if err != nil && !errors.Is(err, errBannerNotHandled) {
+			if errors.Is(err, errBannerNotHandled) {
+				// The choice couldn't be made again in the new browser, so
+				// the rest of this pass would not be what it says. Stop it;
+				// the pass is left out of the report.
+				a.logf("  %s: %s", pass, a.state.Banner.Problems[pass])
+				a.saveCheckpoint()
+				return nil
+			}
+			if err != nil {
 				return err
 			}
 		}
@@ -437,9 +491,21 @@ func (a *auditor) runPass(ctx context.Context, pass string, discover bool, recor
 		for _, e := range v.Emails {
 			a.emails.Add(e)
 		}
+		if discover && i == 0 && v.FinalURL != "" {
+			// The start address may redirect (example.com to
+			// www.example.com, http to https): follow the site where it
+			// landed.
+			if f, err := url.Parse(v.FinalURL); err == nil && (f.Scheme == "http" || f.Scheme == "https") && bareHost(f.Hostname()) == bareHost(a.origin.Hostname()) {
+				a.base = &url.URL{Scheme: f.Scheme, Host: f.Host}
+				a.state.Base = a.base.String()
+				if n, ok := normalizeLink(v.FinalURL, a.base); ok {
+					a.state.Pages[0] = n
+				}
+			}
+		}
 		if discover && depth < a.o.MaxDepth {
 			for _, l := range v.Links {
-				if n, ok := normalizeLink(l, a.origin); ok && !contains(a.state.Pages, n) {
+				if n, ok := normalizeLink(l, a.base); ok && !contains(a.state.Pages, n) {
 					a.state.Frontier = append(a.state.Frontier, frontierEntry{URL: n, Depth: depth + 1})
 				}
 			}
@@ -454,7 +520,11 @@ func (a *auditor) runPass(ctx context.Context, pass string, discover bool, recor
 }
 
 // visit loads one page in its own tab and records everything it sends.
-func (a *auditor) visit(ctx context.Context, bc, pass string, idx int, pageURL string, detect bool) (*Visit, []Request, error) {
+func (a *auditor) visit(parent context.Context, bc, pass string, idx int, pageURL string, detect bool) (*Visit, []Request, error) {
+	// Every browser call for this page shares one deadline, so a page that
+	// stops answering (a script stuck in a loop, say) can't hold up the audit.
+	ctx, cancel := context.WithTimeout(parent, a.o.PageWait+a.o.BannerWait+20*time.Second)
+	defer cancel()
 	v := &Visit{Pass: pass, Page: idx, URL: pageURL, Started: time.Now().UTC()}
 	t, err := a.b.openTab(ctx, bc, pass, idx, a.ua)
 	if err != nil {
@@ -474,7 +544,10 @@ func (a *auditor) visit(ctx context.Context, bc, pass string, idx int, pageURL s
 	case <-t.rec.loaded:
 	case <-time.After(time.Until(deadline)):
 	case <-ctx.Done():
-		return v, t.rec.requests(), ctx.Err()
+		if parent.Err() != nil {
+			return v, t.rec.requests(), parent.Err()
+		}
+		return v, t.rec.requests(), fmt.Errorf("%s did not finish loading in time", pageURL)
 	case <-a.b.cdp.Done():
 		return v, t.rec.requests(), ErrClosed
 	}
@@ -552,6 +625,9 @@ func (a *auditor) loadCheckpoint() error {
 		st.Done = map[string]int{}
 	}
 	a.state = &st
+	if b, err := url.Parse(st.Base); err == nil && st.Base != "" {
+		a.base = b
+	}
 	a.res.Started = st.Started
 	for _, e := range st.Emails {
 		a.emails.Add(e)
