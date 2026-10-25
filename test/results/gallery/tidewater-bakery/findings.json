@@ -1,0 +1,282 @@
+{
+  "tool": "pxta",
+  "version": "0.1.0",
+  "catalog": "2026.10.25",
+  "site": "https://www.tidewaterbakery.test/",
+  "started": "2026-10-25T15:08:32.945493282Z",
+  "finished": "2026-10-25T15:09:17.425300249Z",
+  "browser": "Chrome/153.0.8010.12",
+  "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 pxta/0.1.0 (+https://pxta.com)",
+  "banner": {
+    "found": true,
+    "platform": "didomi",
+    "actions": {
+      "accept": "clicked #didomi-notice-agree-button",
+      "reject": "clicked #didomi-notice-disagree-button"
+    }
+  },
+  "passes": [
+    "none",
+    "reject",
+    "accept"
+  ],
+  "pages": [
+    {
+      "pass": "none",
+      "page": 0,
+      "url": "https://www.tidewaterbakery.test/",
+      "final_url": "https://www.tidewaterbakery.test/",
+      "title": "Tidewater Bakery",
+      "started": "2026-10-25T15:08:33.428366776Z",
+      "requests": 3
+    },
+    {
+      "pass": "none",
+      "page": 1,
+      "url": "https://www.tidewaterbakery.test/menu",
+      "final_url": "https://www.tidewaterbakery.test/menu",
+      "title": "Menu | Tidewater Bakery",
+      "started": "2026-10-25T15:08:37.839988589Z",
+      "requests": 2
+    },
+    {
+      "pass": "none",
+      "page": 2,
+      "url": "https://www.tidewaterbakery.test/order",
+      "final_url": "https://www.tidewaterbakery.test/order",
+      "title": "Order a cake | Tidewater Bakery",
+      "started": "2026-10-25T15:08:41.873237933Z",
+      "requests": 2
+    },
+    {
+      "pass": "reject",
+      "page": 0,
+      "url": "https://www.tidewaterbakery.test/",
+      "final_url": "https://www.tidewaterbakery.test/",
+      "title": "Tidewater Bakery",
+      "started": "2026-10-25T15:08:48.625408757Z",
+      "requests": 2
+    },
+    {
+      "pass": "reject",
+      "page": 1,
+      "url": "https://www.tidewaterbakery.test/menu",
+      "final_url": "https://www.tidewaterbakery.test/menu",
+      "title": "Menu | Tidewater Bakery",
+      "started": "2026-10-25T15:08:52.521828579Z",
+      "requests": 2
+    },
+    {
+      "pass": "reject",
+      "page": 2,
+      "url": "https://www.tidewaterbakery.test/order",
+      "final_url": "https://www.tidewaterbakery.test/order",
+      "title": "Order a cake | Tidewater Bakery",
+      "started": "2026-10-25T15:08:56.493147481Z",
+      "requests": 2
+    },
+    {
+      "pass": "accept",
+      "page": 0,
+      "url": "https://www.tidewaterbakery.test/",
+      "final_url": "https://www.tidewaterbakery.test/",
+      "title": "Tidewater Bakery",
+      "started": "2026-10-25T15:09:03.166779873Z",
+      "requests": 6
+    },
+    {
+      "pass": "accept",
+      "page": 1,
+      "url": "https://www.tidewaterbakery.test/menu",
+      "final_url": "https://www.tidewaterbakery.test/menu",
+      "title": "Menu | Tidewater Bakery",
+      "started": "2026-10-25T15:09:07.124077808Z",
+      "requests": 6
+    },
+    {
+      "pass": "accept",
+      "page": 2,
+      "url": "https://www.tidewaterbakery.test/order",
+      "final_url": "https://www.tidewaterbakery.test/order",
+      "title": "Order a cake | Tidewater Bakery",
+      "started": "2026-10-25T15:09:11.280943671Z",
+      "requests": 7
+    }
+  ],
+  "known_emails": [
+    "pxta-probe@example.com"
+  ],
+  "filled_forms": true,
+  "settings": {
+    "max_pages": 10,
+    "max_depth": 3,
+    "page_wait": "15s",
+    "idle": "2s",
+    "banner_wait": "6s",
+    "respect_robots": true
+  },
+  "browser_restarts": 0,
+  "har_sha256": "f6f8ef0ea3609b6b3af849c943763a23f85b8653c2870270ebeaf91c92c43f28",
+  "findings": [
+    {
+      "code": "personal-data",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/order",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /order, the Meta Pixel sent a SHA-256 hash of the email address pxta-probe@example.com after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=88123004417\u0026ev=SubscribedButtonClick\u0026dl=https%3A%2F%2Fwww.tidewaterbakery.test%2Forder\u0026rl=\u0026if=false\u0026ts=1792940954239\u0026v=2.9.fixture\u0026ud%5Bem%5D=d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
+        "method": "GET",
+        "time": "2026-10-25T15:09:14.243Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "interact",
+        "params": [
+          {
+            "key": "id",
+            "value": "88123004417",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "SubscribedButtonClick",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.tidewaterbakery.test/order",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792940954239",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          },
+          {
+            "key": "ud[em]",
+            "value": "d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email_hash",
+            "key": "ud[em]",
+            "value": "d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
+            "what": "a SHA-256 hash of the email address pxta-probe@example.com"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "accept",
+      "page": "",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "Google Analytics 4 sent data from 3 pages after the visitor accepted tracking.",
+      "count": 3,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "accept",
+      "page": "",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "The Meta Pixel sent data from 3 pages after the visitor accepted tracking.",
+      "count": 4,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    }
+  ],
+  "trackers": [
+    {
+      "id": "google-analytics-4",
+      "name": "Google Analytics 4",
+      "vendor": "Google",
+      "loaded_on": {
+        "accept": [
+          "/",
+          "/menu",
+          "/order"
+        ]
+      },
+      "fired_on": {
+        "accept": [
+          "/",
+          "/menu",
+          "/order"
+        ]
+      },
+      "requests": {
+        "accept": 3
+      }
+    },
+    {
+      "id": "meta-pixel",
+      "name": "Meta Pixel",
+      "vendor": "Meta",
+      "loaded_on": {
+        "accept": [
+          "/",
+          "/menu",
+          "/order"
+        ]
+      },
+      "fired_on": {
+        "accept": [
+          "/",
+          "/menu",
+          "/order"
+        ]
+      },
+      "requests": {
+        "accept": 4
+      }
+    }
+  ],
+  "counts": {
+    "info": 2,
+    "low": 1
+  }
+}

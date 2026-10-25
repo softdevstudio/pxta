@@ -1,0 +1,1329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PXTA report: www.harborpine.test</title>
+<style>
+:root{--ink:#16202b;--muted:#5b6774;--line:#dfe4ea;--bg:#fff;--soft:#f5f7f9;--high:#b3261e;--medium:#b25e09;--low:#4a6a8a;--info:#6b7280;--accent:#0e7c86;--mark:#fff1c2}
+*{box-sizing:border-box}body{margin:0;font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+main{max-width:1040px;margin:0 auto;padding:28px 18px 60px}
+h1{font-size:26px;margin:0 0 4px}h2{font-size:19px;margin:36px 0 10px;padding-top:10px;border-top:2px solid var(--ink)}h3{font-size:15px;margin:18px 0 6px}
+.sub{color:var(--muted);margin:0 0 18px}.mono,code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:18px 0}
+.tile{border:1px solid var(--line);border-radius:8px;padding:10px 12px}.tile b{display:block;font-size:24px}.tile span{color:var(--muted);font-size:13px}
+.tile.sev-high b{color:var(--high)}.tile.sev-medium b{color:var(--medium)}.tile.sev-low b{color:var(--low)}.tile.sev-info b{color:var(--info)}
+.note{background:var(--soft);border-left:4px solid var(--accent);padding:10px 14px;border-radius:4px;margin:14px 0}
+.finding{border:1px solid var(--line);border-left:5px solid var(--info);border-radius:6px;padding:12px 14px;margin:10px 0;break-inside:avoid}
+.finding.sev-high{border-left-color:var(--high)}.finding.sev-medium{border-left-color:var(--medium)}.finding.sev-low{border-left-color:var(--low)}
+.finding p{margin:0 0 6px;font-size:15.5px}.meta{color:var(--muted);font-size:13px}
+.badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;padding:1px 7px;border-radius:10px;color:#fff;background:var(--info);margin-right:6px;vertical-align:1px}
+.badge.sev-high{background:var(--high)}.badge.sev-medium{background:var(--medium)}.badge.sev-low{background:var(--low)}
+details{margin-top:8px}summary{cursor:pointer;color:var(--accent);font-size:13.5px}
+.ev{margin-top:8px;font-size:13px}.ev .url{word-break:break-all;background:var(--soft);padding:6px 8px;border-radius:4px}
+table{border-collapse:collapse;width:100%;font-size:13.5px;margin:6px 0}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:6px 8px}
+th{background:var(--soft);font-weight:600}td.v{word-break:break-all}tr.hit td{background:var(--mark)}
+.wrap{overflow-x:auto}.bad{color:var(--high);font-weight:600}.ok{color:#1d7a3a;font-weight:600}
+footer{margin-top:40px;color:var(--muted);font-size:12.5px}
+@media print{details{display:block}details>*{display:block}summary{display:none}main{padding:0}}
+</style>
+</head>
+<body>
+<main>
+<h1>Tracking audit of www.harborpine.test</h1>
+<p class="sub">25 October 2026, 15:10 UTC · 6 pages · PXTA 0.1.0, tracker catalog 2026.10.25</p>
+
+<div class="tiles">
+<div class="tile sev-high"><b>24</b><span>high</span></div>
+<div class="tile sev-medium"><b>26</b><span>medium</span></div>
+<div class="tile sev-low"><b>12</b><span>low</span></div>
+<div class="tile sev-info"><b>9</b><span>for information</span></div>
+</div>
+
+<div class="note">
+PXTA found a consent banner from <b>OneTrust</b>, and visited each page 3 times: Banner not answered, After reject, After accept.
+ For the accept pass it clicked #onetrust-accept-btn-handler. For the reject pass it clicked #onetrust-reject-all-handler.
+
+
+There is no score: each finding names the page, the tracker and the data, with the request that carried it.
+</div>
+
+<h2>Findings</h2>
+
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, Google Analytics 4 sent an email address inside the page address before the consent banner was answered.</p>
+<div class="meta"><code>personal-data</code> · Google Analytics 4</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;dt=Order&#43;confirmed&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:10:47.864Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">dt</td><td class="v mono">Order confirmed | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+<p class="meta">Flagged: an email address in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Meta Pixel sent an email address inside the page address before the consent banner was answered.</p>
+<div class="meta"><code>personal-data</code> · Meta Pixel · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;rl=&amp;if=false&amp;ts=1792941047850&amp;v=2.9.fixture&amp;ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</div>
+<p class="meta">2026-10-25T15:10:47.858Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941047850</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr><tr><td class="mono">ud[em]</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr>
+</table></div>
+<p class="meta">Flagged: an email address in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Meta Pixel sent a SHA-256 hash of the email address jane@example.com before the consent banner was answered.</p>
+<div class="meta"><code>personal-data</code> · Meta Pixel · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;rl=&amp;if=false&amp;ts=1792941047850&amp;v=2.9.fixture&amp;ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</div>
+<p class="meta">2026-10-25T15:10:47.858Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941047850</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr><tr class="hit"><td class="mono">ud[em]</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr>
+</table></div>
+<p class="meta">Flagged: a SHA-256 hash of the email address jane@example.com in <code>ud[em]</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Pinterest Tag sent an email address inside the page address before the consent banner was answered.</p>
+<div class="meta"><code>personal-data</code> · Pinterest Tag · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://ct.pinterest.com/v3/?tid=2612345678901&amp;event=pagevisit&amp;ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D&amp;pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D&amp;ed=%7B%7D</div>
+<p class="meta">2026-10-25T15:10:47.865Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">tid</td><td class="v mono">2612345678901</td><td>tag ID</td></tr><tr><td class="mono">event</td><td class="v mono">pagevisit</td><td>event name</td></tr><tr><td class="mono">ad</td><td class="v mono">{&#34;loc&#34;:&#34;https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com&#34;,&#34;ref&#34;:&#34;&#34;}</td><td></td></tr><tr class="hit"><td class="mono">ad.loc</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">ad.loc&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">ad.loc&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">ad.ref</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">pd</td><td class="v mono">{&#34;em&#34;:&#34;8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d&#34;}</td><td></td></tr><tr><td class="mono">pd.em</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr><tr><td class="mono">ed</td><td class="v mono">{}</td><td></td></tr>
+</table></div>
+<p class="meta">Flagged: an email address in <code>ad.loc</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Pinterest Tag sent a SHA-256 hash of the email address jane@example.com before the consent banner was answered.</p>
+<div class="meta"><code>personal-data</code> · Pinterest Tag · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://ct.pinterest.com/v3/?tid=2612345678901&amp;event=pagevisit&amp;ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D&amp;pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D&amp;ed=%7B%7D</div>
+<p class="meta">2026-10-25T15:10:47.865Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">tid</td><td class="v mono">2612345678901</td><td>tag ID</td></tr><tr><td class="mono">event</td><td class="v mono">pagevisit</td><td>event name</td></tr><tr><td class="mono">ad</td><td class="v mono">{&#34;loc&#34;:&#34;https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com&#34;,&#34;ref&#34;:&#34;&#34;}</td><td></td></tr><tr><td class="mono">ad.loc</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">ad.loc&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">ad.loc&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">ad.ref</td><td class="v mono"></td><td>referring page</td></tr><tr class="hit"><td class="mono">pd</td><td class="v mono">{&#34;em&#34;:&#34;8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d&#34;}</td><td></td></tr><tr><td class="mono">pd.em</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr><tr><td class="mono">ed</td><td class="v mono">{}</td><td></td></tr>
+</table></div>
+<p class="meta">Flagged: a SHA-256 hash of the email address jane@example.com in <code>pd</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /newsletter, the Meta Pixel sent a SHA-256 hash of the email address pxta-probe@example.com before the consent banner was answered.</p>
+<div class="meta"><code>personal-data</code> · Meta Pixel</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=SubscribedButtonClick&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter&amp;rl=&amp;if=false&amp;ts=1792941040364&amp;v=2.9.fixture&amp;ud%5Bem%5D=d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a</div>
+<p class="meta">2026-10-25T15:10:40.366Z · Image from the page · while the page was being scrolled and filled in</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">SubscribedButtonClick</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/newsletter</td><td>page address</td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941040364</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr><tr class="hit"><td class="mono">ud[em]</td><td class="v mono">d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a</td><td>email address (hashed)</td></tr>
+</table></div>
+<p class="meta">Flagged: a SHA-256 hash of the email address pxta-probe@example.com in <code>ud[em]</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, Google Analytics 4 sent an email address inside the page address after the visitor rejected tracking.</p>
+<div class="meta"><code>personal-data</code> · Google Analytics 4</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;dt=Order&#43;confirmed&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:11:17.003Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">dt</td><td class="v mono">Order confirmed | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+<p class="meta">Flagged: an email address in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Meta Pixel sent an email address inside the page address after the visitor rejected tracking.</p>
+<div class="meta"><code>personal-data</code> · Meta Pixel · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;rl=&amp;if=false&amp;ts=1792941076984&amp;v=2.9.fixture&amp;ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</div>
+<p class="meta">2026-10-25T15:11:17.000Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941076984</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr><tr><td class="mono">ud[em]</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr>
+</table></div>
+<p class="meta">Flagged: an email address in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Meta Pixel sent a SHA-256 hash of the email address jane@example.com after the visitor rejected tracking.</p>
+<div class="meta"><code>personal-data</code> · Meta Pixel · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;rl=&amp;if=false&amp;ts=1792941076984&amp;v=2.9.fixture&amp;ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</div>
+<p class="meta">2026-10-25T15:11:17.000Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941076984</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr><tr class="hit"><td class="mono">ud[em]</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr>
+</table></div>
+<p class="meta">Flagged: a SHA-256 hash of the email address jane@example.com in <code>ud[em]</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Pinterest Tag sent an email address inside the page address after the visitor rejected tracking.</p>
+<div class="meta"><code>personal-data</code> · Pinterest Tag · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://ct.pinterest.com/v3/?tid=2612345678901&amp;event=pagevisit&amp;ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D&amp;pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D&amp;ed=%7B%7D</div>
+<p class="meta">2026-10-25T15:11:17.021Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">tid</td><td class="v mono">2612345678901</td><td>tag ID</td></tr><tr><td class="mono">event</td><td class="v mono">pagevisit</td><td>event name</td></tr><tr><td class="mono">ad</td><td class="v mono">{&#34;loc&#34;:&#34;https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com&#34;,&#34;ref&#34;:&#34;&#34;}</td><td></td></tr><tr class="hit"><td class="mono">ad.loc</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">ad.loc&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">ad.loc&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">ad.ref</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">pd</td><td class="v mono">{&#34;em&#34;:&#34;8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d&#34;}</td><td></td></tr><tr><td class="mono">pd.em</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr><tr><td class="mono">ed</td><td class="v mono">{}</td><td></td></tr>
+</table></div>
+<p class="meta">Flagged: an email address in <code>ad.loc</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Pinterest Tag sent a SHA-256 hash of the email address jane@example.com after the visitor rejected tracking.</p>
+<div class="meta"><code>personal-data</code> · Pinterest Tag · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://ct.pinterest.com/v3/?tid=2612345678901&amp;event=pagevisit&amp;ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D&amp;pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D&amp;ed=%7B%7D</div>
+<p class="meta">2026-10-25T15:11:17.021Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">tid</td><td class="v mono">2612345678901</td><td>tag ID</td></tr><tr><td class="mono">event</td><td class="v mono">pagevisit</td><td>event name</td></tr><tr><td class="mono">ad</td><td class="v mono">{&#34;loc&#34;:&#34;https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com&#34;,&#34;ref&#34;:&#34;&#34;}</td><td></td></tr><tr><td class="mono">ad.loc</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">ad.loc&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">ad.loc&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">ad.ref</td><td class="v mono"></td><td>referring page</td></tr><tr class="hit"><td class="mono">pd</td><td class="v mono">{&#34;em&#34;:&#34;8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d&#34;}</td><td></td></tr><tr><td class="mono">pd.em</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr><tr><td class="mono">ed</td><td class="v mono">{}</td><td></td></tr>
+</table></div>
+<p class="meta">Flagged: a SHA-256 hash of the email address jane@example.com in <code>pd</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /newsletter, the Meta Pixel sent a SHA-256 hash of the email address pxta-probe@example.com after the visitor rejected tracking.</p>
+<div class="meta"><code>personal-data</code> · Meta Pixel</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=SubscribedButtonClick&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter&amp;rl=&amp;if=false&amp;ts=1792941069599&amp;v=2.9.fixture&amp;ud%5Bem%5D=d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a</div>
+<p class="meta">2026-10-25T15:11:09.601Z · Image from the page · while the page was being scrolled and filled in</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">SubscribedButtonClick</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/newsletter</td><td>page address</td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941069599</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr><tr class="hit"><td class="mono">ud[em]</td><td class="v mono">d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a</td><td>email address (hashed)</td></tr>
+</table></div>
+<p class="meta">Flagged: a SHA-256 hash of the email address pxta-probe@example.com in <code>ud[em]</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, Google Analytics 4 sent the address of a checkout or account page (/checkout/confirm?order=10442&amp;email=jane@example.com) before the consent banner was answered.</p>
+<div class="meta"><code>sensitive-page</code> · Google Analytics 4</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;dt=Order&#43;confirmed&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:10:47.864Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">dt</td><td class="v mono">Order confirmed | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+<p class="meta">Flagged: the address of a checkout or account page (account: checkout) in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Meta Pixel sent the address of a checkout or account page (/checkout/confirm?order=10442&amp;email=jane@example.com) before the consent banner was answered.</p>
+<div class="meta"><code>sensitive-page</code> · Meta Pixel · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;rl=&amp;if=false&amp;ts=1792941047850&amp;v=2.9.fixture&amp;ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</div>
+<p class="meta">2026-10-25T15:10:47.858Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941047850</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr><tr><td class="mono">ud[em]</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr>
+</table></div>
+<p class="meta">Flagged: the address of a checkout or account page (account: checkout) in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Pinterest Tag sent the address of a checkout or account page (/checkout/confirm?order=10442&amp;email=jane@example.com) before the consent banner was answered.</p>
+<div class="meta"><code>sensitive-page</code> · Pinterest Tag · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://ct.pinterest.com/v3/?tid=2612345678901&amp;event=pagevisit&amp;ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D&amp;pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D&amp;ed=%7B%7D</div>
+<p class="meta">2026-10-25T15:10:47.865Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">tid</td><td class="v mono">2612345678901</td><td>tag ID</td></tr><tr><td class="mono">event</td><td class="v mono">pagevisit</td><td>event name</td></tr><tr><td class="mono">ad</td><td class="v mono">{&#34;loc&#34;:&#34;https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com&#34;,&#34;ref&#34;:&#34;&#34;}</td><td></td></tr><tr class="hit"><td class="mono">ad.loc</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">ad.loc&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">ad.loc&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">ad.ref</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">pd</td><td class="v mono">{&#34;em&#34;:&#34;8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d&#34;}</td><td></td></tr><tr><td class="mono">pd.em</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr><tr><td class="mono">ed</td><td class="v mono">{}</td><td></td></tr>
+</table></div>
+<p class="meta">Flagged: the address of a checkout or account page (account: checkout) in <code>ad.loc</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, Google Analytics 4 sent the address of a checkout or account page (/checkout/confirm?order=10442&amp;email=jane@example.com) after the visitor rejected tracking.</p>
+<div class="meta"><code>sensitive-page</code> · Google Analytics 4</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;dt=Order&#43;confirmed&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:11:17.003Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">dt</td><td class="v mono">Order confirmed | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+<p class="meta">Flagged: the address of a checkout or account page (account: checkout) in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Meta Pixel sent the address of a checkout or account page (/checkout/confirm?order=10442&amp;email=jane@example.com) after the visitor rejected tracking.</p>
+<div class="meta"><code>sensitive-page</code> · Meta Pixel · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;rl=&amp;if=false&amp;ts=1792941076984&amp;v=2.9.fixture&amp;ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</div>
+<p class="meta">2026-10-25T15:11:17.000Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941076984</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr><tr><td class="mono">ud[em]</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr>
+</table></div>
+<p class="meta">Flagged: the address of a checkout or account page (account: checkout) in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Pinterest Tag sent the address of a checkout or account page (/checkout/confirm?order=10442&amp;email=jane@example.com) after the visitor rejected tracking.</p>
+<div class="meta"><code>sensitive-page</code> · Pinterest Tag · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://ct.pinterest.com/v3/?tid=2612345678901&amp;event=pagevisit&amp;ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D&amp;pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D&amp;ed=%7B%7D</div>
+<p class="meta">2026-10-25T15:11:17.021Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">tid</td><td class="v mono">2612345678901</td><td>tag ID</td></tr><tr><td class="mono">event</td><td class="v mono">pagevisit</td><td>event name</td></tr><tr><td class="mono">ad</td><td class="v mono">{&#34;loc&#34;:&#34;https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com&#34;,&#34;ref&#34;:&#34;&#34;}</td><td></td></tr><tr class="hit"><td class="mono">ad.loc</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">ad.loc&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">ad.loc&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">ad.ref</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">pd</td><td class="v mono">{&#34;em&#34;:&#34;8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d&#34;}</td><td></td></tr><tr><td class="mono">pd.em</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr><tr><td class="mono">ed</td><td class="v mono">{}</td><td></td></tr>
+</table></div>
+<p class="meta">Flagged: the address of a checkout or account page (account: checkout) in <code>ad.loc</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /search?q=wool&#43;socks, Google Analytics 4 sent the search term “wool socks” before the consent banner was answered.</p>
+<div class="meta"><code>search-term</code> · Google Analytics 4 · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks&amp;dt=Search&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:10:33.605Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/search?q=wool&#43;socks</td><td>page address</td></tr><tr><td class="mono">dl&gt;q</td><td class="v mono">wool socks</td><td></td></tr><tr><td class="mono">dt</td><td class="v mono">Search | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+<p class="meta">Flagged: the search term “wool socks” in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /search?q=wool&#43;socks, the Meta Pixel sent the search term “wool socks” before the consent banner was answered.</p>
+<div class="meta"><code>search-term</code> · Meta Pixel</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks&amp;rl=&amp;if=false&amp;ts=1792941033596&amp;v=2.9.fixture</div>
+<p class="meta">2026-10-25T15:10:33.598Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/search?q=wool&#43;socks</td><td>page address</td></tr><tr><td class="mono">dl&gt;q</td><td class="v mono">wool socks</td><td></td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941033596</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr>
+</table></div>
+<p class="meta">Flagged: the search term “wool socks” in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /search?q=wool&#43;socks, Google Analytics 4 sent the search term “wool socks” after the visitor rejected tracking.</p>
+<div class="meta"><code>search-term</code> · Google Analytics 4 · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks&amp;dt=Search&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:11:02.874Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/search?q=wool&#43;socks</td><td>page address</td></tr><tr><td class="mono">dl&gt;q</td><td class="v mono">wool socks</td><td></td></tr><tr><td class="mono">dt</td><td class="v mono">Search | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+<p class="meta">Flagged: the search term “wool socks” in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /search?q=wool&#43;socks, the Meta Pixel sent the search term “wool socks” after the visitor rejected tracking.</p>
+<div class="meta"><code>search-term</code> · Meta Pixel</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks&amp;rl=&amp;if=false&amp;ts=1792941062858&amp;v=2.9.fixture</div>
+<p class="meta">2026-10-25T15:11:02.864Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/search?q=wool&#43;socks</td><td>page address</td></tr><tr><td class="mono">dl&gt;q</td><td class="v mono">wool socks</td><td></td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941062858</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr>
+</table></div>
+<p class="meta">Flagged: the search term “wool socks” in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, Google Analytics 4 reported Google Consent Mode as denied (G100) but still sent an email address, before the consent banner was answered.</p>
+<div class="meta"><code>consent-mode-mismatch</code> · Google Analytics 4</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;dt=Order&#43;confirmed&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:10:47.864Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">dt</td><td class="v mono">Order confirmed | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+<p class="meta">Flagged: an email address in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-high">
+<p><span class="badge sev-high">HIGH</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, Google Analytics 4 reported Google Consent Mode as denied (G100) but still sent an email address, after the visitor rejected tracking.</p>
+<div class="meta"><code>consent-mode-mismatch</code> · Google Analytics 4</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;dt=Order&#43;confirmed&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:11:17.003Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">dt</td><td class="v mono">Order confirmed | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+<p class="meta">Flagged: an email address in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /, Google Analytics 4 sent a page_view event after the visitor rejected tracking.</p>
+<div class="meta"><code>tracker-after-reject</code> · Google Analytics 4</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2F&amp;dt=Harbor&#43;%26&#43;Pine&#43;Outfitters&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:10:54.725Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/</td><td>page address</td></tr><tr><td class="mono">dt</td><td class="v mono">Harbor &amp; Pine Outfitters</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /, the Meta Pixel sent a PageView event after the visitor rejected tracking.</p>
+<div class="meta"><code>tracker-after-reject</code> · Meta Pixel</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2F&amp;rl=&amp;if=false&amp;ts=1792941054719&amp;v=2.9.fixture</div>
+<p class="meta">2026-10-25T15:10:54.720Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/</td><td>page address</td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941054719</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /cart, Google Analytics 4 sent a page_view event after the visitor rejected tracking.</p>
+<div class="meta"><code>tracker-after-reject</code> · Google Analytics 4</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcart&amp;dt=Cart&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:11:12.984Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/cart</td><td>page address</td></tr><tr><td class="mono">dt</td><td class="v mono">Cart | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /cart, the Meta Pixel sent a PageView event after the visitor rejected tracking.</p>
+<div class="meta"><code>tracker-after-reject</code> · Meta Pixel</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcart&amp;rl=&amp;if=false&amp;ts=1792941072980&amp;v=2.9.fixture</div>
+<p class="meta">2026-10-25T15:11:12.984Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/cart</td><td>page address</td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941072980</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, Google Analytics 4 sent a page_view event after the visitor rejected tracking.</p>
+<div class="meta"><code>tracker-after-reject</code> · Google Analytics 4</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;dt=Order&#43;confirmed&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:11:17.003Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">dt</td><td class="v mono">Order confirmed | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Meta Pixel sent a PageView event after the visitor rejected tracking.</p>
+<div class="meta"><code>tracker-after-reject</code> · Meta Pixel · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;rl=&amp;if=false&amp;ts=1792941076984&amp;v=2.9.fixture&amp;ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</div>
+<p class="meta">2026-10-25T15:11:17.000Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941076984</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr><tr><td class="mono">ud[em]</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Pinterest Tag sent a pagevisit event after the visitor rejected tracking.</p>
+<div class="meta"><code>tracker-after-reject</code> · Pinterest Tag · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://ct.pinterest.com/v3/?tid=2612345678901&amp;event=pagevisit&amp;ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D&amp;pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D&amp;ed=%7B%7D</div>
+<p class="meta">2026-10-25T15:11:17.021Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">tid</td><td class="v mono">2612345678901</td><td>tag ID</td></tr><tr><td class="mono">event</td><td class="v mono">pagevisit</td><td>event name</td></tr><tr><td class="mono">ad</td><td class="v mono">{&#34;loc&#34;:&#34;https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com&#34;,&#34;ref&#34;:&#34;&#34;}</td><td></td></tr><tr><td class="mono">ad.loc</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">ad.loc&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">ad.loc&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">ad.ref</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">pd</td><td class="v mono">{&#34;em&#34;:&#34;8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d&#34;}</td><td></td></tr><tr><td class="mono">pd.em</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr><tr><td class="mono">ed</td><td class="v mono">{}</td><td></td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /newsletter, Google Analytics 4 sent a page_view event after the visitor rejected tracking.</p>
+<div class="meta"><code>tracker-after-reject</code> · Google Analytics 4</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter&amp;dt=Newsletter&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:11:06.967Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/newsletter</td><td>page address</td></tr><tr><td class="mono">dt</td><td class="v mono">Newsletter | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /newsletter, the Meta Pixel sent a PageView event after the visitor rejected tracking.</p>
+<div class="meta"><code>tracker-after-reject</code> · Meta Pixel · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter&amp;rl=&amp;if=false&amp;ts=1792941066954&amp;v=2.9.fixture</div>
+<p class="meta">2026-10-25T15:11:06.959Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/newsletter</td><td>page address</td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941066954</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /search?q=wool&#43;socks, Google Analytics 4 sent a page_view event after the visitor rejected tracking.</p>
+<div class="meta"><code>tracker-after-reject</code> · Google Analytics 4 · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks&amp;dt=Search&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:11:02.874Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/search?q=wool&#43;socks</td><td>page address</td></tr><tr><td class="mono">dl&gt;q</td><td class="v mono">wool socks</td><td></td></tr><tr><td class="mono">dt</td><td class="v mono">Search | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /search?q=wool&#43;socks, the Meta Pixel sent a PageView event after the visitor rejected tracking.</p>
+<div class="meta"><code>tracker-after-reject</code> · Meta Pixel</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks&amp;rl=&amp;if=false&amp;ts=1792941062858&amp;v=2.9.fixture</div>
+<p class="meta">2026-10-25T15:11:02.864Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/search?q=wool&#43;socks</td><td>page address</td></tr><tr><td class="mono">dl&gt;q</td><td class="v mono">wool socks</td><td></td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941062858</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /shop/rain-shell, Google Analytics 4 sent a page_view event after the visitor rejected tracking.</p>
+<div class="meta"><code>tracker-after-reject</code> · Google Analytics 4</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fshop%2Frain-shell&amp;dt=Rain&#43;Shell&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:10:58.748Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/shop/rain-shell</td><td>page address</td></tr><tr><td class="mono">dt</td><td class="v mono">Rain Shell | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /shop/rain-shell, the Meta Pixel sent a PageView event after the visitor rejected tracking.</p>
+<div class="meta"><code>tracker-after-reject</code> · Meta Pixel · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fshop%2Frain-shell&amp;rl=&amp;if=false&amp;ts=1792941058735&amp;v=2.9.fixture</div>
+<p class="meta">2026-10-25T15:10:58.739Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/shop/rain-shell</td><td>page address</td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941058735</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /, Google Analytics 4 sent a page_view event before the consent banner was answered.</p>
+<div class="meta"><code>tracker-before-consent</code> · Google Analytics 4</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2F&amp;dt=Harbor&#43;%26&#43;Pine&#43;Outfitters&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:10:25.571Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/</td><td>page address</td></tr><tr><td class="mono">dt</td><td class="v mono">Harbor &amp; Pine Outfitters</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /, the Meta Pixel sent a PageView event before the consent banner was answered.</p>
+<div class="meta"><code>tracker-before-consent</code> · Meta Pixel</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2F&amp;rl=&amp;if=false&amp;ts=1792941025502&amp;v=2.9.fixture</div>
+<p class="meta">2026-10-25T15:10:25.504Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/</td><td>page address</td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941025502</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /cart, Google Analytics 4 sent a page_view event before the consent banner was answered.</p>
+<div class="meta"><code>tracker-before-consent</code> · Google Analytics 4</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcart&amp;dt=Cart&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:10:43.774Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/cart</td><td>page address</td></tr><tr><td class="mono">dt</td><td class="v mono">Cart | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /cart, the Meta Pixel sent a PageView event before the consent banner was answered.</p>
+<div class="meta"><code>tracker-before-consent</code> · Meta Pixel</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcart&amp;rl=&amp;if=false&amp;ts=1792941043755&amp;v=2.9.fixture</div>
+<p class="meta">2026-10-25T15:10:43.763Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/cart</td><td>page address</td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941043755</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, Google Analytics 4 sent a page_view event before the consent banner was answered.</p>
+<div class="meta"><code>tracker-before-consent</code> · Google Analytics 4</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;dt=Order&#43;confirmed&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:10:47.864Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">dt</td><td class="v mono">Order confirmed | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Meta Pixel sent a PageView event before the consent banner was answered.</p>
+<div class="meta"><code>tracker-before-consent</code> · Meta Pixel · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;rl=&amp;if=false&amp;ts=1792941047850&amp;v=2.9.fixture&amp;ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</div>
+<p class="meta">2026-10-25T15:10:47.858Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941047850</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr><tr><td class="mono">ud[em]</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Pinterest Tag sent a pagevisit event before the consent banner was answered.</p>
+<div class="meta"><code>tracker-before-consent</code> · Pinterest Tag · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://ct.pinterest.com/v3/?tid=2612345678901&amp;event=pagevisit&amp;ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D&amp;pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D&amp;ed=%7B%7D</div>
+<p class="meta">2026-10-25T15:10:47.865Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">tid</td><td class="v mono">2612345678901</td><td>tag ID</td></tr><tr><td class="mono">event</td><td class="v mono">pagevisit</td><td>event name</td></tr><tr><td class="mono">ad</td><td class="v mono">{&#34;loc&#34;:&#34;https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com&#34;,&#34;ref&#34;:&#34;&#34;}</td><td></td></tr><tr><td class="mono">ad.loc</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">ad.loc&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">ad.loc&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">ad.ref</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">pd</td><td class="v mono">{&#34;em&#34;:&#34;8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d&#34;}</td><td></td></tr><tr><td class="mono">pd.em</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr><tr><td class="mono">ed</td><td class="v mono">{}</td><td></td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /newsletter, Google Analytics 4 sent a page_view event before the consent banner was answered.</p>
+<div class="meta"><code>tracker-before-consent</code> · Google Analytics 4</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter&amp;dt=Newsletter&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:10:37.735Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/newsletter</td><td>page address</td></tr><tr><td class="mono">dt</td><td class="v mono">Newsletter | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /newsletter, the Meta Pixel sent a PageView event before the consent banner was answered.</p>
+<div class="meta"><code>tracker-before-consent</code> · Meta Pixel · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter&amp;rl=&amp;if=false&amp;ts=1792941037718&amp;v=2.9.fixture</div>
+<p class="meta">2026-10-25T15:10:37.725Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/newsletter</td><td>page address</td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941037718</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /search?q=wool&#43;socks, Google Analytics 4 sent a page_view event before the consent banner was answered.</p>
+<div class="meta"><code>tracker-before-consent</code> · Google Analytics 4 · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks&amp;dt=Search&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:10:33.605Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/search?q=wool&#43;socks</td><td>page address</td></tr><tr><td class="mono">dl&gt;q</td><td class="v mono">wool socks</td><td></td></tr><tr><td class="mono">dt</td><td class="v mono">Search | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /search?q=wool&#43;socks, the Meta Pixel sent a PageView event before the consent banner was answered.</p>
+<div class="meta"><code>tracker-before-consent</code> · Meta Pixel</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks&amp;rl=&amp;if=false&amp;ts=1792941033596&amp;v=2.9.fixture</div>
+<p class="meta">2026-10-25T15:10:33.598Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/search?q=wool&#43;socks</td><td>page address</td></tr><tr><td class="mono">dl&gt;q</td><td class="v mono">wool socks</td><td></td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941033596</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /shop/rain-shell, Google Analytics 4 sent a page_view event before the consent banner was answered.</p>
+<div class="meta"><code>tracker-before-consent</code> · Google Analytics 4</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fshop%2Frain-shell&amp;dt=Rain&#43;Shell&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:10:29.565Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/shop/rain-shell</td><td>page address</td></tr><tr><td class="mono">dt</td><td class="v mono">Rain Shell | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-medium">
+<p><span class="badge sev-medium">MEDIUM</span>On /shop/rain-shell, the Meta Pixel sent a PageView event before the consent banner was answered.</p>
+<div class="meta"><code>tracker-before-consent</code> · Meta Pixel · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fshop%2Frain-shell&amp;rl=&amp;if=false&amp;ts=1792941029554&amp;v=2.9.fixture</div>
+<p class="meta">2026-10-25T15:10:29.559Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/shop/rain-shell</td><td>page address</td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941029554</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr>
+</table></div>
+
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-low">
+<p><span class="badge sev-low">LOW</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, Google Analytics 4 sent an email address inside the page address after the visitor accepted tracking.</p>
+<div class="meta"><code>personal-data</code> · Google Analytics 4</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;dt=Order&#43;confirmed&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:11:46.464Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">dt</td><td class="v mono">Order confirmed | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+<p class="meta">Flagged: an email address in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-low">
+<p><span class="badge sev-low">LOW</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Meta Pixel sent an email address inside the page address after the visitor accepted tracking.</p>
+<div class="meta"><code>personal-data</code> · Meta Pixel · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;rl=&amp;if=false&amp;ts=1792941106383&amp;v=2.9.fixture&amp;ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</div>
+<p class="meta">2026-10-25T15:11:46.392Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941106383</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr><tr><td class="mono">ud[em]</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr>
+</table></div>
+<p class="meta">Flagged: an email address in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-low">
+<p><span class="badge sev-low">LOW</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Meta Pixel sent a SHA-256 hash of the email address jane@example.com after the visitor accepted tracking.</p>
+<div class="meta"><code>personal-data</code> · Meta Pixel · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;rl=&amp;if=false&amp;ts=1792941106383&amp;v=2.9.fixture&amp;ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</div>
+<p class="meta">2026-10-25T15:11:46.392Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941106383</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr><tr class="hit"><td class="mono">ud[em]</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr>
+</table></div>
+<p class="meta">Flagged: a SHA-256 hash of the email address jane@example.com in <code>ud[em]</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-low">
+<p><span class="badge sev-low">LOW</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Pinterest Tag sent an email address inside the page address after the visitor accepted tracking.</p>
+<div class="meta"><code>personal-data</code> · Pinterest Tag · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://ct.pinterest.com/v3/?tid=2612345678901&amp;event=pagevisit&amp;ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D&amp;pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D&amp;ed=%7B%7D</div>
+<p class="meta">2026-10-25T15:11:46.451Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">tid</td><td class="v mono">2612345678901</td><td>tag ID</td></tr><tr><td class="mono">event</td><td class="v mono">pagevisit</td><td>event name</td></tr><tr><td class="mono">ad</td><td class="v mono">{&#34;loc&#34;:&#34;https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com&#34;,&#34;ref&#34;:&#34;&#34;}</td><td></td></tr><tr class="hit"><td class="mono">ad.loc</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">ad.loc&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">ad.loc&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">ad.ref</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">pd</td><td class="v mono">{&#34;em&#34;:&#34;8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d&#34;}</td><td></td></tr><tr><td class="mono">pd.em</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr><tr><td class="mono">ed</td><td class="v mono">{}</td><td></td></tr>
+</table></div>
+<p class="meta">Flagged: an email address in <code>ad.loc</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-low">
+<p><span class="badge sev-low">LOW</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Pinterest Tag sent a SHA-256 hash of the email address jane@example.com after the visitor accepted tracking.</p>
+<div class="meta"><code>personal-data</code> · Pinterest Tag · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://ct.pinterest.com/v3/?tid=2612345678901&amp;event=pagevisit&amp;ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D&amp;pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D&amp;ed=%7B%7D</div>
+<p class="meta">2026-10-25T15:11:46.451Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">tid</td><td class="v mono">2612345678901</td><td>tag ID</td></tr><tr><td class="mono">event</td><td class="v mono">pagevisit</td><td>event name</td></tr><tr><td class="mono">ad</td><td class="v mono">{&#34;loc&#34;:&#34;https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com&#34;,&#34;ref&#34;:&#34;&#34;}</td><td></td></tr><tr><td class="mono">ad.loc</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">ad.loc&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">ad.loc&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">ad.ref</td><td class="v mono"></td><td>referring page</td></tr><tr class="hit"><td class="mono">pd</td><td class="v mono">{&#34;em&#34;:&#34;8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d&#34;}</td><td></td></tr><tr><td class="mono">pd.em</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr><tr><td class="mono">ed</td><td class="v mono">{}</td><td></td></tr>
+</table></div>
+<p class="meta">Flagged: a SHA-256 hash of the email address jane@example.com in <code>pd</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-low">
+<p><span class="badge sev-low">LOW</span>On /newsletter, the Meta Pixel sent a SHA-256 hash of the email address pxta-probe@example.com after the visitor accepted tracking.</p>
+<div class="meta"><code>personal-data</code> · Meta Pixel</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=SubscribedButtonClick&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter&amp;rl=&amp;if=false&amp;ts=1792941098778&amp;v=2.9.fixture&amp;ud%5Bem%5D=d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a</div>
+<p class="meta">2026-10-25T15:11:38.781Z · Image from the page · while the page was being scrolled and filled in</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">SubscribedButtonClick</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/newsletter</td><td>page address</td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941098778</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr><tr class="hit"><td class="mono">ud[em]</td><td class="v mono">d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a</td><td>email address (hashed)</td></tr>
+</table></div>
+<p class="meta">Flagged: a SHA-256 hash of the email address pxta-probe@example.com in <code>ud[em]</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-low">
+<p><span class="badge sev-low">LOW</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, Google Analytics 4 sent the address of a checkout or account page (/checkout/confirm?order=10442&amp;email=jane@example.com) after the visitor accepted tracking.</p>
+<div class="meta"><code>sensitive-page</code> · Google Analytics 4</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;dt=Order&#43;confirmed&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:11:46.464Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">dt</td><td class="v mono">Order confirmed | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+<p class="meta">Flagged: the address of a checkout or account page (account: checkout) in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-low">
+<p><span class="badge sev-low">LOW</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Meta Pixel sent the address of a checkout or account page (/checkout/confirm?order=10442&amp;email=jane@example.com) after the visitor accepted tracking.</p>
+<div class="meta"><code>sensitive-page</code> · Meta Pixel · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;rl=&amp;if=false&amp;ts=1792941106383&amp;v=2.9.fixture&amp;ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</div>
+<p class="meta">2026-10-25T15:11:46.392Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941106383</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr><tr><td class="mono">ud[em]</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr>
+</table></div>
+<p class="meta">Flagged: the address of a checkout or account page (account: checkout) in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-low">
+<p><span class="badge sev-low">LOW</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, the Pinterest Tag sent the address of a checkout or account page (/checkout/confirm?order=10442&amp;email=jane@example.com) after the visitor accepted tracking.</p>
+<div class="meta"><code>sensitive-page</code> · Pinterest Tag · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://ct.pinterest.com/v3/?tid=2612345678901&amp;event=pagevisit&amp;ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D&amp;pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D&amp;ed=%7B%7D</div>
+<p class="meta">2026-10-25T15:11:46.451Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">tid</td><td class="v mono">2612345678901</td><td>tag ID</td></tr><tr><td class="mono">event</td><td class="v mono">pagevisit</td><td>event name</td></tr><tr><td class="mono">ad</td><td class="v mono">{&#34;loc&#34;:&#34;https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com&#34;,&#34;ref&#34;:&#34;&#34;}</td><td></td></tr><tr class="hit"><td class="mono">ad.loc</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">ad.loc&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">ad.loc&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">ad.ref</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">pd</td><td class="v mono">{&#34;em&#34;:&#34;8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d&#34;}</td><td></td></tr><tr><td class="mono">pd.em</td><td class="v mono">8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d</td><td>email address (hashed)</td></tr><tr><td class="mono">ed</td><td class="v mono">{}</td><td></td></tr>
+</table></div>
+<p class="meta">Flagged: the address of a checkout or account page (account: checkout) in <code>ad.loc</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-low">
+<p><span class="badge sev-low">LOW</span>On /search?q=wool&#43;socks, Google Analytics 4 sent the search term “wool socks” after the visitor accepted tracking.</p>
+<div class="meta"><code>search-term</code> · Google Analytics 4 · seen 2 times</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks&amp;dt=Search&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:11:31.979Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/search?q=wool&#43;socks</td><td>page address</td></tr><tr><td class="mono">dl&gt;q</td><td class="v mono">wool socks</td><td></td></tr><tr><td class="mono">dt</td><td class="v mono">Search | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+<p class="meta">Flagged: the search term “wool socks” in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-low">
+<p><span class="badge sev-low">LOW</span>On /search?q=wool&#43;socks, the Meta Pixel sent the search term “wool socks” after the visitor accepted tracking.</p>
+<div class="meta"><code>search-term</code> · Meta Pixel</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">GET https://www.facebook.com/tr/?id=310044221897&amp;ev=PageView&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks&amp;rl=&amp;if=false&amp;ts=1792941091966&amp;v=2.9.fixture</div>
+<p class="meta">2026-10-25T15:11:31.975Z · Image from the page · while the page was loading</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">id</td><td class="v mono">310044221897</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">PageView</td><td>event name</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/search?q=wool&#43;socks</td><td>page address</td></tr><tr><td class="mono">dl&gt;q</td><td class="v mono">wool socks</td><td></td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792941091966</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr>
+</table></div>
+<p class="meta">Flagged: the search term “wool socks” in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+<div class="finding sev-low">
+<p><span class="badge sev-low">LOW</span>On /checkout/confirm?order=10442&amp;email=jane@example.com, Google Analytics 4 reported Google Consent Mode as denied (G100) but still sent an email address, after the visitor accepted tracking.</p>
+<div class="meta"><code>consent-mode-mismatch</code> · Google Analytics 4</div>
+
+<details><summary>Evidence</summary>
+<div class="ev">
+<div class="url mono">POST https://region1.google-analytics.com/g/collect?v=2&amp;tid=G-HP2026&amp;gcs=G100&amp;cid=1111111111.2222222222&amp;dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com&amp;dt=Order&#43;confirmed&#43;%7C&#43;Harbor&#43;%26&#43;Pine&amp;dr=&amp;en=page_view</div>
+<p class="meta">2026-10-25T15:11:46.464Z · Ping from the page · while the page was loading · Consent Mode G100: ad_storage denied, analytics_storage denied</p>
+
+<div class="wrap"><table>
+<tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
+<tr><td class="mono">v</td><td class="v mono">2</td><td></td></tr><tr><td class="mono">tid</td><td class="v mono">G-HP2026</td><td>measurement ID</td></tr><tr><td class="mono">gcs</td><td class="v mono">G100</td><td>Consent Mode state</td></tr><tr><td class="mono">cid</td><td class="v mono">1111111111.2222222222</td><td>client ID (_ga cookie)</td></tr><tr class="hit"><td class="mono">dl</td><td class="v mono">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>page address</td></tr><tr><td class="mono">dl&gt;order</td><td class="v mono">10442</td><td></td></tr><tr><td class="mono">dl&gt;email</td><td class="v mono">jane@example.com</td><td></td></tr><tr><td class="mono">dt</td><td class="v mono">Order confirmed | Harbor &amp; Pine</td><td>page title</td></tr><tr><td class="mono">dr</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">en</td><td class="v mono">page_view</td><td>event name</td></tr>
+</table></div>
+<p class="meta">Flagged: an email address in <code>dl</code>.</p>
+
+</div>
+</details>
+
+</div>
+
+
+<h2>Trackers on the site</h2>
+
+<div class="wrap"><table>
+<tr><th>Tracker</th><th>Vendor</th><th>Banner not answered</th><th>After reject</th><th>After accept</th></tr>
+<tr><td>Google Analytics 4</td><td>Google</td><td>sent data on 6 pages</td><td>sent data on 6 pages</td><td>sent data on 6 pages</td></tr><tr><td>Meta Pixel</td><td>Meta</td><td>sent data on 6 pages</td><td>sent data on 6 pages</td><td>sent data on 6 pages</td></tr><tr><td>Pinterest Tag</td><td>Pinterest</td><td>sent data on 1 page</td><td>sent data on 1 page</td><td>sent data on 1 page</td></tr>
+</table></div>
+
+
+
+<h2>Consent behaviour</h2>
+<div class="wrap"><table>
+<tr><th>Tracker</th><th>Before an answer</th><th>After reject</th><th>After accept</th><th>In short</th></tr>
+<tr><td>Google Analytics 4</td><td>sends data</td><td>sends data</td><td>sends data</td><td class="bad">ignores reject</td></tr><tr><td>Meta Pixel</td><td>sends data</td><td>sends data</td><td>sends data</td><td class="bad">ignores reject</td></tr><tr><td>Pinterest Tag</td><td>sends data</td><td>sends data</td><td>sends data</td><td class="bad">ignores reject</td></tr>
+</table></div>
+
+
+<h2>Pages visited</h2>
+<div class="wrap"><table>
+<tr><th>Pass</th><th>#</th><th>Page</th><th>Requests</th></tr>
+<tr><td>Banner not answered</td><td>0</td><td class="v">https://www.harborpine.test/</td><td>7</td></tr><tr><td>Banner not answered</td><td>1</td><td class="v">https://www.harborpine.test/shop/rain-shell</td><td>7</td></tr><tr><td>Banner not answered</td><td>2</td><td class="v">https://www.harborpine.test/search?q=wool&#43;socks</td><td>7</td></tr><tr><td>Banner not answered</td><td>3</td><td class="v">https://www.harborpine.test/newsletter</td><td>7</td></tr><tr><td>Banner not answered</td><td>4</td><td class="v">https://www.harborpine.test/cart</td><td>6</td></tr><tr><td>Banner not answered</td><td>5</td><td class="v">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>10</td></tr><tr><td>After reject</td><td>0</td><td class="v">https://www.harborpine.test/</td><td>6</td></tr><tr><td>After reject</td><td>1</td><td class="v">https://www.harborpine.test/shop/rain-shell</td><td>7</td></tr><tr><td>After reject</td><td>2</td><td class="v">https://www.harborpine.test/search?q=wool&#43;socks</td><td>7</td></tr><tr><td>After reject</td><td>3</td><td class="v">https://www.harborpine.test/newsletter</td><td>7</td></tr><tr><td>After reject</td><td>4</td><td class="v">https://www.harborpine.test/cart</td><td>6</td></tr><tr><td>After reject</td><td>5</td><td class="v">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>10</td></tr><tr><td>After accept</td><td>0</td><td class="v">https://www.harborpine.test/</td><td>6</td></tr><tr><td>After accept</td><td>1</td><td class="v">https://www.harborpine.test/shop/rain-shell</td><td>7</td></tr><tr><td>After accept</td><td>2</td><td class="v">https://www.harborpine.test/search?q=wool&#43;socks</td><td>7</td></tr><tr><td>After accept</td><td>3</td><td class="v">https://www.harborpine.test/newsletter</td><td>7</td></tr><tr><td>After accept</td><td>4</td><td class="v">https://www.harborpine.test/cart</td><td>6</td></tr><tr><td>After accept</td><td>5</td><td class="v">https://www.harborpine.test/checkout/confirm?order=10442&amp;email=jane%40example.com</td><td>10</td></tr>
+</table></div>
+
+<h2>Method</h2>
+<p>PXTA loaded each page in headless Chrome/153.0.8010.12 with a fresh browser profile for each pass, waited until no new request had started for 2s (at most 15s per page), scrolled to the bottom, typed the marker address <code>pxta-probe@example.com</code> into email fields without submitting anything, then left the page so beacons sent on unload were recorded too. Requests from iframes and workers are included.</p>
+<p>User agent: <code>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 pxta/0.1.0 (&#43;https://pxta.com)</code>. Robots.txt was respected. Up to 10 pages, 3 links deep.</p>
+<p>Email addresses whose SHA-256 and MD5 hashes were looked for: <code>jane@example.com</code>, <code>pxta-probe@example.com</code>.</p>
+<p><b>What PXTA cannot see.</b> Data a site sends from its own servers (server-side tagging, conversion APIs) never passes through the browser. Pages behind a login were not visited. A tracker that fires only after a click PXTA didn't make is not in this report.</p>
+<p><b>What this report is.</b> A record of network traffic. It draws no legal conclusion about whether the site complies with any law.</p>
+<p>The raw capture is in <code>requests.har</code>, SHA-256 <code class="v">56c3662a4b8f040a8772c669380369239ddbaec0f14ffea7ab5471ff27478e77</code>, and every finding is in <code>findings.json</code>.</p>
+<footer>Made with PXTA 0.1.0, Pixel Tracking Audit · pxta.com · 2026-10-25 15:11 UTC</footer>
+</main>
+</body>
+</html>
+

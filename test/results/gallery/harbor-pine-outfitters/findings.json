@@ -1,0 +1,5576 @@
+{
+  "tool": "pxta",
+  "version": "0.1.0",
+  "catalog": "2026.10.25",
+  "site": "https://www.harborpine.test/",
+  "started": "2026-10-25T15:10:24.503998087Z",
+  "finished": "2026-10-25T15:11:50.317480167Z",
+  "browser": "Chrome/153.0.8010.12",
+  "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 pxta/0.1.0 (+https://pxta.com)",
+  "banner": {
+    "found": true,
+    "platform": "onetrust",
+    "actions": {
+      "accept": "clicked #onetrust-accept-btn-handler",
+      "reject": "clicked #onetrust-reject-all-handler"
+    }
+  },
+  "passes": [
+    "none",
+    "reject",
+    "accept"
+  ],
+  "pages": [
+    {
+      "pass": "none",
+      "page": 0,
+      "url": "https://www.harborpine.test/",
+      "final_url": "https://www.harborpine.test/",
+      "title": "Harbor \u0026 Pine Outfitters",
+      "started": "2026-10-25T15:10:24.929028541Z",
+      "requests": 7
+    },
+    {
+      "pass": "none",
+      "page": 1,
+      "url": "https://www.harborpine.test/shop/rain-shell",
+      "final_url": "https://www.harborpine.test/shop/rain-shell",
+      "title": "Rain Shell | Harbor \u0026 Pine",
+      "started": "2026-10-25T15:10:29.30864391Z",
+      "requests": 7
+    },
+    {
+      "pass": "none",
+      "page": 2,
+      "url": "https://www.harborpine.test/search?q=wool+socks",
+      "final_url": "https://www.harborpine.test/search?q=wool+socks",
+      "title": "Search | Harbor \u0026 Pine",
+      "started": "2026-10-25T15:10:33.305797768Z",
+      "requests": 7
+    },
+    {
+      "pass": "none",
+      "page": 3,
+      "url": "https://www.harborpine.test/newsletter",
+      "final_url": "https://www.harborpine.test/newsletter",
+      "title": "Newsletter | Harbor \u0026 Pine",
+      "started": "2026-10-25T15:10:37.376759436Z",
+      "requests": 7
+    },
+    {
+      "pass": "none",
+      "page": 4,
+      "url": "https://www.harborpine.test/cart",
+      "final_url": "https://www.harborpine.test/cart",
+      "title": "Cart | Harbor \u0026 Pine",
+      "started": "2026-10-25T15:10:43.499778939Z",
+      "requests": 6
+    },
+    {
+      "pass": "none",
+      "page": 5,
+      "url": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+      "final_url": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+      "title": "Order confirmed | Harbor \u0026 Pine",
+      "started": "2026-10-25T15:10:47.534121957Z",
+      "requests": 10
+    },
+    {
+      "pass": "reject",
+      "page": 0,
+      "url": "https://www.harborpine.test/",
+      "final_url": "https://www.harborpine.test/",
+      "title": "Harbor \u0026 Pine Outfitters",
+      "started": "2026-10-25T15:10:54.376046208Z",
+      "requests": 6
+    },
+    {
+      "pass": "reject",
+      "page": 1,
+      "url": "https://www.harborpine.test/shop/rain-shell",
+      "final_url": "https://www.harborpine.test/shop/rain-shell",
+      "title": "Rain Shell | Harbor \u0026 Pine",
+      "started": "2026-10-25T15:10:58.466932291Z",
+      "requests": 7
+    },
+    {
+      "pass": "reject",
+      "page": 2,
+      "url": "https://www.harborpine.test/search?q=wool+socks",
+      "final_url": "https://www.harborpine.test/search?q=wool+socks",
+      "title": "Search | Harbor \u0026 Pine",
+      "started": "2026-10-25T15:11:02.519254755Z",
+      "requests": 7
+    },
+    {
+      "pass": "reject",
+      "page": 3,
+      "url": "https://www.harborpine.test/newsletter",
+      "final_url": "https://www.harborpine.test/newsletter",
+      "title": "Newsletter | Harbor \u0026 Pine",
+      "started": "2026-10-25T15:11:06.62689995Z",
+      "requests": 7
+    },
+    {
+      "pass": "reject",
+      "page": 4,
+      "url": "https://www.harborpine.test/cart",
+      "final_url": "https://www.harborpine.test/cart",
+      "title": "Cart | Harbor \u0026 Pine",
+      "started": "2026-10-25T15:11:12.736780641Z",
+      "requests": 6
+    },
+    {
+      "pass": "reject",
+      "page": 5,
+      "url": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+      "final_url": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+      "title": "Order confirmed | Harbor \u0026 Pine",
+      "started": "2026-10-25T15:11:16.730583321Z",
+      "requests": 10
+    },
+    {
+      "pass": "accept",
+      "page": 0,
+      "url": "https://www.harborpine.test/",
+      "final_url": "https://www.harborpine.test/",
+      "title": "Harbor \u0026 Pine Outfitters",
+      "started": "2026-10-25T15:11:23.488569939Z",
+      "requests": 6
+    },
+    {
+      "pass": "accept",
+      "page": 1,
+      "url": "https://www.harborpine.test/shop/rain-shell",
+      "final_url": "https://www.harborpine.test/shop/rain-shell",
+      "title": "Rain Shell | Harbor \u0026 Pine",
+      "started": "2026-10-25T15:11:27.586279811Z",
+      "requests": 7
+    },
+    {
+      "pass": "accept",
+      "page": 2,
+      "url": "https://www.harborpine.test/search?q=wool+socks",
+      "final_url": "https://www.harborpine.test/search?q=wool+socks",
+      "title": "Search | Harbor \u0026 Pine",
+      "started": "2026-10-25T15:11:31.707147131Z",
+      "requests": 7
+    },
+    {
+      "pass": "accept",
+      "page": 3,
+      "url": "https://www.harborpine.test/newsletter",
+      "final_url": "https://www.harborpine.test/newsletter",
+      "title": "Newsletter | Harbor \u0026 Pine",
+      "started": "2026-10-25T15:11:35.804708549Z",
+      "requests": 7
+    },
+    {
+      "pass": "accept",
+      "page": 4,
+      "url": "https://www.harborpine.test/cart",
+      "final_url": "https://www.harborpine.test/cart",
+      "title": "Cart | Harbor \u0026 Pine",
+      "started": "2026-10-25T15:11:41.912886637Z",
+      "requests": 6
+    },
+    {
+      "pass": "accept",
+      "page": 5,
+      "url": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+      "final_url": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+      "title": "Order confirmed | Harbor \u0026 Pine",
+      "started": "2026-10-25T15:11:46.030046638Z",
+      "requests": 10
+    }
+  ],
+  "known_emails": [
+    "jane@example.com",
+    "pxta-probe@example.com"
+  ],
+  "filled_forms": true,
+  "settings": {
+    "max_pages": 10,
+    "max_depth": 3,
+    "page_wait": "15s",
+    "idle": "2s",
+    "banner_wait": "6s",
+    "respect_robots": true
+  },
+  "browser_restarts": 0,
+  "har_sha256": "56c3662a4b8f040a8772c669380369239ddbaec0f14ffea7ab5471ff27478e77",
+  "findings": [
+    {
+      "code": "personal-data",
+      "severity": "high",
+      "pass": "none",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, Google Analytics 4 sent an email address inside the page address before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:10:47.864Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Order confirmed | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email",
+            "key": "dl",
+            "value": "jane@example.com",
+            "what": "an email address",
+            "in_page_address": true
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "personal-data",
+      "severity": "high",
+      "pass": "none",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent an email address inside the page address before the consent banner was answered.",
+      "count": 2,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792941047850\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "method": "GET",
+        "time": "2026-10-25T15:10:47.858Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941047850",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          },
+          {
+            "key": "ud[em]",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email",
+            "key": "dl",
+            "value": "jane@example.com",
+            "what": "an email address",
+            "in_page_address": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "personal-data",
+      "severity": "high",
+      "pass": "none",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent a SHA-256 hash of the email address jane@example.com before the consent banner was answered.",
+      "count": 2,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792941047850\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "method": "GET",
+        "time": "2026-10-25T15:10:47.858Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941047850",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          },
+          {
+            "key": "ud[em]",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email_hash",
+            "key": "ud[em]",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "what": "a SHA-256 hash of the email address jane@example.com"
+          }
+        ]
+      }
+    },
+    {
+      "code": "personal-data",
+      "severity": "high",
+      "pass": "none",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "pinterest-tag",
+      "tracker_name": "Pinterest Tag",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Pinterest Tag sent an email address inside the page address before the consent banner was answered.",
+      "count": 2,
+      "evidence": {
+        "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
+        "method": "GET",
+        "time": "2026-10-25T15:10:47.865Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "tid",
+            "value": "2612345678901",
+            "meaning": "tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "event",
+            "value": "pagevisit",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "ad",
+            "value": "{\"loc\":\"https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com\",\"ref\":\"\"}",
+            "source": "query"
+          },
+          {
+            "key": "ad.loc",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "ad.loc\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "ad.loc\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "ad.ref",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "pd",
+            "value": "{\"em\":\"8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d\"}",
+            "source": "query"
+          },
+          {
+            "key": "pd.em",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "json"
+          },
+          {
+            "key": "ed",
+            "value": "{}",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email",
+            "key": "ad.loc",
+            "value": "jane@example.com",
+            "what": "an email address",
+            "in_page_address": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "personal-data",
+      "severity": "high",
+      "pass": "none",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "pinterest-tag",
+      "tracker_name": "Pinterest Tag",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Pinterest Tag sent a SHA-256 hash of the email address jane@example.com before the consent banner was answered.",
+      "count": 2,
+      "evidence": {
+        "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
+        "method": "GET",
+        "time": "2026-10-25T15:10:47.865Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "tid",
+            "value": "2612345678901",
+            "meaning": "tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "event",
+            "value": "pagevisit",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "ad",
+            "value": "{\"loc\":\"https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com\",\"ref\":\"\"}",
+            "source": "query"
+          },
+          {
+            "key": "ad.loc",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "ad.loc\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "ad.loc\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "ad.ref",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "pd",
+            "value": "{\"em\":\"8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d\"}",
+            "source": "query"
+          },
+          {
+            "key": "pd.em",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "json"
+          },
+          {
+            "key": "ed",
+            "value": "{}",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email_hash",
+            "key": "pd",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "what": "a SHA-256 hash of the email address jane@example.com"
+          }
+        ]
+      }
+    },
+    {
+      "code": "personal-data",
+      "severity": "high",
+      "pass": "none",
+      "page": "/newsletter",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /newsletter, the Meta Pixel sent a SHA-256 hash of the email address pxta-probe@example.com before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=SubscribedButtonClick\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter\u0026rl=\u0026if=false\u0026ts=1792941040364\u0026v=2.9.fixture\u0026ud%5Bem%5D=d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
+        "method": "GET",
+        "time": "2026-10-25T15:10:40.366Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "interact",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "SubscribedButtonClick",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/newsletter",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941040364",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          },
+          {
+            "key": "ud[em]",
+            "value": "d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email_hash",
+            "key": "ud[em]",
+            "value": "d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
+            "what": "a SHA-256 hash of the email address pxta-probe@example.com"
+          }
+        ]
+      }
+    },
+    {
+      "code": "personal-data",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, Google Analytics 4 sent an email address inside the page address after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:11:17.003Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Order confirmed | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email",
+            "key": "dl",
+            "value": "jane@example.com",
+            "what": "an email address",
+            "in_page_address": true
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "personal-data",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent an email address inside the page address after the visitor rejected tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792941076984\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "method": "GET",
+        "time": "2026-10-25T15:11:17.000Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941076984",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          },
+          {
+            "key": "ud[em]",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email",
+            "key": "dl",
+            "value": "jane@example.com",
+            "what": "an email address",
+            "in_page_address": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "personal-data",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent a SHA-256 hash of the email address jane@example.com after the visitor rejected tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792941076984\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "method": "GET",
+        "time": "2026-10-25T15:11:17.000Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941076984",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          },
+          {
+            "key": "ud[em]",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email_hash",
+            "key": "ud[em]",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "what": "a SHA-256 hash of the email address jane@example.com"
+          }
+        ]
+      }
+    },
+    {
+      "code": "personal-data",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "pinterest-tag",
+      "tracker_name": "Pinterest Tag",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Pinterest Tag sent an email address inside the page address after the visitor rejected tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
+        "method": "GET",
+        "time": "2026-10-25T15:11:17.021Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "tid",
+            "value": "2612345678901",
+            "meaning": "tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "event",
+            "value": "pagevisit",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "ad",
+            "value": "{\"loc\":\"https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com\",\"ref\":\"\"}",
+            "source": "query"
+          },
+          {
+            "key": "ad.loc",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "ad.loc\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "ad.loc\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "ad.ref",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "pd",
+            "value": "{\"em\":\"8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d\"}",
+            "source": "query"
+          },
+          {
+            "key": "pd.em",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "json"
+          },
+          {
+            "key": "ed",
+            "value": "{}",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email",
+            "key": "ad.loc",
+            "value": "jane@example.com",
+            "what": "an email address",
+            "in_page_address": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "personal-data",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "pinterest-tag",
+      "tracker_name": "Pinterest Tag",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Pinterest Tag sent a SHA-256 hash of the email address jane@example.com after the visitor rejected tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
+        "method": "GET",
+        "time": "2026-10-25T15:11:17.021Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "tid",
+            "value": "2612345678901",
+            "meaning": "tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "event",
+            "value": "pagevisit",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "ad",
+            "value": "{\"loc\":\"https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com\",\"ref\":\"\"}",
+            "source": "query"
+          },
+          {
+            "key": "ad.loc",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "ad.loc\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "ad.loc\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "ad.ref",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "pd",
+            "value": "{\"em\":\"8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d\"}",
+            "source": "query"
+          },
+          {
+            "key": "pd.em",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "json"
+          },
+          {
+            "key": "ed",
+            "value": "{}",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email_hash",
+            "key": "pd",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "what": "a SHA-256 hash of the email address jane@example.com"
+          }
+        ]
+      }
+    },
+    {
+      "code": "personal-data",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/newsletter",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /newsletter, the Meta Pixel sent a SHA-256 hash of the email address pxta-probe@example.com after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=SubscribedButtonClick\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter\u0026rl=\u0026if=false\u0026ts=1792941069599\u0026v=2.9.fixture\u0026ud%5Bem%5D=d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
+        "method": "GET",
+        "time": "2026-10-25T15:11:09.601Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "interact",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "SubscribedButtonClick",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/newsletter",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941069599",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          },
+          {
+            "key": "ud[em]",
+            "value": "d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email_hash",
+            "key": "ud[em]",
+            "value": "d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
+            "what": "a SHA-256 hash of the email address pxta-probe@example.com"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "none",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, Google Analytics 4 sent the address of a checkout or account page (/checkout/confirm?order=10442\u0026email=jane@example.com) before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:10:47.864Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Order confirmed | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane@example.com",
+            "what": "the address of a checkout or account page",
+            "category": "account: checkout"
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "none",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent the address of a checkout or account page (/checkout/confirm?order=10442\u0026email=jane@example.com) before the consent banner was answered.",
+      "count": 2,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792941047850\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "method": "GET",
+        "time": "2026-10-25T15:10:47.858Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941047850",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          },
+          {
+            "key": "ud[em]",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane@example.com",
+            "what": "the address of a checkout or account page",
+            "category": "account: checkout"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "none",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "pinterest-tag",
+      "tracker_name": "Pinterest Tag",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Pinterest Tag sent the address of a checkout or account page (/checkout/confirm?order=10442\u0026email=jane@example.com) before the consent banner was answered.",
+      "count": 2,
+      "evidence": {
+        "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
+        "method": "GET",
+        "time": "2026-10-25T15:10:47.865Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "tid",
+            "value": "2612345678901",
+            "meaning": "tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "event",
+            "value": "pagevisit",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "ad",
+            "value": "{\"loc\":\"https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com\",\"ref\":\"\"}",
+            "source": "query"
+          },
+          {
+            "key": "ad.loc",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "ad.loc\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "ad.loc\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "ad.ref",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "pd",
+            "value": "{\"em\":\"8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d\"}",
+            "source": "query"
+          },
+          {
+            "key": "pd.em",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "json"
+          },
+          {
+            "key": "ed",
+            "value": "{}",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "ad.loc",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane@example.com",
+            "what": "the address of a checkout or account page",
+            "category": "account: checkout"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, Google Analytics 4 sent the address of a checkout or account page (/checkout/confirm?order=10442\u0026email=jane@example.com) after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:11:17.003Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Order confirmed | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane@example.com",
+            "what": "the address of a checkout or account page",
+            "category": "account: checkout"
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent the address of a checkout or account page (/checkout/confirm?order=10442\u0026email=jane@example.com) after the visitor rejected tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792941076984\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "method": "GET",
+        "time": "2026-10-25T15:11:17.000Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941076984",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          },
+          {
+            "key": "ud[em]",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane@example.com",
+            "what": "the address of a checkout or account page",
+            "category": "account: checkout"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "pinterest-tag",
+      "tracker_name": "Pinterest Tag",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Pinterest Tag sent the address of a checkout or account page (/checkout/confirm?order=10442\u0026email=jane@example.com) after the visitor rejected tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
+        "method": "GET",
+        "time": "2026-10-25T15:11:17.021Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "tid",
+            "value": "2612345678901",
+            "meaning": "tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "event",
+            "value": "pagevisit",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "ad",
+            "value": "{\"loc\":\"https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com\",\"ref\":\"\"}",
+            "source": "query"
+          },
+          {
+            "key": "ad.loc",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "ad.loc\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "ad.loc\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "ad.ref",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "pd",
+            "value": "{\"em\":\"8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d\"}",
+            "source": "query"
+          },
+          {
+            "key": "pd.em",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "json"
+          },
+          {
+            "key": "ed",
+            "value": "{}",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "ad.loc",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane@example.com",
+            "what": "the address of a checkout or account page",
+            "category": "account: checkout"
+          }
+        ]
+      }
+    },
+    {
+      "code": "search-term",
+      "severity": "high",
+      "pass": "none",
+      "page": "/search?q=wool+socks",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /search?q=wool+socks, Google Analytics 4 sent the search term “wool socks” before the consent banner was answered.",
+      "count": 2,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026dt=Search+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:10:33.605Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/search?q=wool+socks",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eq",
+            "value": "wool socks",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Search | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "search_term",
+            "key": "dl",
+            "value": "wool socks",
+            "what": "the search term “wool socks”",
+            "in_page_address": true
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "search-term",
+      "severity": "high",
+      "pass": "none",
+      "page": "/search?q=wool+socks",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /search?q=wool+socks, the Meta Pixel sent the search term “wool socks” before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026rl=\u0026if=false\u0026ts=1792941033596\u0026v=2.9.fixture",
+        "method": "GET",
+        "time": "2026-10-25T15:10:33.598Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/search?q=wool+socks",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eq",
+            "value": "wool socks",
+            "source": "url"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941033596",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "search_term",
+            "key": "dl",
+            "value": "wool socks",
+            "what": "the search term “wool socks”",
+            "in_page_address": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "search-term",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/search?q=wool+socks",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /search?q=wool+socks, Google Analytics 4 sent the search term “wool socks” after the visitor rejected tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026dt=Search+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:11:02.874Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/search?q=wool+socks",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eq",
+            "value": "wool socks",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Search | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "search_term",
+            "key": "dl",
+            "value": "wool socks",
+            "what": "the search term “wool socks”",
+            "in_page_address": true
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "search-term",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/search?q=wool+socks",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /search?q=wool+socks, the Meta Pixel sent the search term “wool socks” after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026rl=\u0026if=false\u0026ts=1792941062858\u0026v=2.9.fixture",
+        "method": "GET",
+        "time": "2026-10-25T15:11:02.864Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/search?q=wool+socks",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eq",
+            "value": "wool socks",
+            "source": "url"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941062858",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "search_term",
+            "key": "dl",
+            "value": "wool socks",
+            "what": "the search term “wool socks”",
+            "in_page_address": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "consent-mode-mismatch",
+      "severity": "high",
+      "pass": "none",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, Google Analytics 4 reported Google Consent Mode as denied (G100) but still sent an email address, before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:10:47.864Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Order confirmed | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email",
+            "key": "dl",
+            "value": "jane@example.com",
+            "what": "an email address",
+            "in_page_address": true
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "consent-mode-mismatch",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, Google Analytics 4 reported Google Consent Mode as denied (G100) but still sent an email address, after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:11:17.003Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Order confirmed | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email",
+            "key": "dl",
+            "value": "jane@example.com",
+            "what": "an email address",
+            "in_page_address": true
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /, Google Analytics 4 sent a page_view event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2F\u0026dt=Harbor+%26+Pine+Outfitters\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:10:54.725Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Harbor \u0026 Pine Outfitters",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /, the Meta Pixel sent a PageView event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2F\u0026rl=\u0026if=false\u0026ts=1792941054719\u0026v=2.9.fixture",
+        "method": "GET",
+        "time": "2026-10-25T15:10:54.720Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941054719",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/cart",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /cart, Google Analytics 4 sent a page_view event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcart\u0026dt=Cart+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:11:12.984Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/cart",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Cart | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/cart",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /cart, the Meta Pixel sent a PageView event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcart\u0026rl=\u0026if=false\u0026ts=1792941072980\u0026v=2.9.fixture",
+        "method": "GET",
+        "time": "2026-10-25T15:11:12.984Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/cart",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941072980",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, Google Analytics 4 sent a page_view event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:11:17.003Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Order confirmed | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent a PageView event after the visitor rejected tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792941076984\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "method": "GET",
+        "time": "2026-10-25T15:11:17.000Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941076984",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          },
+          {
+            "key": "ud[em]",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "pinterest-tag",
+      "tracker_name": "Pinterest Tag",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Pinterest Tag sent a pagevisit event after the visitor rejected tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
+        "method": "GET",
+        "time": "2026-10-25T15:11:17.021Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "tid",
+            "value": "2612345678901",
+            "meaning": "tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "event",
+            "value": "pagevisit",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "ad",
+            "value": "{\"loc\":\"https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com\",\"ref\":\"\"}",
+            "source": "query"
+          },
+          {
+            "key": "ad.loc",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "ad.loc\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "ad.loc\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "ad.ref",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "pd",
+            "value": "{\"em\":\"8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d\"}",
+            "source": "query"
+          },
+          {
+            "key": "pd.em",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "json"
+          },
+          {
+            "key": "ed",
+            "value": "{}",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/newsletter",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /newsletter, Google Analytics 4 sent a page_view event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter\u0026dt=Newsletter+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:11:06.967Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/newsletter",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Newsletter | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/newsletter",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /newsletter, the Meta Pixel sent a PageView event after the visitor rejected tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter\u0026rl=\u0026if=false\u0026ts=1792941066954\u0026v=2.9.fixture",
+        "method": "GET",
+        "time": "2026-10-25T15:11:06.959Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/newsletter",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941066954",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/search?q=wool+socks",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /search?q=wool+socks, Google Analytics 4 sent a page_view event after the visitor rejected tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026dt=Search+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:11:02.874Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/search?q=wool+socks",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eq",
+            "value": "wool socks",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Search | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/search?q=wool+socks",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /search?q=wool+socks, the Meta Pixel sent a PageView event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026rl=\u0026if=false\u0026ts=1792941062858\u0026v=2.9.fixture",
+        "method": "GET",
+        "time": "2026-10-25T15:11:02.864Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/search?q=wool+socks",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eq",
+            "value": "wool socks",
+            "source": "url"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941062858",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/shop/rain-shell",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /shop/rain-shell, Google Analytics 4 sent a page_view event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fshop%2Frain-shell\u0026dt=Rain+Shell+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:10:58.748Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/shop/rain-shell",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Rain Shell | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/shop/rain-shell",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /shop/rain-shell, the Meta Pixel sent a PageView event after the visitor rejected tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fshop%2Frain-shell\u0026rl=\u0026if=false\u0026ts=1792941058735\u0026v=2.9.fixture",
+        "method": "GET",
+        "time": "2026-10-25T15:10:58.739Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/shop/rain-shell",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941058735",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /, Google Analytics 4 sent a page_view event before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2F\u0026dt=Harbor+%26+Pine+Outfitters\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:10:25.571Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Harbor \u0026 Pine Outfitters",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /, the Meta Pixel sent a PageView event before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2F\u0026rl=\u0026if=false\u0026ts=1792941025502\u0026v=2.9.fixture",
+        "method": "GET",
+        "time": "2026-10-25T15:10:25.504Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941025502",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/cart",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /cart, Google Analytics 4 sent a page_view event before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcart\u0026dt=Cart+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:10:43.774Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/cart",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Cart | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/cart",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /cart, the Meta Pixel sent a PageView event before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcart\u0026rl=\u0026if=false\u0026ts=1792941043755\u0026v=2.9.fixture",
+        "method": "GET",
+        "time": "2026-10-25T15:10:43.763Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/cart",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941043755",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, Google Analytics 4 sent a page_view event before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:10:47.864Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Order confirmed | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent a PageView event before the consent banner was answered.",
+      "count": 2,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792941047850\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "method": "GET",
+        "time": "2026-10-25T15:10:47.858Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941047850",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          },
+          {
+            "key": "ud[em]",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "pinterest-tag",
+      "tracker_name": "Pinterest Tag",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Pinterest Tag sent a pagevisit event before the consent banner was answered.",
+      "count": 2,
+      "evidence": {
+        "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
+        "method": "GET",
+        "time": "2026-10-25T15:10:47.865Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "tid",
+            "value": "2612345678901",
+            "meaning": "tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "event",
+            "value": "pagevisit",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "ad",
+            "value": "{\"loc\":\"https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com\",\"ref\":\"\"}",
+            "source": "query"
+          },
+          {
+            "key": "ad.loc",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "ad.loc\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "ad.loc\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "ad.ref",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "pd",
+            "value": "{\"em\":\"8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d\"}",
+            "source": "query"
+          },
+          {
+            "key": "pd.em",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "json"
+          },
+          {
+            "key": "ed",
+            "value": "{}",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/newsletter",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /newsletter, Google Analytics 4 sent a page_view event before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter\u0026dt=Newsletter+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:10:37.735Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/newsletter",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Newsletter | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/newsletter",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /newsletter, the Meta Pixel sent a PageView event before the consent banner was answered.",
+      "count": 2,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter\u0026rl=\u0026if=false\u0026ts=1792941037718\u0026v=2.9.fixture",
+        "method": "GET",
+        "time": "2026-10-25T15:10:37.725Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/newsletter",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941037718",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/search?q=wool+socks",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /search?q=wool+socks, Google Analytics 4 sent a page_view event before the consent banner was answered.",
+      "count": 2,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026dt=Search+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:10:33.605Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/search?q=wool+socks",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eq",
+            "value": "wool socks",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Search | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/search?q=wool+socks",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /search?q=wool+socks, the Meta Pixel sent a PageView event before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026rl=\u0026if=false\u0026ts=1792941033596\u0026v=2.9.fixture",
+        "method": "GET",
+        "time": "2026-10-25T15:10:33.598Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/search?q=wool+socks",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eq",
+            "value": "wool socks",
+            "source": "url"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941033596",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/shop/rain-shell",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /shop/rain-shell, Google Analytics 4 sent a page_view event before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fshop%2Frain-shell\u0026dt=Rain+Shell+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:10:29.565Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/shop/rain-shell",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Rain Shell | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/shop/rain-shell",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /shop/rain-shell, the Meta Pixel sent a PageView event before the consent banner was answered.",
+      "count": 2,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fshop%2Frain-shell\u0026rl=\u0026if=false\u0026ts=1792941029554\u0026v=2.9.fixture",
+        "method": "GET",
+        "time": "2026-10-25T15:10:29.559Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/shop/rain-shell",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941029554",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "personal-data",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, Google Analytics 4 sent an email address inside the page address after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:11:46.464Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Order confirmed | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email",
+            "key": "dl",
+            "value": "jane@example.com",
+            "what": "an email address",
+            "in_page_address": true
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "personal-data",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent an email address inside the page address after the visitor accepted tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792941106383\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "method": "GET",
+        "time": "2026-10-25T15:11:46.392Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941106383",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          },
+          {
+            "key": "ud[em]",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email",
+            "key": "dl",
+            "value": "jane@example.com",
+            "what": "an email address",
+            "in_page_address": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "personal-data",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent a SHA-256 hash of the email address jane@example.com after the visitor accepted tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792941106383\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "method": "GET",
+        "time": "2026-10-25T15:11:46.392Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941106383",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          },
+          {
+            "key": "ud[em]",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email_hash",
+            "key": "ud[em]",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "what": "a SHA-256 hash of the email address jane@example.com"
+          }
+        ]
+      }
+    },
+    {
+      "code": "personal-data",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "pinterest-tag",
+      "tracker_name": "Pinterest Tag",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Pinterest Tag sent an email address inside the page address after the visitor accepted tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
+        "method": "GET",
+        "time": "2026-10-25T15:11:46.451Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "tid",
+            "value": "2612345678901",
+            "meaning": "tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "event",
+            "value": "pagevisit",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "ad",
+            "value": "{\"loc\":\"https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com\",\"ref\":\"\"}",
+            "source": "query"
+          },
+          {
+            "key": "ad.loc",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "ad.loc\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "ad.loc\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "ad.ref",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "pd",
+            "value": "{\"em\":\"8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d\"}",
+            "source": "query"
+          },
+          {
+            "key": "pd.em",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "json"
+          },
+          {
+            "key": "ed",
+            "value": "{}",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email",
+            "key": "ad.loc",
+            "value": "jane@example.com",
+            "what": "an email address",
+            "in_page_address": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "personal-data",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "pinterest-tag",
+      "tracker_name": "Pinterest Tag",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Pinterest Tag sent a SHA-256 hash of the email address jane@example.com after the visitor accepted tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
+        "method": "GET",
+        "time": "2026-10-25T15:11:46.451Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "tid",
+            "value": "2612345678901",
+            "meaning": "tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "event",
+            "value": "pagevisit",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "ad",
+            "value": "{\"loc\":\"https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com\",\"ref\":\"\"}",
+            "source": "query"
+          },
+          {
+            "key": "ad.loc",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "ad.loc\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "ad.loc\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "ad.ref",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "pd",
+            "value": "{\"em\":\"8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d\"}",
+            "source": "query"
+          },
+          {
+            "key": "pd.em",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "json"
+          },
+          {
+            "key": "ed",
+            "value": "{}",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email_hash",
+            "key": "pd",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "what": "a SHA-256 hash of the email address jane@example.com"
+          }
+        ]
+      }
+    },
+    {
+      "code": "personal-data",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/newsletter",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /newsletter, the Meta Pixel sent a SHA-256 hash of the email address pxta-probe@example.com after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=SubscribedButtonClick\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter\u0026rl=\u0026if=false\u0026ts=1792941098778\u0026v=2.9.fixture\u0026ud%5Bem%5D=d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
+        "method": "GET",
+        "time": "2026-10-25T15:11:38.781Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "interact",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "SubscribedButtonClick",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/newsletter",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941098778",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          },
+          {
+            "key": "ud[em]",
+            "value": "d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email_hash",
+            "key": "ud[em]",
+            "value": "d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
+            "what": "a SHA-256 hash of the email address pxta-probe@example.com"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, Google Analytics 4 sent the address of a checkout or account page (/checkout/confirm?order=10442\u0026email=jane@example.com) after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:11:46.464Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Order confirmed | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane@example.com",
+            "what": "the address of a checkout or account page",
+            "category": "account: checkout"
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent the address of a checkout or account page (/checkout/confirm?order=10442\u0026email=jane@example.com) after the visitor accepted tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792941106383\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "method": "GET",
+        "time": "2026-10-25T15:11:46.392Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941106383",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          },
+          {
+            "key": "ud[em]",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane@example.com",
+            "what": "the address of a checkout or account page",
+            "category": "account: checkout"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "pinterest-tag",
+      "tracker_name": "Pinterest Tag",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Pinterest Tag sent the address of a checkout or account page (/checkout/confirm?order=10442\u0026email=jane@example.com) after the visitor accepted tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
+        "method": "GET",
+        "time": "2026-10-25T15:11:46.451Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "tid",
+            "value": "2612345678901",
+            "meaning": "tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "event",
+            "value": "pagevisit",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "ad",
+            "value": "{\"loc\":\"https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com\",\"ref\":\"\"}",
+            "source": "query"
+          },
+          {
+            "key": "ad.loc",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "ad.loc\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "ad.loc\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "ad.ref",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "pd",
+            "value": "{\"em\":\"8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d\"}",
+            "source": "query"
+          },
+          {
+            "key": "pd.em",
+            "value": "8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+            "meaning": "email address (hashed)",
+            "kind": "email_hash",
+            "source": "json"
+          },
+          {
+            "key": "ed",
+            "value": "{}",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "ad.loc",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane@example.com",
+            "what": "the address of a checkout or account page",
+            "category": "account: checkout"
+          }
+        ]
+      }
+    },
+    {
+      "code": "search-term",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/search?q=wool+socks",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /search?q=wool+socks, Google Analytics 4 sent the search term “wool socks” after the visitor accepted tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026dt=Search+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:11:31.979Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/search?q=wool+socks",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eq",
+            "value": "wool socks",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Search | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "search_term",
+            "key": "dl",
+            "value": "wool socks",
+            "what": "the search term “wool socks”",
+            "in_page_address": true
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "search-term",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/search?q=wool+socks",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /search?q=wool+socks, the Meta Pixel sent the search term “wool socks” after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026rl=\u0026if=false\u0026ts=1792941091966\u0026v=2.9.fixture",
+        "method": "GET",
+        "time": "2026-10-25T15:11:31.975Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "id",
+            "value": "310044221897",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "ev",
+            "value": "PageView",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/search?q=wool+socks",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eq",
+            "value": "wool socks",
+            "source": "url"
+          },
+          {
+            "key": "rl",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "if",
+            "value": "false",
+            "source": "query"
+          },
+          {
+            "key": "ts",
+            "value": "1792941091966",
+            "source": "query"
+          },
+          {
+            "key": "v",
+            "value": "2.9.fixture",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "search_term",
+            "key": "dl",
+            "value": "wool socks",
+            "what": "the search term “wool socks”",
+            "in_page_address": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "consent-mode-mismatch",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/checkout/confirm?order=10442\u0026email=jane@example.com",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, Google Analytics 4 reported Google Consent Mode as denied (G100) but still sent an email address, after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:11:46.464Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-HP2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G100",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eorder",
+            "value": "10442",
+            "source": "url"
+          },
+          {
+            "key": "dl\u003eemail",
+            "value": "jane@example.com",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Order confirmed | Harbor \u0026 Pine",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "email",
+            "key": "dl",
+            "value": "jane@example.com",
+            "what": "an email address",
+            "in_page_address": true
+          }
+        ],
+        "consent_mode": "G100: ad_storage denied, analytics_storage denied"
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "none",
+      "page": "",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "Google Analytics 4 sent data from 6 pages before the consent banner was answered.",
+      "count": 7,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "none",
+      "page": "",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "The Meta Pixel sent data from 6 pages before the consent banner was answered.",
+      "count": 9,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "none",
+      "page": "",
+      "tracker": "pinterest-tag",
+      "tracker_name": "Pinterest Tag",
+      "sentence": "The Pinterest Tag sent data from 1 page before the consent banner was answered.",
+      "count": 2,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "reject",
+      "page": "",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "Google Analytics 4 sent data from 6 pages after the visitor rejected tracking.",
+      "count": 7,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "reject",
+      "page": "",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "The Meta Pixel sent data from 6 pages after the visitor rejected tracking.",
+      "count": 9,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "reject",
+      "page": "",
+      "tracker": "pinterest-tag",
+      "tracker_name": "Pinterest Tag",
+      "sentence": "The Pinterest Tag sent data from 1 page after the visitor rejected tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "accept",
+      "page": "",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "Google Analytics 4 sent data from 6 pages after the visitor accepted tracking.",
+      "count": 7,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "accept",
+      "page": "",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "The Meta Pixel sent data from 6 pages after the visitor accepted tracking.",
+      "count": 9,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "accept",
+      "page": "",
+      "tracker": "pinterest-tag",
+      "tracker_name": "Pinterest Tag",
+      "sentence": "The Pinterest Tag sent data from 1 page after the visitor accepted tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    }
+  ],
+  "trackers": [
+    {
+      "id": "google-analytics-4",
+      "name": "Google Analytics 4",
+      "vendor": "Google",
+      "loaded_on": {
+        "accept": [
+          "/",
+          "/shop/rain-shell",
+          "/search?q=wool+socks",
+          "/newsletter",
+          "/cart",
+          "/checkout/confirm?order=10442\u0026email=jane@example.com"
+        ],
+        "none": [
+          "/",
+          "/shop/rain-shell",
+          "/search?q=wool+socks",
+          "/newsletter",
+          "/cart",
+          "/checkout/confirm?order=10442\u0026email=jane@example.com"
+        ],
+        "reject": [
+          "/",
+          "/shop/rain-shell",
+          "/search?q=wool+socks",
+          "/newsletter",
+          "/cart",
+          "/checkout/confirm?order=10442\u0026email=jane@example.com"
+        ]
+      },
+      "fired_on": {
+        "accept": [
+          "/",
+          "/shop/rain-shell",
+          "/search?q=wool+socks",
+          "/newsletter",
+          "/cart",
+          "/checkout/confirm?order=10442\u0026email=jane@example.com"
+        ],
+        "none": [
+          "/",
+          "/shop/rain-shell",
+          "/search?q=wool+socks",
+          "/newsletter",
+          "/cart",
+          "/checkout/confirm?order=10442\u0026email=jane@example.com"
+        ],
+        "reject": [
+          "/",
+          "/shop/rain-shell",
+          "/search?q=wool+socks",
+          "/newsletter",
+          "/cart",
+          "/checkout/confirm?order=10442\u0026email=jane@example.com"
+        ]
+      },
+      "requests": {
+        "accept": 7,
+        "none": 7,
+        "reject": 7
+      }
+    },
+    {
+      "id": "meta-pixel",
+      "name": "Meta Pixel",
+      "vendor": "Meta",
+      "loaded_on": {
+        "accept": [
+          "/",
+          "/shop/rain-shell",
+          "/search?q=wool+socks",
+          "/newsletter",
+          "/cart",
+          "/checkout/confirm?order=10442\u0026email=jane@example.com"
+        ],
+        "none": [
+          "/",
+          "/shop/rain-shell",
+          "/search?q=wool+socks",
+          "/newsletter",
+          "/cart",
+          "/checkout/confirm?order=10442\u0026email=jane@example.com"
+        ],
+        "reject": [
+          "/",
+          "/shop/rain-shell",
+          "/search?q=wool+socks",
+          "/newsletter",
+          "/cart",
+          "/checkout/confirm?order=10442\u0026email=jane@example.com"
+        ]
+      },
+      "fired_on": {
+        "accept": [
+          "/",
+          "/shop/rain-shell",
+          "/search?q=wool+socks",
+          "/newsletter",
+          "/cart",
+          "/checkout/confirm?order=10442\u0026email=jane@example.com"
+        ],
+        "none": [
+          "/",
+          "/shop/rain-shell",
+          "/search?q=wool+socks",
+          "/newsletter",
+          "/cart",
+          "/checkout/confirm?order=10442\u0026email=jane@example.com"
+        ],
+        "reject": [
+          "/",
+          "/shop/rain-shell",
+          "/search?q=wool+socks",
+          "/newsletter",
+          "/cart",
+          "/checkout/confirm?order=10442\u0026email=jane@example.com"
+        ]
+      },
+      "requests": {
+        "accept": 9,
+        "none": 9,
+        "reject": 9
+      }
+    },
+    {
+      "id": "pinterest-tag",
+      "name": "Pinterest Tag",
+      "vendor": "Pinterest",
+      "loaded_on": {
+        "accept": [
+          "/checkout/confirm?order=10442\u0026email=jane@example.com"
+        ],
+        "none": [
+          "/checkout/confirm?order=10442\u0026email=jane@example.com"
+        ],
+        "reject": [
+          "/checkout/confirm?order=10442\u0026email=jane@example.com"
+        ]
+      },
+      "fired_on": {
+        "accept": [
+          "/checkout/confirm?order=10442\u0026email=jane@example.com"
+        ],
+        "none": [
+          "/checkout/confirm?order=10442\u0026email=jane@example.com"
+        ],
+        "reject": [
+          "/checkout/confirm?order=10442\u0026email=jane@example.com"
+        ]
+      },
+      "requests": {
+        "accept": 2,
+        "none": 2,
+        "reject": 2
+      }
+    }
+  ],
+  "counts": {
+    "high": 24,
+    "info": 9,
+    "low": 12,
+    "medium": 26
+  }
+}

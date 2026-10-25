@@ -50,13 +50,15 @@ PXTA visits up to 20 pages, three links deep, and writes three files to
 | `findings.json` | The same data for scripts, dashboards and ticket systems. |
 | `requests.har` | Every request the pages sent, in the HAR format browsers and proxies read. The report prints its SHA-256, so the evidence can be checked against it later. |
 
-The summary on the terminal looks like this:
+The summary on the terminal looks like this (from the Harbor & Pine sample in
+[test/results/gallery](test/results/gallery), shortened):
 
 ```
-https://www.harborpine.test/: 31 high, 12 medium, 9 low, 9 for information
-Consent banner: onetrust
+https://www.harborpine.test/: 24 high, 26 medium, 12 low, 9 for information
+Consent banner from OneTrust
+  HIGH   On /checkout/confirm?order=10442&email=jane@example.com, Google Analytics 4 sent an email address inside the page address before the consent banner was answered.
   HIGH   On /checkout/confirm?order=10442&email=jane@example.com, the Meta Pixel sent an email address inside the page address before the consent banner was answered.
-  HIGH   On /newsletter, the Meta Pixel sent a SHA-256 hash of the email address pxta-probe@example.com before the consent banner was answered.
+  HIGH   On /checkout/confirm?order=10442&email=jane@example.com, the Meta Pixel sent a SHA-256 hash of the email address jane@example.com before the consent banner was answered.
   ...
 Trackers: Google Analytics 4, Meta Pixel, Pinterest Tag
 Report: /home/you/pxta-report/report.html

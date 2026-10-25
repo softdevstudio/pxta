@@ -1,0 +1,3165 @@
+{
+  "tool": "pxta",
+  "version": "0.1.0",
+  "catalog": "2026.10.25",
+  "site": "https://www.marlowhomeloans.test/",
+  "started": "2026-10-25T15:09:17.64193574Z",
+  "finished": "2026-10-25T15:10:24.282603958Z",
+  "browser": "Chrome/153.0.8010.12",
+  "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 pxta/0.1.0 (+https://pxta.com)",
+  "banner": {
+    "found": true,
+    "platform": "usercentrics",
+    "actions": {
+      "accept": "called the usercentrics JavaScript API",
+      "reject": "called the usercentrics JavaScript API"
+    }
+  },
+  "passes": [
+    "none",
+    "reject",
+    "accept"
+  ],
+  "pages": [
+    {
+      "pass": "none",
+      "page": 0,
+      "url": "https://www.marlowhomeloans.test/",
+      "final_url": "https://www.marlowhomeloans.test/",
+      "title": "Marlow Home Loans",
+      "started": "2026-10-25T15:09:18.040344486Z",
+      "requests": 3
+    },
+    {
+      "pass": "none",
+      "page": 1,
+      "url": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+      "final_url": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+      "title": "Debt consolidation loans | Marlow Home Loans",
+      "started": "2026-10-25T15:09:22.30813254Z",
+      "requests": 2
+    },
+    {
+      "pass": "none",
+      "page": 2,
+      "url": "https://www.marlowhomeloans.test/calculators/mortgage",
+      "final_url": "https://www.marlowhomeloans.test/calculators/mortgage",
+      "title": "Mortgage calculator | Marlow Home Loans",
+      "started": "2026-10-25T15:09:26.348895384Z",
+      "requests": 2
+    },
+    {
+      "pass": "none",
+      "page": 3,
+      "url": "https://www.marlowhomeloans.test/apply",
+      "final_url": "https://www.marlowhomeloans.test/apply",
+      "title": "Apply | Marlow Home Loans",
+      "started": "2026-10-25T15:09:30.362306288Z",
+      "requests": 2
+    },
+    {
+      "pass": "none",
+      "page": 4,
+      "url": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+      "final_url": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+      "title": "Search | Marlow Home Loans",
+      "started": "2026-10-25T15:09:34.399760452Z",
+      "requests": 2
+    },
+    {
+      "pass": "reject",
+      "page": 0,
+      "url": "https://www.marlowhomeloans.test/",
+      "final_url": "https://www.marlowhomeloans.test/",
+      "title": "Marlow Home Loans",
+      "started": "2026-10-25T15:09:41.086352773Z",
+      "requests": 8
+    },
+    {
+      "pass": "reject",
+      "page": 1,
+      "url": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+      "final_url": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+      "title": "Debt consolidation loans | Marlow Home Loans",
+      "started": "2026-10-25T15:09:45.1476046Z",
+      "requests": 8
+    },
+    {
+      "pass": "reject",
+      "page": 2,
+      "url": "https://www.marlowhomeloans.test/calculators/mortgage",
+      "final_url": "https://www.marlowhomeloans.test/calculators/mortgage",
+      "title": "Mortgage calculator | Marlow Home Loans",
+      "started": "2026-10-25T15:09:49.251684683Z",
+      "requests": 8
+    },
+    {
+      "pass": "reject",
+      "page": 3,
+      "url": "https://www.marlowhomeloans.test/apply",
+      "final_url": "https://www.marlowhomeloans.test/apply",
+      "title": "Apply | Marlow Home Loans",
+      "started": "2026-10-25T15:09:53.307085121Z",
+      "requests": 8
+    },
+    {
+      "pass": "reject",
+      "page": 4,
+      "url": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+      "final_url": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+      "title": "Search | Marlow Home Loans",
+      "started": "2026-10-25T15:09:57.351054534Z",
+      "requests": 8
+    },
+    {
+      "pass": "accept",
+      "page": 0,
+      "url": "https://www.marlowhomeloans.test/",
+      "final_url": "https://www.marlowhomeloans.test/",
+      "title": "Marlow Home Loans",
+      "started": "2026-10-25T15:10:04.113623686Z",
+      "requests": 8
+    },
+    {
+      "pass": "accept",
+      "page": 1,
+      "url": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+      "final_url": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+      "title": "Debt consolidation loans | Marlow Home Loans",
+      "started": "2026-10-25T15:10:08.060658012Z",
+      "requests": 8
+    },
+    {
+      "pass": "accept",
+      "page": 2,
+      "url": "https://www.marlowhomeloans.test/calculators/mortgage",
+      "final_url": "https://www.marlowhomeloans.test/calculators/mortgage",
+      "title": "Mortgage calculator | Marlow Home Loans",
+      "started": "2026-10-25T15:10:12.058080456Z",
+      "requests": 8
+    },
+    {
+      "pass": "accept",
+      "page": 3,
+      "url": "https://www.marlowhomeloans.test/apply",
+      "final_url": "https://www.marlowhomeloans.test/apply",
+      "title": "Apply | Marlow Home Loans",
+      "started": "2026-10-25T15:10:16.115883889Z",
+      "requests": 8
+    },
+    {
+      "pass": "accept",
+      "page": 4,
+      "url": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+      "final_url": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+      "title": "Search | Marlow Home Loans",
+      "started": "2026-10-25T15:10:20.184950312Z",
+      "requests": 8
+    }
+  ],
+  "known_emails": [
+    "pxta-probe@example.com"
+  ],
+  "filled_forms": true,
+  "settings": {
+    "max_pages": 10,
+    "max_depth": 3,
+    "page_wait": "15s",
+    "idle": "2s",
+    "banner_wait": "6s",
+    "respect_robots": true
+  },
+  "browser_restarts": 0,
+  "har_sha256": "c30150e42f29a426784c235af2811cd18e1c81035b529c542d5b0930699e49f0",
+  "findings": [
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/loans/debt-consolidation",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /loans/debt-consolidation, Google Analytics 4 sent the address of a page about money trouble (/loans/debt-consolidation) after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026dt=Debt+consolidation+loans+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:09:45.478Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-MARLOW1",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Debt consolidation loans | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+            "what": "the address of a page about money trouble",
+            "category": "finance: debt"
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/loans/debt-consolidation",
+      "tracker": "microsoft-uet",
+      "tracker_name": "Microsoft Advertising UET tag",
+      "sentence": "On /loans/debt-consolidation, the Microsoft Advertising UET tag sent the address of a page about money trouble (/loans/debt-consolidation) after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026tl=Debt+consolidation+loans+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
+        "method": "GET",
+        "time": "2026-10-25T15:09:45.491Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "ti",
+            "value": "187220554",
+            "meaning": "UET tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "evt",
+            "value": "pageLoad",
+            "meaning": "event type",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "p",
+            "value": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "tl",
+            "value": "Debt consolidation loans | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "r",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "mid",
+            "value": "fixture-mid",
+            "meaning": "machine ID",
+            "kind": "client_id",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "p",
+            "value": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+            "what": "the address of a page about money trouble",
+            "category": "finance: debt"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/loans/debt-consolidation",
+      "tracker": "x-pixel",
+      "tracker_name": "X (Twitter) Pixel",
+      "sentence": "On /loans/debt-consolidation, the X (Twitter) Pixel sent the address of a page about money trouble (/loans/debt-consolidation) after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
+        "method": "GET",
+        "time": "2026-10-25T15:09:45.502Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "txn_id",
+            "value": "o4l2m",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "p_id",
+            "value": "Twitter",
+            "meaning": "pixel type",
+            "kind": "other",
+            "source": "query"
+          },
+          {
+            "key": "tw_document_href",
+            "value": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "events",
+            "value": "[[\"tw-o4l2m-pageview\",null]]",
+            "meaning": "events",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "events[0][0]",
+            "value": "tw-o4l2m-pageview",
+            "source": "json"
+          },
+          {
+            "key": "tpx_cb",
+            "value": "twttr.adsct",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "tw_document_href",
+            "value": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+            "what": "the address of a page about money trouble",
+            "category": "finance: debt"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/search?q=bankruptcy",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /search?q=bankruptcy, Google Analytics 4 sent the address of a page about money trouble (/search?q=bankruptcy) after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026dt=Search+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:09:57.578Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-MARLOW1",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eq",
+            "value": "bankruptcy",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Search | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "what": "the address of a page about money trouble",
+            "category": "finance: bankruptcy"
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/search?q=bankruptcy",
+      "tracker": "microsoft-uet",
+      "tracker_name": "Microsoft Advertising UET tag",
+      "sentence": "On /search?q=bankruptcy, the Microsoft Advertising UET tag sent the address of a page about money trouble (/search?q=bankruptcy) after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026tl=Search+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
+        "method": "GET",
+        "time": "2026-10-25T15:09:57.580Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "ti",
+            "value": "187220554",
+            "meaning": "UET tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "evt",
+            "value": "pageLoad",
+            "meaning": "event type",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "p",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "p\u003eq",
+            "value": "bankruptcy",
+            "source": "url"
+          },
+          {
+            "key": "tl",
+            "value": "Search | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "r",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "mid",
+            "value": "fixture-mid",
+            "meaning": "machine ID",
+            "kind": "client_id",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "p",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "what": "the address of a page about money trouble",
+            "category": "finance: bankruptcy"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/search?q=bankruptcy",
+      "tracker": "x-pixel",
+      "tracker_name": "X (Twitter) Pixel",
+      "sentence": "On /search?q=bankruptcy, the X (Twitter) Pixel sent the address of a page about money trouble (/search?q=bankruptcy) after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
+        "method": "GET",
+        "time": "2026-10-25T15:09:57.579Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "txn_id",
+            "value": "o4l2m",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "p_id",
+            "value": "Twitter",
+            "meaning": "pixel type",
+            "kind": "other",
+            "source": "query"
+          },
+          {
+            "key": "tw_document_href",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "tw_document_href\u003eq",
+            "value": "bankruptcy",
+            "source": "url"
+          },
+          {
+            "key": "events",
+            "value": "[[\"tw-o4l2m-pageview\",null]]",
+            "meaning": "events",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "events[0][0]",
+            "value": "tw-o4l2m-pageview",
+            "source": "json"
+          },
+          {
+            "key": "tpx_cb",
+            "value": "twttr.adsct",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "tw_document_href",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "what": "the address of a page about money trouble",
+            "category": "finance: bankruptcy"
+          }
+        ]
+      }
+    },
+    {
+      "code": "search-term",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/search?q=bankruptcy",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /search?q=bankruptcy, Google Analytics 4 sent the search term “bankruptcy” after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026dt=Search+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:09:57.578Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-MARLOW1",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eq",
+            "value": "bankruptcy",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Search | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "search_term",
+            "key": "dl",
+            "value": "bankruptcy",
+            "what": "the search term “bankruptcy”",
+            "in_page_address": true
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "search-term",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/search?q=bankruptcy",
+      "tracker": "microsoft-uet",
+      "tracker_name": "Microsoft Advertising UET tag",
+      "sentence": "On /search?q=bankruptcy, the Microsoft Advertising UET tag sent the search term “bankruptcy” after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026tl=Search+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
+        "method": "GET",
+        "time": "2026-10-25T15:09:57.580Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "ti",
+            "value": "187220554",
+            "meaning": "UET tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "evt",
+            "value": "pageLoad",
+            "meaning": "event type",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "p",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "p\u003eq",
+            "value": "bankruptcy",
+            "source": "url"
+          },
+          {
+            "key": "tl",
+            "value": "Search | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "r",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "mid",
+            "value": "fixture-mid",
+            "meaning": "machine ID",
+            "kind": "client_id",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "search_term",
+            "key": "p",
+            "value": "bankruptcy",
+            "what": "the search term “bankruptcy”",
+            "in_page_address": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "search-term",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/search?q=bankruptcy",
+      "tracker": "x-pixel",
+      "tracker_name": "X (Twitter) Pixel",
+      "sentence": "On /search?q=bankruptcy, the X (Twitter) Pixel sent the search term “bankruptcy” after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
+        "method": "GET",
+        "time": "2026-10-25T15:09:57.579Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "txn_id",
+            "value": "o4l2m",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "p_id",
+            "value": "Twitter",
+            "meaning": "pixel type",
+            "kind": "other",
+            "source": "query"
+          },
+          {
+            "key": "tw_document_href",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "tw_document_href\u003eq",
+            "value": "bankruptcy",
+            "source": "url"
+          },
+          {
+            "key": "events",
+            "value": "[[\"tw-o4l2m-pageview\",null]]",
+            "meaning": "events",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "events[0][0]",
+            "value": "tw-o4l2m-pageview",
+            "source": "json"
+          },
+          {
+            "key": "tpx_cb",
+            "value": "twttr.adsct",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "search_term",
+            "key": "tw_document_href",
+            "value": "bankruptcy",
+            "what": "the search term “bankruptcy”",
+            "in_page_address": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "consent-mode-granted",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /, Google Analytics 4 reported Google Consent Mode as granted (G111: ad_storage granted, analytics_storage granted) after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2F\u0026dt=Marlow+Home+Loans\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:09:41.373Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-MARLOW1",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "consent-mode-granted",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/apply",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /apply, Google Analytics 4 reported Google Consent Mode as granted (G111: ad_storage granted, analytics_storage granted) after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fapply\u0026dt=Apply+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:09:53.570Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-MARLOW1",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/apply",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Apply | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "consent-mode-granted",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/calculators/mortgage",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /calculators/mortgage, Google Analytics 4 reported Google Consent Mode as granted (G111: ad_storage granted, analytics_storage granted) after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fcalculators%2Fmortgage\u0026dt=Mortgage+calculator+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:09:49.549Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-MARLOW1",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/calculators/mortgage",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Mortgage calculator | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "consent-mode-granted",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/loans/debt-consolidation",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /loans/debt-consolidation, Google Analytics 4 reported Google Consent Mode as granted (G111: ad_storage granted, analytics_storage granted) after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026dt=Debt+consolidation+loans+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:09:45.478Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-MARLOW1",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Debt consolidation loans | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "consent-mode-granted",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/search?q=bankruptcy",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /search?q=bankruptcy, Google Analytics 4 reported Google Consent Mode as granted (G111: ad_storage granted, analytics_storage granted) after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026dt=Search+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:09:57.578Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-MARLOW1",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eq",
+            "value": "bankruptcy",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Search | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /, Google Analytics 4 sent a page_view event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2F\u0026dt=Marlow+Home+Loans\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:09:41.373Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-MARLOW1",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/",
+      "tracker": "microsoft-uet",
+      "tracker_name": "Microsoft Advertising UET tag",
+      "sentence": "On /, the Microsoft Advertising UET tag sent a pageLoad event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2F\u0026tl=Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
+        "method": "GET",
+        "time": "2026-10-25T15:09:41.362Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "ti",
+            "value": "187220554",
+            "meaning": "UET tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "evt",
+            "value": "pageLoad",
+            "meaning": "event type",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "p",
+            "value": "https://www.marlowhomeloans.test/",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "tl",
+            "value": "Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "r",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "mid",
+            "value": "fixture-mid",
+            "meaning": "machine ID",
+            "kind": "client_id",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/",
+      "tracker": "x-pixel",
+      "tracker_name": "X (Twitter) Pixel",
+      "sentence": "On /, the X (Twitter) Pixel sent a request after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2F\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
+        "method": "GET",
+        "time": "2026-10-25T15:09:41.399Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "txn_id",
+            "value": "o4l2m",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "p_id",
+            "value": "Twitter",
+            "meaning": "pixel type",
+            "kind": "other",
+            "source": "query"
+          },
+          {
+            "key": "tw_document_href",
+            "value": "https://www.marlowhomeloans.test/",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "events",
+            "value": "[[\"tw-o4l2m-pageview\",null]]",
+            "meaning": "events",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "events[0][0]",
+            "value": "tw-o4l2m-pageview",
+            "source": "json"
+          },
+          {
+            "key": "tpx_cb",
+            "value": "twttr.adsct",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/apply",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /apply, Google Analytics 4 sent a page_view event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fapply\u0026dt=Apply+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:09:53.570Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-MARLOW1",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/apply",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Apply | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/apply",
+      "tracker": "microsoft-uet",
+      "tracker_name": "Microsoft Advertising UET tag",
+      "sentence": "On /apply, the Microsoft Advertising UET tag sent a pageLoad event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Fapply\u0026tl=Apply+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
+        "method": "GET",
+        "time": "2026-10-25T15:09:53.579Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "ti",
+            "value": "187220554",
+            "meaning": "UET tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "evt",
+            "value": "pageLoad",
+            "meaning": "event type",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "p",
+            "value": "https://www.marlowhomeloans.test/apply",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "tl",
+            "value": "Apply | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "r",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "mid",
+            "value": "fixture-mid",
+            "meaning": "machine ID",
+            "kind": "client_id",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/apply",
+      "tracker": "x-pixel",
+      "tracker_name": "X (Twitter) Pixel",
+      "sentence": "On /apply, the X (Twitter) Pixel sent a request after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Fapply\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
+        "method": "GET",
+        "time": "2026-10-25T15:09:53.570Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "txn_id",
+            "value": "o4l2m",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "p_id",
+            "value": "Twitter",
+            "meaning": "pixel type",
+            "kind": "other",
+            "source": "query"
+          },
+          {
+            "key": "tw_document_href",
+            "value": "https://www.marlowhomeloans.test/apply",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "events",
+            "value": "[[\"tw-o4l2m-pageview\",null]]",
+            "meaning": "events",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "events[0][0]",
+            "value": "tw-o4l2m-pageview",
+            "source": "json"
+          },
+          {
+            "key": "tpx_cb",
+            "value": "twttr.adsct",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/calculators/mortgage",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /calculators/mortgage, Google Analytics 4 sent a page_view event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fcalculators%2Fmortgage\u0026dt=Mortgage+calculator+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:09:49.549Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-MARLOW1",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/calculators/mortgage",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Mortgage calculator | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/calculators/mortgage",
+      "tracker": "microsoft-uet",
+      "tracker_name": "Microsoft Advertising UET tag",
+      "sentence": "On /calculators/mortgage, the Microsoft Advertising UET tag sent a pageLoad event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Fcalculators%2Fmortgage\u0026tl=Mortgage+calculator+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
+        "method": "GET",
+        "time": "2026-10-25T15:09:49.556Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "ti",
+            "value": "187220554",
+            "meaning": "UET tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "evt",
+            "value": "pageLoad",
+            "meaning": "event type",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "p",
+            "value": "https://www.marlowhomeloans.test/calculators/mortgage",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "tl",
+            "value": "Mortgage calculator | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "r",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "mid",
+            "value": "fixture-mid",
+            "meaning": "machine ID",
+            "kind": "client_id",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/calculators/mortgage",
+      "tracker": "x-pixel",
+      "tracker_name": "X (Twitter) Pixel",
+      "sentence": "On /calculators/mortgage, the X (Twitter) Pixel sent a request after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Fcalculators%2Fmortgage\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
+        "method": "GET",
+        "time": "2026-10-25T15:09:49.556Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "txn_id",
+            "value": "o4l2m",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "p_id",
+            "value": "Twitter",
+            "meaning": "pixel type",
+            "kind": "other",
+            "source": "query"
+          },
+          {
+            "key": "tw_document_href",
+            "value": "https://www.marlowhomeloans.test/calculators/mortgage",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "events",
+            "value": "[[\"tw-o4l2m-pageview\",null]]",
+            "meaning": "events",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "events[0][0]",
+            "value": "tw-o4l2m-pageview",
+            "source": "json"
+          },
+          {
+            "key": "tpx_cb",
+            "value": "twttr.adsct",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/loans/debt-consolidation",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /loans/debt-consolidation, Google Analytics 4 sent a page_view event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026dt=Debt+consolidation+loans+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:09:45.478Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-MARLOW1",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Debt consolidation loans | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/loans/debt-consolidation",
+      "tracker": "microsoft-uet",
+      "tracker_name": "Microsoft Advertising UET tag",
+      "sentence": "On /loans/debt-consolidation, the Microsoft Advertising UET tag sent a pageLoad event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026tl=Debt+consolidation+loans+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
+        "method": "GET",
+        "time": "2026-10-25T15:09:45.491Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "ti",
+            "value": "187220554",
+            "meaning": "UET tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "evt",
+            "value": "pageLoad",
+            "meaning": "event type",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "p",
+            "value": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "tl",
+            "value": "Debt consolidation loans | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "r",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "mid",
+            "value": "fixture-mid",
+            "meaning": "machine ID",
+            "kind": "client_id",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/loans/debt-consolidation",
+      "tracker": "x-pixel",
+      "tracker_name": "X (Twitter) Pixel",
+      "sentence": "On /loans/debt-consolidation, the X (Twitter) Pixel sent a request after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
+        "method": "GET",
+        "time": "2026-10-25T15:09:45.502Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "txn_id",
+            "value": "o4l2m",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "p_id",
+            "value": "Twitter",
+            "meaning": "pixel type",
+            "kind": "other",
+            "source": "query"
+          },
+          {
+            "key": "tw_document_href",
+            "value": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "events",
+            "value": "[[\"tw-o4l2m-pageview\",null]]",
+            "meaning": "events",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "events[0][0]",
+            "value": "tw-o4l2m-pageview",
+            "source": "json"
+          },
+          {
+            "key": "tpx_cb",
+            "value": "twttr.adsct",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/search?q=bankruptcy",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /search?q=bankruptcy, Google Analytics 4 sent a page_view event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026dt=Search+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:09:57.578Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-MARLOW1",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eq",
+            "value": "bankruptcy",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Search | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/search?q=bankruptcy",
+      "tracker": "microsoft-uet",
+      "tracker_name": "Microsoft Advertising UET tag",
+      "sentence": "On /search?q=bankruptcy, the Microsoft Advertising UET tag sent a pageLoad event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026tl=Search+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
+        "method": "GET",
+        "time": "2026-10-25T15:09:57.580Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "ti",
+            "value": "187220554",
+            "meaning": "UET tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "evt",
+            "value": "pageLoad",
+            "meaning": "event type",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "p",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "p\u003eq",
+            "value": "bankruptcy",
+            "source": "url"
+          },
+          {
+            "key": "tl",
+            "value": "Search | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "r",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "mid",
+            "value": "fixture-mid",
+            "meaning": "machine ID",
+            "kind": "client_id",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/search?q=bankruptcy",
+      "tracker": "x-pixel",
+      "tracker_name": "X (Twitter) Pixel",
+      "sentence": "On /search?q=bankruptcy, the X (Twitter) Pixel sent a request after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
+        "method": "GET",
+        "time": "2026-10-25T15:09:57.579Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "txn_id",
+            "value": "o4l2m",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "p_id",
+            "value": "Twitter",
+            "meaning": "pixel type",
+            "kind": "other",
+            "source": "query"
+          },
+          {
+            "key": "tw_document_href",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "tw_document_href\u003eq",
+            "value": "bankruptcy",
+            "source": "url"
+          },
+          {
+            "key": "events",
+            "value": "[[\"tw-o4l2m-pageview\",null]]",
+            "meaning": "events",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "events[0][0]",
+            "value": "tw-o4l2m-pageview",
+            "source": "json"
+          },
+          {
+            "key": "tpx_cb",
+            "value": "twttr.adsct",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/loans/debt-consolidation",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /loans/debt-consolidation, Google Analytics 4 sent the address of a page about money trouble (/loans/debt-consolidation) after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026dt=Debt+consolidation+loans+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:10:08.288Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-MARLOW1",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Debt consolidation loans | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+            "what": "the address of a page about money trouble",
+            "category": "finance: debt"
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/loans/debt-consolidation",
+      "tracker": "microsoft-uet",
+      "tracker_name": "Microsoft Advertising UET tag",
+      "sentence": "On /loans/debt-consolidation, the Microsoft Advertising UET tag sent the address of a page about money trouble (/loans/debt-consolidation) after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026tl=Debt+consolidation+loans+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
+        "method": "GET",
+        "time": "2026-10-25T15:10:08.300Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "ti",
+            "value": "187220554",
+            "meaning": "UET tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "evt",
+            "value": "pageLoad",
+            "meaning": "event type",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "p",
+            "value": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "tl",
+            "value": "Debt consolidation loans | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "r",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "mid",
+            "value": "fixture-mid",
+            "meaning": "machine ID",
+            "kind": "client_id",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "p",
+            "value": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+            "what": "the address of a page about money trouble",
+            "category": "finance: debt"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/loans/debt-consolidation",
+      "tracker": "x-pixel",
+      "tracker_name": "X (Twitter) Pixel",
+      "sentence": "On /loans/debt-consolidation, the X (Twitter) Pixel sent the address of a page about money trouble (/loans/debt-consolidation) after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
+        "method": "GET",
+        "time": "2026-10-25T15:10:08.291Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "txn_id",
+            "value": "o4l2m",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "p_id",
+            "value": "Twitter",
+            "meaning": "pixel type",
+            "kind": "other",
+            "source": "query"
+          },
+          {
+            "key": "tw_document_href",
+            "value": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "events",
+            "value": "[[\"tw-o4l2m-pageview\",null]]",
+            "meaning": "events",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "events[0][0]",
+            "value": "tw-o4l2m-pageview",
+            "source": "json"
+          },
+          {
+            "key": "tpx_cb",
+            "value": "twttr.adsct",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "tw_document_href",
+            "value": "https://www.marlowhomeloans.test/loans/debt-consolidation",
+            "what": "the address of a page about money trouble",
+            "category": "finance: debt"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/search?q=bankruptcy",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /search?q=bankruptcy, Google Analytics 4 sent the address of a page about money trouble (/search?q=bankruptcy) after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026dt=Search+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:10:20.431Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-MARLOW1",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eq",
+            "value": "bankruptcy",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Search | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "what": "the address of a page about money trouble",
+            "category": "finance: bankruptcy"
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/search?q=bankruptcy",
+      "tracker": "microsoft-uet",
+      "tracker_name": "Microsoft Advertising UET tag",
+      "sentence": "On /search?q=bankruptcy, the Microsoft Advertising UET tag sent the address of a page about money trouble (/search?q=bankruptcy) after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026tl=Search+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
+        "method": "GET",
+        "time": "2026-10-25T15:10:20.433Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "ti",
+            "value": "187220554",
+            "meaning": "UET tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "evt",
+            "value": "pageLoad",
+            "meaning": "event type",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "p",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "p\u003eq",
+            "value": "bankruptcy",
+            "source": "url"
+          },
+          {
+            "key": "tl",
+            "value": "Search | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "r",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "mid",
+            "value": "fixture-mid",
+            "meaning": "machine ID",
+            "kind": "client_id",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "p",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "what": "the address of a page about money trouble",
+            "category": "finance: bankruptcy"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/search?q=bankruptcy",
+      "tracker": "x-pixel",
+      "tracker_name": "X (Twitter) Pixel",
+      "sentence": "On /search?q=bankruptcy, the X (Twitter) Pixel sent the address of a page about money trouble (/search?q=bankruptcy) after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
+        "method": "GET",
+        "time": "2026-10-25T15:10:20.430Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "txn_id",
+            "value": "o4l2m",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "p_id",
+            "value": "Twitter",
+            "meaning": "pixel type",
+            "kind": "other",
+            "source": "query"
+          },
+          {
+            "key": "tw_document_href",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "tw_document_href\u003eq",
+            "value": "bankruptcy",
+            "source": "url"
+          },
+          {
+            "key": "events",
+            "value": "[[\"tw-o4l2m-pageview\",null]]",
+            "meaning": "events",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "events[0][0]",
+            "value": "tw-o4l2m-pageview",
+            "source": "json"
+          },
+          {
+            "key": "tpx_cb",
+            "value": "twttr.adsct",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "tw_document_href",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "what": "the address of a page about money trouble",
+            "category": "finance: bankruptcy"
+          }
+        ]
+      }
+    },
+    {
+      "code": "search-term",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/search?q=bankruptcy",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /search?q=bankruptcy, Google Analytics 4 sent the search term “bankruptcy” after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026dt=Search+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:10:20.431Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-MARLOW1",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eq",
+            "value": "bankruptcy",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Search | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "search_term",
+            "key": "dl",
+            "value": "bankruptcy",
+            "what": "the search term “bankruptcy”",
+            "in_page_address": true
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "search-term",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/search?q=bankruptcy",
+      "tracker": "microsoft-uet",
+      "tracker_name": "Microsoft Advertising UET tag",
+      "sentence": "On /search?q=bankruptcy, the Microsoft Advertising UET tag sent the search term “bankruptcy” after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026tl=Search+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
+        "method": "GET",
+        "time": "2026-10-25T15:10:20.433Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "ti",
+            "value": "187220554",
+            "meaning": "UET tag ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "evt",
+            "value": "pageLoad",
+            "meaning": "event type",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "p",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "p\u003eq",
+            "value": "bankruptcy",
+            "source": "url"
+          },
+          {
+            "key": "tl",
+            "value": "Search | Marlow Home Loans",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "r",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "mid",
+            "value": "fixture-mid",
+            "meaning": "machine ID",
+            "kind": "client_id",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "search_term",
+            "key": "p",
+            "value": "bankruptcy",
+            "what": "the search term “bankruptcy”",
+            "in_page_address": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "search-term",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/search?q=bankruptcy",
+      "tracker": "x-pixel",
+      "tracker_name": "X (Twitter) Pixel",
+      "sentence": "On /search?q=bankruptcy, the X (Twitter) Pixel sent the search term “bankruptcy” after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
+        "method": "GET",
+        "time": "2026-10-25T15:10:20.430Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "txn_id",
+            "value": "o4l2m",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "p_id",
+            "value": "Twitter",
+            "meaning": "pixel type",
+            "kind": "other",
+            "source": "query"
+          },
+          {
+            "key": "tw_document_href",
+            "value": "https://www.marlowhomeloans.test/search?q=bankruptcy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "tw_document_href\u003eq",
+            "value": "bankruptcy",
+            "source": "url"
+          },
+          {
+            "key": "events",
+            "value": "[[\"tw-o4l2m-pageview\",null]]",
+            "meaning": "events",
+            "kind": "event",
+            "source": "query"
+          },
+          {
+            "key": "events[0][0]",
+            "value": "tw-o4l2m-pageview",
+            "source": "json"
+          },
+          {
+            "key": "tpx_cb",
+            "value": "twttr.adsct",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "search_term",
+            "key": "tw_document_href",
+            "value": "bankruptcy",
+            "what": "the search term “bankruptcy”",
+            "in_page_address": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "reject",
+      "page": "",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "Google Analytics 4 sent data from 5 pages after the visitor rejected tracking.",
+      "count": 5,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "reject",
+      "page": "",
+      "tracker": "microsoft-uet",
+      "tracker_name": "Microsoft Advertising UET tag",
+      "sentence": "The Microsoft Advertising UET tag sent data from 5 pages after the visitor rejected tracking.",
+      "count": 5,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "reject",
+      "page": "",
+      "tracker": "x-pixel",
+      "tracker_name": "X (Twitter) Pixel",
+      "sentence": "The X (Twitter) Pixel sent data from 5 pages after the visitor rejected tracking.",
+      "count": 5,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "accept",
+      "page": "",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "Google Analytics 4 sent data from 5 pages after the visitor accepted tracking.",
+      "count": 5,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "accept",
+      "page": "",
+      "tracker": "microsoft-uet",
+      "tracker_name": "Microsoft Advertising UET tag",
+      "sentence": "The Microsoft Advertising UET tag sent data from 5 pages after the visitor accepted tracking.",
+      "count": 5,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "accept",
+      "page": "",
+      "tracker": "x-pixel",
+      "tracker_name": "X (Twitter) Pixel",
+      "sentence": "The X (Twitter) Pixel sent data from 5 pages after the visitor accepted tracking.",
+      "count": 5,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    }
+  ],
+  "trackers": [
+    {
+      "id": "google-analytics-4",
+      "name": "Google Analytics 4",
+      "vendor": "Google",
+      "loaded_on": {
+        "accept": [
+          "/",
+          "/loans/debt-consolidation",
+          "/calculators/mortgage",
+          "/apply",
+          "/search?q=bankruptcy"
+        ],
+        "reject": [
+          "/",
+          "/loans/debt-consolidation",
+          "/calculators/mortgage",
+          "/apply",
+          "/search?q=bankruptcy"
+        ]
+      },
+      "fired_on": {
+        "accept": [
+          "/",
+          "/loans/debt-consolidation",
+          "/calculators/mortgage",
+          "/apply",
+          "/search?q=bankruptcy"
+        ],
+        "reject": [
+          "/",
+          "/loans/debt-consolidation",
+          "/calculators/mortgage",
+          "/apply",
+          "/search?q=bankruptcy"
+        ]
+      },
+      "requests": {
+        "accept": 5,
+        "reject": 5
+      }
+    },
+    {
+      "id": "microsoft-uet",
+      "name": "Microsoft Advertising UET tag",
+      "vendor": "Microsoft",
+      "loaded_on": {
+        "accept": [
+          "/",
+          "/loans/debt-consolidation",
+          "/calculators/mortgage",
+          "/apply",
+          "/search?q=bankruptcy"
+        ],
+        "reject": [
+          "/",
+          "/loans/debt-consolidation",
+          "/calculators/mortgage",
+          "/apply",
+          "/search?q=bankruptcy"
+        ]
+      },
+      "fired_on": {
+        "accept": [
+          "/",
+          "/loans/debt-consolidation",
+          "/calculators/mortgage",
+          "/apply",
+          "/search?q=bankruptcy"
+        ],
+        "reject": [
+          "/",
+          "/loans/debt-consolidation",
+          "/calculators/mortgage",
+          "/apply",
+          "/search?q=bankruptcy"
+        ]
+      },
+      "requests": {
+        "accept": 5,
+        "reject": 5
+      }
+    },
+    {
+      "id": "x-pixel",
+      "name": "X (Twitter) Pixel",
+      "vendor": "X",
+      "loaded_on": {
+        "accept": [
+          "/",
+          "/loans/debt-consolidation",
+          "/calculators/mortgage",
+          "/apply",
+          "/search?q=bankruptcy"
+        ],
+        "reject": [
+          "/",
+          "/loans/debt-consolidation",
+          "/calculators/mortgage",
+          "/apply",
+          "/search?q=bankruptcy"
+        ]
+      },
+      "fired_on": {
+        "accept": [
+          "/",
+          "/loans/debt-consolidation",
+          "/calculators/mortgage",
+          "/apply",
+          "/search?q=bankruptcy"
+        ],
+        "reject": [
+          "/",
+          "/loans/debt-consolidation",
+          "/calculators/mortgage",
+          "/apply",
+          "/search?q=bankruptcy"
+        ]
+      },
+      "requests": {
+        "accept": 5,
+        "reject": 5
+      }
+    }
+  ],
+  "counts": {
+    "high": 14,
+    "info": 6,
+    "low": 9,
+    "medium": 15
+  }
+}

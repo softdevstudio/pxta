@@ -1,0 +1,6 @@
+pages: 500
+browser killed after page: 167
+browser restarts: 1
+distinct pages recorded: 500
+analytics hits recorded: 500
+pages with an error: 0

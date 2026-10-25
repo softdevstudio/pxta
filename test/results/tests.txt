@@ -20,7 +20,7 @@
     browser_test.go:51:   [accept 4/6] https://www.harborpine.test/newsletter
     browser_test.go:51:   [accept 5/6] https://www.harborpine.test/cart
     browser_test.go:51:   [accept 6/6] https://www.harborpine.test/checkout/confirm?order=10442&email=jane%40example.com
---- PASS: TestBrowserShop (62.79s)
+--- PASS: TestBrowserShop (60.90s)
 === RUN   TestBrowserClinic
     browser_test.go:51: pass none
     browser_test.go:51:   [none 1/1] https://www.cedarvalleyclinic.test/
@@ -40,7 +40,7 @@
     browser_test.go:51:   [accept 3/5] https://www.cedarvalleyclinic.test/conditions/diabetes
     browser_test.go:51:   [accept 4/5] https://www.cedarvalleyclinic.test/book?service=therapy
     browser_test.go:51:   [accept 5/5] https://www.cedarvalleyclinic.test/search?q=anxiety+medication
---- PASS: TestBrowserClinic (50.77s)
+--- PASS: TestBrowserClinic (49.58s)
 === RUN   TestBrowserBakery
     browser_test.go:51: pass none
     browser_test.go:51:   [none 1/1] https://www.tidewaterbakery.test/
@@ -54,7 +54,7 @@
     browser_test.go:51:   [accept 1/3] https://www.tidewaterbakery.test/
     browser_test.go:51:   [accept 2/3] https://www.tidewaterbakery.test/menu
     browser_test.go:51:   [accept 3/3] https://www.tidewaterbakery.test/order
---- PASS: TestBrowserBakery (33.42s)
+--- PASS: TestBrowserBakery (32.55s)
 === RUN   TestBrowserLoans
     browser_test.go:51: pass none
     browser_test.go:51:   [none 1/1] https://www.marlowhomeloans.test/
@@ -74,7 +74,7 @@
     browser_test.go:51:   [accept 3/5] https://www.marlowhomeloans.test/calculators/mortgage
     browser_test.go:51:   [accept 4/5] https://www.marlowhomeloans.test/apply
     browser_test.go:51:   [accept 5/5] https://www.marlowhomeloans.test/search?q=bankruptcy
---- PASS: TestBrowserLoans (49.79s)
+--- PASS: TestBrowserLoans (48.88s)
 === RUN   TestBrowserConsentPlatforms
 === RUN   TestBrowserConsentPlatforms/onetrust-good
     browser_test.go:51: pass none
@@ -123,11 +123,740 @@
     browser_test.go:51: pass reject
     browser_test.go:51:   [reject 1/2] https://cmp-didomi-good.test/
     browser_test.go:51:   [reject 2/2] https://cmp-didomi-good.test/about
-signal: terminated
-FAIL	github.com/softdevstudio/pxta	305.702s
-=== RUN   TestCLI
---- PASS: TestCLI (0.02s)
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/2] https://cmp-didomi-good.test/
+    browser_test.go:51:   [accept 2/2] https://cmp-didomi-good.test/about
+=== RUN   TestBrowserConsentPlatforms/didomi-bad
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://cmp-didomi-bad.test/
+    browser_test.go:51:   [none 2/2] https://cmp-didomi-bad.test/about
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/2] https://cmp-didomi-bad.test/
+    browser_test.go:51:   [reject 2/2] https://cmp-didomi-bad.test/about
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/2] https://cmp-didomi-bad.test/
+    browser_test.go:51:   [accept 2/2] https://cmp-didomi-bad.test/about
+=== RUN   TestBrowserConsentPlatforms/usercentrics-good
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://cmp-usercentrics-good.test/
+    browser_test.go:51:   [none 2/2] https://cmp-usercentrics-good.test/about
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/2] https://cmp-usercentrics-good.test/
+    browser_test.go:51:   [reject 2/2] https://cmp-usercentrics-good.test/about
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/2] https://cmp-usercentrics-good.test/
+    browser_test.go:51:   [accept 2/2] https://cmp-usercentrics-good.test/about
+=== RUN   TestBrowserConsentPlatforms/usercentrics-bad
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://cmp-usercentrics-bad.test/
+    browser_test.go:51:   [none 2/2] https://cmp-usercentrics-bad.test/about
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/2] https://cmp-usercentrics-bad.test/
+    browser_test.go:51:   [reject 2/2] https://cmp-usercentrics-bad.test/about
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/2] https://cmp-usercentrics-bad.test/
+    browser_test.go:51:   [accept 2/2] https://cmp-usercentrics-bad.test/about
+=== RUN   TestBrowserConsentPlatforms/generic-good
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://cmp-generic-good.test/
+    browser_test.go:51:   [none 2/2] https://cmp-generic-good.test/about
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/2] https://cmp-generic-good.test/
+    browser_test.go:51:   [reject 2/2] https://cmp-generic-good.test/about
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/2] https://cmp-generic-good.test/
+    browser_test.go:51:   [accept 2/2] https://cmp-generic-good.test/about
+=== RUN   TestBrowserConsentPlatforms/generic-bad
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://cmp-generic-bad.test/
+    browser_test.go:51:   [none 2/2] https://cmp-generic-bad.test/about
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/2] https://cmp-generic-bad.test/
+    browser_test.go:51:   [reject 2/2] https://cmp-generic-bad.test/about
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/2] https://cmp-generic-bad.test/
+    browser_test.go:51:   [accept 2/2] https://cmp-generic-bad.test/about
+=== RUN   TestBrowserConsentPlatforms/iframe-good
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://cmp-iframe-good.test/
+    browser_test.go:51:   [none 2/2] https://cmp-iframe-good.test/about
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/2] https://cmp-iframe-good.test/
+    browser_test.go:51:   [reject 2/2] https://cmp-iframe-good.test/about
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/2] https://cmp-iframe-good.test/
+    browser_test.go:51:   [accept 2/2] https://cmp-iframe-good.test/about
+=== RUN   TestBrowserConsentPlatforms/iframe-bad
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://cmp-iframe-bad.test/
+    browser_test.go:51:   [none 2/2] https://cmp-iframe-bad.test/about
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/2] https://cmp-iframe-bad.test/
+    browser_test.go:51:   [reject 2/2] https://cmp-iframe-bad.test/about
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/2] https://cmp-iframe-bad.test/
+    browser_test.go:51:   [accept 2/2] https://cmp-iframe-bad.test/about
+=== RUN   TestBrowserConsentPlatforms/delayed-good
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://cmp-delayed-good.test/
+    browser_test.go:51:   [none 2/2] https://cmp-delayed-good.test/about
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/2] https://cmp-delayed-good.test/
+    browser_test.go:51:   [reject 2/2] https://cmp-delayed-good.test/about
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/2] https://cmp-delayed-good.test/
+    browser_test.go:51:   [accept 2/2] https://cmp-delayed-good.test/about
+=== RUN   TestBrowserConsentPlatforms/delayed-bad
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://cmp-delayed-bad.test/
+    browser_test.go:51:   [none 2/2] https://cmp-delayed-bad.test/about
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/2] https://cmp-delayed-bad.test/
+    browser_test.go:51:   [reject 2/2] https://cmp-delayed-bad.test/about
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/2] https://cmp-delayed-bad.test/
+    browser_test.go:51:   [accept 2/2] https://cmp-delayed-bad.test/about
+--- PASS: TestBrowserConsentPlatforms (341.14s)
+    --- PASS: TestBrowserConsentPlatforms/onetrust-good (23.33s)
+    --- PASS: TestBrowserConsentPlatforms/onetrust-bad (23.62s)
+    --- PASS: TestBrowserConsentPlatforms/cookiebot-good (23.15s)
+    --- PASS: TestBrowserConsentPlatforms/cookiebot-bad (23.72s)
+    --- PASS: TestBrowserConsentPlatforms/didomi-good (23.99s)
+    --- PASS: TestBrowserConsentPlatforms/didomi-bad (23.38s)
+    --- PASS: TestBrowserConsentPlatforms/usercentrics-good (23.42s)
+    --- PASS: TestBrowserConsentPlatforms/usercentrics-bad (23.30s)
+    --- PASS: TestBrowserConsentPlatforms/generic-good (23.32s)
+    --- PASS: TestBrowserConsentPlatforms/generic-bad (23.47s)
+    --- PASS: TestBrowserConsentPlatforms/iframe-good (23.50s)
+    --- PASS: TestBrowserConsentPlatforms/iframe-bad (23.33s)
+    --- PASS: TestBrowserConsentPlatforms/delayed-good (29.42s)
+    --- PASS: TestBrowserConsentPlatforms/delayed-bad (30.20s)
+=== RUN   TestBrowserConsentModeMismatch
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://www.consentmode.test/
+--- PASS: TestBrowserConsentModeMismatch (7.41s)
+=== RUN   TestBrowserEncodings
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://www.encodings.test/
+--- PASS: TestBrowserEncodings (7.00s)
+=== RUN   TestBrowserLateTrackers
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://www.latetrackers.test/
+--- PASS: TestBrowserLateTrackers (7.13s)
+=== RUN   TestBrowserFramesWorkersUnload
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://www.framesworkers.test/
+--- PASS: TestBrowserFramesWorkersUnload (7.06s)
+=== RUN   TestBrowserNoTrackers
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://www.notrackers.test/
+    browser_test.go:51:   [none 2/2] https://www.notrackers.test/about
+--- PASS: TestBrowserNoTrackers (9.54s)
+=== RUN   TestBrowserRobots
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://www.robots.test/
+    browser_test.go:51:   [none 2/2] https://www.robots.test/public
+--- PASS: TestBrowserRobots (9.68s)
+=== RUN   TestBrowserCrashRecovery
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://www.bigsite.test/p/0
+    browser_test.go:51:   [none 2/2] https://www.bigsite.test/p/1
+    browser_test.go:51:   [none 3/3] https://www.bigsite.test/p/2
+    browser_test.go:51:   [none 4/4] https://www.bigsite.test/p/3
+    browser_test.go:51:   [none 5/5] https://www.bigsite.test/p/4
+    browser_test.go:51:   [none 6/6] https://www.bigsite.test/p/5
+    browser_test.go:51:   [none 7/7] https://www.bigsite.test/p/6
+    browser_test.go:51:   [none 8/8] https://www.bigsite.test/p/7
+    browser_test.go:51:   [none 9/9] https://www.bigsite.test/p/8
+    browser_test.go:51:   [none 10/10] https://www.bigsite.test/p/9
+    browser_test.go:51:   [none 11/11] https://www.bigsite.test/p/10
+    browser_test.go:51:   [none 12/12] https://www.bigsite.test/p/11
+    browser_test.go:51:   [none 13/13] https://www.bigsite.test/p/12
+    browser_test.go:51:   [none 14/14] https://www.bigsite.test/p/13
+    browser_test.go:51:   [none 15/15] https://www.bigsite.test/p/14
+    browser_test.go:51:   [none 16/16] https://www.bigsite.test/p/15
+    browser_test.go:51:   [none 17/17] https://www.bigsite.test/p/16
+    browser_test.go:51:   [none 18/18] https://www.bigsite.test/p/17
+    browser_test.go:51:   [none 19/19] https://www.bigsite.test/p/18
+    browser_test.go:51:   [none 20/20] https://www.bigsite.test/p/19
+    browser_test.go:51:   [none 21/21] https://www.bigsite.test/p/20
+    browser_test.go:51:   [none 22/22] https://www.bigsite.test/p/21
+    browser_test.go:51:   [none 23/23] https://www.bigsite.test/p/22
+    browser_test.go:51:   [none 24/24] https://www.bigsite.test/p/23
+    browser_test.go:51:   [none 25/25] https://www.bigsite.test/p/24
+    browser_test.go:51:   [none 26/26] https://www.bigsite.test/p/25
+    browser_test.go:51:   [none 27/27] https://www.bigsite.test/p/26
+    browser_test.go:51:   [none 28/28] https://www.bigsite.test/p/27
+    browser_test.go:51:   [none 29/29] https://www.bigsite.test/p/28
+    browser_test.go:51:   [none 30/30] https://www.bigsite.test/p/29
+    browser_test.go:51:   [none 31/31] https://www.bigsite.test/p/30
+    browser_test.go:51:   [none 32/32] https://www.bigsite.test/p/31
+    browser_test.go:51:   [none 33/33] https://www.bigsite.test/p/32
+    browser_test.go:51:   [none 34/34] https://www.bigsite.test/p/33
+    browser_test.go:51:   [none 35/35] https://www.bigsite.test/p/34
+    browser_test.go:51:   [none 36/36] https://www.bigsite.test/p/35
+    browser_test.go:51:   [none 37/37] https://www.bigsite.test/p/36
+    browser_test.go:51:   [none 38/38] https://www.bigsite.test/p/37
+    browser_test.go:51:   [none 39/39] https://www.bigsite.test/p/38
+    browser_test.go:51:   [none 40/40] https://www.bigsite.test/p/39
+    browser_test.go:51:   [none 41/41] https://www.bigsite.test/p/40
+    browser_test.go:51:   [none 42/42] https://www.bigsite.test/p/41
+    browser_test.go:51:   [none 43/43] https://www.bigsite.test/p/42
+    browser_test.go:51:   [none 44/44] https://www.bigsite.test/p/43
+    browser_test.go:51:   [none 45/45] https://www.bigsite.test/p/44
+    browser_test.go:51:   [none 46/46] https://www.bigsite.test/p/45
+    browser_test.go:51:   [none 47/47] https://www.bigsite.test/p/46
+    browser_test.go:51:   [none 48/48] https://www.bigsite.test/p/47
+    browser_test.go:51:   [none 49/49] https://www.bigsite.test/p/48
+    browser_test.go:51:   [none 50/50] https://www.bigsite.test/p/49
+    browser_test.go:51:   [none 51/51] https://www.bigsite.test/p/50
+    browser_test.go:51:   [none 52/52] https://www.bigsite.test/p/51
+    browser_test.go:51:   [none 53/53] https://www.bigsite.test/p/52
+    browser_test.go:51:   [none 54/54] https://www.bigsite.test/p/53
+    browser_test.go:51:   [none 55/55] https://www.bigsite.test/p/54
+    browser_test.go:51:   [none 56/56] https://www.bigsite.test/p/55
+    browser_test.go:51:   [none 57/57] https://www.bigsite.test/p/56
+    browser_test.go:51:   [none 58/58] https://www.bigsite.test/p/57
+    browser_test.go:51:   [none 59/59] https://www.bigsite.test/p/58
+    browser_test.go:51:   [none 60/60] https://www.bigsite.test/p/59
+    browser_test.go:51:   [none 61/61] https://www.bigsite.test/p/60
+    browser_test.go:51:   [none 62/62] https://www.bigsite.test/p/61
+    browser_test.go:51:   [none 63/63] https://www.bigsite.test/p/62
+    browser_test.go:51:   [none 64/64] https://www.bigsite.test/p/63
+    browser_test.go:51:   [none 65/65] https://www.bigsite.test/p/64
+    browser_test.go:51:   [none 66/66] https://www.bigsite.test/p/65
+    browser_test.go:51:   [none 67/67] https://www.bigsite.test/p/66
+    browser_test.go:51:   [none 68/68] https://www.bigsite.test/p/67
+    browser_test.go:51:   [none 69/69] https://www.bigsite.test/p/68
+    browser_test.go:51:   [none 70/70] https://www.bigsite.test/p/69
+    browser_test.go:51:   [none 71/71] https://www.bigsite.test/p/70
+    browser_test.go:51:   [none 72/72] https://www.bigsite.test/p/71
+    browser_test.go:51:   [none 73/73] https://www.bigsite.test/p/72
+    browser_test.go:51:   [none 74/74] https://www.bigsite.test/p/73
+    browser_test.go:51:   [none 75/75] https://www.bigsite.test/p/74
+    browser_test.go:51:   [none 76/76] https://www.bigsite.test/p/75
+    browser_test.go:51:   [none 77/77] https://www.bigsite.test/p/76
+    browser_test.go:51:   [none 78/78] https://www.bigsite.test/p/77
+    browser_test.go:51:   [none 79/79] https://www.bigsite.test/p/78
+    browser_test.go:51:   [none 80/80] https://www.bigsite.test/p/79
+    browser_test.go:51:   [none 81/81] https://www.bigsite.test/p/80
+    browser_test.go:51:   [none 82/82] https://www.bigsite.test/p/81
+    browser_test.go:51:   [none 83/83] https://www.bigsite.test/p/82
+    browser_test.go:51:   [none 84/84] https://www.bigsite.test/p/83
+    browser_test.go:51:   [none 85/85] https://www.bigsite.test/p/84
+    browser_test.go:51:   [none 86/86] https://www.bigsite.test/p/85
+    browser_test.go:51:   [none 87/87] https://www.bigsite.test/p/86
+    browser_test.go:51:   [none 88/88] https://www.bigsite.test/p/87
+    browser_test.go:51:   [none 89/89] https://www.bigsite.test/p/88
+    browser_test.go:51:   [none 90/90] https://www.bigsite.test/p/89
+    browser_test.go:51:   [none 91/91] https://www.bigsite.test/p/90
+    browser_test.go:51:   [none 92/92] https://www.bigsite.test/p/91
+    browser_test.go:51:   [none 93/93] https://www.bigsite.test/p/92
+    browser_test.go:51:   [none 94/94] https://www.bigsite.test/p/93
+    browser_test.go:51:   [none 95/95] https://www.bigsite.test/p/94
+    browser_test.go:51:   [none 96/96] https://www.bigsite.test/p/95
+    browser_test.go:51:   [none 97/97] https://www.bigsite.test/p/96
+    browser_test.go:51:   [none 98/98] https://www.bigsite.test/p/97
+    browser_test.go:51:   [none 99/99] https://www.bigsite.test/p/98
+    browser_test.go:51:   [none 100/100] https://www.bigsite.test/p/99
+    browser_test.go:51:   [none 101/101] https://www.bigsite.test/p/100
+    browser_test.go:51:   [none 102/102] https://www.bigsite.test/p/101
+    browser_test.go:51:   [none 103/103] https://www.bigsite.test/p/102
+    browser_test.go:51:   [none 104/104] https://www.bigsite.test/p/103
+    browser_test.go:51:   [none 105/105] https://www.bigsite.test/p/104
+    browser_test.go:51:   [none 106/106] https://www.bigsite.test/p/105
+    browser_test.go:51:   [none 107/107] https://www.bigsite.test/p/106
+    browser_test.go:51:   [none 108/108] https://www.bigsite.test/p/107
+    browser_test.go:51:   [none 109/109] https://www.bigsite.test/p/108
+    browser_test.go:51:   [none 110/110] https://www.bigsite.test/p/109
+    browser_test.go:51:   [none 111/111] https://www.bigsite.test/p/110
+    browser_test.go:51:   [none 112/112] https://www.bigsite.test/p/111
+    browser_test.go:51:   [none 113/113] https://www.bigsite.test/p/112
+    browser_test.go:51:   [none 114/114] https://www.bigsite.test/p/113
+    browser_test.go:51:   [none 115/115] https://www.bigsite.test/p/114
+    browser_test.go:51:   [none 116/116] https://www.bigsite.test/p/115
+    browser_test.go:51:   [none 117/117] https://www.bigsite.test/p/116
+    browser_test.go:51:   [none 118/118] https://www.bigsite.test/p/117
+    browser_test.go:51:   [none 119/119] https://www.bigsite.test/p/118
+    browser_test.go:51:   [none 120/120] https://www.bigsite.test/p/119
+    browser_test.go:51:   [none 121/121] https://www.bigsite.test/p/120
+    browser_test.go:51:   [none 122/122] https://www.bigsite.test/p/121
+    browser_test.go:51:   [none 123/123] https://www.bigsite.test/p/122
+    browser_test.go:51:   [none 124/124] https://www.bigsite.test/p/123
+    browser_test.go:51:   [none 125/125] https://www.bigsite.test/p/124
+    browser_test.go:51:   [none 126/126] https://www.bigsite.test/p/125
+    browser_test.go:51:   [none 127/127] https://www.bigsite.test/p/126
+    browser_test.go:51:   [none 128/128] https://www.bigsite.test/p/127
+    browser_test.go:51:   [none 129/129] https://www.bigsite.test/p/128
+    browser_test.go:51:   [none 130/130] https://www.bigsite.test/p/129
+    browser_test.go:51:   [none 131/131] https://www.bigsite.test/p/130
+    browser_test.go:51:   [none 132/132] https://www.bigsite.test/p/131
+    browser_test.go:51:   [none 133/133] https://www.bigsite.test/p/132
+    browser_test.go:51:   [none 134/134] https://www.bigsite.test/p/133
+    browser_test.go:51:   [none 135/135] https://www.bigsite.test/p/134
+    browser_test.go:51:   [none 136/136] https://www.bigsite.test/p/135
+    browser_test.go:51:   [none 137/137] https://www.bigsite.test/p/136
+    browser_test.go:51:   [none 138/138] https://www.bigsite.test/p/137
+    browser_test.go:51:   [none 139/139] https://www.bigsite.test/p/138
+    browser_test.go:51:   [none 140/140] https://www.bigsite.test/p/139
+    browser_test.go:51:   [none 141/141] https://www.bigsite.test/p/140
+    browser_test.go:51:   [none 142/142] https://www.bigsite.test/p/141
+    browser_test.go:51:   [none 143/143] https://www.bigsite.test/p/142
+    browser_test.go:51:   [none 144/144] https://www.bigsite.test/p/143
+    browser_test.go:51:   [none 145/145] https://www.bigsite.test/p/144
+    browser_test.go:51:   [none 146/146] https://www.bigsite.test/p/145
+    browser_test.go:51:   [none 147/147] https://www.bigsite.test/p/146
+    browser_test.go:51:   [none 148/148] https://www.bigsite.test/p/147
+    browser_test.go:51:   [none 149/149] https://www.bigsite.test/p/148
+    browser_test.go:51:   [none 150/150] https://www.bigsite.test/p/149
+    browser_test.go:51:   [none 151/151] https://www.bigsite.test/p/150
+    browser_test.go:51:   [none 152/152] https://www.bigsite.test/p/151
+    browser_test.go:51:   [none 153/153] https://www.bigsite.test/p/152
+    browser_test.go:51:   [none 154/154] https://www.bigsite.test/p/153
+    browser_test.go:51:   [none 155/155] https://www.bigsite.test/p/154
+    browser_test.go:51:   [none 156/156] https://www.bigsite.test/p/155
+    browser_test.go:51:   [none 157/157] https://www.bigsite.test/p/156
+    browser_test.go:51:   [none 158/158] https://www.bigsite.test/p/157
+    browser_test.go:51:   [none 159/159] https://www.bigsite.test/p/158
+    browser_test.go:51:   [none 160/160] https://www.bigsite.test/p/159
+    browser_test.go:51:   [none 161/161] https://www.bigsite.test/p/160
+    browser_test.go:51:   [none 162/162] https://www.bigsite.test/p/161
+    browser_test.go:51:   [none 163/163] https://www.bigsite.test/p/162
+    browser_test.go:51:   [none 164/164] https://www.bigsite.test/p/163
+    browser_test.go:51:   [none 165/165] https://www.bigsite.test/p/164
+    browser_test.go:51:   [none 166/166] https://www.bigsite.test/p/165
+    browser_test.go:51:   [none 167/167] https://www.bigsite.test/p/166
+    browser_test.go:51:   [none 168/168] https://www.bigsite.test/p/167
+    browser_test.go:51: browser stopped; starting it again (restart 1)
+    browser_test.go:51:   [none 169/169] https://www.bigsite.test/p/168
+    browser_test.go:51:   [none 170/170] https://www.bigsite.test/p/169
+    browser_test.go:51:   [none 171/171] https://www.bigsite.test/p/170
+    browser_test.go:51:   [none 172/172] https://www.bigsite.test/p/171
+    browser_test.go:51:   [none 173/173] https://www.bigsite.test/p/172
+    browser_test.go:51:   [none 174/174] https://www.bigsite.test/p/173
+    browser_test.go:51:   [none 175/175] https://www.bigsite.test/p/174
+    browser_test.go:51:   [none 176/176] https://www.bigsite.test/p/175
+    browser_test.go:51:   [none 177/177] https://www.bigsite.test/p/176
+    browser_test.go:51:   [none 178/178] https://www.bigsite.test/p/177
+    browser_test.go:51:   [none 179/179] https://www.bigsite.test/p/178
+    browser_test.go:51:   [none 180/180] https://www.bigsite.test/p/179
+    browser_test.go:51:   [none 181/181] https://www.bigsite.test/p/180
+    browser_test.go:51:   [none 182/182] https://www.bigsite.test/p/181
+    browser_test.go:51:   [none 183/183] https://www.bigsite.test/p/182
+    browser_test.go:51:   [none 184/184] https://www.bigsite.test/p/183
+    browser_test.go:51:   [none 185/185] https://www.bigsite.test/p/184
+    browser_test.go:51:   [none 186/186] https://www.bigsite.test/p/185
+    browser_test.go:51:   [none 187/187] https://www.bigsite.test/p/186
+    browser_test.go:51:   [none 188/188] https://www.bigsite.test/p/187
+    browser_test.go:51:   [none 189/189] https://www.bigsite.test/p/188
+    browser_test.go:51:   [none 190/190] https://www.bigsite.test/p/189
+    browser_test.go:51:   [none 191/191] https://www.bigsite.test/p/190
+    browser_test.go:51:   [none 192/192] https://www.bigsite.test/p/191
+    browser_test.go:51:   [none 193/193] https://www.bigsite.test/p/192
+    browser_test.go:51:   [none 194/194] https://www.bigsite.test/p/193
+    browser_test.go:51:   [none 195/195] https://www.bigsite.test/p/194
+    browser_test.go:51:   [none 196/196] https://www.bigsite.test/p/195
+    browser_test.go:51:   [none 197/197] https://www.bigsite.test/p/196
+    browser_test.go:51:   [none 198/198] https://www.bigsite.test/p/197
+    browser_test.go:51:   [none 199/199] https://www.bigsite.test/p/198
+    browser_test.go:51:   [none 200/200] https://www.bigsite.test/p/199
+    browser_test.go:51:   [none 201/201] https://www.bigsite.test/p/200
+    browser_test.go:51:   [none 202/202] https://www.bigsite.test/p/201
+    browser_test.go:51:   [none 203/203] https://www.bigsite.test/p/202
+    browser_test.go:51:   [none 204/204] https://www.bigsite.test/p/203
+    browser_test.go:51:   [none 205/205] https://www.bigsite.test/p/204
+    browser_test.go:51:   [none 206/206] https://www.bigsite.test/p/205
+    browser_test.go:51:   [none 207/207] https://www.bigsite.test/p/206
+    browser_test.go:51:   [none 208/208] https://www.bigsite.test/p/207
+    browser_test.go:51:   [none 209/209] https://www.bigsite.test/p/208
+    browser_test.go:51:   [none 210/210] https://www.bigsite.test/p/209
+    browser_test.go:51:   [none 211/211] https://www.bigsite.test/p/210
+    browser_test.go:51:   [none 212/212] https://www.bigsite.test/p/211
+    browser_test.go:51:   [none 213/213] https://www.bigsite.test/p/212
+    browser_test.go:51:   [none 214/214] https://www.bigsite.test/p/213
+    browser_test.go:51:   [none 215/215] https://www.bigsite.test/p/214
+    browser_test.go:51:   [none 216/216] https://www.bigsite.test/p/215
+    browser_test.go:51:   [none 217/217] https://www.bigsite.test/p/216
+    browser_test.go:51:   [none 218/218] https://www.bigsite.test/p/217
+    browser_test.go:51:   [none 219/219] https://www.bigsite.test/p/218
+    browser_test.go:51:   [none 220/220] https://www.bigsite.test/p/219
+    browser_test.go:51:   [none 221/221] https://www.bigsite.test/p/220
+    browser_test.go:51:   [none 222/222] https://www.bigsite.test/p/221
+    browser_test.go:51:   [none 223/223] https://www.bigsite.test/p/222
+    browser_test.go:51:   [none 224/224] https://www.bigsite.test/p/223
+    browser_test.go:51:   [none 225/225] https://www.bigsite.test/p/224
+    browser_test.go:51:   [none 226/226] https://www.bigsite.test/p/225
+    browser_test.go:51:   [none 227/227] https://www.bigsite.test/p/226
+    browser_test.go:51:   [none 228/228] https://www.bigsite.test/p/227
+    browser_test.go:51:   [none 229/229] https://www.bigsite.test/p/228
+    browser_test.go:51:   [none 230/230] https://www.bigsite.test/p/229
+    browser_test.go:51:   [none 231/231] https://www.bigsite.test/p/230
+    browser_test.go:51:   [none 232/232] https://www.bigsite.test/p/231
+    browser_test.go:51:   [none 233/233] https://www.bigsite.test/p/232
+    browser_test.go:51:   [none 234/234] https://www.bigsite.test/p/233
+    browser_test.go:51:   [none 235/235] https://www.bigsite.test/p/234
+    browser_test.go:51:   [none 236/236] https://www.bigsite.test/p/235
+    browser_test.go:51:   [none 237/237] https://www.bigsite.test/p/236
+    browser_test.go:51:   [none 238/238] https://www.bigsite.test/p/237
+    browser_test.go:51:   [none 239/239] https://www.bigsite.test/p/238
+    browser_test.go:51:   [none 240/240] https://www.bigsite.test/p/239
+    browser_test.go:51:   [none 241/241] https://www.bigsite.test/p/240
+    browser_test.go:51:   [none 242/242] https://www.bigsite.test/p/241
+    browser_test.go:51:   [none 243/243] https://www.bigsite.test/p/242
+    browser_test.go:51:   [none 244/244] https://www.bigsite.test/p/243
+    browser_test.go:51:   [none 245/245] https://www.bigsite.test/p/244
+    browser_test.go:51:   [none 246/246] https://www.bigsite.test/p/245
+    browser_test.go:51:   [none 247/247] https://www.bigsite.test/p/246
+    browser_test.go:51:   [none 248/248] https://www.bigsite.test/p/247
+    browser_test.go:51:   [none 249/249] https://www.bigsite.test/p/248
+    browser_test.go:51:   [none 250/250] https://www.bigsite.test/p/249
+    browser_test.go:51:   [none 251/251] https://www.bigsite.test/p/250
+    browser_test.go:51:   [none 252/252] https://www.bigsite.test/p/251
+    browser_test.go:51:   [none 253/253] https://www.bigsite.test/p/252
+    browser_test.go:51:   [none 254/254] https://www.bigsite.test/p/253
+    browser_test.go:51:   [none 255/255] https://www.bigsite.test/p/254
+    browser_test.go:51:   [none 256/256] https://www.bigsite.test/p/255
+    browser_test.go:51:   [none 257/257] https://www.bigsite.test/p/256
+    browser_test.go:51:   [none 258/258] https://www.bigsite.test/p/257
+    browser_test.go:51:   [none 259/259] https://www.bigsite.test/p/258
+    browser_test.go:51:   [none 260/260] https://www.bigsite.test/p/259
+    browser_test.go:51:   [none 261/261] https://www.bigsite.test/p/260
+    browser_test.go:51:   [none 262/262] https://www.bigsite.test/p/261
+    browser_test.go:51:   [none 263/263] https://www.bigsite.test/p/262
+    browser_test.go:51:   [none 264/264] https://www.bigsite.test/p/263
+    browser_test.go:51:   [none 265/265] https://www.bigsite.test/p/264
+    browser_test.go:51:   [none 266/266] https://www.bigsite.test/p/265
+    browser_test.go:51:   [none 267/267] https://www.bigsite.test/p/266
+    browser_test.go:51:   [none 268/268] https://www.bigsite.test/p/267
+    browser_test.go:51:   [none 269/269] https://www.bigsite.test/p/268
+    browser_test.go:51:   [none 270/270] https://www.bigsite.test/p/269
+    browser_test.go:51:   [none 271/271] https://www.bigsite.test/p/270
+    browser_test.go:51:   [none 272/272] https://www.bigsite.test/p/271
+    browser_test.go:51:   [none 273/273] https://www.bigsite.test/p/272
+    browser_test.go:51:   [none 274/274] https://www.bigsite.test/p/273
+    browser_test.go:51:   [none 275/275] https://www.bigsite.test/p/274
+    browser_test.go:51:   [none 276/276] https://www.bigsite.test/p/275
+    browser_test.go:51:   [none 277/277] https://www.bigsite.test/p/276
+    browser_test.go:51:   [none 278/278] https://www.bigsite.test/p/277
+    browser_test.go:51:   [none 279/279] https://www.bigsite.test/p/278
+    browser_test.go:51:   [none 280/280] https://www.bigsite.test/p/279
+    browser_test.go:51:   [none 281/281] https://www.bigsite.test/p/280
+    browser_test.go:51:   [none 282/282] https://www.bigsite.test/p/281
+    browser_test.go:51:   [none 283/283] https://www.bigsite.test/p/282
+    browser_test.go:51:   [none 284/284] https://www.bigsite.test/p/283
+    browser_test.go:51:   [none 285/285] https://www.bigsite.test/p/284
+    browser_test.go:51:   [none 286/286] https://www.bigsite.test/p/285
+    browser_test.go:51:   [none 287/287] https://www.bigsite.test/p/286
+    browser_test.go:51:   [none 288/288] https://www.bigsite.test/p/287
+    browser_test.go:51:   [none 289/289] https://www.bigsite.test/p/288
+    browser_test.go:51:   [none 290/290] https://www.bigsite.test/p/289
+    browser_test.go:51:   [none 291/291] https://www.bigsite.test/p/290
+    browser_test.go:51:   [none 292/292] https://www.bigsite.test/p/291
+    browser_test.go:51:   [none 293/293] https://www.bigsite.test/p/292
+    browser_test.go:51:   [none 294/294] https://www.bigsite.test/p/293
+    browser_test.go:51:   [none 295/295] https://www.bigsite.test/p/294
+    browser_test.go:51:   [none 296/296] https://www.bigsite.test/p/295
+    browser_test.go:51:   [none 297/297] https://www.bigsite.test/p/296
+    browser_test.go:51:   [none 298/298] https://www.bigsite.test/p/297
+    browser_test.go:51:   [none 299/299] https://www.bigsite.test/p/298
+    browser_test.go:51:   [none 300/300] https://www.bigsite.test/p/299
+    browser_test.go:51:   [none 301/301] https://www.bigsite.test/p/300
+    browser_test.go:51:   [none 302/302] https://www.bigsite.test/p/301
+    browser_test.go:51:   [none 303/303] https://www.bigsite.test/p/302
+    browser_test.go:51:   [none 304/304] https://www.bigsite.test/p/303
+    browser_test.go:51:   [none 305/305] https://www.bigsite.test/p/304
+    browser_test.go:51:   [none 306/306] https://www.bigsite.test/p/305
+    browser_test.go:51:   [none 307/307] https://www.bigsite.test/p/306
+    browser_test.go:51:   [none 308/308] https://www.bigsite.test/p/307
+    browser_test.go:51:   [none 309/309] https://www.bigsite.test/p/308
+    browser_test.go:51:   [none 310/310] https://www.bigsite.test/p/309
+    browser_test.go:51:   [none 311/311] https://www.bigsite.test/p/310
+    browser_test.go:51:   [none 312/312] https://www.bigsite.test/p/311
+    browser_test.go:51:   [none 313/313] https://www.bigsite.test/p/312
+    browser_test.go:51:   [none 314/314] https://www.bigsite.test/p/313
+    browser_test.go:51:   [none 315/315] https://www.bigsite.test/p/314
+    browser_test.go:51:   [none 316/316] https://www.bigsite.test/p/315
+    browser_test.go:51:   [none 317/317] https://www.bigsite.test/p/316
+    browser_test.go:51:   [none 318/318] https://www.bigsite.test/p/317
+    browser_test.go:51:   [none 319/319] https://www.bigsite.test/p/318
+    browser_test.go:51:   [none 320/320] https://www.bigsite.test/p/319
+    browser_test.go:51:   [none 321/321] https://www.bigsite.test/p/320
+    browser_test.go:51:   [none 322/322] https://www.bigsite.test/p/321
+    browser_test.go:51:   [none 323/323] https://www.bigsite.test/p/322
+    browser_test.go:51:   [none 324/324] https://www.bigsite.test/p/323
+    browser_test.go:51:   [none 325/325] https://www.bigsite.test/p/324
+    browser_test.go:51:   [none 326/326] https://www.bigsite.test/p/325
+    browser_test.go:51:   [none 327/327] https://www.bigsite.test/p/326
+    browser_test.go:51:   [none 328/328] https://www.bigsite.test/p/327
+    browser_test.go:51:   [none 329/329] https://www.bigsite.test/p/328
+    browser_test.go:51:   [none 330/330] https://www.bigsite.test/p/329
+    browser_test.go:51:   [none 331/331] https://www.bigsite.test/p/330
+    browser_test.go:51:   [none 332/332] https://www.bigsite.test/p/331
+    browser_test.go:51:   [none 333/333] https://www.bigsite.test/p/332
+    browser_test.go:51:   [none 334/334] https://www.bigsite.test/p/333
+    browser_test.go:51:   [none 335/335] https://www.bigsite.test/p/334
+    browser_test.go:51:   [none 336/336] https://www.bigsite.test/p/335
+    browser_test.go:51:   [none 337/337] https://www.bigsite.test/p/336
+    browser_test.go:51:   [none 338/338] https://www.bigsite.test/p/337
+    browser_test.go:51:   [none 339/339] https://www.bigsite.test/p/338
+    browser_test.go:51:   [none 340/340] https://www.bigsite.test/p/339
+    browser_test.go:51:   [none 341/341] https://www.bigsite.test/p/340
+    browser_test.go:51:   [none 342/342] https://www.bigsite.test/p/341
+    browser_test.go:51:   [none 343/343] https://www.bigsite.test/p/342
+    browser_test.go:51:   [none 344/344] https://www.bigsite.test/p/343
+    browser_test.go:51:   [none 345/345] https://www.bigsite.test/p/344
+    browser_test.go:51:   [none 346/346] https://www.bigsite.test/p/345
+    browser_test.go:51:   [none 347/347] https://www.bigsite.test/p/346
+    browser_test.go:51:   [none 348/348] https://www.bigsite.test/p/347
+    browser_test.go:51:   [none 349/349] https://www.bigsite.test/p/348
+    browser_test.go:51:   [none 350/350] https://www.bigsite.test/p/349
+    browser_test.go:51:   [none 351/351] https://www.bigsite.test/p/350
+    browser_test.go:51:   [none 352/352] https://www.bigsite.test/p/351
+    browser_test.go:51:   [none 353/353] https://www.bigsite.test/p/352
+    browser_test.go:51:   [none 354/354] https://www.bigsite.test/p/353
+    browser_test.go:51:   [none 355/355] https://www.bigsite.test/p/354
+    browser_test.go:51:   [none 356/356] https://www.bigsite.test/p/355
+    browser_test.go:51:   [none 357/357] https://www.bigsite.test/p/356
+    browser_test.go:51:   [none 358/358] https://www.bigsite.test/p/357
+    browser_test.go:51:   [none 359/359] https://www.bigsite.test/p/358
+    browser_test.go:51:   [none 360/360] https://www.bigsite.test/p/359
+    browser_test.go:51:   [none 361/361] https://www.bigsite.test/p/360
+    browser_test.go:51:   [none 362/362] https://www.bigsite.test/p/361
+    browser_test.go:51:   [none 363/363] https://www.bigsite.test/p/362
+    browser_test.go:51:   [none 364/364] https://www.bigsite.test/p/363
+    browser_test.go:51:   [none 365/365] https://www.bigsite.test/p/364
+    browser_test.go:51:   [none 366/366] https://www.bigsite.test/p/365
+    browser_test.go:51:   [none 367/367] https://www.bigsite.test/p/366
+    browser_test.go:51:   [none 368/368] https://www.bigsite.test/p/367
+    browser_test.go:51:   [none 369/369] https://www.bigsite.test/p/368
+    browser_test.go:51:   [none 370/370] https://www.bigsite.test/p/369
+    browser_test.go:51:   [none 371/371] https://www.bigsite.test/p/370
+    browser_test.go:51:   [none 372/372] https://www.bigsite.test/p/371
+    browser_test.go:51:   [none 373/373] https://www.bigsite.test/p/372
+    browser_test.go:51:   [none 374/374] https://www.bigsite.test/p/373
+    browser_test.go:51:   [none 375/375] https://www.bigsite.test/p/374
+    browser_test.go:51:   [none 376/376] https://www.bigsite.test/p/375
+    browser_test.go:51:   [none 377/377] https://www.bigsite.test/p/376
+    browser_test.go:51:   [none 378/378] https://www.bigsite.test/p/377
+    browser_test.go:51:   [none 379/379] https://www.bigsite.test/p/378
+    browser_test.go:51:   [none 380/380] https://www.bigsite.test/p/379
+    browser_test.go:51:   [none 381/381] https://www.bigsite.test/p/380
+    browser_test.go:51:   [none 382/382] https://www.bigsite.test/p/381
+    browser_test.go:51:   [none 383/383] https://www.bigsite.test/p/382
+    browser_test.go:51:   [none 384/384] https://www.bigsite.test/p/383
+    browser_test.go:51:   [none 385/385] https://www.bigsite.test/p/384
+    browser_test.go:51:   [none 386/386] https://www.bigsite.test/p/385
+    browser_test.go:51:   [none 387/387] https://www.bigsite.test/p/386
+    browser_test.go:51:   [none 388/388] https://www.bigsite.test/p/387
+    browser_test.go:51:   [none 389/389] https://www.bigsite.test/p/388
+    browser_test.go:51:   [none 390/390] https://www.bigsite.test/p/389
+    browser_test.go:51:   [none 391/391] https://www.bigsite.test/p/390
+    browser_test.go:51:   [none 392/392] https://www.bigsite.test/p/391
+    browser_test.go:51:   [none 393/393] https://www.bigsite.test/p/392
+    browser_test.go:51:   [none 394/394] https://www.bigsite.test/p/393
+    browser_test.go:51:   [none 395/395] https://www.bigsite.test/p/394
+    browser_test.go:51:   [none 396/396] https://www.bigsite.test/p/395
+    browser_test.go:51:   [none 397/397] https://www.bigsite.test/p/396
+    browser_test.go:51:   [none 398/398] https://www.bigsite.test/p/397
+    browser_test.go:51:   [none 399/399] https://www.bigsite.test/p/398
+    browser_test.go:51:   [none 400/400] https://www.bigsite.test/p/399
+    browser_test.go:51:   [none 401/401] https://www.bigsite.test/p/400
+    browser_test.go:51:   [none 402/402] https://www.bigsite.test/p/401
+    browser_test.go:51:   [none 403/403] https://www.bigsite.test/p/402
+    browser_test.go:51:   [none 404/404] https://www.bigsite.test/p/403
+    browser_test.go:51:   [none 405/405] https://www.bigsite.test/p/404
+    browser_test.go:51:   [none 406/406] https://www.bigsite.test/p/405
+    browser_test.go:51:   [none 407/407] https://www.bigsite.test/p/406
+    browser_test.go:51:   [none 408/408] https://www.bigsite.test/p/407
+    browser_test.go:51:   [none 409/409] https://www.bigsite.test/p/408
+    browser_test.go:51:   [none 410/410] https://www.bigsite.test/p/409
+    browser_test.go:51:   [none 411/411] https://www.bigsite.test/p/410
+    browser_test.go:51:   [none 412/412] https://www.bigsite.test/p/411
+    browser_test.go:51:   [none 413/413] https://www.bigsite.test/p/412
+    browser_test.go:51:   [none 414/414] https://www.bigsite.test/p/413
+    browser_test.go:51:   [none 415/415] https://www.bigsite.test/p/414
+    browser_test.go:51:   [none 416/416] https://www.bigsite.test/p/415
+    browser_test.go:51:   [none 417/417] https://www.bigsite.test/p/416
+    browser_test.go:51:   [none 418/418] https://www.bigsite.test/p/417
+    browser_test.go:51:   [none 419/419] https://www.bigsite.test/p/418
+    browser_test.go:51:   [none 420/420] https://www.bigsite.test/p/419
+    browser_test.go:51:   [none 421/421] https://www.bigsite.test/p/420
+    browser_test.go:51:   [none 422/422] https://www.bigsite.test/p/421
+    browser_test.go:51:   [none 423/423] https://www.bigsite.test/p/422
+    browser_test.go:51:   [none 424/424] https://www.bigsite.test/p/423
+    browser_test.go:51:   [none 425/425] https://www.bigsite.test/p/424
+    browser_test.go:51:   [none 426/426] https://www.bigsite.test/p/425
+    browser_test.go:51:   [none 427/427] https://www.bigsite.test/p/426
+    browser_test.go:51:   [none 428/428] https://www.bigsite.test/p/427
+    browser_test.go:51:   [none 429/429] https://www.bigsite.test/p/428
+    browser_test.go:51:   [none 430/430] https://www.bigsite.test/p/429
+    browser_test.go:51:   [none 431/431] https://www.bigsite.test/p/430
+    browser_test.go:51:   [none 432/432] https://www.bigsite.test/p/431
+    browser_test.go:51:   [none 433/433] https://www.bigsite.test/p/432
+    browser_test.go:51:   [none 434/434] https://www.bigsite.test/p/433
+    browser_test.go:51:   [none 435/435] https://www.bigsite.test/p/434
+    browser_test.go:51:   [none 436/436] https://www.bigsite.test/p/435
+    browser_test.go:51:   [none 437/437] https://www.bigsite.test/p/436
+    browser_test.go:51:   [none 438/438] https://www.bigsite.test/p/437
+    browser_test.go:51:   [none 439/439] https://www.bigsite.test/p/438
+    browser_test.go:51:   [none 440/440] https://www.bigsite.test/p/439
+    browser_test.go:51:   [none 441/441] https://www.bigsite.test/p/440
+    browser_test.go:51:   [none 442/442] https://www.bigsite.test/p/441
+    browser_test.go:51:   [none 443/443] https://www.bigsite.test/p/442
+    browser_test.go:51:   [none 444/444] https://www.bigsite.test/p/443
+    browser_test.go:51:   [none 445/445] https://www.bigsite.test/p/444
+    browser_test.go:51:   [none 446/446] https://www.bigsite.test/p/445
+    browser_test.go:51:   [none 447/447] https://www.bigsite.test/p/446
+    browser_test.go:51:   [none 448/448] https://www.bigsite.test/p/447
+    browser_test.go:51:   [none 449/449] https://www.bigsite.test/p/448
+    browser_test.go:51:   [none 450/450] https://www.bigsite.test/p/449
+    browser_test.go:51:   [none 451/451] https://www.bigsite.test/p/450
+    browser_test.go:51:   [none 452/452] https://www.bigsite.test/p/451
+    browser_test.go:51:   [none 453/453] https://www.bigsite.test/p/452
+    browser_test.go:51:   [none 454/454] https://www.bigsite.test/p/453
+    browser_test.go:51:   [none 455/455] https://www.bigsite.test/p/454
+    browser_test.go:51:   [none 456/456] https://www.bigsite.test/p/455
+    browser_test.go:51:   [none 457/457] https://www.bigsite.test/p/456
+    browser_test.go:51:   [none 458/458] https://www.bigsite.test/p/457
+    browser_test.go:51:   [none 459/459] https://www.bigsite.test/p/458
+    browser_test.go:51:   [none 460/460] https://www.bigsite.test/p/459
+    browser_test.go:51:   [none 461/461] https://www.bigsite.test/p/460
+    browser_test.go:51:   [none 462/462] https://www.bigsite.test/p/461
+    browser_test.go:51:   [none 463/463] https://www.bigsite.test/p/462
+    browser_test.go:51:   [none 464/464] https://www.bigsite.test/p/463
+    browser_test.go:51:   [none 465/465] https://www.bigsite.test/p/464
+    browser_test.go:51:   [none 466/466] https://www.bigsite.test/p/465
+    browser_test.go:51:   [none 467/467] https://www.bigsite.test/p/466
+    browser_test.go:51:   [none 468/468] https://www.bigsite.test/p/467
+    browser_test.go:51:   [none 469/469] https://www.bigsite.test/p/468
+    browser_test.go:51:   [none 470/470] https://www.bigsite.test/p/469
+    browser_test.go:51:   [none 471/471] https://www.bigsite.test/p/470
+    browser_test.go:51:   [none 472/472] https://www.bigsite.test/p/471
+    browser_test.go:51:   [none 473/473] https://www.bigsite.test/p/472
+    browser_test.go:51:   [none 474/474] https://www.bigsite.test/p/473
+    browser_test.go:51:   [none 475/475] https://www.bigsite.test/p/474
+    browser_test.go:51:   [none 476/476] https://www.bigsite.test/p/475
+    browser_test.go:51:   [none 477/477] https://www.bigsite.test/p/476
+    browser_test.go:51:   [none 478/478] https://www.bigsite.test/p/477
+    browser_test.go:51:   [none 479/479] https://www.bigsite.test/p/478
+    browser_test.go:51:   [none 480/480] https://www.bigsite.test/p/479
+    browser_test.go:51:   [none 481/481] https://www.bigsite.test/p/480
+    browser_test.go:51:   [none 482/482] https://www.bigsite.test/p/481
+    browser_test.go:51:   [none 483/483] https://www.bigsite.test/p/482
+    browser_test.go:51:   [none 484/484] https://www.bigsite.test/p/483
+    browser_test.go:51:   [none 485/485] https://www.bigsite.test/p/484
+    browser_test.go:51:   [none 486/486] https://www.bigsite.test/p/485
+    browser_test.go:51:   [none 487/487] https://www.bigsite.test/p/486
+    browser_test.go:51:   [none 488/488] https://www.bigsite.test/p/487
+    browser_test.go:51:   [none 489/489] https://www.bigsite.test/p/488
+    browser_test.go:51:   [none 490/490] https://www.bigsite.test/p/489
+    browser_test.go:51:   [none 491/491] https://www.bigsite.test/p/490
+    browser_test.go:51:   [none 492/492] https://www.bigsite.test/p/491
+    browser_test.go:51:   [none 493/493] https://www.bigsite.test/p/492
+    browser_test.go:51:   [none 494/494] https://www.bigsite.test/p/493
+    browser_test.go:51:   [none 495/495] https://www.bigsite.test/p/494
+    browser_test.go:51:   [none 496/496] https://www.bigsite.test/p/495
+    browser_test.go:51:   [none 497/497] https://www.bigsite.test/p/496
+    browser_test.go:51:   [none 498/498] https://www.bigsite.test/p/497
+    browser_test.go:51:   [none 499/499] https://www.bigsite.test/p/498
+    browser_test.go:51:   [none 500/500] https://www.bigsite.test/p/499
+    browser_test.go:429: crash test: 500 pages, browser killed at page 166, 1 restart(s), 500 hits, 19m54s
+--- PASS: TestBrowserCrashRecovery (1193.52s)
+=== RUN   TestBrowserResume
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://www.bigsite.test/p/0
+    browser_test.go:51:   [none 2/2] https://www.bigsite.test/p/1
+    browser_test.go:51:   [none 3/3] https://www.bigsite.test/p/2
+    browser_test.go:51:   [none 4/4] https://www.bigsite.test/p/3
+    browser_test.go:51:   [none 5/5] https://www.bigsite.test/p/4
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 6/6] https://www.bigsite.test/p/5
+    browser_test.go:51:   [none 7/7] https://www.bigsite.test/p/6
+    browser_test.go:51:   [none 8/8] https://www.bigsite.test/p/7
+    browser_test.go:51:   [none 9/9] https://www.bigsite.test/p/8
+    browser_test.go:51:   [none 10/10] https://www.bigsite.test/p/9
+    browser_test.go:51:   [none 11/11] https://www.bigsite.test/p/10
+    browser_test.go:51:   [none 12/12] https://www.bigsite.test/p/11
+--- PASS: TestBrowserResume (35.83s)
+=== RUN   TestGallery
+    browser_test.go:523: set PXTA_GALLERY_DIR to write the sample reports
+--- SKIP: TestGallery (0.00s)
+=== RUN   TestCatalogSamples
+=== RUN   TestCatalogSamples/google-ads
+=== RUN   TestCatalogSamples/google-analytics-4
+=== RUN   TestCatalogSamples/google-tag-manager
+=== RUN   TestCatalogSamples/linkedin-insight
+=== RUN   TestCatalogSamples/meta-pixel
+=== RUN   TestCatalogSamples/microsoft-uet
+=== RUN   TestCatalogSamples/pinterest-tag
+=== RUN   TestCatalogSamples/snap-pixel
+=== RUN   TestCatalogSamples/tiktok-pixel
+=== RUN   TestCatalogSamples/x-pixel
+--- PASS: TestCatalogSamples (0.00s)
+    --- PASS: TestCatalogSamples/google-ads (0.00s)
+    --- PASS: TestCatalogSamples/google-analytics-4 (0.00s)
+    --- PASS: TestCatalogSamples/google-tag-manager (0.00s)
+    --- PASS: TestCatalogSamples/linkedin-insight (0.00s)
+    --- PASS: TestCatalogSamples/meta-pixel (0.00s)
+    --- PASS: TestCatalogSamples/microsoft-uet (0.00s)
+    --- PASS: TestCatalogSamples/pinterest-tag (0.00s)
+    --- PASS: TestCatalogSamples/snap-pixel (0.00s)
+    --- PASS: TestCatalogSamples/tiktok-pixel (0.00s)
+    --- PASS: TestCatalogSamples/x-pixel (0.00s)
+=== RUN   TestCatalogRejectsBadEntries
+--- PASS: TestCatalogRejectsBadEntries (0.00s)
+=== RUN   TestMatch
+--- PASS: TestMatch (0.00s)
+=== RUN   TestEmailEncodings
+=== RUN   TestEmailEncodings/base64
+=== RUN   TestEmailEncodings/base64_JSON
+=== RUN   TestEmailEncodings/JSON_inside_form_field
+=== RUN   TestEmailEncodings/multi-line_body
+=== RUN   TestEmailEncodings/JSON_lines_body
+=== RUN   TestEmailEncodings/text_body
+=== RUN   TestEmailEncodings/inside_page_address
+=== RUN   TestEmailEncodings/plain_query
+=== RUN   TestEmailEncodings/url-encoded
+=== RUN   TestEmailEncodings/double-encoded
+=== RUN   TestEmailEncodings/JSON_body
+=== RUN   TestEmailEncodings/form_body
+--- PASS: TestEmailEncodings (0.00s)
+    --- PASS: TestEmailEncodings/base64 (0.00s)
+    --- PASS: TestEmailEncodings/base64_JSON (0.00s)
+    --- PASS: TestEmailEncodings/JSON_inside_form_field (0.00s)
+    --- PASS: TestEmailEncodings/multi-line_body (0.00s)
+    --- PASS: TestEmailEncodings/JSON_lines_body (0.00s)
+    --- PASS: TestEmailEncodings/text_body (0.00s)
+    --- PASS: TestEmailEncodings/inside_page_address (0.00s)
+    --- PASS: TestEmailEncodings/plain_query (0.00s)
+    --- PASS: TestEmailEncodings/url-encoded (0.00s)
+    --- PASS: TestEmailEncodings/double-encoded (0.00s)
+    --- PASS: TestEmailEncodings/JSON_body (0.00s)
+    --- PASS: TestEmailEncodings/form_body (0.00s)
+=== RUN   TestEmailHashes
+--- PASS: TestEmailHashes (0.00s)
+=== RUN   TestOtherRules
+--- PASS: TestOtherRules (0.00s)
+=== RUN   TestSensitiveCategory
+--- PASS: TestSensitiveCategory (0.00s)
+=== RUN   TestConsentModeState
+--- PASS: TestConsentModeState (0.00s)
+=== RUN   TestRobots
+--- PASS: TestRobots (0.00s)
+=== RUN   TestNormalizeLink
+--- PASS: TestNormalizeLink (0.00s)
+=== RUN   TestAnalyze
+--- PASS: TestAnalyze (0.00s)
+=== RUN   TestRenderEscapes
+--- PASS: TestRenderEscapes (0.00s)
+=== RUN   TestCDPClient
+--- PASS: TestCDPClient (0.02s)
+=== RUN   TestDialRejectsNonWebSocket
+--- PASS: TestDialRejectsNonWebSocket (0.00s)
 PASS
-ok  	github.com/softdevstudio/pxta/cmd/pxta	0.068s
+ok  	github.com/softdevstudio/pxta	1810.271s
+=== RUN   TestCLI
+--- PASS: TestCLI (0.03s)
+PASS
+ok  	github.com/softdevstudio/pxta/cmd/pxta	0.062s
 ?   	github.com/softdevstudio/pxta/scripts/findbrowser	[no test files]
-FAIL

@@ -1,0 +1,4228 @@
+{
+  "tool": "pxta",
+  "version": "0.1.0",
+  "catalog": "2026.10.25",
+  "site": "https://www.cedarvalleyclinic.test/",
+  "started": "2026-10-25T15:07:26.149168019Z",
+  "finished": "2026-10-25T15:08:32.755288282Z",
+  "browser": "Chrome/153.0.8010.12",
+  "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 pxta/0.1.0 (+https://pxta.com)",
+  "banner": {
+    "found": true,
+    "platform": "cookiebot",
+    "actions": {
+      "accept": "clicked #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll",
+      "reject": "clicked #CybotCookiebotDialogBodyButtonDecline"
+    }
+  },
+  "passes": [
+    "none",
+    "reject",
+    "accept"
+  ],
+  "pages": [
+    {
+      "pass": "none",
+      "page": 0,
+      "url": "https://www.cedarvalleyclinic.test/",
+      "final_url": "https://www.cedarvalleyclinic.test/",
+      "title": "Cedar Valley Clinic",
+      "started": "2026-10-25T15:07:26.597987993Z",
+      "requests": 7
+    },
+    {
+      "pass": "none",
+      "page": 1,
+      "url": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+      "final_url": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+      "title": "Anxiety treatment | Cedar Valley Clinic",
+      "started": "2026-10-25T15:07:31.003682024Z",
+      "requests": 7
+    },
+    {
+      "pass": "none",
+      "page": 2,
+      "url": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+      "final_url": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+      "title": "Diabetes care | Cedar Valley Clinic",
+      "started": "2026-10-25T15:07:34.981889908Z",
+      "requests": 7
+    },
+    {
+      "pass": "none",
+      "page": 3,
+      "url": "https://www.cedarvalleyclinic.test/book?service=therapy",
+      "final_url": "https://www.cedarvalleyclinic.test/book?service=therapy",
+      "title": "Book an appointment | Cedar Valley Clinic",
+      "started": "2026-10-25T15:07:39.05381241Z",
+      "requests": 6
+    },
+    {
+      "pass": "none",
+      "page": 4,
+      "url": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+      "final_url": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+      "title": "Search | Cedar Valley Clinic",
+      "started": "2026-10-25T15:07:43.068867489Z",
+      "requests": 6
+    },
+    {
+      "pass": "reject",
+      "page": 0,
+      "url": "https://www.cedarvalleyclinic.test/",
+      "final_url": "https://www.cedarvalleyclinic.test/",
+      "title": "Cedar Valley Clinic",
+      "started": "2026-10-25T15:07:49.778151104Z",
+      "requests": 6
+    },
+    {
+      "pass": "reject",
+      "page": 1,
+      "url": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+      "final_url": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+      "title": "Anxiety treatment | Cedar Valley Clinic",
+      "started": "2026-10-25T15:07:53.684768591Z",
+      "requests": 7
+    },
+    {
+      "pass": "reject",
+      "page": 2,
+      "url": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+      "final_url": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+      "title": "Diabetes care | Cedar Valley Clinic",
+      "started": "2026-10-25T15:07:57.676967067Z",
+      "requests": 7
+    },
+    {
+      "pass": "reject",
+      "page": 3,
+      "url": "https://www.cedarvalleyclinic.test/book?service=therapy",
+      "final_url": "https://www.cedarvalleyclinic.test/book?service=therapy",
+      "title": "Book an appointment | Cedar Valley Clinic",
+      "started": "2026-10-25T15:08:01.714868086Z",
+      "requests": 6
+    },
+    {
+      "pass": "reject",
+      "page": 4,
+      "url": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+      "final_url": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+      "title": "Search | Cedar Valley Clinic",
+      "started": "2026-10-25T15:08:05.774539422Z",
+      "requests": 6
+    },
+    {
+      "pass": "accept",
+      "page": 0,
+      "url": "https://www.cedarvalleyclinic.test/",
+      "final_url": "https://www.cedarvalleyclinic.test/",
+      "title": "Cedar Valley Clinic",
+      "started": "2026-10-25T15:08:12.537995681Z",
+      "requests": 8
+    },
+    {
+      "pass": "accept",
+      "page": 1,
+      "url": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+      "final_url": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+      "title": "Anxiety treatment | Cedar Valley Clinic",
+      "started": "2026-10-25T15:08:16.42454773Z",
+      "requests": 9
+    },
+    {
+      "pass": "accept",
+      "page": 2,
+      "url": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+      "final_url": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+      "title": "Diabetes care | Cedar Valley Clinic",
+      "started": "2026-10-25T15:08:20.490311156Z",
+      "requests": 9
+    },
+    {
+      "pass": "accept",
+      "page": 3,
+      "url": "https://www.cedarvalleyclinic.test/book?service=therapy",
+      "final_url": "https://www.cedarvalleyclinic.test/book?service=therapy",
+      "title": "Book an appointment | Cedar Valley Clinic",
+      "started": "2026-10-25T15:08:24.530816173Z",
+      "requests": 8
+    },
+    {
+      "pass": "accept",
+      "page": 4,
+      "url": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+      "final_url": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+      "title": "Search | Cedar Valley Clinic",
+      "started": "2026-10-25T15:08:28.607281518Z",
+      "requests": 8
+    }
+  ],
+  "known_emails": [
+    "pxta-probe@example.com"
+  ],
+  "filled_forms": true,
+  "settings": {
+    "max_pages": 10,
+    "max_depth": 3,
+    "page_wait": "15s",
+    "idle": "2s",
+    "banner_wait": "6s",
+    "respect_robots": true
+  },
+  "browser_restarts": 0,
+  "har_sha256": "94e91a79bc1d2818102201f29b5ce28c76409887fa5e0713e97ee82aee93ea0f",
+  "findings": [
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "none",
+      "page": "/book?service=therapy",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /book?service=therapy, the LinkedIn Insight Tag sent the address of a page about health (/book?service=therapy) before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fbook%3Fservice%3Dtherapy\u0026time=1792940859304",
+        "method": "GET",
+        "time": "2026-10-25T15:07:39.312Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/book?service=therapy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "url\u003eservice",
+            "value": "therapy",
+            "source": "url"
+          },
+          {
+            "key": "time",
+            "value": "1792940859304",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/book?service=therapy",
+            "what": "the address of a page about health",
+            "category": "health: therapy"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "none",
+      "page": "/book?service=therapy",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /book?service=therapy, the TikTok Pixel sent the address of a page about health (/book?service=therapy) before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:07:39.306Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/book?service=therapy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url\u003eservice",
+            "value": "therapy",
+            "source": "url"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:07:39.303Z",
+            "source": "json"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/book?service=therapy",
+            "what": "the address of a page about health",
+            "category": "health: therapy"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:39.303Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/book?service=therapy\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "none",
+      "page": "/conditions/anxiety",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /conditions/anxiety, the LinkedIn Insight Tag sent the address of a page about health (/conditions/anxiety) before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fanxiety\u0026time=1792940851238",
+        "method": "GET",
+        "time": "2026-10-25T15:07:31.245Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "time",
+            "value": "1792940851238",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+            "what": "the address of a page about health",
+            "category": "health: conditions"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "none",
+      "page": "/conditions/anxiety",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /conditions/anxiety, the TikTok Pixel sent the address of a page about health (/conditions/anxiety) before the consent banner was answered.",
+      "count": 2,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:07:31.242Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:07:31.237Z",
+            "source": "json"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+            "what": "the address of a page about health",
+            "category": "health: conditions"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:31.237Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/anxiety\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "none",
+      "page": "/conditions/diabetes",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /conditions/diabetes, the LinkedIn Insight Tag sent the address of a page about health (/conditions/diabetes) before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fdiabetes\u0026time=1792940855308",
+        "method": "GET",
+        "time": "2026-10-25T15:07:35.310Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "time",
+            "value": "1792940855308",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+            "what": "the address of a page about health",
+            "category": "health: conditions"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "none",
+      "page": "/conditions/diabetes",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /conditions/diabetes, the TikTok Pixel sent the address of a page about health (/conditions/diabetes) before the consent banner was answered.",
+      "count": 2,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:07:35.305Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:07:35.290Z",
+            "source": "json"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+            "what": "the address of a page about health",
+            "category": "health: conditions"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:35.290Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/diabetes\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "none",
+      "page": "/search?q=anxiety+medication",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /search?q=anxiety+medication, the LinkedIn Insight Tag sent the address of a page about health (/search?q=anxiety+medication) before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792940863361",
+        "method": "GET",
+        "time": "2026-10-25T15:07:43.365Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "url\u003eq",
+            "value": "anxiety medication",
+            "source": "url"
+          },
+          {
+            "key": "time",
+            "value": "1792940863361",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "what": "the address of a page about health",
+            "category": "health: anxiety"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "none",
+      "page": "/search?q=anxiety+medication",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /search?q=anxiety+medication, the TikTok Pixel sent the address of a page about health (/search?q=anxiety+medication) before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:07:43.365Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url\u003eq",
+            "value": "anxiety medication",
+            "source": "url"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:07:43.358Z",
+            "source": "json"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "what": "the address of a page about health",
+            "category": "health: anxiety"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:43.358Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/book?service=therapy",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /book?service=therapy, the LinkedIn Insight Tag sent the address of a page about health (/book?service=therapy) after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fbook%3Fservice%3Dtherapy\u0026time=1792940882024",
+        "method": "GET",
+        "time": "2026-10-25T15:08:02.025Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/book?service=therapy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "url\u003eservice",
+            "value": "therapy",
+            "source": "url"
+          },
+          {
+            "key": "time",
+            "value": "1792940882024",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/book?service=therapy",
+            "what": "the address of a page about health",
+            "category": "health: therapy"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/book?service=therapy",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /book?service=therapy, the TikTok Pixel sent the address of a page about health (/book?service=therapy) after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:08:02.023Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/book?service=therapy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url\u003eservice",
+            "value": "therapy",
+            "source": "url"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:08:02.013Z",
+            "source": "json"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/book?service=therapy",
+            "what": "the address of a page about health",
+            "category": "health: therapy"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:02.013Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/book?service=therapy\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/conditions/anxiety",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /conditions/anxiety, the LinkedIn Insight Tag sent the address of a page about health (/conditions/anxiety) after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fanxiety\u0026time=1792940873902",
+        "method": "GET",
+        "time": "2026-10-25T15:07:53.920Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "time",
+            "value": "1792940873902",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+            "what": "the address of a page about health",
+            "category": "health: conditions"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/conditions/anxiety",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /conditions/anxiety, the TikTok Pixel sent the address of a page about health (/conditions/anxiety) after the visitor rejected tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:07:53.905Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:07:53.896Z",
+            "source": "json"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+            "what": "the address of a page about health",
+            "category": "health: conditions"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:53.896Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/anxiety\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/conditions/diabetes",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /conditions/diabetes, the LinkedIn Insight Tag sent the address of a page about health (/conditions/diabetes) after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fdiabetes\u0026time=1792940877960",
+        "method": "GET",
+        "time": "2026-10-25T15:07:57.961Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "time",
+            "value": "1792940877960",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+            "what": "the address of a page about health",
+            "category": "health: conditions"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/conditions/diabetes",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /conditions/diabetes, the TikTok Pixel sent the address of a page about health (/conditions/diabetes) after the visitor rejected tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:07:57.959Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:07:57.953Z",
+            "source": "json"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+            "what": "the address of a page about health",
+            "category": "health: conditions"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:57.953Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/diabetes\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/search?q=anxiety+medication",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /search?q=anxiety+medication, the LinkedIn Insight Tag sent the address of a page about health (/search?q=anxiety+medication) after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792940886090",
+        "method": "GET",
+        "time": "2026-10-25T15:08:06.090Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "url\u003eq",
+            "value": "anxiety medication",
+            "source": "url"
+          },
+          {
+            "key": "time",
+            "value": "1792940886090",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "what": "the address of a page about health",
+            "category": "health: anxiety"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/search?q=anxiety+medication",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /search?q=anxiety+medication, the TikTok Pixel sent the address of a page about health (/search?q=anxiety+medication) after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:08:06.088Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url\u003eq",
+            "value": "anxiety medication",
+            "source": "url"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:08:06.082Z",
+            "source": "json"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "what": "the address of a page about health",
+            "category": "health: anxiety"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:06.082Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "search-term",
+      "severity": "high",
+      "pass": "none",
+      "page": "/search?q=anxiety+medication",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /search?q=anxiety+medication, the LinkedIn Insight Tag sent the search term “anxiety medication” before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792940863361",
+        "method": "GET",
+        "time": "2026-10-25T15:07:43.365Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "url\u003eq",
+            "value": "anxiety medication",
+            "source": "url"
+          },
+          {
+            "key": "time",
+            "value": "1792940863361",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "search_term",
+            "key": "url",
+            "value": "anxiety medication",
+            "what": "the search term “anxiety medication”",
+            "in_page_address": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "search-term",
+      "severity": "high",
+      "pass": "none",
+      "page": "/search?q=anxiety+medication",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /search?q=anxiety+medication, the TikTok Pixel sent the search term “anxiety medication” before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:07:43.365Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url\u003eq",
+            "value": "anxiety medication",
+            "source": "url"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:07:43.358Z",
+            "source": "json"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "search_term",
+            "key": "context.page.url",
+            "value": "anxiety medication",
+            "what": "the search term “anxiety medication”",
+            "in_page_address": true
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:43.358Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "search-term",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/search?q=anxiety+medication",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /search?q=anxiety+medication, the LinkedIn Insight Tag sent the search term “anxiety medication” after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792940886090",
+        "method": "GET",
+        "time": "2026-10-25T15:08:06.090Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "url\u003eq",
+            "value": "anxiety medication",
+            "source": "url"
+          },
+          {
+            "key": "time",
+            "value": "1792940886090",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "search_term",
+            "key": "url",
+            "value": "anxiety medication",
+            "what": "the search term “anxiety medication”",
+            "in_page_address": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "search-term",
+      "severity": "high",
+      "pass": "reject",
+      "page": "/search?q=anxiety+medication",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /search?q=anxiety+medication, the TikTok Pixel sent the search term “anxiety medication” after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:08:06.088Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url\u003eq",
+            "value": "anxiety medication",
+            "source": "url"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:08:06.082Z",
+            "source": "json"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "search_term",
+            "key": "context.page.url",
+            "value": "anxiety medication",
+            "what": "the search term “anxiety medication”",
+            "in_page_address": true
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:06.082Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /, the LinkedIn Insight Tag sent a request after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2F\u0026time=1792940869929",
+        "method": "GET",
+        "time": "2026-10-25T15:07:49.930Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "time",
+            "value": "1792940869929",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /, the TikTok Pixel sent a Pageview event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:07:49.924Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:07:49.918Z",
+            "source": "json"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:49.918Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/book?service=therapy",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /book?service=therapy, the LinkedIn Insight Tag sent a request after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fbook%3Fservice%3Dtherapy\u0026time=1792940882024",
+        "method": "GET",
+        "time": "2026-10-25T15:08:02.025Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/book?service=therapy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "url\u003eservice",
+            "value": "therapy",
+            "source": "url"
+          },
+          {
+            "key": "time",
+            "value": "1792940882024",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/book?service=therapy",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /book?service=therapy, the TikTok Pixel sent a Pageview event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:08:02.023Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/book?service=therapy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url\u003eservice",
+            "value": "therapy",
+            "source": "url"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:08:02.013Z",
+            "source": "json"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:02.013Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/book?service=therapy\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/conditions/anxiety",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /conditions/anxiety, the LinkedIn Insight Tag sent a request after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fanxiety\u0026time=1792940873902",
+        "method": "GET",
+        "time": "2026-10-25T15:07:53.920Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "time",
+            "value": "1792940873902",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/conditions/anxiety",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /conditions/anxiety, the TikTok Pixel sent a Pageview event after the visitor rejected tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:07:53.905Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:07:53.896Z",
+            "source": "json"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:53.896Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/anxiety\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/conditions/diabetes",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /conditions/diabetes, the LinkedIn Insight Tag sent a request after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fdiabetes\u0026time=1792940877960",
+        "method": "GET",
+        "time": "2026-10-25T15:07:57.961Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "time",
+            "value": "1792940877960",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/conditions/diabetes",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /conditions/diabetes, the TikTok Pixel sent a Pageview event after the visitor rejected tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:07:57.959Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:07:57.953Z",
+            "source": "json"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:57.953Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/diabetes\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/search?q=anxiety+medication",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /search?q=anxiety+medication, the LinkedIn Insight Tag sent a request after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792940886090",
+        "method": "GET",
+        "time": "2026-10-25T15:08:06.090Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "url\u003eq",
+            "value": "anxiety medication",
+            "source": "url"
+          },
+          {
+            "key": "time",
+            "value": "1792940886090",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-after-reject",
+      "severity": "medium",
+      "pass": "reject",
+      "page": "/search?q=anxiety+medication",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /search?q=anxiety+medication, the TikTok Pixel sent a Pageview event after the visitor rejected tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:08:06.088Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url\u003eq",
+            "value": "anxiety medication",
+            "source": "url"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:08:06.082Z",
+            "source": "json"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:06.082Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /, the LinkedIn Insight Tag sent a request before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2F\u0026time=1792940847216",
+        "method": "GET",
+        "time": "2026-10-25T15:07:27.233Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "time",
+            "value": "1792940847216",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /, the TikTok Pixel sent a Pageview event before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:07:27.200Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:07:27.171Z",
+            "source": "json"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:27.171Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/book?service=therapy",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /book?service=therapy, the LinkedIn Insight Tag sent a request before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fbook%3Fservice%3Dtherapy\u0026time=1792940859304",
+        "method": "GET",
+        "time": "2026-10-25T15:07:39.312Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/book?service=therapy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "url\u003eservice",
+            "value": "therapy",
+            "source": "url"
+          },
+          {
+            "key": "time",
+            "value": "1792940859304",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/book?service=therapy",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /book?service=therapy, the TikTok Pixel sent a Pageview event before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:07:39.306Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/book?service=therapy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url\u003eservice",
+            "value": "therapy",
+            "source": "url"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:07:39.303Z",
+            "source": "json"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:39.303Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/book?service=therapy\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/conditions/anxiety",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /conditions/anxiety, the LinkedIn Insight Tag sent a request before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fanxiety\u0026time=1792940851238",
+        "method": "GET",
+        "time": "2026-10-25T15:07:31.245Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "time",
+            "value": "1792940851238",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/conditions/anxiety",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /conditions/anxiety, the TikTok Pixel sent a Pageview event before the consent banner was answered.",
+      "count": 2,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:07:31.242Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:07:31.237Z",
+            "source": "json"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:31.237Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/anxiety\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/conditions/diabetes",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /conditions/diabetes, the LinkedIn Insight Tag sent a request before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fdiabetes\u0026time=1792940855308",
+        "method": "GET",
+        "time": "2026-10-25T15:07:35.310Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "time",
+            "value": "1792940855308",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/conditions/diabetes",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /conditions/diabetes, the TikTok Pixel sent a Pageview event before the consent banner was answered.",
+      "count": 2,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:07:35.305Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:07:35.290Z",
+            "source": "json"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:35.290Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/diabetes\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/search?q=anxiety+medication",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /search?q=anxiety+medication, the LinkedIn Insight Tag sent a request before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792940863361",
+        "method": "GET",
+        "time": "2026-10-25T15:07:43.365Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "url\u003eq",
+            "value": "anxiety medication",
+            "source": "url"
+          },
+          {
+            "key": "time",
+            "value": "1792940863361",
+            "source": "query"
+          }
+        ]
+      }
+    },
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/search?q=anxiety+medication",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /search?q=anxiety+medication, the TikTok Pixel sent a Pageview event before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:07:43.365Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url\u003eq",
+            "value": "anxiety medication",
+            "source": "url"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:07:43.358Z",
+            "source": "json"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:07:43.358Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /, Google Analytics 4 sent the title of a page about health (Cedar Valley Clinic) after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-CVC2026\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.cedarvalleyclinic.test%2F\u0026dt=Cedar+Valley+Clinic\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:08:12.689Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-CVC2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.cedarvalleyclinic.test/",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Cedar Valley Clinic",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "dt",
+            "value": "Cedar Valley Clinic",
+            "what": "the title of a page about health",
+            "category": "health: clinic"
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/book?service=therapy",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /book?service=therapy, Google Analytics 4 sent the address of a page about health (/book?service=therapy) after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-CVC2026\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fbook%3Fservice%3Dtherapy\u0026dt=Book+an+appointment+%7C+Cedar+Valley+Clinic\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:08:24.854Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-CVC2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.cedarvalleyclinic.test/book?service=therapy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eservice",
+            "value": "therapy",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Book an appointment | Cedar Valley Clinic",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "dl",
+            "value": "https://www.cedarvalleyclinic.test/book?service=therapy",
+            "what": "the address of a page about health",
+            "category": "health: therapy"
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/book?service=therapy",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /book?service=therapy, the LinkedIn Insight Tag sent the address of a page about health (/book?service=therapy) after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fbook%3Fservice%3Dtherapy\u0026time=1792940904838",
+        "method": "GET",
+        "time": "2026-10-25T15:08:24.841Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/book?service=therapy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "url\u003eservice",
+            "value": "therapy",
+            "source": "url"
+          },
+          {
+            "key": "time",
+            "value": "1792940904838",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/book?service=therapy",
+            "what": "the address of a page about health",
+            "category": "health: therapy"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/book?service=therapy",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /book?service=therapy, the TikTok Pixel sent the address of a page about health (/book?service=therapy) after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:08:24.839Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/book?service=therapy",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url\u003eservice",
+            "value": "therapy",
+            "source": "url"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:08:24.828Z",
+            "source": "json"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/book?service=therapy",
+            "what": "the address of a page about health",
+            "category": "health: therapy"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:24.828Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/book?service=therapy\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/conditions/anxiety",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /conditions/anxiety, Google Analytics 4 sent the address of a page about health (/conditions/anxiety) after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-CVC2026\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fanxiety\u0026dt=Anxiety+treatment+%7C+Cedar+Valley+Clinic\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:08:16.739Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-CVC2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Anxiety treatment | Cedar Valley Clinic",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "dl",
+            "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+            "what": "the address of a page about health",
+            "category": "health: conditions"
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/conditions/anxiety",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /conditions/anxiety, the LinkedIn Insight Tag sent the address of a page about health (/conditions/anxiety) after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fanxiety\u0026time=1792940896732",
+        "method": "GET",
+        "time": "2026-10-25T15:08:16.739Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "time",
+            "value": "1792940896732",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+            "what": "the address of a page about health",
+            "category": "health: conditions"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/conditions/anxiety",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /conditions/anxiety, the TikTok Pixel sent the address of a page about health (/conditions/anxiety) after the visitor accepted tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:08:16.737Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:08:16.725Z",
+            "source": "json"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/anxiety",
+            "what": "the address of a page about health",
+            "category": "health: conditions"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:16.725Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/anxiety\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/conditions/diabetes",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /conditions/diabetes, Google Analytics 4 sent the address of a page about health (/conditions/diabetes) after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-CVC2026\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fdiabetes\u0026dt=Diabetes+care+%7C+Cedar+Valley+Clinic\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:08:20.794Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-CVC2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dt",
+            "value": "Diabetes care | Cedar Valley Clinic",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "dl",
+            "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+            "what": "the address of a page about health",
+            "category": "health: conditions"
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/conditions/diabetes",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /conditions/diabetes, the LinkedIn Insight Tag sent the address of a page about health (/conditions/diabetes) after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fconditions%2Fdiabetes\u0026time=1792940900784",
+        "method": "GET",
+        "time": "2026-10-25T15:08:20.794Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "time",
+            "value": "1792940900784",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+            "what": "the address of a page about health",
+            "category": "health: conditions"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/conditions/diabetes",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /conditions/diabetes, the TikTok Pixel sent the address of a page about health (/conditions/diabetes) after the visitor accepted tracking.",
+      "count": 2,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:08:20.787Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:08:20.773Z",
+            "source": "json"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/conditions/diabetes",
+            "what": "the address of a page about health",
+            "category": "health: conditions"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:20.773Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/conditions/diabetes\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/search?q=anxiety+medication",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /search?q=anxiety+medication, Google Analytics 4 sent the address of a page about health (/search?q=anxiety+medication) after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-CVC2026\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026dt=Search+%7C+Cedar+Valley+Clinic\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:08:28.921Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-CVC2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eq",
+            "value": "anxiety medication",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Search | Cedar Valley Clinic",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "dl",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "what": "the address of a page about health",
+            "category": "health: anxiety"
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/search?q=anxiety+medication",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /search?q=anxiety+medication, the LinkedIn Insight Tag sent the address of a page about health (/search?q=anxiety+medication) after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792940908916",
+        "method": "GET",
+        "time": "2026-10-25T15:08:28.921Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "url\u003eq",
+            "value": "anxiety medication",
+            "source": "url"
+          },
+          {
+            "key": "time",
+            "value": "1792940908916",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "what": "the address of a page about health",
+            "category": "health: anxiety"
+          }
+        ]
+      }
+    },
+    {
+      "code": "sensitive-page",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/search?q=anxiety+medication",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /search?q=anxiety+medication, the TikTok Pixel sent the address of a page about health (/search?q=anxiety+medication) after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:08:28.921Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url\u003eq",
+            "value": "anxiety medication",
+            "source": "url"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:08:28.907Z",
+            "source": "json"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "sensitive_page",
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "what": "the address of a page about health",
+            "category": "health: anxiety"
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:28.907Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "search-term",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/search?q=anxiety+medication",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "On /search?q=anxiety+medication, Google Analytics 4 sent the search term “anxiety medication” after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-CVC2026\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026dt=Search+%7C+Cedar+Valley+Clinic\u0026dr=\u0026en=page_view",
+        "method": "POST",
+        "time": "2026-10-25T15:08:28.921Z",
+        "type": "Ping",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "v",
+            "value": "2",
+            "source": "query"
+          },
+          {
+            "key": "tid",
+            "value": "G-CVC2026",
+            "meaning": "measurement ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "gcs",
+            "value": "G111",
+            "meaning": "Consent Mode state",
+            "kind": "consent",
+            "source": "query"
+          },
+          {
+            "key": "cid",
+            "value": "1111111111.2222222222",
+            "meaning": "client ID (_ga cookie)",
+            "kind": "client_id",
+            "source": "query"
+          },
+          {
+            "key": "dl",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "dl\u003eq",
+            "value": "anxiety medication",
+            "source": "url"
+          },
+          {
+            "key": "dt",
+            "value": "Search | Cedar Valley Clinic",
+            "meaning": "page title",
+            "kind": "title",
+            "source": "query"
+          },
+          {
+            "key": "dr",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "query"
+          },
+          {
+            "key": "en",
+            "value": "page_view",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "search_term",
+            "key": "dl",
+            "value": "anxiety medication",
+            "what": "the search term “anxiety medication”",
+            "in_page_address": true
+          }
+        ],
+        "consent_mode": "G111: ad_storage granted, analytics_storage granted"
+      }
+    },
+    {
+      "code": "search-term",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/search?q=anxiety+medication",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "On /search?q=anxiety+medication, the LinkedIn Insight Tag sent the search term “anxiety medication” after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://px.ads.linkedin.com/collect/?pid=4471029\u0026fmt=gif\u0026url=https%3A%2F%2Fwww.cedarvalleyclinic.test%2Fsearch%3Fq%3Danxiety%2Bmedication\u0026time=1792940908916",
+        "method": "GET",
+        "time": "2026-10-25T15:08:28.921Z",
+        "type": "Image",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "pid",
+            "value": "4471029",
+            "meaning": "partner ID",
+            "kind": "account",
+            "source": "query"
+          },
+          {
+            "key": "fmt",
+            "value": "gif",
+            "source": "query"
+          },
+          {
+            "key": "url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "query"
+          },
+          {
+            "key": "url\u003eq",
+            "value": "anxiety medication",
+            "source": "url"
+          },
+          {
+            "key": "time",
+            "value": "1792940908916",
+            "source": "query"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "search_term",
+            "key": "url",
+            "value": "anxiety medication",
+            "what": "the search term “anxiety medication”",
+            "in_page_address": true
+          }
+        ]
+      }
+    },
+    {
+      "code": "search-term",
+      "severity": "low",
+      "pass": "accept",
+      "page": "/search?q=anxiety+medication",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "On /search?q=anxiety+medication, the TikTok Pixel sent the search term “anxiety medication” after the visitor accepted tracking.",
+      "count": 1,
+      "evidence": {
+        "url": "https://analytics.tiktok.com/api/v2/pixel",
+        "method": "POST",
+        "time": "2026-10-25T15:08:28.921Z",
+        "type": "Fetch",
+        "target": "page",
+        "phase": "load",
+        "params": [
+          {
+            "key": "context.library.name",
+            "value": "pixel.js",
+            "source": "json"
+          },
+          {
+            "key": "context.library.version",
+            "value": "fixture",
+            "source": "json"
+          },
+          {
+            "key": "context.page.referrer",
+            "value": "",
+            "meaning": "referring page",
+            "kind": "referrer",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url",
+            "value": "https://www.cedarvalleyclinic.test/search?q=anxiety+medication",
+            "meaning": "page address",
+            "kind": "page_url",
+            "source": "json"
+          },
+          {
+            "key": "context.page.url\u003eq",
+            "value": "anxiety medication",
+            "source": "url"
+          },
+          {
+            "key": "context.user.anonymous_id",
+            "value": "ttp-fixture-123",
+            "meaning": "browser ID (_ttp cookie)",
+            "kind": "client_id",
+            "source": "json"
+          },
+          {
+            "key": "event",
+            "value": "Pageview",
+            "meaning": "event name",
+            "kind": "event",
+            "source": "json"
+          },
+          {
+            "key": "pixel_code",
+            "value": "CVC7H2K9",
+            "meaning": "pixel ID",
+            "kind": "account",
+            "source": "json"
+          },
+          {
+            "key": "timestamp",
+            "value": "2026-10-25T15:08:28.907Z",
+            "source": "json"
+          }
+        ],
+        "leaks": [
+          {
+            "rule": "search_term",
+            "key": "context.page.url",
+            "value": "anxiety medication",
+            "what": "the search term “anxiety medication”",
+            "in_page_address": true
+          }
+        ],
+        "body": "{\"event\":\"Pageview\",\"pixel_code\":\"CVC7H2K9\",\"timestamp\":\"2026-10-25T15:08:28.907Z\",\"context\":{\"page\":{\"url\":\"https://www.cedarvalleyclinic.test/search?q=anxiety+medication\",\"referrer\":\"\"},\"user\":{\"anonymous_id\":\"ttp-fixture-123\"},\"library\":{\"name\":\"pixel.js\",\"version\":\"fixture\"}},\"properties\":{}}"
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "none",
+      "page": "",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "The LinkedIn Insight Tag sent data from 5 pages before the consent banner was answered.",
+      "count": 5,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "none",
+      "page": "",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "The TikTok Pixel sent data from 5 pages before the consent banner was answered.",
+      "count": 7,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "reject",
+      "page": "",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "The LinkedIn Insight Tag sent data from 5 pages after the visitor rejected tracking.",
+      "count": 5,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "reject",
+      "page": "",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "The TikTok Pixel sent data from 5 pages after the visitor rejected tracking.",
+      "count": 7,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "accept",
+      "page": "",
+      "tracker": "google-analytics-4",
+      "tracker_name": "Google Analytics 4",
+      "sentence": "Google Analytics 4 sent data from 5 pages after the visitor accepted tracking.",
+      "count": 5,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "accept",
+      "page": "",
+      "tracker": "linkedin-insight",
+      "tracker_name": "LinkedIn Insight Tag",
+      "sentence": "The LinkedIn Insight Tag sent data from 5 pages after the visitor accepted tracking.",
+      "count": 5,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    },
+    {
+      "code": "tracker-present",
+      "severity": "info",
+      "pass": "accept",
+      "page": "",
+      "tracker": "tiktok-pixel",
+      "tracker_name": "TikTok Pixel",
+      "sentence": "The TikTok Pixel sent data from 5 pages after the visitor accepted tracking.",
+      "count": 7,
+      "evidence": {
+        "url": "",
+        "method": "",
+        "time": "",
+        "params": null
+      }
+    }
+  ],
+  "trackers": [
+    {
+      "id": "google-analytics-4",
+      "name": "Google Analytics 4",
+      "vendor": "Google",
+      "loaded_on": {
+        "accept": [
+          "/",
+          "/conditions/anxiety",
+          "/conditions/diabetes",
+          "/book?service=therapy",
+          "/search?q=anxiety+medication"
+        ]
+      },
+      "fired_on": {
+        "accept": [
+          "/",
+          "/conditions/anxiety",
+          "/conditions/diabetes",
+          "/book?service=therapy",
+          "/search?q=anxiety+medication"
+        ]
+      },
+      "requests": {
+        "accept": 5
+      }
+    },
+    {
+      "id": "linkedin-insight",
+      "name": "LinkedIn Insight Tag",
+      "vendor": "LinkedIn",
+      "loaded_on": {
+        "accept": [
+          "/",
+          "/conditions/anxiety",
+          "/conditions/diabetes",
+          "/book?service=therapy",
+          "/search?q=anxiety+medication"
+        ],
+        "none": [
+          "/",
+          "/conditions/anxiety",
+          "/conditions/diabetes",
+          "/book?service=therapy",
+          "/search?q=anxiety+medication"
+        ],
+        "reject": [
+          "/",
+          "/conditions/anxiety",
+          "/conditions/diabetes",
+          "/book?service=therapy",
+          "/search?q=anxiety+medication"
+        ]
+      },
+      "fired_on": {
+        "accept": [
+          "/",
+          "/conditions/anxiety",
+          "/conditions/diabetes",
+          "/book?service=therapy",
+          "/search?q=anxiety+medication"
+        ],
+        "none": [
+          "/",
+          "/conditions/anxiety",
+          "/conditions/diabetes",
+          "/book?service=therapy",
+          "/search?q=anxiety+medication"
+        ],
+        "reject": [
+          "/",
+          "/conditions/anxiety",
+          "/conditions/diabetes",
+          "/book?service=therapy",
+          "/search?q=anxiety+medication"
+        ]
+      },
+      "requests": {
+        "accept": 5,
+        "none": 5,
+        "reject": 5
+      }
+    },
+    {
+      "id": "tiktok-pixel",
+      "name": "TikTok Pixel",
+      "vendor": "TikTok",
+      "loaded_on": {
+        "accept": [
+          "/",
+          "/conditions/anxiety",
+          "/conditions/diabetes",
+          "/book?service=therapy",
+          "/search?q=anxiety+medication"
+        ],
+        "none": [
+          "/",
+          "/conditions/anxiety",
+          "/conditions/diabetes",
+          "/book?service=therapy",
+          "/search?q=anxiety+medication"
+        ],
+        "reject": [
+          "/",
+          "/conditions/anxiety",
+          "/conditions/diabetes",
+          "/book?service=therapy",
+          "/search?q=anxiety+medication"
+        ]
+      },
+      "fired_on": {
+        "accept": [
+          "/",
+          "/conditions/anxiety",
+          "/conditions/diabetes",
+          "/book?service=therapy",
+          "/search?q=anxiety+medication"
+        ],
+        "none": [
+          "/",
+          "/conditions/anxiety",
+          "/conditions/diabetes",
+          "/book?service=therapy",
+          "/search?q=anxiety+medication"
+        ],
+        "reject": [
+          "/",
+          "/conditions/anxiety",
+          "/conditions/diabetes",
+          "/book?service=therapy",
+          "/search?q=anxiety+medication"
+        ]
+      },
+      "requests": {
+        "accept": 7,
+        "none": 7,
+        "reject": 7
+      }
+    }
+  ],
+  "counts": {
+    "high": 20,
+    "info": 7,
+    "low": 16,
+    "medium": 20
+  }
+}
