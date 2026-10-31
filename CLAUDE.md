@@ -73,7 +73,7 @@ test results, the release workflow and a README wording change). The
 released Linux binary was downloaded, checked against SHA256SUMS and run
 for a real audit.
 
-## In progress: 0.2.0, `pxta check`, rules file, `--redact`, Action
+## Done: 0.2.0, `pxta check`, rules file, `--redact`, Action (released 2026-10-31)
 
 Approved by YK on 2026-10-31 as item 1, Phase A of softdev-plan.md in
 photozeitgeist/jollyroger.biz. Phase B (`pxta diff`) waits for his go.
@@ -133,10 +133,12 @@ Steps:
 5. [x] action.yml, ACTION.md, action test workflow
 6. [x] README, CHANGELOG, independent review (two rounds), fixes, recording
        (2026-10-31: 90 tests and subtests passed, gallery numbers unchanged)
-7. [ ] release 0.2.0 through the workflow (its first real run), check assets
-8. [ ] pxta.com post, softdevstudio.com note, softdev-plan.md status
+7. [x] release 0.2.0 through the workflow (its first real run), check assets
+       (v0.2.0 on e71524f; Linux binary checked against SHA256SUMS and run;
+       action-test download job passed, pinned and latest)
+8. [x] pxta.com post, softdevstudio.com note, softdev-plan.md status
 
-Resume from the first unchecked step; pull first.
+All steps done. Next is Phase B, `pxta diff`; ask YK first.
 
 ## Gaps and to-do
 
@@ -160,9 +162,7 @@ Known gaps, not planned yet:
 
 Approved by the owner on 2026-10-25, in this order:
 
-1. `pxta check`: CI exit codes and a rules file, so a build fails when a
-   tag fires before consent or personal data goes out. Ship a GitHub
-   Action wrapper with it, and `--redact` for reports that get shared.
+1. Done in 0.2.0: `pxta check`, rules file, GitHub Action, `--redact`.
 2. `pxta diff`: compare two audits (findings.json) and list what's new,
    what's gone and which trackers changed behaviour.
 
