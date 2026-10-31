@@ -140,7 +140,7 @@ Steps:
 
 All steps done. Next is Phase B, `pxta diff`; ask YK first.
 
-## In progress: 0.3.0, `pxta diff`
+## Done: 0.3.0, `pxta diff` (released 2026-10-31)
 
 Approved by YK on 2026-10-31 ("Phase b"), item 1 Phase B of softdev-plan.md.
 
@@ -203,14 +203,17 @@ Steps:
 4. [x] Action inputs and action-test cases
 5. [x] README, ACTION.md, CHANGELOG, independent review (three rounds),
        fixes, recording (2026-10-31: 102 tests and subtests, gallery unchanged)
-6. [ ] release 0.3.0 through the workflow, check assets, download job
-7. [ ] pxta.com post and pages, softdevstudio.com note, softdev-plan.md
+6. [x] release 0.3.0 through the workflow, check assets, download job
+       (v0.3.0 on 4807dca; Linux binary checked and run; download job passed)
+7. [x] pxta.com post and pages, softdevstudio.com note, softdev-plan.md
+
+All steps done. Phase C (catalog growth, --words, first-party collectors)
+is to be proposed to YK; ask before starting.
 
 ## Gaps and to-do
 
 Known gaps, not planned yet:
 
-- No `pxta diff` yet (see Next).
 - Check problems about trackers (`tracker-not-allowed`, `tracker-blocked`,
   `no-banner`) are judged once per site, not per page or pass.
 - No logged-in pages or form submission: the owner left these out of the
@@ -229,8 +232,9 @@ Known gaps, not planned yet:
 Approved by the owner on 2026-10-25, in this order:
 
 1. Done in 0.2.0: `pxta check`, rules file, GitHub Action, `--redact`.
-2. `pxta diff`: compare two audits (findings.json) and list what's new,
-   what's gone and which trackers changed behaviour.
+2. Done in 0.3.0: `pxta diff` and the Action baseline.
+3. Proposed in softdev-plan.md, not approved yet (Phase C): 15 to 20 more
+   trackers, a `--words` file, first-party collectors by request shape.
 
 Each is its own release, through the normal workflow above. Ask the owner
 before starting each one.
