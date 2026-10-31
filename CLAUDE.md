@@ -73,6 +73,59 @@ test results, the release workflow and a README wording change). The
 released Linux binary was downloaded, checked against SHA256SUMS and run
 for a real audit.
 
+## In progress: 0.2.0, `pxta check`, rules file, `--redact`, Action
+
+Approved by YK on 2026-10-31 as item 1, Phase A of softdev-plan.md in
+photozeitgeist/jollyroger.biz. Phase B (`pxta diff`) waits for his go.
+
+What and why: a build should fail when a tag fires before consent or
+personal data goes out, and reports from CI get shared, so they need a mode
+with the personal values taken out.
+
+Design decisions:
+- `pxta check <url> [audit options]` runs an audit then judges it;
+  `pxta check --findings findings.json` judges an earlier audit (no browser).
+  Exit codes: 0 pass, 1 rule broken, 2 usage or rules-file error,
+  3 the audit could not run, 130 stopped.
+- Rules file is JSON (stdlib only, like the catalog): `fail_on` severity
+  (default medium: anything before consent or after reject fails),
+  `fail_codes` (default banner-not-handled, so a check that could not run
+  its reject pass never passes quietly), `trackers.allow` / `trackers.block`,
+  `require_banner`, and `allow` exceptions that must carry a `reason` and
+  may carry `until` (YYYY-MM-DD; expired ones stop matching and are listed).
+  Unknown fields, codes or severities are errors, not ignored.
+- Output: text, `--format github` (::error annotations), `--summary FILE`
+  (Markdown, appended, for $GITHUB_STEP_SUMMARY), check.json in --out.
+- `--redact` (audit and check): personal values found anywhere in the
+  results (email addresses other than PXTA's own probe, their hashes,
+  hashed customer fields, phone numbers, names, user and client IDs, cookie
+  and authorization headers, addresses given with --email) are replaced by
+  REDACTED in findings.json, report.html and requests.har, in raw,
+  URL-encoded, JSON-escaped and base64-carried forms. The probe values
+  PXTA types itself (pxta-probe@example.com, Pat Probe, +1 555 0100 123) stay:
+  they are the evidence. After writing, every file is scanned again and the
+  run fails rather than leave a value behind. Finding counts don't change.
+- GitHub Action: action.yml in the repo root, downloads the release for the
+  runner, checks SHA256SUMS, runs `pxta check`, writes the step summary,
+  uploads the report as an artifact. ACTION.md describes the pattern so
+  other projects copy it (softdev-plan.md section 3).
+- go.mod stays at go 1.24: Claude's sandbox has only Go 1.24.7 and can't
+  download a newer toolchain, and release builds already use the current
+  stable Go. Raise it when the sandbox has 1.26.
+
+Steps:
+1. [ ] check.go: rules, evaluation, outputs; unit tests
+2. [ ] redact.go: redaction and the after-write scan; unit tests
+3. [ ] CLI: `check`, `--redact` on audit and check; CLI tests
+4. [ ] browser tests: shop fails check, bakery passes, redacted shop and
+       encodings reports hold no personal value
+5. [ ] action.yml, ACTION.md, action test workflow
+6. [ ] README, CHANGELOG, independent review, fixes, recording
+7. [ ] release 0.2.0 through the workflow (its first real run), check assets
+8. [ ] pxta.com post, softdevstudio.com note, softdev-plan.md status
+
+Resume from the first unchecked step; pull first.
+
 ## Gaps and to-do
 
 Known gaps, not planned yet:
