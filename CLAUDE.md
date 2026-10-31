@@ -140,6 +140,55 @@ Steps:
 
 All steps done. Next is Phase B, `pxta diff`; ask YK first.
 
+## In progress: 0.3.0, `pxta diff`
+
+Approved by YK on 2026-10-31 ("Phase b"), item 1 Phase B of softdev-plan.md.
+
+What and why: a tag-manager change or a deploy can start a tag before
+consent without anyone touching the code. `pxta diff old.json new.json`
+says what changed between two audits, so a team can see what the change
+added or fixed, and CI can fail on what is new rather than on old,
+accepted problems.
+
+Design decisions:
+- Input: two findings.json files (`ReadResult`). Pages are compared by
+  path, so staging against production works; different sites give a
+  warning, not an error. Mixing a redacted and an unredacted file warns.
+- Findings are matched by code, pass, page path, tracker, and for leaks
+  the rule plus the parameter name (personal data) or rule plus value
+  (sensitive page, search term). Values like client IDs change every run,
+  so they are not part of the match. `tracker-present` rows are left to
+  the tracker section.
+- Sections: new findings; gone findings; findings on pages only one audit
+  visited ("not compared", never counted as new or fixed when the page
+  wasn't visited in the other); passes run in only one audit, same;
+  tracker behaviour per pass (new tracker, gone tracker, starts or stops
+  sending data in a pass, more or fewer pages); banner changes (found,
+  platform, problems); counts by severity, old and new.
+- Exit codes: 0 no change, 1 changes, 2 usage, 3 a file couldn't be read.
+  `--fail-on SEVERITY` exits 1 only for a new finding at that severity or
+  above (tracker and banner changes then report without failing).
+- Output: text; `--format json` (diff.json shape, stable keys);
+  `--format github` (an annotation per new finding, built with
+  `PublicLine`); `--summary FILE` (Markdown, from public lines only).
+- Action: inputs `baseline` (an earlier findings.json) and
+  `baseline-fail-on`; after the check, the action diffs the new audit
+  against the baseline, adds it to the job summary and sets outputs
+  `diff-exit-code` and `changes`. Without `baseline-fail-on`, the diff
+  reports and never fails the step.
+- Planted-change fixture: www.tidewaterbakery-next.test, the bakery with
+  one change: the X Pixel loads on /menu without waiting for consent. The
+  browser test diffs the two audits and expects exactly that change.
+
+Steps:
+1. [ ] diff.go: matching, sections, outputs; unit tests
+2. [ ] CLI `diff`; CLI tests
+3. [ ] fixture and browser test (exactly the planted change)
+4. [ ] Action inputs and action-test cases
+5. [ ] README, ACTION.md, CHANGELOG, independent review, fixes, recording
+6. [ ] release 0.3.0 through the workflow, check assets, download job
+7. [ ] pxta.com post and pages, softdevstudio.com note, softdev-plan.md
+
 ## Gaps and to-do
 
 Known gaps, not planned yet:
