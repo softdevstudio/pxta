@@ -339,3 +339,29 @@ func TestDiffRoundTwo(t *testing.T) {
 		t.Fatalf("kind and counts: %+v", d.Trackers)
 	}
 }
+
+// Third round: a search page the old crawl didn't reach, with the same
+// trackers sending the term through the same parameter, isn't new.
+func TestDiffSearchPage(t *testing.T) {
+	search := func(r *Result, term string) {
+		page := "/search?q=" + term
+		r.Pages = append(r.Pages, Visit{Pass: PassAccept, Page: 9, URL: "https://shop.test" + page, FinalURL: "https://shop.test" + page})
+		r.Findings = append(r.Findings, &Finding{Code: CodeSearchTerm, Severity: SevLow, Pass: PassAccept, Page: page, Tracker: "meta-pixel", Count: 1,
+			Evidence: Evidence{Highlight: []Leak{{Rule: RuleSearch, Key: "dl", Value: term}}}})
+	}
+	old, cur := diffFixture(), diffFixture()
+	search(old, "bankruptcy")
+	search(cur, "bankruptcy")
+	search(cur, "mortgage")
+	if d := mustDiff(t, old, cur, SevLow); d.Fail || len(d.Added) != 0 || len(d.Skipped) != 1 {
+		t.Fatalf("one more search page: added %+v skipped %+v", d.Added, d.Skipped)
+	}
+	// On a page both audits visited, a different term is a different finding.
+	a, b := diffFixture(), diffFixture()
+	search(a, "cake")
+	search(b, "cake")
+	b.Findings[len(b.Findings)-1].Evidence.Highlight[0].Value = "bread"
+	if d := mustDiff(t, a, b, ""); len(d.Added) != 1 || len(d.Removed) != 1 {
+		t.Fatalf("other term, same page: %+v %+v", d.Added, d.Removed)
+	}
+}

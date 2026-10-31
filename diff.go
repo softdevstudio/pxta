@@ -89,12 +89,18 @@ type DiffSide struct {
 // staging and production; a search term by the term. Consent Mode
 // mismatches are keyed without their leaks, as Analyze keys them.
 func diffKey(f *Finding) string {
-	return f.Page + "|" + diffSignature(f)
+	return f.Page + "|" + signature(f, true)
 }
 
-// diffSignature is a finding's key without its page: what was sent, by
-// which tracker, in which pass.
+// diffSignature is a finding's key without its page or search term: what
+// kind of thing was sent, by which tracker, in which pass. A search page
+// the old crawl didn't reach has a term nothing else had, so the term is
+// left out here.
 func diffSignature(f *Finding) string {
+	return signature(f, false)
+}
+
+func signature(f *Finding, withTerm bool) string {
 	k := f.Code + "|" + f.Pass + "|" + f.Tracker
 	if f.Code == CodeConsentModeMismatch || f.Code == CodeConsentModeGranted {
 		return k
@@ -107,7 +113,10 @@ func diffSignature(f *Finding) string {
 			cat, _, _ := strings.Cut(strings.ToLower(l.Category), ":")
 			k += "|" + l.Rule + "|" + strings.TrimSpace(cat) + "|" + paramShape(l.Key)
 		case RuleSearch:
-			k += "|" + l.Rule + "|" + strings.ToLower(l.Value)
+			k += "|" + l.Rule + "|" + paramShape(l.Key)
+			if withTerm {
+				k += "|" + strings.ToLower(l.Value)
+			}
 		default:
 			k += "|" + l.Rule + "|" + paramShape(l.Key)
 		}
@@ -559,7 +568,7 @@ func (d *DiffResult) WriteText(w io.Writer, public bool) {
 		}
 	}
 	section("New findings", d.Added, func(f DiffFinding) string {
-		if f.Unseen {
+		if f.Unseen && f.Page != "" {
 			return " (on a page the old audit didn't reach; nothing like it there)"
 		}
 		return ""
