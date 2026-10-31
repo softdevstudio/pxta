@@ -10,8 +10,9 @@
   client IDs that change every run don't show up as changes and staging
   compares with production.
 - Findings on pages or passes only one audit covered are listed as not
-  compared, never as new or fixed; `--new-pages` counts pages the old audit
-  never reached as new.
+  compared, never as fixed. They count as new when nothing like them
+  happened anywhere in the old audit; `--new-pages` counts every finding on
+  a page the old audit never reached as new.
 - Exit codes 0 no change, 1 changes, 2 usage or a redacted audit against an
   unredacted one, 3 unreadable or unwritable file. `--fail-on` exits 1 for a
   new finding at a severity or above, and always for a lost consent pass,

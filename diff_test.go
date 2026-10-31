@@ -129,14 +129,17 @@ func TestDiffCoverage(t *testing.T) {
 	for _, pass := range cur.Passes {
 		cur.Pages = append(cur.Pages, Visit{Pass: pass, Page: 3, URL: "https://shop.test/careers", FinalURL: "https://shop.test/careers"})
 	}
-	cur.Findings = append(cur.Findings, &Finding{Code: CodeTrackerAfterReject, Severity: SevHigh, Pass: PassReject, Page: "/careers", Tracker: "meta-pixel", Name: "Meta Pixel", Count: 1})
-	cur.Trackers[1].Fired[PassReject] = []string{"/careers"}
-	// By default a page the old audit never reached isn't compared: the crawl
-	// may simply not have got there.
+	cur.Findings = append(cur.Findings, &Finding{Code: CodeTrackerBeforeConsent, Severity: SevMedium, Pass: PassNone, Page: "/careers", Tracker: "meta-pixel", Name: "Meta Pixel", Count: 1})
+	cur.Trackers[1].Fired[PassNone] = []string{"/order", "/careers"}
+	// By default a page the old audit never reached isn't compared when the
+	// old audit had the same finding elsewhere: the crawl may simply not
+	// have got there.
 	d = mustDiff(t, diffFixture(), cur, "")
 	if d.Changed || len(d.Skipped) != 1 {
 		t.Fatalf("new page compared by default: %+v", d)
 	}
+	cur.Findings[len(cur.Findings)-1] = &Finding{Code: CodeTrackerAfterReject, Severity: SevHigh, Pass: PassReject, Page: "/careers", Tracker: "meta-pixel", Name: "Meta Pixel", Count: 1}
+	cur.Trackers[1].Fired = map[string][]string{PassNone: {"/order"}, PassAccept: {"/order"}, PassReject: {"/careers"}}
 	d, _ = Diff(diffFixture(), cur, DiffOptions{NewPages: true})
 	if len(d.Added) != 1 || d.Added[0].Page != "/careers" || len(d.Trackers) != 1 || d.Trackers[0].Kind != TrackerStarted {
 		t.Fatalf("new page with NewPages: %+v %+v", d.Added, d.Trackers)
@@ -278,7 +281,7 @@ func TestDiffTrackerKinds(t *testing.T) {
 	cur.Pages = pages
 	cur.Trackers = append(cur.Trackers, TrackerUse{ID: "x-pixel", Name: "X Pixel", Fired: map[string][]string{PassReject: {"/menu"}}})
 	d := mustDiff(t, old, cur, "")
-	if len(d.Trackers) != 1 || d.Trackers[0].Kind != TrackerMore {
+	if len(d.Trackers) != 1 || d.Trackers[0].Kind != TrackerMoved {
 		t.Fatalf("kinds %+v", d.Trackers)
 	}
 	// Same number of pages, different ones.
@@ -291,5 +294,48 @@ func TestDiffTrackerKinds(t *testing.T) {
 	}
 	if s := d.Trackers[0].publicSentence(); !strings.HasPrefix(s, "The Meta Pixel") {
 		t.Errorf("public sentence %q", s)
+	}
+}
+
+// Second round: a new problem on a page outside the baseline is new when
+// nothing like it happened anywhere before; the same pixel on one more page
+// isn't. Gaining a banner isn't lost coverage. Tracker kinds follow the
+// counts they print.
+func TestDiffRoundTwo(t *testing.T) {
+	cur := diffFixture()
+	cur.Pages = append(cur.Pages, Visit{Pass: PassReject, Page: 7, URL: "https://shop.test/signup", FinalURL: "https://shop.test/signup"})
+	cur.Findings = append(cur.Findings,
+		&Finding{Code: CodePersonalData, Severity: SevHigh, Pass: PassReject, Page: "/signup", Tracker: "meta-pixel", Count: 1,
+			Evidence: Evidence{Highlight: []Leak{{Rule: RuleEmail, Key: "em"}}}},
+		// Like /order's before-consent finding: same code, pass, tracker.
+		&Finding{Code: CodeTrackerBeforeConsent, Severity: SevMedium, Pass: PassNone, Page: "/signup", Tracker: "meta-pixel", Count: 1})
+	cur.Pages = append(cur.Pages, Visit{Pass: PassNone, Page: 7, URL: "https://shop.test/signup", FinalURL: "https://shop.test/signup"})
+	d := mustDiff(t, diffFixture(), cur, SevHigh)
+	if len(d.Added) != 1 || d.Added[0].Page != "/signup" || !d.Added[0].Unseen || !d.Fail || len(d.Skipped) != 1 {
+		t.Fatalf("signup: added %+v skipped %+v fail %v", d.Added, d.Skipped, d.Fail)
+	}
+
+	nb := diffFixture()
+	nb.Banner = Banner{}
+	nb.Passes = []string{PassNoBanner}
+	for i := range nb.Pages {
+		nb.Pages[i].Pass = PassNoBanner
+	}
+	nb.Findings = nil
+	if d := mustDiff(t, nb, diffFixture(), SevHigh); len(d.Coverage) != 0 || d.Fail || !strings.Contains(strings.Join(d.Banner, " "), "appeared") {
+		t.Fatalf("gaining a banner: coverage %q banner %q fail %v", d.Coverage, d.Banner, d.Fail)
+	}
+
+	old, cur2 := diffFixture(), diffFixture()
+	old.Trackers[1].Fired[PassNone] = []string{"/", "/menu", "/order"}
+	cur2.Trackers[1].Fired[PassNone] = []string{"/order", "/new-a", "/new-b", "/new-c"}
+	for _, p := range []string{"/new-a", "/new-b", "/new-c"} {
+		for _, r := range []*Result{old, cur2} {
+			r.Pages = append(r.Pages, Visit{Pass: PassNone, Page: 8, URL: "https://shop.test" + p, FinalURL: "https://shop.test" + p})
+		}
+	}
+	d = mustDiff(t, old, cur2, "")
+	if len(d.Trackers) != 1 || d.Trackers[0].Kind != TrackerMore || d.Trackers[0].NewPages != 4 || d.Trackers[0].OldPages != 3 {
+		t.Fatalf("kind and counts: %+v", d.Trackers)
 	}
 }

@@ -22,6 +22,10 @@ type DiffFinding struct {
 	Sentence string `json:"sentence"`
 	Count    int    `json:"count"`
 	OldCount int    `json:"old_count,omitempty"`
+	// Unseen marks a new finding on a page the old audit didn't reach in
+	// that pass, counted as new because nothing like it happened anywhere
+	// in the old audit.
+	Unseen bool `json:"on_page_not_in_old,omitempty"`
 }
 
 // TrackerChange is a change in what one tracker did in one pass.
@@ -85,14 +89,23 @@ type DiffSide struct {
 // staging and production; a search term by the term. Consent Mode
 // mismatches are keyed without their leaks, as Analyze keys them.
 func diffKey(f *Finding) string {
-	k := f.Code + "|" + f.Pass + "|" + f.Page + "|" + f.Tracker
+	return f.Page + "|" + diffSignature(f)
+}
+
+// diffSignature is a finding's key without its page: what was sent, by
+// which tracker, in which pass.
+func diffSignature(f *Finding) string {
+	k := f.Code + "|" + f.Pass + "|" + f.Tracker
 	if f.Code == CodeConsentModeMismatch || f.Code == CodeConsentModeGranted {
 		return k
 	}
 	for _, l := range f.Evidence.Highlight {
 		switch l.Rule {
 		case RuleSensitive:
-			k += "|" + l.Rule + "|" + strings.ToLower(l.Category)
+			// The category's group ("finance" of "finance: debt") and the
+			// parameter: the matched word can change with the wording.
+			cat, _, _ := strings.Cut(strings.ToLower(l.Category), ":")
+			k += "|" + l.Rule + "|" + strings.TrimSpace(cat) + "|" + paramShape(l.Key)
 		case RuleSearch:
 			k += "|" + l.Rule + "|" + strings.ToLower(l.Value)
 		default:
@@ -224,6 +237,15 @@ func Diff(old, cur *Result, opt DiffOptions) (*DiffResult, error) {
 	}
 	oldF, oldOrder := index(old)
 	curF, curOrder := index(cur)
+	// What the old audit saw anywhere, page aside. A finding on a page the
+	// old audit didn't reach is still new when nothing like it (same code,
+	// pass, tracker and leak) happened on any page before: a tracker that
+	// starts sending emails on a new sign-up page is a change, the same
+	// pixel firing on one more blog post isn't.
+	oldSig := map[string]bool{}
+	for _, f := range oldF {
+		oldSig[diffSignature(f)] = true
+	}
 	for _, k := range curOrder {
 		f := curF[k]
 		o := oldF[k]
@@ -236,6 +258,10 @@ func Diff(old, cur *Result, opt DiffOptions) (*DiffResult, error) {
 			}
 		case comparable(f.Pass, f.Page) || (opt.NewPages && passIn(old, f.Pass) && newPage(f.Page, oldSeen)):
 			d.Added = append(d.Added, toDiff(f))
+		case passIn(old, f.Pass) && !oldSig[diffSignature(f)]:
+			df := toDiff(f)
+			df.Unseen = true
+			d.Added = append(d.Added, df)
 		default:
 			// The old audit didn't reach this page in this pass, or didn't
 			// run the pass: not a fair comparison.
@@ -277,8 +303,13 @@ func Diff(old, cur *Result, opt DiffOptions) (*DiffResult, error) {
 	// Coverage: a pass the old audit ran that the new one didn't, or a new
 	// audit that visited no page, hides every change it would have shown.
 	for _, p := range old.Passes {
+		// A site that gained a banner loses its no-banner pass: that's the
+		// banner change, not lost coverage.
+		if p == PassNoBanner && cur.Banner.Found {
+			continue
+		}
 		if !passIn(cur, p) {
-			d.Coverage = append(d.Coverage, fmt.Sprintf("The %s pass ran in the old audit but not in the new one, so nothing %s was compared.", passName(p), passPhrase[p]))
+			d.Coverage = append(d.Coverage, fmt.Sprintf("The %s pass ran in the old audit but not in the new one, so nothing %s was compared.", passName(p), whenPhrase(p)))
 		}
 	}
 	n := 0
@@ -395,9 +426,9 @@ func trackerChanges(old, cur *Result, comparable func(pass, page string) bool, n
 				tc.Kind = TrackerStarted
 			case after == 0:
 				tc.Kind = TrackerStopped
-			case len(added) > len(removed):
+			case after > before:
 				tc.Kind = TrackerMore
-			case len(added) < len(removed):
+			case after < before:
 				tc.Kind = TrackerFewer
 			default:
 				tc.Kind = TrackerMoved
@@ -527,7 +558,12 @@ func (d *DiffResult) WriteText(w io.Writer, public bool) {
 			fmt.Fprintf(w, "  %-6s %s\n", strings.ToUpper(sevOrDash(f.Severity)), s)
 		}
 	}
-	section("New findings", d.Added, nil)
+	section("New findings", d.Added, func(f DiffFinding) string {
+		if f.Unseen {
+			return " (on a page the old audit didn't reach; nothing like it there)"
+		}
+		return ""
+	})
 	section("Gone findings", d.Removed, nil)
 	if len(d.Trackers) > 0 {
 		fmt.Fprintf(w, "\nTracker changes (%d)\n", len(d.Trackers))
@@ -601,17 +637,21 @@ func publicBanner(s string) string {
 // WriteGitHub prints an annotation per new finding (error at or above
 // fail-on, warning otherwise) and a notice per gone finding.
 func (d *DiffResult) WriteGitHub(w io.Writer) {
+	worse := "error"
+	if d.FailOn == "never" {
+		worse = "warning"
+	}
 	for _, s := range d.Coverage {
-		fmt.Fprintf(w, "::error title=pxta diff coverage::%s\n", ghData(s))
+		fmt.Fprintf(w, "::%s title=pxta diff coverage::%s\n", worse, ghData(s))
 	}
 	for _, s := range d.Banner {
 		if strings.HasPrefix(s, "New banner problem") || strings.HasSuffix(s, "is gone.") {
-			fmt.Fprintf(w, "::error title=pxta diff banner::%s\n", ghData(publicBanner(s)))
+			fmt.Fprintf(w, "::%s title=pxta diff banner::%s\n", worse, ghData(publicBanner(s)))
 		}
 	}
 	for _, f := range d.Added {
 		level := "warning"
-		if d.FailOn == "" || (d.FailOn != "never" && sevRank[f.Severity] >= sevRank[d.FailOn]) {
+		if d.FailOn == "" || (d.FailOn != "never" && (sevRank[f.Severity] >= sevRank[d.FailOn] || f.Code == CodeBannerNotHandled)) {
 			level = "error"
 		}
 		title := "pxta diff new " + f.Code

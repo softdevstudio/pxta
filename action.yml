@@ -194,7 +194,9 @@ runs:
         case "$IN_FAIL_ON" in
           "") fail_on=never ;;
           any) fail_on="" ;;
-          *) fail_on="$IN_FAIL_ON" ;;
+          high|medium|low|info) fail_on="$IN_FAIL_ON" ;;
+          *) echo "::error::baseline-fail-on must be high, medium, low, info or any, not $IN_FAIL_ON"
+             echo "exit-code=2" >> "$GITHUB_OUTPUT"; exit 0 ;;
         esac
         args=(diff "$IN_BASELINE" "$cur" --format github)
         if [ -n "$fail_on" ]; then args+=(--fail-on "$fail_on"); fi

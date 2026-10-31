@@ -334,8 +334,9 @@ same code, pass, page path and tracker, and, for a leak:
 - personal data: the same rule and parameter (`em`, `ud[em]`). Batch line
   and array numbers are left out, so `dl` in a hit's address and
   `body.3>dl` in a batched hit are the same parameter.
-- a sensitive page: the same category ("health: condition"), not the
-  address the tag sent, so staging and production compare.
+- a sensitive page: the same category group ("health" of "health:
+  condition") and parameter, not the address or title the tag sent, so
+  staging and production compare.
 - a search term: the same term.
 
 Client IDs, session IDs and hashes of a test address change from one run
@@ -344,19 +345,25 @@ matched without their leaks.
 
 What isn't compared. Pages are compared by path; a warning says when the
 sites differ. A finding on a page the other audit didn't visit in the same
-pass is listed as not compared, never as new or fixed, so a crawl that
-reached one page more or one page less doesn't look like a change. With
-`--new-pages`, pages no pass of the old audit reached count as new pages
-and their findings as new. A changed count of the same finding is listed
+pass is listed as not compared, never as fixed, so a crawl that reached
+one page more or one page less doesn't look like a change. It still counts
+as new when nothing like it (the same code, pass, tracker and leak)
+happened on any page of the old audit: a pixel that starts sending email
+addresses on a new sign-up page is new, the same pixel firing on one more
+blog post isn't. With `--new-pages`, every finding on a page no pass of the
+old audit reached counts as new. Run both audits with the same `--passes`:
+a pass the new audit didn't run counts as lost (see below). A changed count of the same finding is listed
 but isn't a change. A redacted audit can't be compared with an unredacted
 one: their pages don't match, and the diff would carry the unredacted
 audit's data next to the redacted one's.
 
 What fails `--fail-on`. A new finding at that severity or above, and,
 whatever the severity, the things that hide or are consent regressions: a
-pass the old audit ran that the new one didn't (a reject button PXTA can no
-longer press), a new audit that visited no page without an error, a banner
-that's gone, a new banner problem, or a new `banner-not-handled`.
+pass the old audit ran that the new one didn't (a reject or accept button
+PXTA can no longer press, or fewer `--passes`), a new audit that visited no
+page without an error, a banner that's gone, or a new banner problem. A
+site that gains a banner loses its no-banner pass; that is reported as a
+banner change and doesn't fail.
 
 Tracker changes have kinds, like finding codes: `started` (sends data in a
 pass where it sent none), `stopped`, `more-pages`, `fewer-pages` and

@@ -187,6 +187,11 @@ Design decisions:
   noise, the Action failing on known problems, broken audits passing, new
   pages counted as new, wrong tracker kinds, Consent Mode flapping and an
   unredacted baseline reaching diff.json; all fixed with tests.
+- A finding on a page the old audit didn't reach in that pass is new
+  (`Unseen`) when its page-free signature (code, pass, tracker, leak shape)
+  is nowhere in the old audit; otherwise not compared. Second review
+  (2026-10-31) found that without this the Action missed a new leak on a
+  new page. Gaining a banner (lost no-banner pass) is not lost coverage.
 - Planted-change fixture: www.tidewaterbakery-next.test, the bakery with
   one change: the X Pixel loads on /menu without waiting for consent. The
   browser test diffs the two audits and expects exactly that change.

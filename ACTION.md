@@ -78,8 +78,8 @@ comparison only reports and the check decides as usual. Update the baseline
 file when a change is accepted. The action redacts by default, so keep a
 redacted baseline (one from a report artifact): a redacted audit can't be
 compared with an unredacted one. A baseline the action can't read, or a
-`baseline-fail-on` value it doesn't know, fails the step even with
-`fail: "false"`.
+`baseline-fail-on` value other than `high`, `medium`, `low`, `info` or
+`any`, fails the step even with `fail: "false"`.
 
 The rules file format is in the README under "pxta check".
 
