@@ -4,17 +4,25 @@
 
 - `pxta diff OLD NEW`: compares two audits' `findings.json` and lists new
   and gone findings, tracker changes per pass (`started`, `stopped`,
-  `more-pages`, `fewer-pages`) and banner changes. Leaks are matched by
-  rule and parameter, not by value, so client IDs that change every run
-  don't show up as changes. Findings on pages or passes only one audit
-  covered are listed as not compared, never as fixed.
-- Exit codes 0 no change, 1 changes, 2 usage, 3 unreadable file;
-  `--fail-on` exits 1 only for a new finding at a severity or above.
+  `more-pages`, `fewer-pages`, `other-pages`) and banner changes.
+- Leaks are matched by rule and parameter (batch line numbers left out),
+  sensitive pages by category and search terms by term, never by value, so
+  client IDs that change every run don't show up as changes and staging
+  compares with production.
+- Findings on pages or passes only one audit covered are listed as not
+  compared, never as new or fixed; `--new-pages` counts pages the old audit
+  never reached as new.
+- Exit codes 0 no change, 1 changes, 2 usage or a redacted audit against an
+  unredacted one, 3 unreadable or unwritable file. `--fail-on` exits 1 for a
+  new finding at a severity or above, and always for a lost consent pass,
+  an audit that visited nothing, or a banner that's gone or can no longer
+  be answered.
 - Output as text, JSON (`--format json`, `--out`), GitHub annotations and a
   Markdown summary built from public fields only.
 - GitHub Action: `baseline` and `baseline-fail-on` inputs run the diff after
-  the check; outputs `diff-exit-code` and `changes`; `diff.json` in the
-  report artifact.
+  the check; with `baseline-fail-on`, the comparison decides the step, so
+  problems the baseline already has don't fail it. Outputs `diff-exit-code`
+  and `changes`; `diff.json` in the report artifact.
 
 ## 0.2.0
 

@@ -295,9 +295,11 @@ annotation and the summary on the job page, and uploads the report files
 
 With `baseline` set to an earlier `findings.json` (from the last run's
 artifact, or one kept in the repo), the action also runs `pxta diff` and
-adds the changes to the job summary. `baseline-fail-on: medium` fails the
-step on a new medium or high finding even when the rules allow it, so
-known problems don't block the build but new ones do.
+adds the changes to the job summary. With `baseline-fail-on: medium` the
+comparison decides the step: a new medium or high finding fails it, and so
+does a lost consent pass or a banner that's gone, while problems the
+baseline already has don't. Known problems stop blocking the build; new
+ones do.
 
 ## pxta diff
 
@@ -315,38 +317,58 @@ pxta diff staging/findings.json production/findings.json --fail-on medium
   --fail-on severity    exit 1 only for a new finding at this severity or
                         above (high, medium, low, info), or never; the
                         default is any change
+  --new-pages           count findings on pages the old audit never
+                        reached as new
   --format json|github  print the diff as JSON, or as GitHub annotations
   --summary file        append a Markdown summary (use $GITHUB_STEP_SUMMARY)
   --out file            also write the diff as JSON to this file
 ```
 
-Exit codes: 0 no change, 1 changes (or, with `--fail-on`, a new finding at
-that severity or above), 2 a usage error, 3 a file couldn't be read.
+Exit codes: 0 no change, 1 changes (with `--fail-on`, see below), 2 a
+usage error or a redacted audit compared with an unredacted one, 3 a file
+couldn't be read or written.
 
 How findings are matched. Two findings are the same when they have the
-same code, pass, page path and tracker, and, for a leak, the same rule and
-the same parameter (`em`, `ud[em]`), or the same word for a sensitive page
-or a search term. Client IDs, session IDs and hashes of a test address
-change from one run to the next, so they aren't part of the match; the
-same leak with a different value is the same finding.
+same code, pass, page path and tracker, and, for a leak:
 
-What isn't counted. Pages are compared by path, so staging can be compared
-with production; a warning says the sites differ. A finding on a page the
-other audit visited in a different pass but not this one, or in a pass
-the other audit didn't run, is listed as not compared, so a smaller crawl
-never looks like a fix. A page no pass of the old audit reached counts as
-a new page, and its findings as new. A changed count of the same finding
-is listed but isn't a change. Comparing a redacted audit with an
-unredacted one gives a warning: pages with personal data in their address
-won't match.
+- personal data: the same rule and parameter (`em`, `ud[em]`). Batch line
+  and array numbers are left out, so `dl` in a hit's address and
+  `body.3>dl` in a batched hit are the same parameter.
+- a sensitive page: the same category ("health: condition"), not the
+  address the tag sent, so staging and production compare.
+- a search term: the same term.
+
+Client IDs, session IDs and hashes of a test address change from one run
+to the next, so values aren't part of the match. Consent Mode findings are
+matched without their leaks.
+
+What isn't compared. Pages are compared by path; a warning says when the
+sites differ. A finding on a page the other audit didn't visit in the same
+pass is listed as not compared, never as new or fixed, so a crawl that
+reached one page more or one page less doesn't look like a change. With
+`--new-pages`, pages no pass of the old audit reached count as new pages
+and their findings as new. A changed count of the same finding is listed
+but isn't a change. A redacted audit can't be compared with an unredacted
+one: their pages don't match, and the diff would carry the unredacted
+audit's data next to the redacted one's.
+
+What fails `--fail-on`. A new finding at that severity or above, and,
+whatever the severity, the things that hide or are consent regressions: a
+pass the old audit ran that the new one didn't (a reject button PXTA can no
+longer press), a new audit that visited no page without an error, a banner
+that's gone, a new banner problem, or a new `banner-not-handled`.
 
 Tracker changes have kinds, like finding codes: `started` (sends data in a
-pass where it sent none), `stopped`, `more-pages` and `fewer-pages`. They
-are in the `tracker_changes` list of the JSON output.
+pass where it sent none), `stopped`, `more-pages`, `fewer-pages` and
+`other-pages` (as many pages, not the same ones). They are in the
+`tracker_changes` list of the JSON output. An unclassified tracker is known
+by its host, so a collector on a rotating host shows as one gone and one
+new.
 
 With `--format github`, the annotations, the summary and the log are built
 the same way as `pxta check`'s: from codes, trackers, page paths and
-passes, never quoting what the site sent.
+passes, never quoting what the site sent, and with hosts instead of full
+start addresses. The JSON output holds the sentences, like `check.json`.
 
 ## Redacted reports
 

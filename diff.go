@@ -1,9 +1,11 @@
 package pxta
 
 import (
+	"errors"
 	"fmt"
 	"io"
 	"net/url"
+	"regexp"
 	"sort"
 	"strings"
 )
@@ -41,6 +43,7 @@ const (
 	TrackerStopped = "stopped" // no longer sends data in that pass
 	TrackerMore    = "more-pages"
 	TrackerFewer   = "fewer-pages"
+	TrackerMoved   = "other-pages" // as many pages as before, not the same ones
 )
 
 // DiffResult is what changed between two audits.
@@ -50,13 +53,15 @@ type DiffResult struct {
 	Warnings []string          `json:"warnings,omitempty"`
 	Added    []DiffFinding     `json:"new_findings"`
 	Removed  []DiffFinding     `json:"gone_findings"`
-	Counted  []DiffFinding     `json:"count_changes,omitempty"`
-	Skipped  []DiffFinding     `json:"not_compared,omitempty"`
+	Counted  []DiffFinding     `json:"count_changes"`
+	Skipped  []DiffFinding     `json:"not_compared"`
 	Trackers []TrackerChange   `json:"tracker_changes"`
-	Banner   []string          `json:"banner_changes,omitempty"`
-	Counts   map[string][2]int `json:"counts"` // severity -> old, new
+	Banner   []string          `json:"banner_changes"`
+	Coverage []string          `json:"coverage_problems"` // a pass or every page missing from the new audit
+	Counts   map[string][2]int `json:"counts"`            // severity -> old, new
 	Changed  bool              `json:"changed"`
 	FailOn   string            `json:"fail_on,omitempty"`
+	NewPages bool              `json:"new_pages_compared,omitempty"`
 	Fail     bool              `json:"fail"`
 }
 
@@ -71,21 +76,44 @@ type DiffSide struct {
 }
 
 // diffKey tells findings apart across audits: code, pass, page, tracker,
-// and for leaks the rule plus the parameter that carried it. The value
-// itself is left out for personal data, because client and session IDs
-// differ in every run; it stays for sensitive pages and search terms,
-// where the word is the finding.
+// and for leaks the rule plus what identifies it without the value.
+// Values are left out because client and session IDs differ in every run.
+// A personal-data leak is told by the parameter that carried it, with batch
+// line and array indices taken out (which line of a batched hit holds the
+// email depends on timing); a sensitive page by its category ("finance:
+// debt"), since the value is the full address or title and differs between
+// staging and production; a search term by the term. Consent Mode
+// mismatches are keyed without their leaks, as Analyze keys them.
 func diffKey(f *Finding) string {
 	k := f.Code + "|" + f.Pass + "|" + f.Page + "|" + f.Tracker
+	if f.Code == CodeConsentModeMismatch || f.Code == CodeConsentModeGranted {
+		return k
+	}
 	for _, l := range f.Evidence.Highlight {
 		switch l.Rule {
-		case RuleSensitive, RuleSearch:
+		case RuleSensitive:
+			k += "|" + l.Rule + "|" + strings.ToLower(l.Category)
+		case RuleSearch:
 			k += "|" + l.Rule + "|" + strings.ToLower(l.Value)
 		default:
-			k += "|" + l.Rule + "|" + l.Key
+			k += "|" + l.Rule + "|" + paramShape(l.Key)
 		}
 	}
 	return k
+}
+
+var (
+	batchLineRe  = regexp.MustCompile(`(^|>)body\.\d+>`)
+	arrayIndexRe = regexp.MustCompile(`\[\d+\]`)
+)
+
+// paramShape is a parameter name without the batch line and array indices
+// decode.go adds. A GA4 hit carries the same parameters in its address or as
+// a line of a batched body, so "dl", "body.1>dl" and "body.3>dl" are all
+// "dl".
+func paramShape(key string) string {
+	key = batchLineRe.ReplaceAllString(key, "${1}")
+	return arrayIndexRe.ReplaceAllString(key, "[]")
 }
 
 // visited lists the page paths an audit visited without an error, by pass,
@@ -125,15 +153,32 @@ func toDiff(f *Finding) DiffFinding {
 		Sentence: f.Sentence, Count: f.Count}
 }
 
-// Diff compares two audits. failOn is a severity, "" (any change fails) or
-// "never".
-func Diff(old, cur *Result, failOn string) *DiffResult {
-	d := &DiffResult{Old: side(old), New: side(cur), Counts: map[string][2]int{}, FailOn: failOn}
-	if host(old.Site) != host(cur.Site) {
-		d.Warnings = append(d.Warnings, fmt.Sprintf("The audits are of different sites (%s and %s); pages are compared by path.", old.Site, cur.Site))
-	}
+// DiffOptions shape a comparison.
+type DiffOptions struct {
+	// FailOn is a severity, "" (any change fails) or "never".
+	FailOn string
+	// NewPages counts findings on pages no pass of the old audit reached as
+	// new. Off by default: a crawl that reaches one more page, or a page that
+	// timed out last time, would otherwise look like a change.
+	NewPages bool
+}
+
+// ErrRedactionMix is returned for a redacted and an unredacted audit: their
+// pages don't match, and the diff would carry the unredacted one's data
+// next to the redacted one's.
+var ErrRedactionMix = errors.New("one audit was redacted and the other wasn't; compare two redacted or two unredacted audits")
+
+// Diff compares two audits.
+func Diff(old, cur *Result, opt DiffOptions) (*DiffResult, error) {
 	if old.Redacted != cur.Redacted {
-		d.Warnings = append(d.Warnings, "One audit was redacted and the other wasn't, so pages with personal data in their address won't match.")
+		return nil, ErrRedactionMix
+	}
+	failOn := opt.FailOn
+	d := &DiffResult{Old: side(old), New: side(cur), Counts: map[string][2]int{}, FailOn: failOn, NewPages: opt.NewPages,
+		Added: []DiffFinding{}, Removed: []DiffFinding{}, Counted: []DiffFinding{}, Skipped: []DiffFinding{},
+		Trackers: []TrackerChange{}, Banner: []string{}, Coverage: []string{}, Warnings: []string{}}
+	if host(old.Site) != host(cur.Site) {
+		d.Warnings = append(d.Warnings, fmt.Sprintf("The audits are of different sites (%s and %s); pages are compared by path.", host(old.Site), host(cur.Site)))
 	}
 	if old.Catalog != cur.Catalog && old.Catalog != "" && cur.Catalog != "" {
 		d.Warnings = append(d.Warnings, fmt.Sprintf("The tracker catalogs differ (%s and %s), so some changes may come from PXTA, not the site.", old.Catalog, cur.Catalog))
@@ -189,12 +234,12 @@ func Diff(old, cur *Result, failOn string) *DiffResult {
 				df.OldCount = o.Count
 				d.Counted = append(d.Counted, df)
 			}
-		case !passIn(old, f.Pass) || (f.Page != "" && !oldSeen[f.Pass][f.Page] && !newPage(f.Page, oldSeen)):
-			// The old audit ran this pass but didn't reach this page in it,
-			// though it saw it in another pass: not a fair comparison.
-			d.Skipped = append(d.Skipped, toDiff(f))
-		default:
+		case comparable(f.Pass, f.Page) || (opt.NewPages && passIn(old, f.Pass) && newPage(f.Page, oldSeen)):
 			d.Added = append(d.Added, toDiff(f))
+		default:
+			// The old audit didn't reach this page in this pass, or didn't
+			// run the pass: not a fair comparison.
+			d.Skipped = append(d.Skipped, toDiff(f))
 		}
 	}
 	for _, k := range oldOrder {
@@ -223,25 +268,57 @@ func Diff(old, cur *Result, failOn string) *DiffResult {
 		}
 	}
 
-	d.Trackers = trackerChanges(old, cur, comparable)
-	d.Banner = bannerChanges(old.Banner, cur.Banner)
+	newOK := func(pass, page string) bool {
+		return opt.NewPages && passIn(old, pass) && newPage(page, oldSeen)
+	}
+	d.Trackers = trackerChanges(old, cur, comparable, newOK)
+	var bannerWorse bool
+	d.Banner, bannerWorse = bannerChanges(old.Banner, cur.Banner)
+	// Coverage: a pass the old audit ran that the new one didn't, or a new
+	// audit that visited no page, hides every change it would have shown.
+	for _, p := range old.Passes {
+		if !passIn(cur, p) {
+			d.Coverage = append(d.Coverage, fmt.Sprintf("The %s pass ran in the old audit but not in the new one, so nothing %s was compared.", passName(p), passPhrase[p]))
+		}
+	}
+	n := 0
+	for _, pages := range curSeen {
+		n += len(pages)
+	}
+	if n == 0 {
+		d.Coverage = append(d.Coverage, "The new audit visited no page without an error.")
+	}
 	for _, l := range [][]DiffFinding{d.Added, d.Removed, d.Skipped, d.Counted} {
 		sortDiff(l)
 	}
 
-	d.Changed = len(d.Added) > 0 || len(d.Removed) > 0 || len(d.Trackers) > 0 || len(d.Banner) > 0
+	d.Changed = len(d.Added) > 0 || len(d.Removed) > 0 || len(d.Trackers) > 0 || len(d.Banner) > 0 || len(d.Coverage) > 0
 	switch failOn {
 	case "":
 		d.Fail = d.Changed
 	case "never":
 	default:
+		// A lost pass, an audit that saw nothing, or a banner that's gone or
+		// can no longer be answered fail at any threshold: they are consent
+		// regressions, or they hide the findings that would show one.
+		d.Fail = len(d.Coverage) > 0 || bannerWorse
 		for _, f := range d.Added {
-			if sevRank[f.Severity] >= sevRank[failOn] {
+			if sevRank[f.Severity] >= sevRank[failOn] || f.Code == CodeBannerNotHandled {
 				d.Fail = true
 			}
 		}
 	}
-	return d
+	return d, nil
+}
+
+func passName(p string) string {
+	switch p {
+	case PassNone:
+		return "no-answer"
+	case PassNoBanner:
+		return "no-banner"
+	}
+	return p
 }
 
 // newPage reports whether no pass of the old audit visited the page: a
@@ -264,8 +341,7 @@ func host(site string) string {
 	return strings.TrimPrefix(strings.ToLower(u.Hostname()), "www.")
 }
 
-func trackerChanges(old, cur *Result, comparable func(pass, page string) bool) []TrackerChange {
-	oldSeen := visited(old)
+func trackerChanges(old, cur *Result, comparable func(pass, page string) bool, newOK func(pass, page string) bool) []TrackerChange {
 	oldT := map[string]TrackerUse{}
 	for _, t := range old.Trackers {
 		oldT[t.ID] = t
@@ -282,7 +358,7 @@ func trackerChanges(old, cur *Result, comparable func(pass, page string) bool) [
 		ids[id] = true
 	}
 	passes := []string{PassNone, PassReject, PassAccept, PassNoBanner}
-	var out []TrackerChange
+	out := []TrackerChange{}
 	for id := range ids {
 		o, c := oldT[id], curT[id]
 		name := c.Name
@@ -293,22 +369,18 @@ func trackerChanges(old, cur *Result, comparable func(pass, page string) bool) [
 			if !comparable(pass, "") {
 				continue
 			}
+			// Page lists hold only pages both audits visited (and, with
+			// NewPages, pages new to the site); whether the tracker sent data
+			// in the pass at all comes from the full lists.
 			var added, removed []string
-			before, after := 0, 0
 			for _, p := range o.Fired[pass] {
-				if comparable(pass, p) {
-					before++
-					if !contains(c.Fired[pass], p) {
-						removed = append(removed, p)
-					}
+				if comparable(pass, p) && !contains(c.Fired[pass], p) {
+					removed = append(removed, p)
 				}
 			}
 			for _, p := range c.Fired[pass] {
-				if comparable(pass, p) || newPage(p, oldSeen) {
-					after++
-					if !contains(o.Fired[pass], p) {
-						added = append(added, p)
-					}
+				if (comparable(pass, p) || newOK(pass, p)) && !contains(o.Fired[pass], p) {
+					added = append(added, p)
 				}
 			}
 			if len(added) == 0 && len(removed) == 0 {
@@ -316,29 +388,21 @@ func trackerChanges(old, cur *Result, comparable func(pass, page string) bool) [
 			}
 			sort.Strings(added)
 			sort.Strings(removed)
+			before, after := len(o.Fired[pass]), len(c.Fired[pass])
 			tc := TrackerChange{Tracker: id, Name: name, Pass: pass, Added: added, Removed: removed, OldPages: before, NewPages: after}
-			who := capitalize(diffPhrase(id, name))
-			when := whenPhrase(pass)
 			switch {
 			case before == 0:
 				tc.Kind = TrackerStarted
-				tc.Sentence = fmt.Sprintf("%s now sends data %s, on %s.", who, when, pageList(added))
 			case after == 0:
 				tc.Kind = TrackerStopped
-				tc.Sentence = fmt.Sprintf("%s no longer sends data %s (it did on %s).", who, when, pageList(removed))
-			case after >= before:
+			case len(added) > len(removed):
 				tc.Kind = TrackerMore
-				tc.Sentence = fmt.Sprintf("%s sends data %s on %d %s, up from %d (new: %s).", who, when, after, plural2(after, "page"), before, pageList(added))
-			default:
+			case len(added) < len(removed):
 				tc.Kind = TrackerFewer
-				tc.Sentence = fmt.Sprintf("%s sends data %s on %d %s, down from %d (gone: %s).", who, when, after, plural2(after, "page"), before, pageList(removed))
+			default:
+				tc.Kind = TrackerMoved
 			}
-			if tc.Kind == TrackerMore && len(removed) > 0 {
-				tc.Sentence = strings.TrimSuffix(tc.Sentence, ").") + "; gone: " + pageList(removed) + ")."
-			}
-			if tc.Kind == TrackerFewer && len(added) > 0 {
-				tc.Sentence = strings.TrimSuffix(tc.Sentence, ").") + "; new: " + pageList(added) + ")."
-			}
+			tc.Sentence = tc.describe(capitalize(diffPhrase(id, name)), tc.Added, tc.Removed)
 			out = append(out, tc)
 		}
 	}
@@ -350,6 +414,25 @@ func trackerChanges(old, cur *Result, comparable func(pass, page string) bool) [
 		return out[i].Name < out[j].Name
 	})
 	return out
+}
+
+// describe words a tracker change; who is the tracker as a sentence opens.
+func (t TrackerChange) describe(who string, added, removed []string) string {
+	when := whenPhrase(t.Pass)
+	switch t.Kind {
+	case TrackerStarted:
+		return fmt.Sprintf("%s now sends data %s, on %s.", who, when, pageList(added))
+	case TrackerStopped:
+		return fmt.Sprintf("%s no longer sends data %s (it did on %s).", who, when, pageList(removed))
+	}
+	s := fmt.Sprintf("%s sends data %s on %d %s, was %d", who, when, t.NewPages, plural2(t.NewPages, "page"), t.OldPages)
+	if len(added) > 0 {
+		s += "; new: " + pageList(added)
+	}
+	if len(removed) > 0 {
+		s += "; gone: " + pageList(removed)
+	}
+	return s + "."
 }
 
 // diffPhrase names a tracker in a sentence, as Analyze does: "the Meta
@@ -368,11 +451,14 @@ func pageList(pages []string) string {
 	return strings.Join(pages, ", ")
 }
 
-func bannerChanges(o, c Banner) []string {
-	var out []string
+// bannerChanges lists what changed about the banner; worse is true when
+// the banner is gone or PXTA can no longer answer it in a pass.
+func bannerChanges(o, c Banner) (out []string, worse bool) {
+	out = []string{}
 	switch {
 	case o.Found && !c.Found:
 		out = append(out, fmt.Sprintf("The consent banner (%s) is gone.", PlatformName(o.Platform)))
+		worse = true
 	case !o.Found && c.Found:
 		out = append(out, fmt.Sprintf("A consent banner (%s) appeared.", PlatformName(c.Platform)))
 	case o.Found && c.Found && o.Platform != c.Platform:
@@ -383,11 +469,12 @@ func bannerChanges(o, c Banner) []string {
 		switch {
 		case op == "" && cp != "":
 			out = append(out, fmt.Sprintf("New banner problem %s: %s", passPhrase[pass], cp))
+			worse = true
 		case op != "" && cp == "":
 			out = append(out, fmt.Sprintf("Banner problem %s fixed (was: %s)", passPhrase[pass], op))
 		}
 	}
-	return out
+	return out, worse
 }
 
 func sortDiff(l []DiffFinding) {
@@ -415,9 +502,17 @@ func (d *DiffResult) WriteText(w io.Writer, public bool) {
 		}
 		return f.Sentence
 	}
-	fmt.Fprintf(w, "pxta diff: %s (%s) against %s (%s)\n", d.New.Site, orDash(d.New.Started), d.Old.Site, orDash(d.Old.Started))
+	newSite, oldSite := d.New.Site, d.Old.Site
+	if public {
+		// A start address can carry a query; the log gets the host.
+		newSite, oldSite = host(newSite), host(oldSite)
+	}
+	fmt.Fprintf(w, "pxta diff: %s (%s) against %s (%s)\n", newSite, orDash(d.New.Started), oldSite, orDash(d.Old.Started))
 	for _, s := range d.Warnings {
 		fmt.Fprintf(w, "  warning: %s\n", s)
+	}
+	for _, s := range d.Coverage {
+		fmt.Fprintf(w, "  not compared: %s\n", s)
 	}
 	section := func(title string, l []DiffFinding, extra func(DiffFinding) string) {
 		if len(l) == 0 {
@@ -463,6 +558,9 @@ func (d *DiffResult) WriteText(w io.Writer, public bool) {
 	if d.Changed {
 		verdict = fmt.Sprintf("%d new, %d gone, %d tracker %s, %d banner %s", len(d.Added), len(d.Removed),
 			len(d.Trackers), plural2(len(d.Trackers), "change"), len(d.Banner), plural2(len(d.Banner), "change"))
+		if len(d.Coverage) > 0 {
+			verdict += fmt.Sprintf(", %d coverage %s", len(d.Coverage), plural2(len(d.Coverage), "problem"))
+		}
 	}
 	fmt.Fprintf(w, "\npxta diff: %s\n", verdict)
 }
@@ -484,29 +582,11 @@ func (t TrackerChange) publicSentence() string {
 		}
 		return out
 	}
-	c := t
-	c.Added, c.Removed = pub(t.Added), pub(t.Removed)
-	who := c.Name
-	if strings.HasPrefix(c.Tracker, "unclassified:") {
+	who := diffPhrase(t.Tracker, t.Name)
+	if strings.HasPrefix(t.Tracker, "unclassified:") {
 		who = "an unrecognised tracker"
 	}
-	who = capitalize(who)
-	when := whenPhrase(c.Pass)
-	switch c.Kind {
-	case TrackerStarted:
-		return fmt.Sprintf("%s now sends data %s, on %s.", who, when, pageList(c.Added))
-	case TrackerStopped:
-		return fmt.Sprintf("%s no longer sends data %s (it did on %s).", who, when, pageList(c.Removed))
-	default:
-		s := fmt.Sprintf("%s sends data %s on %d %s, was %d", who, when, c.NewPages, plural2(c.NewPages, "page"), c.OldPages)
-		if len(c.Added) > 0 {
-			s += "; new: " + pageList(c.Added)
-		}
-		if len(c.Removed) > 0 {
-			s += "; gone: " + pageList(c.Removed)
-		}
-		return s + "."
-	}
+	return t.describe(capitalize(who), pub(t.Added), pub(t.Removed))
 }
 
 // publicBanner keeps the banner change and drops the problem text, which
@@ -521,6 +601,14 @@ func publicBanner(s string) string {
 // WriteGitHub prints an annotation per new finding (error at or above
 // fail-on, warning otherwise) and a notice per gone finding.
 func (d *DiffResult) WriteGitHub(w io.Writer) {
+	for _, s := range d.Coverage {
+		fmt.Fprintf(w, "::error title=pxta diff coverage::%s\n", ghData(s))
+	}
+	for _, s := range d.Banner {
+		if strings.HasPrefix(s, "New banner problem") || strings.HasSuffix(s, "is gone.") {
+			fmt.Fprintf(w, "::error title=pxta diff banner::%s\n", ghData(publicBanner(s)))
+		}
+	}
 	for _, f := range d.Added {
 		level := "warning"
 		if d.FailOn == "" || (d.FailOn != "never" && sevRank[f.Severity] >= sevRank[d.FailOn]) {
@@ -552,7 +640,10 @@ func (d *DiffResult) Markdown() string {
 	}
 	fmt.Fprintf(&b, "Against the audit of %s.\n", orDash(d.Old.Started))
 	for _, s := range d.Warnings {
-		fmt.Fprintf(&b, "\n> %s\n", mdCell(strings.ReplaceAll(s, d.Old.Site, host(d.Old.Site))))
+		fmt.Fprintf(&b, "\n> %s\n", mdCell(s))
+	}
+	for _, s := range d.Coverage {
+		fmt.Fprintf(&b, "\n> **Not compared:** %s\n", mdCell(s))
 	}
 	table := func(title string, l []DiffFinding) {
 		if len(l) == 0 {

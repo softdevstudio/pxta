@@ -691,7 +691,10 @@ func TestBrowserDiff(t *testing.T) {
 	f := startFixtures(t)
 	before := auditFixture(t, f, "https://www.tidewaterbakery.test/", nil)
 	after := auditFixture(t, f, "https://www.tidewaterbakery-next.test/", nil)
-	d := Diff(before, after, "")
+	d, err := Diff(before, after, DiffOptions{})
+	if err != nil {
+		t.Fatal(err)
+	}
 	var b strings.Builder
 	d.WriteText(&b, false)
 	t.Log(b.String())
@@ -718,12 +721,22 @@ func TestBrowserDiff(t *testing.T) {
 	if len(d.Warnings) != 1 || !strings.Contains(d.Warnings[0], "different sites") {
 		t.Errorf("warnings %q", d.Warnings)
 	}
-	if !d.Fail || Diff(before, after, SevHigh).Fail || !Diff(before, after, SevMedium).Fail {
+	high, _ := Diff(before, after, DiffOptions{FailOn: SevHigh})
+	medium, _ := Diff(before, after, DiffOptions{FailOn: SevMedium})
+	if !d.Fail || high.Fail || !medium.Fail {
 		t.Error("fail-on thresholds")
 	}
-	if again := Diff(before, auditFixture(t, f, "https://www.tidewaterbakery.test/", nil), ""); again.Changed {
-		var b strings.Builder
-		again.WriteText(&b, false)
-		t.Errorf("two audits of the same site differ:\n%s", b.String())
+	// Two audits of the same sites differ in nothing: the bakery, and the
+	// shop, which has personal data, sensitive pages and Consent Mode.
+	for _, site := range []string{"https://www.tidewaterbakery.test/", "https://www.harborpine.test/"} {
+		a, b := auditFixture(t, f, site, nil), auditFixture(t, f, site, nil)
+		if site == "https://www.tidewaterbakery.test/" {
+			a = before
+		}
+		if again, _ := Diff(a, b, DiffOptions{}); again.Changed {
+			var w strings.Builder
+			again.WriteText(&w, false)
+			t.Errorf("two audits of %s differ:\n%s", site, w.String())
+		}
 	}
 }

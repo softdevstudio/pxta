@@ -153,29 +153,40 @@ accepted problems.
 Design decisions:
 - Input: two findings.json files (`ReadResult`). Pages are compared by
   path, so staging against production works; different sites give a
-  warning, not an error. Mixing a redacted and an unredacted file warns.
+  warning, not an error. A redacted and an unredacted file are refused
+  (exit 2): pages wouldn't match and diff.json would mix their data.
 - Findings are matched by code, pass, page path, tracker, and for leaks
-  the rule plus the parameter name (personal data) or rule plus value
-  (sensitive page, search term). Values like client IDs change every run,
-  so they are not part of the match. `tracker-present` rows are left to
-  the tracker section.
+  the rule plus the parameter shape (personal data; `paramShape` drops
+  `body.N>` and `[N]`), the category (sensitive page; the value is the full
+  address or title) or the term (search). Consent Mode findings are keyed
+  without leaks, as Analyze keys them. Values like client IDs change every
+  run, so they are not part of the match. `tracker-present` rows are left
+  to the tracker section.
 - Sections: new findings; gone findings; findings on pages only one audit
-  visited ("not compared", never counted as new or fixed when the page
-  wasn't visited in the other); passes run in only one audit, same;
+  visited in that pass ("not compared", never new or fixed; `--new-pages`
+  counts pages no old pass reached as new); coverage problems (a pass the
+  old audit ran and the new one didn't, a new audit with no good page);
   tracker behaviour per pass (new tracker, gone tracker, starts or stops
   sending data in a pass, more or fewer pages); banner changes (found,
   platform, problems); counts by severity, old and new.
 - Exit codes: 0 no change, 1 changes, 2 usage, 3 a file couldn't be read.
-  `--fail-on SEVERITY` exits 1 only for a new finding at that severity or
-  above (tracker and banner changes then report without failing).
+  `--fail-on SEVERITY` exits 1 for a new finding at that severity or
+  above, and at any threshold for a coverage problem, a banner that's gone,
+  a new banner problem or a new banner-not-handled. Other tracker and
+  banner changes report without failing.
 - Output: text; `--format json` (diff.json shape, stable keys);
   `--format github` (an annotation per new finding, built with
   `PublicLine`); `--summary FILE` (Markdown, from public lines only).
 - Action: inputs `baseline` (an earlier findings.json) and
   `baseline-fail-on`; after the check, the action diffs the new audit
   against the baseline, adds it to the job summary and sets outputs
-  `diff-exit-code` and `changes`. Without `baseline-fail-on`, the diff
-  reports and never fails the step.
+  `diff-exit-code` and `changes`. With `baseline-fail-on`, the diff
+  decides the step (the check's own verdict is ignored, so known problems
+  don't fail it); without it, the diff only reports.
+- First review (2026-10-31) found staging/production and batched-hit
+  noise, the Action failing on known problems, broken audits passing, new
+  pages counted as new, wrong tracker kinds, Consent Mode flapping and an
+  unredacted baseline reaching diff.json; all fixed with tests.
 - Planted-change fixture: www.tidewaterbakery-next.test, the bakery with
   one change: the X Pixel loads on /menu without waiting for consent. The
   browser test diffs the two audits and expects exactly that change.

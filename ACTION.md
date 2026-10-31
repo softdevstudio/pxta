@@ -38,7 +38,7 @@ jobs:
 | `fail` | `true` | Fail the step when a rule is broken; `false` reports only. |
 | `version` | | PXTA release tag to use, or `latest`. Empty runs the release the action is pinned to (`@v0.2.0` runs pxta 0.2.0); a branch or SHA pin runs the latest. |
 | `baseline` | | An earlier `findings.json` to compare with (`pxta diff`); the changes go to the job summary and `diff.json` into the report. |
-| `baseline-fail-on` | | Fail on a new finding at this severity or above (`high`, `medium`, `low`, `info`), or `any` change. Empty reports only. |
+| `baseline-fail-on` | | Let the comparison decide the step: fail on a new finding at this severity or above (`high`, `medium`, `low`, `info`), on a lost consent pass or a banner that's gone, or with `any` on any change. Problems the baseline already has then don't fail it. Empty: the comparison only reports. |
 | `pxta-path` | | Use this pxta binary instead of downloading one (for testing the action). |
 
 Outputs: `result` (`pass` or `fail`), `exit-code` (0 pass, 1 rule broken,
@@ -71,10 +71,15 @@ say what's new since then:
           baseline-fail-on: medium
 ```
 
-The step fails on a new medium or high finding; old ones that the
-baseline already has don't fail it. Without `baseline-fail-on`, the
-comparison only reports. Update the baseline file when a change is
-accepted.
+The step fails on a new medium or high finding, a lost consent pass or a
+banner that's gone; problems the baseline already has don't fail it, even
+though the check still lists them. Without `baseline-fail-on`, the
+comparison only reports and the check decides as usual. Update the baseline
+file when a change is accepted. The action redacts by default, so keep a
+redacted baseline (one from a report artifact): a redacted audit can't be
+compared with an unredacted one. A baseline the action can't read, or a
+`baseline-fail-on` value it doesn't know, fails the step even with
+`fail: "false"`.
 
 The rules file format is in the README under "pxta check".
 

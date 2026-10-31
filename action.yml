@@ -59,7 +59,7 @@ inputs:
     required: false
     default: ""
   baseline-fail-on:
-    description: "Fail the step when the comparison finds a new finding at this severity or above: high, medium, low, info, or any (any change). Empty reports only."
+    description: "Let the comparison decide the step: fail on a new finding at this severity or above (high, medium, low, info), on a lost consent pass or a banner that's gone, or with any on any change. Problems the baseline already has then don't fail it. Empty: the comparison only reports."
     required: false
     default: ""
   pxta-path:
@@ -236,6 +236,15 @@ runs:
           1) if [ -n "$DIFF_FAIL_ON" ] && [ "$FAIL" = true ]; then echo "::error::pxta diff: new since the baseline, see the annotations and the job summary"; diff_failed=1; fi ;;
           *) echo "::error::pxta diff could not compare with the baseline (exit $DIFF)"; exit "$DIFF" ;;
         esac
+        # With baseline-fail-on, the comparison decides: problems the
+        # baseline already has are known and don't fail the step.
+        if [ -n "$DIFF_FAIL_ON" ] && [ -n "$DIFF" ]; then
+          case "$CODE" in
+            0|1) [ "$CODE" = 1 ] && echo "pxta check found problems; the baseline comparison decides the step"
+                 [ -z "${diff_failed:-}" ] || exit 1
+                 exit 0 ;;
+          esac
+        fi
         case "$CODE" in
           0) echo "pxta check passed"; [ -z "${diff_failed:-}" ] || exit 1 ;;
           1) if [ "$FAIL" = true ]; then echo "::error::pxta check: rules broken, see the annotations and the job summary"; exit 1; fi
