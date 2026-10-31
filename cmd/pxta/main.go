@@ -27,10 +27,11 @@ Usage:
   pxta audit <url> [options]   crawl a site and write an evidence report
   pxta check <url> [options]   audit a site and fail (exit 1) when it breaks the rules
   pxta check --findings FILE   judge an earlier audit's findings.json
+  pxta diff OLD NEW            what changed between two audits' findings.json
   pxta catalog                 list the trackers PXTA recognises
   pxta version                 print the version
 
-Run "pxta audit -h" or "pxta check -h" for the options.
+Run "pxta audit -h", "pxta check -h" or "pxta diff -h" for the options.
 `
 
 func main() {
@@ -60,6 +61,8 @@ func run(args []string, stdout, stderr io.Writer) int {
 		return runAudit(args[1:], stdout, stderr)
 	case "check":
 		return runCheck(args[1:], stdout, stderr)
+	case "diff":
+		return runDiff(args[1:], stdout, stderr)
 	}
 	fmt.Fprintf(stderr, "pxta: unknown command %q\n\n%s", args[0], usage)
 	return 2

@@ -181,10 +181,10 @@ Design decisions:
   browser test diffs the two audits and expects exactly that change.
 
 Steps:
-1. [ ] diff.go: matching, sections, outputs; unit tests
-2. [ ] CLI `diff`; CLI tests
-3. [ ] fixture and browser test (exactly the planted change)
-4. [ ] Action inputs and action-test cases
+1. [x] diff.go: matching, sections, outputs; unit tests
+2. [x] CLI `diff`; CLI tests
+3. [x] fixture and browser test (exactly the planted change)
+4. [x] Action inputs and action-test cases
 5. [ ] README, ACTION.md, CHANGELOG, independent review, fixes, recording
 6. [ ] release 0.3.0 through the workflow, check assets, download job
 7. [ ] pxta.com post and pages, softdevstudio.com note, softdev-plan.md

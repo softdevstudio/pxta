@@ -282,7 +282,7 @@ them should name the code and tracker only.
 ### GitHub Action
 
 ```yaml
-- uses: softdevstudio/pxta@v0.2.0
+- uses: softdevstudio/pxta@v0.3.0
   with:
     url: https://www.example.com/
     rules: pxta-rules.json
@@ -292,6 +292,61 @@ The action downloads the PXTA release it is pinned to, checks it against
 SHA256SUMS, runs `pxta check`, puts each problem on the run as an
 annotation and the summary on the job page, and uploads the report files
 (redacted by default). Inputs and outputs are in [ACTION.md](ACTION.md).
+
+With `baseline` set to an earlier `findings.json` (from the last run's
+artifact, or one kept in the repo), the action also runs `pxta diff` and
+adds the changes to the job summary. `baseline-fail-on: medium` fails the
+step on a new medium or high finding even when the rules allow it, so
+known problems don't block the build but new ones do.
+
+## pxta diff
+
+`pxta diff` compares two audits and lists what changed: a tag-manager
+change, a deploy or a new consent setup, seen as findings that are new or
+gone, trackers that start or stop sending data in a pass, and banner
+changes.
+
+```sh
+pxta diff last-month/findings.json pxta-report/findings.json
+pxta diff staging/findings.json production/findings.json --fail-on medium
+```
+
+```
+  --fail-on severity    exit 1 only for a new finding at this severity or
+                        above (high, medium, low, info), or never; the
+                        default is any change
+  --format json|github  print the diff as JSON, or as GitHub annotations
+  --summary file        append a Markdown summary (use $GITHUB_STEP_SUMMARY)
+  --out file            also write the diff as JSON to this file
+```
+
+Exit codes: 0 no change, 1 changes (or, with `--fail-on`, a new finding at
+that severity or above), 2 a usage error, 3 a file couldn't be read.
+
+How findings are matched. Two findings are the same when they have the
+same code, pass, page path and tracker, and, for a leak, the same rule and
+the same parameter (`em`, `ud[em]`), or the same word for a sensitive page
+or a search term. Client IDs, session IDs and hashes of a test address
+change from one run to the next, so they aren't part of the match; the
+same leak with a different value is the same finding.
+
+What isn't counted. Pages are compared by path, so staging can be compared
+with production; a warning says the sites differ. A finding on a page the
+other audit visited in a different pass but not this one, or in a pass
+the other audit didn't run, is listed as not compared, so a smaller crawl
+never looks like a fix. A page no pass of the old audit reached counts as
+a new page, and its findings as new. A changed count of the same finding
+is listed but isn't a change. Comparing a redacted audit with an
+unredacted one gives a warning: pages with personal data in their address
+won't match.
+
+Tracker changes have kinds, like finding codes: `started` (sends data in a
+pass where it sent none), `stopped`, `more-pages` and `fewer-pages`. They
+are in the `tracker_changes` list of the JSON output.
+
+With `--format github`, the annotations, the summary and the log are built
+the same way as `pxta check`'s: from codes, trackers, page paths and
+passes, never quoting what the site sent.
 
 ## Redacted reports
 

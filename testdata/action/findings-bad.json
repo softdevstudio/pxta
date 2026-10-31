@@ -2,12 +2,76 @@
   "tool": "pxta",
   "version": "0.2.0",
   "site": "https://shop.test/",
-  "banner": {"found": true, "platform": "onetrust"},
+  "banner": {
+    "found": true,
+    "platform": "onetrust"
+  },
   "findings": [
-    {"code": "tracker-before-consent", "severity": "medium", "pass": "none", "page": "/", "tracker": "meta-pixel",
-     "tracker_name": "Meta Pixel", "sentence": "On /, the Meta Pixel sent PageView before the consent banner was answered.",
-     "count": 1, "evidence": {"url": "https://www.facebook.com/tr/?id=1&ev=PageView", "method": "GET", "time": "", "params": []}}
+    {
+      "code": "tracker-before-consent",
+      "severity": "medium",
+      "pass": "none",
+      "page": "/",
+      "tracker": "meta-pixel",
+      "tracker_name": "Meta Pixel",
+      "sentence": "On /, the Meta Pixel sent PageView before the consent banner was answered.",
+      "count": 1,
+      "evidence": {
+        "url": "https://www.facebook.com/tr/?id=1&ev=PageView",
+        "method": "GET",
+        "time": "",
+        "params": []
+      }
+    }
   ],
-  "trackers": [{"id": "meta-pixel", "name": "Meta Pixel", "vendor": "Meta", "loaded_on": {}, "fired_on": {"none": ["/"]}, "requests": {"none": 1}}],
-  "counts": {"medium": 1}
+  "trackers": [
+    {
+      "id": "meta-pixel",
+      "name": "Meta Pixel",
+      "vendor": "Meta",
+      "loaded_on": {},
+      "fired_on": {
+        "none": [
+          "/"
+        ]
+      },
+      "requests": {
+        "none": 1
+      }
+    }
+  ],
+  "counts": {
+    "medium": 1
+  },
+  "passes": [
+    "none",
+    "reject",
+    "accept"
+  ],
+  "pages": [
+    {
+      "pass": "none",
+      "page": 0,
+      "url": "https://shop.test/",
+      "final_url": "https://shop.test/",
+      "started": "2026-10-31T12:00:00Z",
+      "requests": 1
+    },
+    {
+      "pass": "reject",
+      "page": 0,
+      "url": "https://shop.test/",
+      "final_url": "https://shop.test/",
+      "started": "2026-10-31T12:00:00Z",
+      "requests": 1
+    },
+    {
+      "pass": "accept",
+      "page": 0,
+      "url": "https://shop.test/",
+      "final_url": "https://shop.test/",
+      "started": "2026-10-31T12:00:00Z",
+      "requests": 1
+    }
+  ]
 }

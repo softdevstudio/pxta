@@ -54,6 +54,14 @@ inputs:
     description: "PXTA release to use, a tag such as v0.2.0, or latest. Empty means the release this action is pinned to (softdevstudio/pxta@v0.2.0 runs pxta 0.2.0), else the latest."
     required: false
     default: ""
+  baseline:
+    description: An earlier findings.json to compare this audit with (pxta diff). The changes go to the job summary.
+    required: false
+    default: ""
+  baseline-fail-on:
+    description: "Fail the step when the comparison finds a new finding at this severity or above: high, medium, low, info, or any (any change). Empty reports only."
+    required: false
+    default: ""
   pxta-path:
     description: Use this pxta binary instead of downloading one (for testing the action itself).
     required: false
@@ -69,6 +77,12 @@ outputs:
   version:
     description: The pxta release the action ran (a vX.Y.Z tag, latest, or local)
     value: ${{ steps.install.outputs.version }}
+  diff-exit-code:
+    description: pxta diff's exit code when a baseline was given (0 no change, 1 changes or a new finding at baseline-fail-on, 2 or 3 an error)
+    value: ${{ steps.diff.outputs.exit-code }}
+  changes:
+    description: true when the comparison with the baseline found a change
+    value: ${{ steps.diff.outputs.changes }}
   report:
     description: Folder holding report.html, findings.json, requests.har and check.json
     value: ${{ inputs.out }}
@@ -161,6 +175,39 @@ runs:
         if [ $code = 0 ]; then echo "result=pass" >> "$GITHUB_OUTPUT"; else echo "result=fail" >> "$GITHUB_OUTPUT"; fi
         exit 0
 
+    - name: Compare with the baseline
+      id: diff
+      if: ${{ inputs.baseline != '' && (steps.check.outputs.exit-code == '0' || steps.check.outputs.exit-code == '1') }}
+      shell: bash
+      env:
+        PXTA_BIN: ${{ steps.install.outputs.bin }}
+        IN_BASELINE: ${{ inputs.baseline }}
+        IN_FAIL_ON: ${{ inputs.baseline-fail-on }}
+        IN_FINDINGS: ${{ inputs.findings }}
+        IN_OUT: ${{ inputs.out }}
+      run: |
+        set +e -uf
+        cur="$IN_FINDINGS"
+        [ -n "$cur" ] || cur="$IN_OUT/findings.json"
+        # Report-only unless baseline-fail-on is set; "any" means any change.
+        fail_on=never
+        case "$IN_FAIL_ON" in
+          "") fail_on=never ;;
+          any) fail_on="" ;;
+          *) fail_on="$IN_FAIL_ON" ;;
+        esac
+        args=(diff "$IN_BASELINE" "$cur" --format github)
+        if [ -n "$fail_on" ]; then args+=(--fail-on "$fail_on"); fi
+        if [ -z "$IN_FINDINGS" ]; then args+=(--out "$IN_OUT/diff.json"); fi
+        if [ -n "${GITHUB_STEP_SUMMARY:-}" ]; then args+=(--summary "$GITHUB_STEP_SUMMARY"); fi
+        "$PXTA_BIN" "${args[@]}"
+        code=$?
+        echo "exit-code=$code" >> "$GITHUB_OUTPUT"
+        # Whether anything changed, whatever the threshold.
+        "$PXTA_BIN" diff "$IN_BASELINE" "$cur" > /dev/null 2>&1
+        if [ $? = 1 ]; then echo "changes=true" >> "$GITHUB_OUTPUT"; else echo "changes=false" >> "$GITHUB_OUTPUT"; fi
+        exit 0
+
     - name: Upload the report
       # Only the report files, and only from a finished check: never the
       # working files an interrupted audit leaves behind.
@@ -173,6 +220,7 @@ runs:
           ${{ inputs.out }}/findings.json
           ${{ inputs.out }}/requests.har
           ${{ inputs.out }}/check.json
+          ${{ inputs.out }}/diff.json
         if-no-files-found: ignore
 
     - name: Verdict
@@ -180,9 +228,16 @@ runs:
       env:
         CODE: ${{ steps.check.outputs.exit-code }}
         FAIL: ${{ inputs.fail }}
+        DIFF: ${{ steps.diff.outputs.exit-code }}
+        DIFF_FAIL_ON: ${{ inputs.baseline-fail-on }}
       run: |
+        case "$DIFF" in
+          ""|0) ;;
+          1) if [ -n "$DIFF_FAIL_ON" ] && [ "$FAIL" = true ]; then echo "::error::pxta diff: new since the baseline, see the annotations and the job summary"; diff_failed=1; fi ;;
+          *) echo "::error::pxta diff could not compare with the baseline (exit $DIFF)"; exit "$DIFF" ;;
+        esac
         case "$CODE" in
-          0) echo "pxta check passed" ;;
+          0) echo "pxta check passed"; [ -z "${diff_failed:-}" ] || exit 1 ;;
           1) if [ "$FAIL" = true ]; then echo "::error::pxta check: rules broken, see the annotations and the job summary"; exit 1; fi
              echo "pxta check found problems (fail: false, so the step passes)" ;;
           *) echo "::error::pxta check could not finish (exit $CODE)"; exit "${CODE:-2}" ;;

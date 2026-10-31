@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest   # has Chrome; macOS runners do too
     steps:
       - uses: actions/checkout@v4          # only needed for a rules file in the repo
-      - uses: softdevstudio/pxta@v0.2.0
+      - uses: softdevstudio/pxta@v0.3.0
         with:
           url: https://www.example.com/
           rules: pxta-rules.json           # optional
@@ -37,15 +37,18 @@ jobs:
 | `artifact-name` | `pxta-report` | Artifact name. |
 | `fail` | `true` | Fail the step when a rule is broken; `false` reports only. |
 | `version` | | PXTA release tag to use, or `latest`. Empty runs the release the action is pinned to (`@v0.2.0` runs pxta 0.2.0); a branch or SHA pin runs the latest. |
+| `baseline` | | An earlier `findings.json` to compare with (`pxta diff`); the changes go to the job summary and `diff.json` into the report. |
+| `baseline-fail-on` | | Fail on a new finding at this severity or above (`high`, `medium`, `low`, `info`), or `any` change. Empty reports only. |
 | `pxta-path` | | Use this pxta binary instead of downloading one (for testing the action). |
 
 Outputs: `result` (`pass` or `fail`), `exit-code` (0 pass, 1 rule broken,
 2 usage or rules error, 3 audit could not run), `version` (the release that
-ran) and `report` (the folder).
+ran), `report` (the folder), and with a baseline `diff-exit-code` and
+`changes` (`true` or `false`).
 A usage error or a failed audit always fails the step, whatever `fail` says.
 
-The artifact holds `report.html`, `findings.json`, `requests.har` and
-`check.json`, and is uploaded only when the check finished (exit 0 or 1).
+The artifact holds `report.html`, `findings.json`, `requests.har`,
+`check.json` and, with a baseline, `diff.json`, and is uploaded only when the check finished (exit 0 or 1).
 `redact` applies to audits the action runs; with `findings`, the file is
 judged as it is and nothing is uploaded. Annotations, the job summary and
 the job log never quote what the site sent: each problem is written from its
@@ -53,6 +56,25 @@ code, tracker, page path and pass, with queries cut and any path part that
 looks like an address, a hash or an encoded value replaced. The full
 sentences are in the report. Using the
 action twice in one job needs a different `artifact-name` for each.
+
+### Compare with a baseline
+
+Keep a reviewed `findings.json` in the repo as the baseline (copy it from a
+report artifact once its findings are known and accepted) and let each run
+say what's new since then:
+
+```yaml
+      - uses: softdevstudio/pxta@v0.3.0
+        with:
+          url: https://www.example.com/
+          baseline: pxta-baseline.json
+          baseline-fail-on: medium
+```
+
+The step fails on a new medium or high finding; old ones that the
+baseline already has don't fail it. Without `baseline-fail-on`, the
+comparison only reports. Update the baseline file when a change is
+accepted.
 
 The rules file format is in the README under "pxta check".
 

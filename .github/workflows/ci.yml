@@ -63,7 +63,7 @@ jobs:
           PXTA_REQUIRE_BROWSER: "1"
         run: |
           set -o pipefail
-          go test -count=1 -timeout 30m -run 'Test(Catalog|Match|Email|Other|Sensitive|Consent|Robots|Normalize|Analyze|Render|CDP|Dial|CLI|BrowserShop|Check|Rules|Redact|Verify)' ./... 2>&1 | tee test.log || {
+          go test -count=1 -timeout 30m -run 'Test(Catalog|Match|Email|Other|Sensitive|Consent|Robots|Normalize|Analyze|Render|CDP|Dial|CLI|BrowserShop|Check|Rules|Redact|Verify|Diff)' ./... 2>&1 | tee test.log || {
             echo "::error::$(grep -E -- "--- FAIL|panic:|_test.go:[0-9]+:" test.log | head -120 | awk '{gsub(/%/,"%25"); printf "%s%%0A", $0}')"
             exit 1
           }

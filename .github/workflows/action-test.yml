@@ -54,9 +54,48 @@ jobs:
           findings: testdata/action/findings-bad.json
           rules: testdata/action/rules-allow.json
           pxta-path: ${{ env.PXTA_BIN }}
+      - name: A baseline comparison reports the new finding
+        id: diffreport
+        uses: ./
+        with:
+          findings: testdata/action/findings-bad.json
+          baseline: testdata/action/findings-baseline.json
+          fail: "false"
+          pxta-path: ${{ env.PXTA_BIN }}
+      - name: Against itself, no change
+        id: diffsame
+        uses: ./
+        with:
+          findings: testdata/action/findings-bad.json
+          baseline: testdata/action/findings-bad.json
+          fail: "false"
+          pxta-path: ${{ env.PXTA_BIN }}
+      - name: With baseline-fail-on, a new medium finding fails even when the rules allow it
+        id: difffail
+        continue-on-error: true
+        uses: ./
+        with:
+          findings: testdata/action/findings-bad.json
+          rules: testdata/action/rules-allow.json
+          baseline: testdata/action/findings-baseline.json
+          baseline-fail-on: medium
+          pxta-path: ${{ env.PXTA_BIN }}
+      - name: With baseline-fail-on high, the same comparison passes
+        id: diffhigh
+        uses: ./
+        with:
+          findings: testdata/action/findings-bad.json
+          rules: testdata/action/rules-allow.json
+          baseline: testdata/action/findings-baseline.json
+          baseline-fail-on: high
+          pxta-path: ${{ env.PXTA_BIN }}
       - name: Check the saved-findings results
         shell: bash
         run: |
+          [ "${{ steps.diffreport.outputs.diff-exit-code }}" = 0 ] && [ "${{ steps.diffreport.outputs.changes }}" = true ] || { echo "::error::diff report: exit ${{ steps.diffreport.outputs.diff-exit-code }} changes ${{ steps.diffreport.outputs.changes }}"; exit 1; }
+          [ "${{ steps.diffsame.outputs.changes }}" = false ] || { echo "::error::diff against itself: changes ${{ steps.diffsame.outputs.changes }}"; exit 1; }
+          [ "${{ steps.difffail.outcome }}" = failure ] && [ "${{ steps.difffail.outputs.diff-exit-code }}" = 1 ] || { echo "::error::baseline-fail-on medium: ${{ steps.difffail.outcome }} ${{ steps.difffail.outputs.diff-exit-code }}"; exit 1; }
+          [ "${{ steps.diffhigh.outputs.diff-exit-code }}" = 0 ] && [ "${{ steps.diffhigh.outputs.result }}" = pass ] || { echo "::error::baseline-fail-on high: ${{ steps.diffhigh.outputs.diff-exit-code }}"; exit 1; }
           [ "${{ steps.saved.outputs.result }}" = fail ] && [ "${{ steps.saved.outputs.exit-code }}" = 1 ] || { echo "::error::saved: ${{ steps.saved.outputs.result }} ${{ steps.saved.outputs.exit-code }}"; exit 1; }
           [ "${{ steps.allowed.outputs.result }}" = pass ] || { echo "::error::allowed: ${{ steps.allowed.outputs.result }}"; exit 1; }
 

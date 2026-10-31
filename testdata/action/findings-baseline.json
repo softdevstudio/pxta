@@ -1,0 +1,52 @@
+{
+  "tool": "pxta",
+  "version": "0.2.0",
+  "site": "https://shop.test/",
+  "banner": {
+    "found": true,
+    "platform": "onetrust"
+  },
+  "findings": [],
+  "trackers": [
+    {
+      "id": "meta-pixel",
+      "name": "Meta Pixel",
+      "vendor": "Meta",
+      "loaded_on": {},
+      "fired_on": {},
+      "requests": {}
+    }
+  ],
+  "counts": {},
+  "passes": [
+    "none",
+    "reject",
+    "accept"
+  ],
+  "pages": [
+    {
+      "pass": "none",
+      "page": 0,
+      "url": "https://shop.test/",
+      "final_url": "https://shop.test/",
+      "started": "2026-10-31T12:00:00Z",
+      "requests": 1
+    },
+    {
+      "pass": "reject",
+      "page": 0,
+      "url": "https://shop.test/",
+      "final_url": "https://shop.test/",
+      "started": "2026-10-31T12:00:00Z",
+      "requests": 1
+    },
+    {
+      "pass": "accept",
+      "page": 0,
+      "url": "https://shop.test/",
+      "final_url": "https://shop.test/",
+      "started": "2026-10-31T12:00:00Z",
+      "requests": 1
+    }
+  ]
+}

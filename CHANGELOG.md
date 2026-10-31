@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.3.0
+
+- `pxta diff OLD NEW`: compares two audits' `findings.json` and lists new
+  and gone findings, tracker changes per pass (`started`, `stopped`,
+  `more-pages`, `fewer-pages`) and banner changes. Leaks are matched by
+  rule and parameter, not by value, so client IDs that change every run
+  don't show up as changes. Findings on pages or passes only one audit
+  covered are listed as not compared, never as fixed.
+- Exit codes 0 no change, 1 changes, 2 usage, 3 unreadable file;
+  `--fail-on` exits 1 only for a new finding at a severity or above.
+- Output as text, JSON (`--format json`, `--out`), GitHub annotations and a
+  Markdown summary built from public fields only.
+- GitHub Action: `baseline` and `baseline-fail-on` inputs run the diff after
+  the check; outputs `diff-exit-code` and `changes`; `diff.json` in the
+  report artifact.
+
 ## 0.2.0
 
 - `pxta check`: audit a site, or judge a saved `findings.json`, and exit 1

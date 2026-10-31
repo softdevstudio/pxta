@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"sort"
 	"strconv"
 	"strings"
 	"testing"
@@ -679,5 +680,50 @@ func TestBrowserRedact(t *testing.T) {
 				}
 			}
 		}
+	}
+}
+
+// The bakery and the same bakery after a tag-manager change that loads the
+// X Pixel on /menu without waiting for consent: the diff reports exactly
+// that change and nothing else.
+func TestBrowserDiff(t *testing.T) {
+	needBrowser(t)
+	f := startFixtures(t)
+	before := auditFixture(t, f, "https://www.tidewaterbakery.test/", nil)
+	after := auditFixture(t, f, "https://www.tidewaterbakery-next.test/", nil)
+	d := Diff(before, after, "")
+	var b strings.Builder
+	d.WriteText(&b, false)
+	t.Log(b.String())
+	var added []string
+	for _, x := range d.Added {
+		added = append(added, x.Code+"/"+x.Pass+"/"+x.Page+"/"+x.Tracker)
+	}
+	sort.Strings(added)
+	want := []string{"tracker-after-reject/reject//menu/x-pixel", "tracker-before-consent/none//menu/x-pixel"}
+	if strings.Join(added, " ") != strings.Join(want, " ") {
+		t.Errorf("new findings %v, want %v", added, want)
+	}
+	if len(d.Removed) != 0 || len(d.Skipped) != 0 || len(d.Banner) != 0 {
+		t.Errorf("gone %+v, not compared %+v, banner %v", d.Removed, d.Skipped, d.Banner)
+	}
+	var tc []string
+	for _, x := range d.Trackers {
+		tc = append(tc, x.Tracker+"/"+x.Pass+"/"+x.Kind+"/"+strings.Join(x.Added, ","))
+	}
+	wantT := []string{"x-pixel/none/started//menu", "x-pixel/reject/started//menu", "x-pixel/accept/started//menu"}
+	if strings.Join(tc, " ") != strings.Join(wantT, " ") {
+		t.Errorf("tracker changes %v, want %v", tc, wantT)
+	}
+	if len(d.Warnings) != 1 || !strings.Contains(d.Warnings[0], "different sites") {
+		t.Errorf("warnings %q", d.Warnings)
+	}
+	if !d.Fail || Diff(before, after, SevHigh).Fail || !Diff(before, after, SevMedium).Fail {
+		t.Error("fail-on thresholds")
+	}
+	if again := Diff(before, auditFixture(t, f, "https://www.tidewaterbakery.test/", nil), ""); again.Changed {
+		var b strings.Builder
+		again.WriteText(&b, false)
+		t.Errorf("two audits of the same site differ:\n%s", b.String())
 	}
 }
