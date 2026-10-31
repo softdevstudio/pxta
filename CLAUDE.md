@@ -131,7 +131,8 @@ Steps:
 4. [x] browser tests: shop fails check, bakery passes, redacted shop and
        encodings reports hold no personal value
 5. [x] action.yml, ACTION.md, action test workflow
-6. [ ] README, CHANGELOG, independent review, fixes, recording
+6. [x] README, CHANGELOG, independent review (two rounds), fixes, recording
+       (2026-10-31: 90 tests and subtests passed, gallery numbers unchanged)
 7. [ ] release 0.2.0 through the workflow (its first real run), check assets
 8. [ ] pxta.com post, softdevstudio.com note, softdev-plan.md status
 

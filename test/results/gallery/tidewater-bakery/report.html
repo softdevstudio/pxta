@@ -31,7 +31,7 @@ footer{margin-top:40px;color:var(--muted);font-size:12.5px}
 <body>
 <main>
 <h1>Tracking audit of www.tidewaterbakery.test</h1>
-<p class="sub">25 October 2026, 16:07 UTC · 3 pages · PXTA 0.1.0, tracker catalog 2026.10.25</p>
+<p class="sub">31 October 2026, 17:22 UTC · 3 pages · PXTA 0.2.0, tracker catalog 2026.10.25</p>
 
 <div class="tiles">
 <div class="tile sev-high"><b>0</b><span>high</span></div>
@@ -58,12 +58,12 @@ There is no score: each finding names the page, the tracker and the data, with t
 
 <details><summary>Evidence</summary>
 <div class="ev">
-<div class="url mono">GET https://www.facebook.com/tr/?id=88123004417&amp;ev=SubscribedButtonClick&amp;dl=https%3A%2F%2Fwww.tidewaterbakery.test%2Forder&amp;rl=&amp;if=false&amp;ts=1792944464481&amp;v=2.9.fixture&amp;ud%5Bem%5D=d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a</div>
-<p class="meta">2026-10-25T16:07:44.483Z · Image from the page · while the page was being scrolled and filled in</p>
+<div class="url mono">GET https://www.facebook.com/tr/?id=88123004417&amp;ev=SubscribedButtonClick&amp;dl=https%3A%2F%2Fwww.tidewaterbakery.test%2Forder&amp;rl=&amp;if=false&amp;ts=1793467384019&amp;v=2.9.fixture&amp;ud%5Bem%5D=d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a</div>
+<p class="meta">2026-10-31T17:23:04.022Z · Image from the page · while the page was being scrolled and filled in</p>
 
 <div class="wrap"><table>
 <tr><th>Field</th><th>Value</th><th>Meaning</th></tr>
-<tr><td class="mono">id</td><td class="v mono">88123004417</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">SubscribedButtonClick</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.tidewaterbakery.test/order</td><td>page address</td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1792944464481</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr><tr class="hit"><td class="mono">ud[em]</td><td class="v mono">d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a</td><td>email address (hashed)</td></tr>
+<tr><td class="mono">id</td><td class="v mono">88123004417</td><td>pixel ID</td></tr><tr><td class="mono">ev</td><td class="v mono">SubscribedButtonClick</td><td>event name</td></tr><tr><td class="mono">dl</td><td class="v mono">https://www.tidewaterbakery.test/order</td><td>page address</td></tr><tr><td class="mono">rl</td><td class="v mono"></td><td>referring page</td></tr><tr><td class="mono">if</td><td class="v mono">false</td><td></td></tr><tr><td class="mono">ts</td><td class="v mono">1793467384019</td><td></td></tr><tr><td class="mono">v</td><td class="v mono">2.9.fixture</td><td></td></tr><tr class="hit"><td class="mono">ud[em]</td><td class="v mono">d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a</td><td>email address (hashed)</td></tr>
 </table></div>
 <p class="meta">Flagged: a SHA-256 hash of the email address pxta-probe@example.com in <code>ud[em]</code>.</p>
 
@@ -97,12 +97,12 @@ There is no score: each finding names the page, the tracker and the data, with t
 
 <h2>Method</h2>
 <p>PXTA loaded each page in headless Chrome/153.0.8010.12 with a fresh browser profile for each pass, waited until no new request had started for 2s (at most 15s per page), scrolled to the bottom, typed the marker address <code>pxta-probe@example.com</code> into email fields without submitting anything, then left the page so beacons sent on unload were recorded too. Requests from iframes and workers are included.</p>
-<p>User agent: <code>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 pxta/0.1.0 (&#43;https://pxta.com)</code>. Robots.txt was respected. Up to 10 pages, 3 links deep.</p>
+<p>User agent: <code>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 pxta/0.2.0 (&#43;https://pxta.com)</code>. Robots.txt was respected. Up to 10 pages, 3 links deep.</p>
 <p>Email addresses whose SHA-256 and MD5 hashes were looked for: <code>pxta-probe@example.com</code>.</p>
 <p><b>What PXTA cannot see.</b> Data a site sends from its own servers (server-side tagging, conversion APIs) never passes through the browser. Pages behind a login were not visited. A tracker that fires only after a click PXTA didn't make is not in this report.</p>
 <p><b>What this report is.</b> A record of network traffic. It draws no legal conclusion about whether the site complies with any law.</p>
-<p>The raw capture is in <code>requests.har</code>, SHA-256 <code class="v">9ad0bd5f32f05cb1a8d9166505d679b067f277908ecb2d2095ac97d31a131246</code>, and every finding is in <code>findings.json</code>.</p>
-<footer>Made with PXTA 0.1.0, Pixel Tracking Audit · pxta.com · 2026-10-25 16:07 UTC</footer>
+<p>The raw capture is in <code>requests.har</code>, SHA-256 <code class="v">cae9d6b93c416f3a4139d48b939f436091ccc98595217f48260f65a115e0ad9f</code>, and every finding is in <code>findings.json</code>.</p>
+<footer>Made with PXTA 0.2.0, Pixel Tracking Audit · pxta.com · 2026-10-31 17:23 UTC</footer>
 </main>
 </body>
 </html>

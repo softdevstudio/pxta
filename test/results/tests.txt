@@ -20,7 +20,7 @@
     browser_test.go:51:   [accept 4/6] https://www.harborpine.test/newsletter
     browser_test.go:51:   [accept 5/6] https://www.harborpine.test/cart
     browser_test.go:51:   [accept 6/6] https://www.harborpine.test/checkout/confirm?order=10442&email=jane%40example.com
---- PASS: TestBrowserShop (61.08s)
+--- PASS: TestBrowserShop (60.87s)
 === RUN   TestBrowserClinic
     browser_test.go:51: pass none
     browser_test.go:51:   [none 1/1] https://www.cedarvalleyclinic.test/
@@ -40,7 +40,7 @@
     browser_test.go:51:   [accept 3/5] https://www.cedarvalleyclinic.test/conditions/diabetes
     browser_test.go:51:   [accept 4/5] https://www.cedarvalleyclinic.test/book?service=therapy
     browser_test.go:51:   [accept 5/5] https://www.cedarvalleyclinic.test/search?q=anxiety+medication
---- PASS: TestBrowserClinic (49.48s)
+--- PASS: TestBrowserClinic (49.19s)
 === RUN   TestBrowserBakery
     browser_test.go:51: pass none
     browser_test.go:51:   [none 1/1] https://www.tidewaterbakery.test/
@@ -54,7 +54,7 @@
     browser_test.go:51:   [accept 1/3] https://www.tidewaterbakery.test/
     browser_test.go:51:   [accept 2/3] https://www.tidewaterbakery.test/menu
     browser_test.go:51:   [accept 3/3] https://www.tidewaterbakery.test/order
---- PASS: TestBrowserBakery (32.30s)
+--- PASS: TestBrowserBakery (32.26s)
 === RUN   TestBrowserLoans
     browser_test.go:51: pass none
     browser_test.go:51:   [none 1/1] https://www.marlowhomeloans.test/
@@ -74,7 +74,7 @@
     browser_test.go:51:   [accept 3/5] https://www.marlowhomeloans.test/calculators/mortgage
     browser_test.go:51:   [accept 4/5] https://www.marlowhomeloans.test/apply
     browser_test.go:51:   [accept 5/5] https://www.marlowhomeloans.test/search?q=bankruptcy
---- PASS: TestBrowserLoans (49.33s)
+--- PASS: TestBrowserLoans (48.74s)
 === RUN   TestBrowserConsentPlatforms
 === RUN   TestBrowserConsentPlatforms/onetrust-good
     browser_test.go:51: pass none
@@ -216,47 +216,47 @@
     browser_test.go:51: pass accept
     browser_test.go:51:   [accept 1/2] https://cmp-delayed-bad.test/
     browser_test.go:51:   [accept 2/2] https://cmp-delayed-bad.test/about
---- PASS: TestBrowserConsentPlatforms (343.05s)
-    --- PASS: TestBrowserConsentPlatforms/onetrust-good (23.45s)
-    --- PASS: TestBrowserConsentPlatforms/onetrust-bad (23.42s)
-    --- PASS: TestBrowserConsentPlatforms/cookiebot-good (23.76s)
-    --- PASS: TestBrowserConsentPlatforms/cookiebot-bad (23.30s)
-    --- PASS: TestBrowserConsentPlatforms/didomi-good (23.16s)
-    --- PASS: TestBrowserConsentPlatforms/didomi-bad (23.30s)
-    --- PASS: TestBrowserConsentPlatforms/usercentrics-good (23.42s)
-    --- PASS: TestBrowserConsentPlatforms/usercentrics-bad (23.57s)
-    --- PASS: TestBrowserConsentPlatforms/generic-good (23.53s)
-    --- PASS: TestBrowserConsentPlatforms/generic-bad (24.04s)
-    --- PASS: TestBrowserConsentPlatforms/iframe-good (23.92s)
-    --- PASS: TestBrowserConsentPlatforms/iframe-bad (23.93s)
-    --- PASS: TestBrowserConsentPlatforms/delayed-good (30.08s)
-    --- PASS: TestBrowserConsentPlatforms/delayed-bad (30.17s)
+--- PASS: TestBrowserConsentPlatforms (336.19s)
+    --- PASS: TestBrowserConsentPlatforms/onetrust-good (23.33s)
+    --- PASS: TestBrowserConsentPlatforms/onetrust-bad (23.36s)
+    --- PASS: TestBrowserConsentPlatforms/cookiebot-good (22.73s)
+    --- PASS: TestBrowserConsentPlatforms/cookiebot-bad (22.79s)
+    --- PASS: TestBrowserConsentPlatforms/didomi-good (23.09s)
+    --- PASS: TestBrowserConsentPlatforms/didomi-bad (22.72s)
+    --- PASS: TestBrowserConsentPlatforms/usercentrics-good (23.31s)
+    --- PASS: TestBrowserConsentPlatforms/usercentrics-bad (22.97s)
+    --- PASS: TestBrowserConsentPlatforms/generic-good (23.19s)
+    --- PASS: TestBrowserConsentPlatforms/generic-bad (22.94s)
+    --- PASS: TestBrowserConsentPlatforms/iframe-good (22.84s)
+    --- PASS: TestBrowserConsentPlatforms/iframe-bad (23.26s)
+    --- PASS: TestBrowserConsentPlatforms/delayed-good (29.86s)
+    --- PASS: TestBrowserConsentPlatforms/delayed-bad (29.80s)
 === RUN   TestBrowserConsentModeMismatch
     browser_test.go:51: pass none
     browser_test.go:51:   [none 1/1] https://www.consentmode.test/
---- PASS: TestBrowserConsentModeMismatch (7.08s)
+--- PASS: TestBrowserConsentModeMismatch (7.11s)
 === RUN   TestBrowserEncodings
     browser_test.go:51: pass none
     browser_test.go:51:   [none 1/1] https://www.encodings.test/
---- PASS: TestBrowserEncodings (7.12s)
+--- PASS: TestBrowserEncodings (6.89s)
 === RUN   TestBrowserLateTrackers
     browser_test.go:51: pass none
     browser_test.go:51:   [none 1/1] https://www.latetrackers.test/
---- PASS: TestBrowserLateTrackers (7.52s)
+--- PASS: TestBrowserLateTrackers (7.22s)
 === RUN   TestBrowserFramesWorkersUnload
     browser_test.go:51: pass none
     browser_test.go:51:   [none 1/1] https://www.framesworkers.test/
---- PASS: TestBrowserFramesWorkersUnload (7.45s)
+--- PASS: TestBrowserFramesWorkersUnload (7.30s)
 === RUN   TestBrowserNoTrackers
     browser_test.go:51: pass none
     browser_test.go:51:   [none 1/1] https://www.notrackers.test/
     browser_test.go:51:   [none 2/2] https://www.notrackers.test/about
---- PASS: TestBrowserNoTrackers (9.70s)
+--- PASS: TestBrowserNoTrackers (9.47s)
 === RUN   TestBrowserRobots
     browser_test.go:51: pass none
     browser_test.go:51:   [none 1/1] https://www.robots.test/
     browser_test.go:51:   [none 2/2] https://www.robots.test/public
---- PASS: TestBrowserRobots (9.97s)
+--- PASS: TestBrowserRobots (9.76s)
 === RUN   TestBrowserCrashRecovery
     browser_test.go:51: pass none
     browser_test.go:51:   [none 1/1] https://www.bigsite.test/p/0
@@ -760,8 +760,8 @@
     browser_test.go:51:   [none 498/498] https://www.bigsite.test/p/497
     browser_test.go:51:   [none 499/499] https://www.bigsite.test/p/498
     browser_test.go:51:   [none 500/500] https://www.bigsite.test/p/499
-    browser_test.go:429: crash test: 500 pages, browser killed at page 166, 1 restart(s), 500 hits, 20m5s
---- PASS: TestBrowserCrashRecovery (1204.84s)
+    browser_test.go:429: crash test: 500 pages, browser killed at page 166, 1 restart(s), 500 hits, 19m50s
+--- PASS: TestBrowserCrashRecovery (1189.68s)
 === RUN   TestBrowserResume
     browser_test.go:51: pass none
     browser_test.go:51:   [none 1/1] https://www.bigsite.test/p/0
@@ -777,7 +777,7 @@
     browser_test.go:51:   [none 10/10] https://www.bigsite.test/p/9
     browser_test.go:51:   [none 11/11] https://www.bigsite.test/p/10
     browser_test.go:51:   [none 12/12] https://www.bigsite.test/p/11
---- PASS: TestBrowserResume (36.46s)
+--- PASS: TestBrowserResume (36.30s)
 === RUN   TestGallery
     browser_test.go:523: set PXTA_GALLERY_DIR to write the sample reports
 --- SKIP: TestGallery (0.00s)
@@ -785,21 +785,21 @@
     browser_test.go:51: pass none
     browser_test.go:51:   [none 1/1] https://www.dialogs.test/
     browser_test.go:51:   [none 2/2] https://www.dialogs.test/two
---- PASS: TestBrowserDialogs (9.71s)
+--- PASS: TestBrowserDialogs (9.59s)
 === RUN   TestBrowserNotABanner
     browser_test.go:51: pass none
     browser_test.go:51:   [none 1/1] https://www.okbutton.test/
     browser_test.go:51:   [none 2/2] https://www.okbutton.test/about
     browser_test.go:51:   [none 3/3] https://www.okbutton.test/privacy
     browser_test.go:51:   [none 4/4] https://www.okbutton.test/terms
---- PASS: TestBrowserNotABanner (15.08s)
+--- PASS: TestBrowserNotABanner (15.11s)
 === RUN   TestBrowserRedirectedStart
     browser_test.go:51: pass none
     browser_test.go:51:   [none 1/1] https://redirect.test/
     browser_test.go:51:   [none 2/2] https://www.redirect.test/a
     browser_test.go:51:   [none 3/3] https://www.redirect.test/b
     browser_test.go:51:   [none 4/4] https://www.redirect.test/c
---- PASS: TestBrowserRedirectedStart (15.31s)
+--- PASS: TestBrowserRedirectedStart (15.23s)
 === RUN   TestBrowserPassesOption
     browser_test.go:51: pass none
     browser_test.go:51:   [none 1/1] https://cmp-onetrust-bad.test/
@@ -810,7 +810,124 @@
     browser_test.go:51: pass accept
     browser_test.go:51:   [accept 1/2] https://cmp-onetrust-bad.test/
     browser_test.go:51:   [accept 2/2] https://cmp-onetrust-bad.test/about
---- PASS: TestBrowserPassesOption (23.20s)
+--- PASS: TestBrowserPassesOption (23.11s)
+=== RUN   TestBrowserCheck
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://www.harborpine.test/
+    browser_test.go:51:   [none 2/2] https://www.harborpine.test/shop/rain-shell
+    browser_test.go:51:   [none 3/3] https://www.harborpine.test/search?q=wool+socks
+    browser_test.go:51:   [none 4/4] https://www.harborpine.test/newsletter
+    browser_test.go:51:   [none 5/5] https://www.harborpine.test/cart
+    browser_test.go:51:   [none 6/6] https://www.harborpine.test/checkout/confirm?order=10442&email=jane%40example.com
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/6] https://www.harborpine.test/
+    browser_test.go:51:   [reject 2/6] https://www.harborpine.test/shop/rain-shell
+    browser_test.go:51:   [reject 3/6] https://www.harborpine.test/search?q=wool+socks
+    browser_test.go:51:   [reject 4/6] https://www.harborpine.test/newsletter
+    browser_test.go:51:   [reject 5/6] https://www.harborpine.test/cart
+    browser_test.go:51:   [reject 6/6] https://www.harborpine.test/checkout/confirm?order=10442&email=jane%40example.com
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/6] https://www.harborpine.test/
+    browser_test.go:51:   [accept 2/6] https://www.harborpine.test/shop/rain-shell
+    browser_test.go:51:   [accept 3/6] https://www.harborpine.test/search?q=wool+socks
+    browser_test.go:51:   [accept 4/6] https://www.harborpine.test/newsletter
+    browser_test.go:51:   [accept 5/6] https://www.harborpine.test/cart
+    browser_test.go:51:   [accept 6/6] https://www.harborpine.test/checkout/confirm?order=10442&email=jane%40example.com
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://www.tidewaterbakery.test/
+    browser_test.go:51:   [none 2/2] https://www.tidewaterbakery.test/menu
+    browser_test.go:51:   [none 3/3] https://www.tidewaterbakery.test/order
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/3] https://www.tidewaterbakery.test/
+    browser_test.go:51:   [reject 2/3] https://www.tidewaterbakery.test/menu
+    browser_test.go:51:   [reject 3/3] https://www.tidewaterbakery.test/order
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/3] https://www.tidewaterbakery.test/
+    browser_test.go:51:   [accept 2/3] https://www.tidewaterbakery.test/menu
+    browser_test.go:51:   [accept 3/3] https://www.tidewaterbakery.test/order
+--- PASS: TestBrowserCheck (92.37s)
+=== RUN   TestBrowserRedact
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://www.harborpine.test/
+    browser_test.go:51:   [none 2/2] https://www.harborpine.test/shop/rain-shell
+    browser_test.go:51:   [none 3/3] https://www.harborpine.test/search?q=wool+socks
+    browser_test.go:51:   [none 4/4] https://www.harborpine.test/newsletter
+    browser_test.go:51:   [none 5/5] https://www.harborpine.test/cart
+    browser_test.go:51:   [none 6/6] https://www.harborpine.test/checkout/confirm?order=10442&email=jane%40example.com
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/6] https://www.harborpine.test/
+    browser_test.go:51:   [reject 2/6] https://www.harborpine.test/shop/rain-shell
+    browser_test.go:51:   [reject 3/6] https://www.harborpine.test/search?q=wool+socks
+    browser_test.go:51:   [reject 4/6] https://www.harborpine.test/newsletter
+    browser_test.go:51:   [reject 5/6] https://www.harborpine.test/cart
+    browser_test.go:51:   [reject 6/6] https://www.harborpine.test/checkout/confirm?order=10442&email=jane%40example.com
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/6] https://www.harborpine.test/
+    browser_test.go:51:   [accept 2/6] https://www.harborpine.test/shop/rain-shell
+    browser_test.go:51:   [accept 3/6] https://www.harborpine.test/search?q=wool+socks
+    browser_test.go:51:   [accept 4/6] https://www.harborpine.test/newsletter
+    browser_test.go:51:   [accept 5/6] https://www.harborpine.test/cart
+    browser_test.go:51:   [accept 6/6] https://www.harborpine.test/checkout/confirm?order=10442&email=jane%40example.com
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://www.harborpine.test/
+    browser_test.go:51:   [none 2/2] https://www.harborpine.test/shop/rain-shell
+    browser_test.go:51:   [none 3/3] https://www.harborpine.test/search?q=wool+socks
+    browser_test.go:51:   [none 4/4] https://www.harborpine.test/newsletter
+    browser_test.go:51:   [none 5/5] https://www.harborpine.test/cart
+    browser_test.go:51:   [none 6/6] https://www.harborpine.test/checkout/confirm?order=10442&email=jane%40example.com
+    browser_test.go:51: pass reject
+    browser_test.go:51:   [reject 1/6] https://www.harborpine.test/
+    browser_test.go:51:   [reject 2/6] https://www.harborpine.test/shop/rain-shell
+    browser_test.go:51:   [reject 3/6] https://www.harborpine.test/search?q=wool+socks
+    browser_test.go:51:   [reject 4/6] https://www.harborpine.test/newsletter
+    browser_test.go:51:   [reject 5/6] https://www.harborpine.test/cart
+    browser_test.go:51:   [reject 6/6] https://www.harborpine.test/checkout/confirm?order=10442&email=jane%40example.com
+    browser_test.go:51: pass accept
+    browser_test.go:51:   [accept 1/6] https://www.harborpine.test/
+    browser_test.go:51:   [accept 2/6] https://www.harborpine.test/shop/rain-shell
+    browser_test.go:51:   [accept 3/6] https://www.harborpine.test/search?q=wool+socks
+    browser_test.go:51:   [accept 4/6] https://www.harborpine.test/newsletter
+    browser_test.go:51:   [accept 5/6] https://www.harborpine.test/cart
+    browser_test.go:51:   [accept 6/6] https://www.harborpine.test/checkout/confirm?order=10442&email=jane%40example.com
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://www.encodings.test/
+    browser_test.go:51: pass none
+    browser_test.go:51:   [none 1/1] https://www.encodings.test/
+--- PASS: TestBrowserRedact (134.43s)
+=== RUN   TestCheckDefaults
+--- PASS: TestCheckDefaults (0.00s)
+=== RUN   TestCheckFailOnAndCodes
+--- PASS: TestCheckFailOnAndCodes (0.00s)
+=== RUN   TestCheckAllow
+--- PASS: TestCheckAllow (0.00s)
+=== RUN   TestCheckPagePatterns
+--- PASS: TestCheckPagePatterns (0.00s)
+=== RUN   TestCheckTrackers
+--- PASS: TestCheckTrackers (0.00s)
+=== RUN   TestRulesRejected
+--- PASS: TestRulesRejected (0.00s)
+=== RUN   TestCheckOutputs
+--- PASS: TestCheckOutputs (0.00s)
+=== RUN   TestPublicOutputs
+--- PASS: TestPublicOutputs (0.00s)
+=== RUN   TestRulesTrackersAndPatterns
+--- PASS: TestRulesTrackersAndPatterns (0.00s)
+=== RUN   TestRedact
+--- PASS: TestRedact (0.11s)
+=== RUN   TestVerifyRedactedCatches
+--- PASS: TestVerifyRedactedCatches (0.17s)
+=== RUN   TestRedactSentencePaths
+--- PASS: TestRedactSentencePaths (0.00s)
+=== RUN   TestRedactShortValues
+--- PASS: TestRedactShortValues (0.07s)
+=== RUN   TestRedactLongPagePaths
+--- PASS: TestRedactLongPagePaths (0.03s)
+=== RUN   TestRedactPathSegments
+--- PASS: TestRedactPathSegments (0.01s)
+=== RUN   TestRedactFailureCleansUp
+--- PASS: TestRedactFailureCleansUp (0.00s)
+=== RUN   TestRedactEdges
+--- PASS: TestRedactEdges (0.01s)
 === RUN   TestCatalogSamples
 === RUN   TestCatalogSamples/google-ads
 === RUN   TestCatalogSamples/google-analytics-4
@@ -838,31 +955,31 @@
 === RUN   TestMatch
 --- PASS: TestMatch (0.00s)
 === RUN   TestEmailEncodings
-=== RUN   TestEmailEncodings/plain_query
-=== RUN   TestEmailEncodings/JSON_body
-=== RUN   TestEmailEncodings/form_body
-=== RUN   TestEmailEncodings/text_body
+=== RUN   TestEmailEncodings/JSON_lines_body
 === RUN   TestEmailEncodings/inside_page_address
-=== RUN   TestEmailEncodings/base64
 === RUN   TestEmailEncodings/base64_JSON
 === RUN   TestEmailEncodings/JSON_inside_form_field
 === RUN   TestEmailEncodings/url-encoded
-=== RUN   TestEmailEncodings/double-encoded
+=== RUN   TestEmailEncodings/JSON_body
 === RUN   TestEmailEncodings/multi-line_body
-=== RUN   TestEmailEncodings/JSON_lines_body
+=== RUN   TestEmailEncodings/text_body
+=== RUN   TestEmailEncodings/base64
+=== RUN   TestEmailEncodings/plain_query
+=== RUN   TestEmailEncodings/double-encoded
+=== RUN   TestEmailEncodings/form_body
 --- PASS: TestEmailEncodings (0.00s)
-    --- PASS: TestEmailEncodings/plain_query (0.00s)
-    --- PASS: TestEmailEncodings/JSON_body (0.00s)
-    --- PASS: TestEmailEncodings/form_body (0.00s)
-    --- PASS: TestEmailEncodings/text_body (0.00s)
+    --- PASS: TestEmailEncodings/JSON_lines_body (0.00s)
     --- PASS: TestEmailEncodings/inside_page_address (0.00s)
-    --- PASS: TestEmailEncodings/base64 (0.00s)
     --- PASS: TestEmailEncodings/base64_JSON (0.00s)
     --- PASS: TestEmailEncodings/JSON_inside_form_field (0.00s)
     --- PASS: TestEmailEncodings/url-encoded (0.00s)
-    --- PASS: TestEmailEncodings/double-encoded (0.00s)
+    --- PASS: TestEmailEncodings/JSON_body (0.00s)
     --- PASS: TestEmailEncodings/multi-line_body (0.00s)
-    --- PASS: TestEmailEncodings/JSON_lines_body (0.00s)
+    --- PASS: TestEmailEncodings/text_body (0.00s)
+    --- PASS: TestEmailEncodings/base64 (0.00s)
+    --- PASS: TestEmailEncodings/plain_query (0.00s)
+    --- PASS: TestEmailEncodings/double-encoded (0.00s)
+    --- PASS: TestEmailEncodings/form_body (0.00s)
 === RUN   TestEmailHashes
 --- PASS: TestEmailHashes (0.00s)
 === RUN   TestOtherRules
@@ -880,7 +997,7 @@
 === RUN   TestRenderEscapes
 --- PASS: TestRenderEscapes (0.00s)
 === RUN   TestCDPClient
---- PASS: TestCDPClient (0.03s)
+--- PASS: TestCDPClient (0.02s)
 === RUN   TestDialRejectsNonWebSocket
 --- PASS: TestDialRejectsNonWebSocket (0.00s)
 === RUN   TestIsEmail
@@ -888,9 +1005,11 @@
 === RUN   TestContainsWords
 --- PASS: TestContainsWords (0.00s)
 PASS
-ok  	github.com/softdevstudio/pxta	1888.704s
+ok  	github.com/softdevstudio/pxta	2091.269s
 === RUN   TestCLI
 --- PASS: TestCLI (0.00s)
+=== RUN   TestCheckCLI
+--- PASS: TestCheckCLI (0.01s)
 PASS
-ok  	github.com/softdevstudio/pxta/cmd/pxta	0.015s
+ok  	github.com/softdevstudio/pxta/cmd/pxta	0.022s
 ?   	github.com/softdevstudio/pxta/scripts/findbrowser	[no test files]

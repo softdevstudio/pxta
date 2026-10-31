@@ -1,12 +1,12 @@
 {
   "tool": "pxta",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "catalog": "2026.10.25",
   "site": "https://www.harborpine.test/",
-  "started": "2026-10-25T16:04:29.424992098Z",
-  "finished": "2026-10-25T16:05:55.746081092Z",
+  "started": "2026-10-31T17:19:51.820551968Z",
+  "finished": "2026-10-31T17:21:16.530976505Z",
   "browser": "Chrome/153.0.8010.12",
-  "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 pxta/0.1.0 (+https://pxta.com)",
+  "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 pxta/0.2.0 (+https://pxta.com)",
   "banner": {
     "found": true,
     "platform": "onetrust",
@@ -27,7 +27,7 @@
       "url": "https://www.harborpine.test/",
       "final_url": "https://www.harborpine.test/",
       "title": "Harbor \u0026 Pine Outfitters",
-      "started": "2026-10-25T16:04:30.029225756Z",
+      "started": "2026-10-31T17:19:52.252190014Z",
       "requests": 7
     },
     {
@@ -36,7 +36,7 @@
       "url": "https://www.harborpine.test/shop/rain-shell",
       "final_url": "https://www.harborpine.test/shop/rain-shell",
       "title": "Rain Shell | Harbor \u0026 Pine",
-      "started": "2026-10-25T16:04:34.437780357Z",
+      "started": "2026-10-31T17:19:56.482538557Z",
       "requests": 7
     },
     {
@@ -45,7 +45,7 @@
       "url": "https://www.harborpine.test/search?q=wool+socks",
       "final_url": "https://www.harborpine.test/search?q=wool+socks",
       "title": "Search | Harbor \u0026 Pine",
-      "started": "2026-10-25T16:04:38.560059596Z",
+      "started": "2026-10-31T17:20:00.529900527Z",
       "requests": 7
     },
     {
@@ -54,7 +54,7 @@
       "url": "https://www.harborpine.test/newsletter",
       "final_url": "https://www.harborpine.test/newsletter",
       "title": "Newsletter | Harbor \u0026 Pine",
-      "started": "2026-10-25T16:04:42.665473479Z",
+      "started": "2026-10-31T17:20:04.39865152Z",
       "requests": 7
     },
     {
@@ -63,7 +63,7 @@
       "url": "https://www.harborpine.test/cart",
       "final_url": "https://www.harborpine.test/cart",
       "title": "Cart | Harbor \u0026 Pine",
-      "started": "2026-10-25T16:04:48.718252893Z",
+      "started": "2026-10-31T17:20:10.409950453Z",
       "requests": 6
     },
     {
@@ -72,7 +72,7 @@
       "url": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
       "final_url": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
       "title": "Order confirmed | Harbor \u0026 Pine",
-      "started": "2026-10-25T16:04:52.824267052Z",
+      "started": "2026-10-31T17:20:14.390447978Z",
       "requests": 10
     },
     {
@@ -81,7 +81,7 @@
       "url": "https://www.harborpine.test/",
       "final_url": "https://www.harborpine.test/",
       "title": "Harbor \u0026 Pine Outfitters",
-      "started": "2026-10-25T16:04:59.753626584Z",
+      "started": "2026-10-31T17:20:21.210377805Z",
       "requests": 6
     },
     {
@@ -90,7 +90,7 @@
       "url": "https://www.harborpine.test/shop/rain-shell",
       "final_url": "https://www.harborpine.test/shop/rain-shell",
       "title": "Rain Shell | Harbor \u0026 Pine",
-      "started": "2026-10-25T16:05:03.679611891Z",
+      "started": "2026-10-31T17:20:25.208086223Z",
       "requests": 7
     },
     {
@@ -99,7 +99,7 @@
       "url": "https://www.harborpine.test/search?q=wool+socks",
       "final_url": "https://www.harborpine.test/search?q=wool+socks",
       "title": "Search | Harbor \u0026 Pine",
-      "started": "2026-10-25T16:05:07.794011767Z",
+      "started": "2026-10-31T17:20:29.226175481Z",
       "requests": 7
     },
     {
@@ -108,7 +108,7 @@
       "url": "https://www.harborpine.test/newsletter",
       "final_url": "https://www.harborpine.test/newsletter",
       "title": "Newsletter | Harbor \u0026 Pine",
-      "started": "2026-10-25T16:05:11.893547144Z",
+      "started": "2026-10-31T17:20:33.273623836Z",
       "requests": 7
     },
     {
@@ -117,7 +117,7 @@
       "url": "https://www.harborpine.test/cart",
       "final_url": "https://www.harborpine.test/cart",
       "title": "Cart | Harbor \u0026 Pine",
-      "started": "2026-10-25T16:05:17.943668033Z",
+      "started": "2026-10-31T17:20:39.285254548Z",
       "requests": 6
     },
     {
@@ -126,7 +126,7 @@
       "url": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
       "final_url": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
       "title": "Order confirmed | Harbor \u0026 Pine",
-      "started": "2026-10-25T16:05:22.01837593Z",
+      "started": "2026-10-31T17:20:43.374681066Z",
       "requests": 10
     },
     {
@@ -135,7 +135,7 @@
       "url": "https://www.harborpine.test/",
       "final_url": "https://www.harborpine.test/",
       "title": "Harbor \u0026 Pine Outfitters",
-      "started": "2026-10-25T16:05:28.841187728Z",
+      "started": "2026-10-31T17:20:50.084602671Z",
       "requests": 6
     },
     {
@@ -144,7 +144,7 @@
       "url": "https://www.harborpine.test/shop/rain-shell",
       "final_url": "https://www.harborpine.test/shop/rain-shell",
       "title": "Rain Shell | Harbor \u0026 Pine",
-      "started": "2026-10-25T16:05:32.937039445Z",
+      "started": "2026-10-31T17:20:54.180521958Z",
       "requests": 7
     },
     {
@@ -153,7 +153,7 @@
       "url": "https://www.harborpine.test/search?q=wool+socks",
       "final_url": "https://www.harborpine.test/search?q=wool+socks",
       "title": "Search | Harbor \u0026 Pine",
-      "started": "2026-10-25T16:05:37.034420344Z",
+      "started": "2026-10-31T17:20:58.25395755Z",
       "requests": 7
     },
     {
@@ -162,7 +162,7 @@
       "url": "https://www.harborpine.test/newsletter",
       "final_url": "https://www.harborpine.test/newsletter",
       "title": "Newsletter | Harbor \u0026 Pine",
-      "started": "2026-10-25T16:05:41.076026772Z",
+      "started": "2026-10-31T17:21:02.310412916Z",
       "requests": 7
     },
     {
@@ -171,7 +171,7 @@
       "url": "https://www.harborpine.test/cart",
       "final_url": "https://www.harborpine.test/cart",
       "title": "Cart | Harbor \u0026 Pine",
-      "started": "2026-10-25T16:05:47.330855857Z",
+      "started": "2026-10-31T17:21:08.352105092Z",
       "requests": 6
     },
     {
@@ -180,7 +180,7 @@
       "url": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
       "final_url": "https://www.harborpine.test/checkout/confirm?order=10442\u0026email=jane%40example.com",
       "title": "Order confirmed | Harbor \u0026 Pine",
-      "started": "2026-10-25T16:05:51.509818779Z",
+      "started": "2026-10-31T17:21:12.387625474Z",
       "requests": 10
     }
   ],
@@ -198,7 +198,7 @@
     "respect_robots": true
   },
   "browser_restarts": 0,
-  "har_sha256": "c67c6f059739279dcae0dade8eb28339614cd1990d4146a7d1f7b42d8f1e4db1",
+  "har_sha256": "2bca133dba70286a757b65c7a7f49c4907f3a9f0a9f6c5bdca17c03a064e73c9",
   "findings": [
     {
       "code": "personal-data",
@@ -212,7 +212,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:04:53.232Z",
+        "time": "2026-10-31T17:20:14.750Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -304,9 +304,9 @@
       "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent an email address inside the page address before the consent banner was answered.",
       "count": 2,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792944293211\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1793467214732\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
         "method": "GET",
-        "time": "2026-10-25T16:04:53.226Z",
+        "time": "2026-10-31T17:20:14.735Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -356,7 +356,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944293211",
+            "value": "1793467214732",
             "source": "query"
           },
           {
@@ -393,9 +393,9 @@
       "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent a SHA-256 hash of the email address jane@example.com before the consent banner was answered.",
       "count": 2,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792944293211\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1793467214732\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
         "method": "GET",
-        "time": "2026-10-25T16:04:53.226Z",
+        "time": "2026-10-31T17:20:14.735Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -445,7 +445,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944293211",
+            "value": "1793467214732",
             "source": "query"
           },
           {
@@ -483,7 +483,7 @@
       "evidence": {
         "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
         "method": "GET",
-        "time": "2026-10-25T16:04:53.233Z",
+        "time": "2026-10-31T17:20:14.759Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -572,7 +572,7 @@
       "evidence": {
         "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
         "method": "GET",
-        "time": "2026-10-25T16:04:53.233Z",
+        "time": "2026-10-31T17:20:14.759Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -658,9 +658,9 @@
       "sentence": "On /newsletter, the Meta Pixel sent a SHA-256 hash of the email address pxta-probe@example.com before the consent banner was answered.",
       "count": 1,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=SubscribedButtonClick\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter\u0026rl=\u0026if=false\u0026ts=1792944285583\u0026v=2.9.fixture\u0026ud%5Bem%5D=d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=SubscribedButtonClick\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter\u0026rl=\u0026if=false\u0026ts=1793467207272\u0026v=2.9.fixture\u0026ud%5Bem%5D=d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
         "method": "GET",
-        "time": "2026-10-25T16:04:45.585Z",
+        "time": "2026-10-31T17:20:07.275Z",
         "type": "Image",
         "target": "page",
         "phase": "interact",
@@ -700,7 +700,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944285583",
+            "value": "1793467207272",
             "source": "query"
           },
           {
@@ -738,7 +738,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:05:22.322Z",
+        "time": "2026-10-31T17:20:43.693Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -830,9 +830,9 @@
       "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent an email address inside the page address after the visitor rejected tracking.",
       "count": 2,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792944322286\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1793467243684\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
         "method": "GET",
-        "time": "2026-10-25T16:05:22.294Z",
+        "time": "2026-10-31T17:20:43.689Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -882,7 +882,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944322286",
+            "value": "1793467243684",
             "source": "query"
           },
           {
@@ -919,9 +919,9 @@
       "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent a SHA-256 hash of the email address jane@example.com after the visitor rejected tracking.",
       "count": 2,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792944322286\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1793467243684\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
         "method": "GET",
-        "time": "2026-10-25T16:05:22.294Z",
+        "time": "2026-10-31T17:20:43.689Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -971,7 +971,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944322286",
+            "value": "1793467243684",
             "source": "query"
           },
           {
@@ -1009,7 +1009,7 @@
       "evidence": {
         "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
         "method": "GET",
-        "time": "2026-10-25T16:05:22.327Z",
+        "time": "2026-10-31T17:20:43.695Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1098,7 +1098,7 @@
       "evidence": {
         "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
         "method": "GET",
-        "time": "2026-10-25T16:05:22.327Z",
+        "time": "2026-10-31T17:20:43.695Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1184,9 +1184,9 @@
       "sentence": "On /newsletter, the Meta Pixel sent a SHA-256 hash of the email address pxta-probe@example.com after the visitor rejected tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=SubscribedButtonClick\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter\u0026rl=\u0026if=false\u0026ts=1792944314803\u0026v=2.9.fixture\u0026ud%5Bem%5D=d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=SubscribedButtonClick\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter\u0026rl=\u0026if=false\u0026ts=1793467236137\u0026v=2.9.fixture\u0026ud%5Bem%5D=d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
         "method": "GET",
-        "time": "2026-10-25T16:05:14.806Z",
+        "time": "2026-10-31T17:20:36.141Z",
         "type": "Image",
         "target": "page",
         "phase": "interact",
@@ -1226,7 +1226,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944314803",
+            "value": "1793467236137",
             "source": "query"
           },
           {
@@ -1264,7 +1264,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:04:53.232Z",
+        "time": "2026-10-31T17:20:14.750Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -1356,9 +1356,9 @@
       "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent the address of a checkout or account page (/checkout/confirm?order=10442\u0026email=jane@example.com) before the consent banner was answered.",
       "count": 2,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792944293211\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1793467214732\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
         "method": "GET",
-        "time": "2026-10-25T16:04:53.226Z",
+        "time": "2026-10-31T17:20:14.735Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1408,7 +1408,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944293211",
+            "value": "1793467214732",
             "source": "query"
           },
           {
@@ -1447,7 +1447,7 @@
       "evidence": {
         "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
         "method": "GET",
-        "time": "2026-10-25T16:04:53.233Z",
+        "time": "2026-10-31T17:20:14.759Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1536,7 +1536,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:05:22.322Z",
+        "time": "2026-10-31T17:20:43.693Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -1628,9 +1628,9 @@
       "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent the address of a checkout or account page (/checkout/confirm?order=10442\u0026email=jane@example.com) after the visitor rejected tracking.",
       "count": 2,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792944322286\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1793467243684\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
         "method": "GET",
-        "time": "2026-10-25T16:05:22.294Z",
+        "time": "2026-10-31T17:20:43.689Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1680,7 +1680,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944322286",
+            "value": "1793467243684",
             "source": "query"
           },
           {
@@ -1719,7 +1719,7 @@
       "evidence": {
         "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
         "method": "GET",
-        "time": "2026-10-25T16:05:22.327Z",
+        "time": "2026-10-31T17:20:43.695Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1808,7 +1808,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026dt=Search+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:04:38.920Z",
+        "time": "2026-10-31T17:20:00.645Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -1895,9 +1895,9 @@
       "sentence": "On /search?q=wool+socks, the Meta Pixel sent the search term “wool socks” before the consent banner was answered.",
       "count": 1,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026rl=\u0026if=false\u0026ts=1792944278897\u0026v=2.9.fixture",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026rl=\u0026if=false\u0026ts=1793467200641\u0026v=2.9.fixture",
         "method": "GET",
-        "time": "2026-10-25T16:04:38.907Z",
+        "time": "2026-10-31T17:20:00.643Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1942,7 +1942,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944278897",
+            "value": "1793467200641",
             "source": "query"
           },
           {
@@ -1974,7 +1974,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026dt=Search+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:05:08.146Z",
+        "time": "2026-10-31T17:20:29.508Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -2061,9 +2061,9 @@
       "sentence": "On /search?q=wool+socks, the Meta Pixel sent the search term “wool socks” after the visitor rejected tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026rl=\u0026if=false\u0026ts=1792944308124\u0026v=2.9.fixture",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026rl=\u0026if=false\u0026ts=1793467229496\u0026v=2.9.fixture",
         "method": "GET",
-        "time": "2026-10-25T16:05:08.134Z",
+        "time": "2026-10-31T17:20:29.499Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2108,7 +2108,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944308124",
+            "value": "1793467229496",
             "source": "query"
           },
           {
@@ -2140,7 +2140,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:04:53.232Z",
+        "time": "2026-10-31T17:20:14.750Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -2234,7 +2234,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:05:22.322Z",
+        "time": "2026-10-31T17:20:43.693Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -2328,7 +2328,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2F\u0026dt=Harbor+%26+Pine+Outfitters\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:04:59.943Z",
+        "time": "2026-10-31T17:20:21.451Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -2401,9 +2401,9 @@
       "sentence": "On /, the Meta Pixel sent a PageView event after the visitor rejected tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2F\u0026rl=\u0026if=false\u0026ts=1792944299921\u0026v=2.9.fixture",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2F\u0026rl=\u0026if=false\u0026ts=1793467221446\u0026v=2.9.fixture",
         "method": "GET",
-        "time": "2026-10-25T16:04:59.923Z",
+        "time": "2026-10-31T17:20:21.451Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2443,7 +2443,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944299921",
+            "value": "1793467221446",
             "source": "query"
           },
           {
@@ -2466,7 +2466,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcart\u0026dt=Cart+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:05:18.265Z",
+        "time": "2026-10-31T17:20:39.608Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -2539,9 +2539,9 @@
       "sentence": "On /cart, the Meta Pixel sent a PageView event after the visitor rejected tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcart\u0026rl=\u0026if=false\u0026ts=1792944318254\u0026v=2.9.fixture",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcart\u0026rl=\u0026if=false\u0026ts=1793467239598\u0026v=2.9.fixture",
         "method": "GET",
-        "time": "2026-10-25T16:05:18.261Z",
+        "time": "2026-10-31T17:20:39.601Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2581,7 +2581,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944318254",
+            "value": "1793467239598",
             "source": "query"
           },
           {
@@ -2604,7 +2604,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:05:22.322Z",
+        "time": "2026-10-31T17:20:43.693Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -2687,9 +2687,9 @@
       "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent a PageView event after the visitor rejected tracking.",
       "count": 2,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792944322286\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1793467243684\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
         "method": "GET",
-        "time": "2026-10-25T16:05:22.294Z",
+        "time": "2026-10-31T17:20:43.689Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2739,7 +2739,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944322286",
+            "value": "1793467243684",
             "source": "query"
           },
           {
@@ -2769,7 +2769,7 @@
       "evidence": {
         "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
         "method": "GET",
-        "time": "2026-10-25T16:05:22.327Z",
+        "time": "2026-10-31T17:20:43.695Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2849,7 +2849,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter\u0026dt=Newsletter+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:05:12.177Z",
+        "time": "2026-10-31T17:20:33.509Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -2922,9 +2922,9 @@
       "sentence": "On /newsletter, the Meta Pixel sent a PageView event after the visitor rejected tracking.",
       "count": 2,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter\u0026rl=\u0026if=false\u0026ts=1792944312171\u0026v=2.9.fixture",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter\u0026rl=\u0026if=false\u0026ts=1793467233503\u0026v=2.9.fixture",
         "method": "GET",
-        "time": "2026-10-25T16:05:12.176Z",
+        "time": "2026-10-31T17:20:33.505Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2964,7 +2964,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944312171",
+            "value": "1793467233503",
             "source": "query"
           },
           {
@@ -2987,7 +2987,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026dt=Search+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:05:08.146Z",
+        "time": "2026-10-31T17:20:29.508Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -3065,9 +3065,9 @@
       "sentence": "On /search?q=wool+socks, the Meta Pixel sent a PageView event after the visitor rejected tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026rl=\u0026if=false\u0026ts=1792944308124\u0026v=2.9.fixture",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026rl=\u0026if=false\u0026ts=1793467229496\u0026v=2.9.fixture",
         "method": "GET",
-        "time": "2026-10-25T16:05:08.134Z",
+        "time": "2026-10-31T17:20:29.499Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -3112,7 +3112,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944308124",
+            "value": "1793467229496",
             "source": "query"
           },
           {
@@ -3135,7 +3135,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fshop%2Frain-shell\u0026dt=Rain+Shell+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:05:04.023Z",
+        "time": "2026-10-31T17:20:25.450Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -3208,9 +3208,9 @@
       "sentence": "On /shop/rain-shell, the Meta Pixel sent a PageView event after the visitor rejected tracking.",
       "count": 2,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fshop%2Frain-shell\u0026rl=\u0026if=false\u0026ts=1792944303996\u0026v=2.9.fixture",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fshop%2Frain-shell\u0026rl=\u0026if=false\u0026ts=1793467225399\u0026v=2.9.fixture",
         "method": "GET",
-        "time": "2026-10-25T16:05:04.012Z",
+        "time": "2026-10-31T17:20:25.405Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -3250,7 +3250,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944303996",
+            "value": "1793467225399",
             "source": "query"
           },
           {
@@ -3273,7 +3273,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2F\u0026dt=Harbor+%26+Pine+Outfitters\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:04:30.679Z",
+        "time": "2026-10-31T17:19:52.725Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -3346,9 +3346,9 @@
       "sentence": "On /, the Meta Pixel sent a PageView event before the consent banner was answered.",
       "count": 1,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2F\u0026rl=\u0026if=false\u0026ts=1792944270581\u0026v=2.9.fixture",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2F\u0026rl=\u0026if=false\u0026ts=1793467192703\u0026v=2.9.fixture",
         "method": "GET",
-        "time": "2026-10-25T16:04:30.593Z",
+        "time": "2026-10-31T17:19:52.710Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -3388,7 +3388,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944270581",
+            "value": "1793467192703",
             "source": "query"
           },
           {
@@ -3411,7 +3411,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcart\u0026dt=Cart+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:04:49.072Z",
+        "time": "2026-10-31T17:20:10.635Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -3484,9 +3484,9 @@
       "sentence": "On /cart, the Meta Pixel sent a PageView event before the consent banner was answered.",
       "count": 1,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcart\u0026rl=\u0026if=false\u0026ts=1792944289058\u0026v=2.9.fixture",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcart\u0026rl=\u0026if=false\u0026ts=1793467210629\u0026v=2.9.fixture",
         "method": "GET",
-        "time": "2026-10-25T16:04:49.059Z",
+        "time": "2026-10-31T17:20:10.632Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -3526,7 +3526,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944289058",
+            "value": "1793467210629",
             "source": "query"
           },
           {
@@ -3549,7 +3549,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:04:53.232Z",
+        "time": "2026-10-31T17:20:14.750Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -3632,9 +3632,9 @@
       "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent a PageView event before the consent banner was answered.",
       "count": 2,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792944293211\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1793467214732\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
         "method": "GET",
-        "time": "2026-10-25T16:04:53.226Z",
+        "time": "2026-10-31T17:20:14.735Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -3684,7 +3684,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944293211",
+            "value": "1793467214732",
             "source": "query"
           },
           {
@@ -3714,7 +3714,7 @@
       "evidence": {
         "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
         "method": "GET",
-        "time": "2026-10-25T16:04:53.233Z",
+        "time": "2026-10-31T17:20:14.759Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -3794,7 +3794,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter\u0026dt=Newsletter+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:04:42.953Z",
+        "time": "2026-10-31T17:20:04.639Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -3867,9 +3867,9 @@
       "sentence": "On /newsletter, the Meta Pixel sent a PageView event before the consent banner was answered.",
       "count": 2,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter\u0026rl=\u0026if=false\u0026ts=1792944282928\u0026v=2.9.fixture",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter\u0026rl=\u0026if=false\u0026ts=1793467204632\u0026v=2.9.fixture",
         "method": "GET",
-        "time": "2026-10-25T16:04:42.939Z",
+        "time": "2026-10-31T17:20:04.639Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -3909,7 +3909,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944282928",
+            "value": "1793467204632",
             "source": "query"
           },
           {
@@ -3932,7 +3932,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026dt=Search+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:04:38.920Z",
+        "time": "2026-10-31T17:20:00.645Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -4010,9 +4010,9 @@
       "sentence": "On /search?q=wool+socks, the Meta Pixel sent a PageView event before the consent banner was answered.",
       "count": 1,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026rl=\u0026if=false\u0026ts=1792944278897\u0026v=2.9.fixture",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026rl=\u0026if=false\u0026ts=1793467200641\u0026v=2.9.fixture",
         "method": "GET",
-        "time": "2026-10-25T16:04:38.907Z",
+        "time": "2026-10-31T17:20:00.643Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -4057,7 +4057,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944278897",
+            "value": "1793467200641",
             "source": "query"
           },
           {
@@ -4080,7 +4080,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fshop%2Frain-shell\u0026dt=Rain+Shell+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:04:34.821Z",
+        "time": "2026-10-31T17:19:56.763Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -4153,9 +4153,9 @@
       "sentence": "On /shop/rain-shell, the Meta Pixel sent a PageView event before the consent banner was answered.",
       "count": 2,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fshop%2Frain-shell\u0026rl=\u0026if=false\u0026ts=1792944274791\u0026v=2.9.fixture",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fshop%2Frain-shell\u0026rl=\u0026if=false\u0026ts=1793467196753\u0026v=2.9.fixture",
         "method": "GET",
-        "time": "2026-10-25T16:04:34.796Z",
+        "time": "2026-10-31T17:19:56.763Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -4195,7 +4195,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944274791",
+            "value": "1793467196753",
             "source": "query"
           },
           {
@@ -4218,7 +4218,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:05:51.808Z",
+        "time": "2026-10-31T17:21:12.679Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -4310,9 +4310,9 @@
       "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent an email address inside the page address after the visitor accepted tracking.",
       "count": 2,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792944351801\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1793467272649\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
         "method": "GET",
-        "time": "2026-10-25T16:05:51.804Z",
+        "time": "2026-10-31T17:21:12.659Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -4362,7 +4362,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944351801",
+            "value": "1793467272649",
             "source": "query"
           },
           {
@@ -4399,9 +4399,9 @@
       "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent a SHA-256 hash of the email address jane@example.com after the visitor accepted tracking.",
       "count": 2,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792944351801\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1793467272649\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
         "method": "GET",
-        "time": "2026-10-25T16:05:51.804Z",
+        "time": "2026-10-31T17:21:12.659Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -4451,7 +4451,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944351801",
+            "value": "1793467272649",
             "source": "query"
           },
           {
@@ -4489,7 +4489,7 @@
       "evidence": {
         "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
         "method": "GET",
-        "time": "2026-10-25T16:05:51.857Z",
+        "time": "2026-10-31T17:21:12.679Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -4578,7 +4578,7 @@
       "evidence": {
         "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
         "method": "GET",
-        "time": "2026-10-25T16:05:51.857Z",
+        "time": "2026-10-31T17:21:12.679Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -4664,9 +4664,9 @@
       "sentence": "On /newsletter, the Meta Pixel sent a SHA-256 hash of the email address pxta-probe@example.com after the visitor accepted tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=SubscribedButtonClick\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter\u0026rl=\u0026if=false\u0026ts=1792944344199\u0026v=2.9.fixture\u0026ud%5Bem%5D=d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=SubscribedButtonClick\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fnewsletter\u0026rl=\u0026if=false\u0026ts=1793467265220\u0026v=2.9.fixture\u0026ud%5Bem%5D=d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
         "method": "GET",
-        "time": "2026-10-25T16:05:44.201Z",
+        "time": "2026-10-31T17:21:05.223Z",
         "type": "Image",
         "target": "page",
         "phase": "interact",
@@ -4706,7 +4706,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944344199",
+            "value": "1793467265220",
             "source": "query"
           },
           {
@@ -4744,7 +4744,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:05:51.808Z",
+        "time": "2026-10-31T17:21:12.679Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -4836,9 +4836,9 @@
       "sentence": "On /checkout/confirm?order=10442\u0026email=jane@example.com, the Meta Pixel sent the address of a checkout or account page (/checkout/confirm?order=10442\u0026email=jane@example.com) after the visitor accepted tracking.",
       "count": 2,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1792944351801\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026rl=\u0026if=false\u0026ts=1793467272649\u0026v=2.9.fixture\u0026ud%5Bem%5D=8c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d",
         "method": "GET",
-        "time": "2026-10-25T16:05:51.804Z",
+        "time": "2026-10-31T17:21:12.659Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -4888,7 +4888,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944351801",
+            "value": "1793467272649",
             "source": "query"
           },
           {
@@ -4927,7 +4927,7 @@
       "evidence": {
         "url": "https://ct.pinterest.com/v3/?tid=2612345678901\u0026event=pagevisit\u0026ad=%7B%22loc%22%3A%22https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com%22%2C%22ref%22%3A%22%22%7D\u0026pd=%7B%22em%22%3A%228c87b489ce35cf2e2f39f80e282cb2e804932a56a213983eeeb428407d43b52d%22%7D\u0026ed=%7B%7D",
         "method": "GET",
-        "time": "2026-10-25T16:05:51.857Z",
+        "time": "2026-10-31T17:21:12.679Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -5016,7 +5016,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026dt=Search+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:05:37.311Z",
+        "time": "2026-10-31T17:20:58.563Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -5103,9 +5103,9 @@
       "sentence": "On /search?q=wool+socks, the Meta Pixel sent the search term “wool socks” after the visitor accepted tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026rl=\u0026if=false\u0026ts=1792944337300\u0026v=2.9.fixture",
+        "url": "https://www.facebook.com/tr/?id=310044221897\u0026ev=PageView\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fsearch%3Fq%3Dwool%2Bsocks\u0026rl=\u0026if=false\u0026ts=1793467258547\u0026v=2.9.fixture",
         "method": "GET",
-        "time": "2026-10-25T16:05:37.303Z",
+        "time": "2026-10-31T17:20:58.552Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -5150,7 +5150,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944337300",
+            "value": "1793467258547",
             "source": "query"
           },
           {
@@ -5182,7 +5182,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-HP2026\u0026gcs=G100\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.harborpine.test%2Fcheckout%2Fconfirm%3Forder%3D10442%26email%3Djane%2540example.com\u0026dt=Order+confirmed+%7C+Harbor+%26+Pine\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-25T16:05:51.808Z",
+        "time": "2026-10-31T17:21:12.679Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",

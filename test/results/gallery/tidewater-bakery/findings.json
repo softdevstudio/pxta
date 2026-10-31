@@ -1,12 +1,12 @@
 {
   "tool": "pxta",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "catalog": "2026.10.25",
   "site": "https://www.tidewaterbakery.test/",
-  "started": "2026-10-25T16:07:03.43158681Z",
-  "finished": "2026-10-25T16:07:47.679939265Z",
+  "started": "2026-10-31T17:22:23.483483516Z",
+  "finished": "2026-10-31T17:23:07.226436096Z",
   "browser": "Chrome/153.0.8010.12",
-  "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 pxta/0.1.0 (+https://pxta.com)",
+  "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 pxta/0.2.0 (+https://pxta.com)",
   "banner": {
     "found": true,
     "platform": "didomi",
@@ -27,7 +27,7 @@
       "url": "https://www.tidewaterbakery.test/",
       "final_url": "https://www.tidewaterbakery.test/",
       "title": "Tidewater Bakery",
-      "started": "2026-10-25T16:07:03.817748204Z",
+      "started": "2026-10-31T17:22:23.885466551Z",
       "requests": 3
     },
     {
@@ -36,7 +36,7 @@
       "url": "https://www.tidewaterbakery.test/menu",
       "final_url": "https://www.tidewaterbakery.test/menu",
       "title": "Menu | Tidewater Bakery",
-      "started": "2026-10-25T16:07:08.135746205Z",
+      "started": "2026-10-31T17:22:28.163452919Z",
       "requests": 2
     },
     {
@@ -45,7 +45,7 @@
       "url": "https://www.tidewaterbakery.test/order",
       "final_url": "https://www.tidewaterbakery.test/order",
       "title": "Order a cake | Tidewater Bakery",
-      "started": "2026-10-25T16:07:12.121837967Z",
+      "started": "2026-10-31T17:22:32.157431091Z",
       "requests": 2
     },
     {
@@ -54,7 +54,7 @@
       "url": "https://www.tidewaterbakery.test/",
       "final_url": "https://www.tidewaterbakery.test/",
       "title": "Tidewater Bakery",
-      "started": "2026-10-25T16:07:18.685667583Z",
+      "started": "2026-10-31T17:22:38.729605837Z",
       "requests": 2
     },
     {
@@ -63,7 +63,7 @@
       "url": "https://www.tidewaterbakery.test/menu",
       "final_url": "https://www.tidewaterbakery.test/menu",
       "title": "Menu | Tidewater Bakery",
-      "started": "2026-10-25T16:07:22.738414905Z",
+      "started": "2026-10-31T17:22:42.595360158Z",
       "requests": 2
     },
     {
@@ -72,7 +72,7 @@
       "url": "https://www.tidewaterbakery.test/order",
       "final_url": "https://www.tidewaterbakery.test/order",
       "title": "Order a cake | Tidewater Bakery",
-      "started": "2026-10-25T16:07:26.791829073Z",
+      "started": "2026-10-31T17:22:46.591423779Z",
       "requests": 2
     },
     {
@@ -81,7 +81,7 @@
       "url": "https://www.tidewaterbakery.test/",
       "final_url": "https://www.tidewaterbakery.test/",
       "title": "Tidewater Bakery",
-      "started": "2026-10-25T16:07:33.534972687Z",
+      "started": "2026-10-31T17:22:53.154069429Z",
       "requests": 6
     },
     {
@@ -90,7 +90,7 @@
       "url": "https://www.tidewaterbakery.test/menu",
       "final_url": "https://www.tidewaterbakery.test/menu",
       "title": "Menu | Tidewater Bakery",
-      "started": "2026-10-25T16:07:37.556258733Z",
+      "started": "2026-10-31T17:22:57.026000316Z",
       "requests": 6
     },
     {
@@ -99,7 +99,7 @@
       "url": "https://www.tidewaterbakery.test/order",
       "final_url": "https://www.tidewaterbakery.test/order",
       "title": "Order a cake | Tidewater Bakery",
-      "started": "2026-10-25T16:07:41.575086065Z",
+      "started": "2026-10-31T17:23:01.05415862Z",
       "requests": 7
     }
   ],
@@ -116,7 +116,7 @@
     "respect_robots": true
   },
   "browser_restarts": 0,
-  "har_sha256": "9ad0bd5f32f05cb1a8d9166505d679b067f277908ecb2d2095ac97d31a131246",
+  "har_sha256": "cae9d6b93c416f3a4139d48b939f436091ccc98595217f48260f65a115e0ad9f",
   "findings": [
     {
       "code": "personal-data",
@@ -128,9 +128,9 @@
       "sentence": "On /order, the Meta Pixel sent a SHA-256 hash of the email address pxta-probe@example.com after the visitor accepted tracking.",
       "count": 1,
       "evidence": {
-        "url": "https://www.facebook.com/tr/?id=88123004417\u0026ev=SubscribedButtonClick\u0026dl=https%3A%2F%2Fwww.tidewaterbakery.test%2Forder\u0026rl=\u0026if=false\u0026ts=1792944464481\u0026v=2.9.fixture\u0026ud%5Bem%5D=d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
+        "url": "https://www.facebook.com/tr/?id=88123004417\u0026ev=SubscribedButtonClick\u0026dl=https%3A%2F%2Fwww.tidewaterbakery.test%2Forder\u0026rl=\u0026if=false\u0026ts=1793467384019\u0026v=2.9.fixture\u0026ud%5Bem%5D=d8f3ef4a8f2657afef29b4d64189cc2c74886e9f0f3336e7049449c9d11af89a",
         "method": "GET",
-        "time": "2026-10-25T16:07:44.483Z",
+        "time": "2026-10-31T17:23:04.022Z",
         "type": "Image",
         "target": "page",
         "phase": "interact",
@@ -170,7 +170,7 @@
           },
           {
             "key": "ts",
-            "value": "1792944464481",
+            "value": "1793467384019",
             "source": "query"
           },
           {

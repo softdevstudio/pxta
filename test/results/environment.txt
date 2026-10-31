@@ -1,6 +1,6 @@
-recorded: 2026-10-25T15:32:59Z
-machine: Linux 6.18.44-fc-v153 x86_64
+recorded: 2026-10-31T16:44:58Z
+machine: Linux 6.18.44-fc-v185 x86_64
 cpus: 2
 go: go version go1.24.7 linux/amd64
-pxta: 0.1.0
-browser: Google Chrome for Testing 153.0.8010.12 (/opt/google/chrome/chrome)
+pxta: 0.2.0
+browser: Google Chrome for Testing 153.0.8010.12 (/usr/bin/google-chrome)
