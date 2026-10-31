@@ -602,3 +602,82 @@ func TestBrowserPassesOption(t *testing.T) {
 		t.Error("no findings from the reject pass on a site that ignores reject")
 	}
 }
+
+// pxta check on real fixture audits: the shop breaks the default rules, the
+// bakery keeps them.
+func TestBrowserCheck(t *testing.T) {
+	needBrowser(t)
+	f := startFixtures(t)
+	shop := auditFixture(t, f, "https://www.harborpine.test/", nil)
+	c := Check(shop, nil)
+	if c.Pass {
+		t.Fatal("the shop passed the default rules")
+	}
+	got := map[string]bool{}
+	for _, p := range c.Failed {
+		got[p.Code] = true
+	}
+	for _, code := range []string{CodeTrackerBeforeConsent, CodeTrackerAfterReject, CodePersonalData} {
+		if !got[code] {
+			t.Errorf("default check did not fail on %s", code)
+		}
+	}
+	bakery := auditFixture(t, f, "https://www.tidewaterbakery.test/", nil)
+	if c := Check(bakery, nil); !c.Pass {
+		var b strings.Builder
+		c.WriteText(&b)
+		t.Fatalf("the bakery failed the default rules:\n%s", b.String())
+	}
+	// An allow list of trackers catches one that isn't on it.
+	r, err := ParseRules([]byte(`{"trackers":{"allow":["google-analytics-4"]}}`))
+	if err != nil {
+		t.Fatal(err)
+	}
+	c = Check(bakery, r)
+	if c.Pass || c.Failed[0].Code != ProblemTrackerNotAllowed || c.Failed[0].Tracker != "meta-pixel" {
+		t.Fatalf("tracker allow list: %+v", c.Failed)
+	}
+}
+
+// --redact: the shop's customer address and the encodings site's addresses
+// are gone from every file in every form, the findings are all still there,
+// and PXTA's probe address stays as evidence.
+func TestBrowserRedact(t *testing.T) {
+	needBrowser(t)
+	f := startFixtures(t)
+	for _, tc := range []struct {
+		start string
+		gone  []string
+	}{
+		{"https://www.harborpine.test/", []string{"jane@example.com", "jane%40example.com", sha("jane@example.com")}},
+		{"https://www.encodings.test/", []string{"@encodings.test", "%40encodings.test", "%2540encodings.test", sha("hashed@encodings.test")}},
+	} {
+		plain := auditFixture(t, f, tc.start, nil)
+		var out string
+		red := auditFixture(t, f, tc.start, func(o *Options) { o.Redact = true; out = o.OutDir })
+		checkOutputs(t, out)
+		if !red.Redacted {
+			t.Fatalf("%s: result not marked redacted", tc.start)
+		}
+		if strings.Contains(tc.start, "harborpine") {
+			mustFind(t, red, CodePersonalData, PassNone, "meta-pixel", "/newsletter", ProbeEmail)
+		}
+		for _, sev := range []string{SevHigh, SevMedium} {
+			if red.Counts[sev] != plain.Counts[sev] {
+				t.Errorf("%s: %s findings %d redacted, %d plain", tc.start, sev, red.Counts[sev], plain.Counts[sev])
+			}
+		}
+		for _, name := range []string{"findings.json", "report.html", "requests.har"} {
+			b, err := os.ReadFile(filepath.Join(out, name))
+			if err != nil {
+				t.Fatal(err)
+			}
+			low := strings.ToLower(string(b))
+			for _, g := range tc.gone {
+				if strings.Contains(low, strings.ToLower(g)) {
+					t.Errorf("%s %s still holds %q", tc.start, name, g)
+				}
+			}
+		}
+	}
+}

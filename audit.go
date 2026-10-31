@@ -37,6 +37,9 @@ type Options struct {
 	Catalog      *Catalog
 	Log          io.Writer
 	ReproBase    string // the command shown in findings to rerun one page
+	// Redact replaces the personal values in the written report with
+	// REDACTED, and fails the audit if any is left in the files.
+	Redact bool
 	// The tests use these.
 	OnPage func(pass string, page int) // called after each page is recorded
 }
@@ -59,8 +62,10 @@ type Result struct {
 	Settings    Settings  `json:"settings"`
 	Restarts    int       `json:"browser_restarts"`
 	HARSHA256   string    `json:"har_sha256,omitempty"`
+	Redacted    bool      `json:"redacted,omitempty"`
 	*Analysis
 	requests []Request
+	redactor *redactor
 }
 
 // Banner is what PXTA found and did about the consent banner.
@@ -311,7 +316,17 @@ func Audit(ctx context.Context, o Options) (*Result, error) {
 	sortFindings(a.res.Findings)
 	a.res.Emails = a.emails.List()
 	a.res.Finished = time.Now().UTC()
+	if o.Redact {
+		a.res.redactor = Redact(a.res, a.emails, a.cat)
+	}
 	if err := WriteOutputs(a.res, o.OutDir); err != nil {
+		return nil, err
+	}
+	if err := a.res.VerifyRedacted(o.OutDir); err != nil {
+		// Never leave a half-redacted report behind for someone to share.
+		for _, f := range []string{"findings.json", "report.html", "requests.har"} {
+			os.Remove(filepath.Join(o.OutDir, f))
+		}
 		return nil, err
 	}
 	// The working files go once the report is written; requests.har holds

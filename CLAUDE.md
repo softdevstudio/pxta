@@ -114,10 +114,10 @@ Design decisions:
   stable Go. Raise it when the sandbox has 1.26.
 
 Steps:
-1. [ ] check.go: rules, evaluation, outputs; unit tests
-2. [ ] redact.go: redaction and the after-write scan; unit tests
-3. [ ] CLI: `check`, `--redact` on audit and check; CLI tests
-4. [ ] browser tests: shop fails check, bakery passes, redacted shop and
+1. [x] check.go: rules, evaluation, outputs; unit tests
+2. [x] redact.go: redaction and the after-write scan; unit tests
+3. [x] CLI: `check`, `--redact` on audit and check; CLI tests
+4. [x] browser tests: shop fails check, bakery passes, redacted shop and
        encodings reports hold no personal value
 5. [ ] action.yml, ACTION.md, action test workflow
 6. [ ] README, CHANGELOG, independent review, fixes, recording
