@@ -309,7 +309,10 @@ cut-off piece of a value is left.
 Short values (first names, short IDs) are replaced only where they stand
 as a whole word, so a visitor called Tim doesn't turn "time" into
 "REDACTEDe". Names shorter than three letters and IDs shorter than six
-characters are left alone.
+characters are left alone. In running text, such as page titles, only
+values of eight characters or more and email addresses are replaced, since
+a first name like Will can't be told from the word; PXTA's own sentences
+never quote a name, phone number or ID.
 
 What stays: the trackers, endpoints, parameter names, page paths, search
 terms and sensitive-page words (they describe the site, not a person),
@@ -326,11 +329,14 @@ and the working files (`state.json`, `requests.jsonl`) are removed, rather
 than leave a half-redacted report for someone to pass on. An audit
 interrupted with Ctrl-C keeps its working files, so `--resume` still works.
 
-GitHub annotations and the job summary are public to anyone who can see
-the run, so `pxta check` always shortens what goes there, with or without
-`--redact`: page queries become `?...`, and email addresses (other than the
-probe) and 32- or 64-digit hashes become `REDACTED`. The full sentences
-are in `check.json` and the report.
+GitHub annotations, the job summary and the job log are public to anyone
+who can see the run, so with `--format github` `pxta check` never quotes
+what the site sent there, with or without `--redact`. Each problem is
+written from its code, tracker, page path and pass ("Meta Pixel sent
+personal data on /checkout (before an answer)."): queries are cut, a path
+part that looks like an address, a hash or an encoded value becomes
+`REDACTED`, and an unclassified tracker is named only as unclassified. The
+full sentences are in `check.json` and the report.
 
 ## What PXTA can't see
 

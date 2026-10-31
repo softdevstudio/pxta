@@ -66,6 +66,9 @@ outputs:
   exit-code:
     description: pxta check's exit code (0 pass, 1 rule broken, 2 usage or rules error, 3 audit failed)
     value: ${{ steps.check.outputs.exit-code }}
+  version:
+    description: The pxta release the action ran (a vX.Y.Z tag, latest, or local)
+    value: ${{ steps.install.outputs.version }}
   report:
     description: Folder holding report.html, findings.json, requests.har and check.json
     value: ${{ inputs.out }}
@@ -82,11 +85,14 @@ runs:
         ACTION_REF: ${{ github.action_ref }}
       run: |
         set -euo pipefail
+        # github.action_ref is empty in some runners; the env variable is the fallback.
+        ACTION_REF="${ACTION_REF:-${GITHUB_ACTION_REF:-}}"
         if [ -z "$PXTA_VERSION" ]; then
           if [[ "$ACTION_REF" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then PXTA_VERSION="$ACTION_REF"; else PXTA_VERSION=latest; fi
         fi
         if [ -n "$PXTA_PATH" ]; then
           echo "bin=$PXTA_PATH" >> "$GITHUB_OUTPUT"
+          echo "version=local" >> "$GITHUB_OUTPUT"
           exit 0
         fi
         case "$RUNNER_OS" in
@@ -116,6 +122,7 @@ runs:
         if [ "$ext" = zip ]; then unzip -oq "$name"; bin="$dir/pxta.exe"; else tar -xzf "$name"; bin="$dir/pxta"; fi
         "$bin" version
         echo "bin=$bin" >> "$GITHUB_OUTPUT"
+        echo "version=$PXTA_VERSION" >> "$GITHUB_OUTPUT"
 
     - name: Run pxta check
       id: check
@@ -142,7 +149,8 @@ runs:
           if [ "$IN_REDACT" = true ]; then args+=(--redact); fi
         fi
         if [ -n "$IN_RULES" ]; then args+=(--rules "$IN_RULES"); fi
-        args+=(--format github --summary "$GITHUB_STEP_SUMMARY")
+        args+=(--format github)
+        if [ -n "${GITHUB_STEP_SUMMARY:-}" ]; then args+=(--summary "$GITHUB_STEP_SUMMARY"); fi
         # IN_ARGS is split on spaces on purpose: it is a list of options.
         # set -f above keeps a * in it from being expanded as a file pattern.
         # shellcheck disable=SC2206

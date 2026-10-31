@@ -11,6 +11,11 @@ on:
   pull_request:
     paths: [action.yml, .github/workflows/action-test.yml, "cmd/**", "*.go", "testdata/action/**"]
   workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag the download job pins (vX.Y.Z); empty means the latest release
+        required: false
+        default: ""
 
 permissions:
   contents: read
@@ -102,11 +107,41 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: The released pxta judges saved findings
+      - name: Which release
+        id: tag
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          IN_TAG: ${{ inputs.tag }}
+        run: |
+          tag="$IN_TAG"
+          [ -n "$tag" ] || tag=$(gh api repos/${{ github.repository }}/releases/latest --jq .tag_name)
+          echo "tag=$tag" >> "$GITHUB_OUTPUT"
+      - name: The latest release judges saved findings
         id: rel
         uses: ./
         with:
           findings: testdata/action/findings-bad.json
           fail: "false"
-      - shell: bash
-        run: '[ "${{ steps.rel.outputs.exit-code }}" = 1 ] || { echo "::error::released pxta: exit ${{ steps.rel.outputs.exit-code }}"; exit 1; }'
+      - name: A pinned release judges saved findings
+        id: pin
+        uses: ./
+        with:
+          findings: testdata/action/findings-bad.json
+          fail: "false"
+          version: ${{ steps.tag.outputs.tag }}
+      - name: Check the outputs and the pinned binary's version
+        shell: bash
+        env:
+          REL: ${{ steps.rel.outputs.exit-code }}
+          REL_V: ${{ steps.rel.outputs.version }}
+          PIN: ${{ steps.pin.outputs.exit-code }}
+          PIN_V: ${{ steps.pin.outputs.version }}
+          TAG: ${{ steps.tag.outputs.tag }}
+        run: |
+          [ "$REL" = 1 ] || { echo "::error::latest pxta: exit $REL"; exit 1; }
+          [ "$REL_V" = latest ] || { echo "::error::an unpinned local action ran $REL_V, not latest"; exit 1; }
+          [ "$PIN" = 1 ] || { echo "::error::pinned pxta: exit $PIN"; exit 1; }
+          [ "$PIN_V" = "$TAG" ] || { echo "::error::asked for $TAG, ran $PIN_V"; exit 1; }
+          got=$("$RUNNER_TEMP/pxta-bin/pxta" version)
+          case "$got" in *"${TAG#v}"*) ;; *) echo "::error::pinned binary says $got, want ${TAG#v}"; exit 1 ;; esac

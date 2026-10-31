@@ -53,9 +53,10 @@ const (
 
 // redactor holds the personal values found in one audit.
 type redactor struct {
-	secrets map[string]bool // lower case
-	re      *regexp.Regexp  // every secret in every encoding, case-insensitive
-	longRe  *regexp.Regexp  // only the long ones: what the after-write scan looks for in raw files
+	secrets map[string]bool   // lower case
+	re      *regexp.Regexp    // every secret in every encoding, case-insensitive
+	longRe  *regexp.Regexp    // only the long ones: what the after-write scan looks for in raw files
+	hosts   map[string]string // unclassified hosts that carry a personal value, and their redacted form
 }
 
 // secretHeaders are request headers whose whole value is personal. PXTA
@@ -285,13 +286,20 @@ func (rd *redactor) compile() {
 }
 
 func isWordByte(b byte) bool {
-	return b >= 'a' && b <= 'z' || b >= 'A' && b <= 'Z' || b >= '0' && b <= '9'
+	return b >= 'a' && b <= 'z' || b >= 'A' && b <= 'Z' || b >= '0' && b <= '9' || b == '_'
 }
 
-// bounded reports whether s[i:j] stands alone: no letter or digit right
-// before or after it.
+func isHexByte(b byte) bool {
+	return b >= '0' && b <= '9' || b >= 'a' && b <= 'f' || b >= 'A' && b <= 'F'
+}
+
+// bounded reports whether s[i:j] stands alone: no letter, digit or _ right
+// before or after it. A percent escape counts as a separator, so the Tim
+// in Mr%20Tim and in Tim%20Smith stands alone.
 func bounded(s string, i, j int) bool {
-	return (i == 0 || !isWordByte(s[i-1])) && (j == len(s) || !isWordByte(s[j]))
+	before := i == 0 || !isWordByte(s[i-1]) || (i >= 3 && s[i-3] == '%' && isHexByte(s[i-2]) && isHexByte(s[i-1]))
+	after := j == len(s) || !isWordByte(s[j]) || s[j] == '%'
+	return before && after
 }
 
 // matches returns the spans of secrets in s: long values anywhere, short
@@ -308,6 +316,21 @@ func (rd *redactor) matches(s string) [][]int {
 		out = append(out, m)
 	}
 	return out
+}
+
+// textLong replaces only the long values and email addresses: for prose
+// (sentences, titles, catalog meanings), where a short value such as the
+// first name Page or Will can't be told from an ordinary word.
+func (rd *redactor) textLong(s string) string {
+	if rd.longRe != nil {
+		s = rd.longRe.ReplaceAllString(s, Redacted)
+	}
+	return emailRe.ReplaceAllStringFunc(s, func(m string) string {
+		if isEmail(m) && !isProbe(m) {
+			return Redacted
+		}
+		return m
+	})
 }
 
 // leaks reports whether a decoded value still carries a personal value.
@@ -385,7 +408,8 @@ func (rd *redactor) pairs(q string) string {
 		} else {
 			v = rd.text(v)
 		}
-		parts[i] = rd.text(k) + "=" + v
+		// Keys are the tag's own field names: never redacted.
+		parts[i] = k + "=" + v
 	}
 	return strings.Join(parts, "&")
 }
@@ -393,7 +417,8 @@ func (rd *redactor) pairs(q string) string {
 // url redacts a URL or a page path: known values first, then the query pair
 // by pair and each path segment for what only decoding shows.
 func (rd *redactor) url(s string) string {
-	s = rd.text(s)
+	// No pass over the whole address: it would reach the query's keys,
+	// which are the tag's own field names.
 	base, frag, hasFrag := strings.Cut(s, "#")
 	pth, q, hasQ := strings.Cut(base, "?")
 	scheme := ""
@@ -404,11 +429,11 @@ func (rd *redactor) url(s string) string {
 		if j < 0 {
 			j = len(rest)
 		}
-		scheme, pth = pth[:i+3]+rest[:j], rest[j:]
+		scheme, pth = pth[:i+3]+rd.text(rest[:j]), rest[j:]
 	}
 	segs := strings.Split(pth, "/")
 	for i, seg := range segs {
-		segs[i] = rd.opaque(seg)
+		segs[i] = rd.opaque(rd.text(seg))
 	}
 	out := scheme + strings.Join(segs, "/")
 	if hasQ {
@@ -452,26 +477,66 @@ func looksLikeURL(s string) bool {
 
 // field redacts one free-text field.
 func (rd *redactor) field(s string) string {
-	s = rd.text(s)
 	if looksLikeURL(s) {
 		return rd.url(s)
 	}
-	// A sentence can quote a page address; redact the addresses in it too.
+	if !strings.ContainsAny(s, " \n") {
+		// A single value (a decoded parameter, an ID): everything applies.
+		return rd.opaque(rd.text(s))
+	}
+	// Prose. Long values and addresses go everywhere; a quoted page address
+	// is redacted like an address. Page addresses in PXTA's own sentences
+	// were already redacted before they were shortened.
+	s = rd.textLong(s)
+	for h, nh := range rd.hosts {
+		s = strings.ReplaceAll(s, h, nh)
+	}
 	words := strings.Split(s, " ")
 	for i, w := range words {
-		if strings.HasPrefix(w, "/") || strings.Contains(w, "://") {
-			words[i] = rd.url(w)
+		core := strings.TrimLeft(w, "(“\"")
+		lead := w[:len(w)-len(core)]
+		core = strings.TrimRight(core, "),.;:”\"")
+		trail := w[len(lead)+len(core):]
+		if strings.HasPrefix(core, "/") || strings.Contains(core, "://") {
+			words[i] = lead + rd.url(core) + trail
 		}
 	}
-	return rd.opaque(strings.Join(words, " "))
+	return strings.Join(words, " ")
+}
+
+// hostID redacts the host in an "unclassified:<host>" tracker ID, which is
+// otherwise one of PXTA's fixed fields.
+func (rd *redactor) hostID(id string) string {
+	if h, ok := strings.CutPrefix(id, "unclassified:"); ok {
+		return "unclassified:" + rd.text(h)
+	}
+	return id
 }
 
 // apply redacts the result in place, and the requests it will write.
 func (rd *redactor) apply(res *Result, reqs []Request) {
+	// Hosts first: sentences name an unclassified tracker by its host, and
+	// prose otherwise gets only the long values.
+	if res.Analysis != nil {
+		for _, tr := range res.Trackers {
+			if h, ok := strings.CutPrefix(tr.ID, "unclassified:"); ok {
+				if nh := rd.text(h); nh != h {
+					if rd.hosts == nil {
+						rd.hosts = map[string]string{}
+					}
+					rd.hosts[h] = nh
+				}
+			}
+		}
+	}
 	walkStrings(reflect.ValueOf(res), rd.field)
 	if res.Analysis != nil {
 		for _, f := range res.Findings {
 			f.Evidence.Body = rd.body(f.Evidence.Body, "")
+			f.Tracker = rd.hostID(f.Tracker)
+		}
+		for i := range res.Trackers {
+			res.Trackers[i].ID = rd.hostID(res.Trackers[i].ID)
 		}
 	}
 	for i := range reqs {
@@ -615,9 +680,14 @@ func (rd *redactor) verifyJSON(name string, b []byte) error {
 				walk(key, e)
 			}
 		case string:
-			if fixedJSONKeys[key] {
+			if fixedJSONKeys[key] && !strings.HasPrefix(t, "unclassified:") {
 				return
 			}
+			if strings.ContainsAny(t, " \n") {
+				// Prose: short values are not redacted there (see textLong).
+				return
+			}
+			t = queryValues(t)
 			for _, u := range []string{t, unescapeAll(t)} {
 				if len(rd.matches(u)) > 0 {
 					bad = fmt.Errorf("redaction check: %s still holds a personal value in %q", name, key)
@@ -628,6 +698,31 @@ func (rd *redactor) verifyJSON(name string, b []byte) error {
 	}
 	walk("", doc)
 	return bad
+}
+
+// queryValues drops the keys from an address's query, which redaction
+// leaves alone (they are the tag's field names), so the check looks only at
+// what redaction looks at.
+func queryValues(s string) string {
+	if !looksLikeURL(s) {
+		return s
+	}
+	base, q, ok := strings.Cut(s, "?")
+	if !ok {
+		return s
+	}
+	q, frag, hasFrag := strings.Cut(q, "#")
+	parts := strings.Split(q, "&")
+	for i, p := range parts {
+		if _, v, ok := strings.Cut(p, "="); ok {
+			parts[i] = "=" + v
+		}
+	}
+	out := base + "?" + strings.Join(parts, "&")
+	if hasFrag {
+		out += "#" + frag
+	}
+	return out
 }
 
 // fixedJSONKeys are the JSON names of fixedFields.

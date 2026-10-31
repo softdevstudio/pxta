@@ -108,6 +108,14 @@ Design decisions:
   PXTA types itself (pxta-probe@example.com, Pat Probe, +1 555 0100 123) stay:
   they are the evidence. After writing, every file is scanned again and the
   run fails rather than leave a value behind. Finding counts don't change.
+  In prose (page titles, sentences) only values of 8+ characters, email
+  addresses and personal unclassified hosts are replaced; query keys are
+  never redacted (they are the tag's field names).
+- Public CI output (annotations, step summary, the job log with
+  `--format github`) is built by `PublicLine` from code, tracker, page path
+  (`PublicPath`) and pass, never from a sentence; unclassified trackers show
+  as "unclassified". Second review (2026-10-31) found the sentence filter
+  leaking; this replaced it.
 - GitHub Action: action.yml in the repo root, downloads the release for the
   runner, checks SHA256SUMS, runs `pxta check`, writes the step summary,
   uploads the report as an artifact. ACTION.md describes the pattern so

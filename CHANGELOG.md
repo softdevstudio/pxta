@@ -15,8 +15,9 @@
   every report file, in every encoding PXTA reads, with a scan of the written
   files that fails the run, and removes the report and working files, if one
   is left. PXTA's own probe values stay.
-- Annotations and job summaries always cut page queries and hide addresses
-  and hashes, since anyone who can see the run reads them.
+- With `--format github`, annotations, the job summary and the log describe
+  each problem from its code, tracker, page path and pass and never quote
+  captured data, since anyone who can see the run reads them.
 - GitHub Action (`uses: softdevstudio/pxta@v0.2.0`), described in ACTION.md.
   It runs the pxta release it is pinned to and uploads only the report files.
   Tested on Linux and macOS runners with real audits, and on Windows with

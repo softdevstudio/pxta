@@ -207,7 +207,7 @@ func runAudit(args []string, stdout, stderr io.Writer) int {
 		}
 		return code
 	}
-	printSummary(stdout, res, *af.out)
+	printSummary(stdout, res, *af.out, false)
 	return 0
 }
 
@@ -289,7 +289,7 @@ func runCheck(args []string, stdout, stderr io.Writer) int {
 			return code
 		}
 		res, outDir = r, *af.out
-		printSummary(stderr, res, outDir)
+		printSummary(stderr, res, outDir, *format == "github")
 	}
 	c := pxta.Check(res, rules)
 	if outDir != "" {
@@ -307,7 +307,8 @@ func runCheck(args []string, stdout, stderr io.Writer) int {
 	if *format == "github" {
 		c.WriteGitHub(stdout)
 	}
-	c.WriteText(stdout)
+	// In a CI log (github format) nothing the site sent is quoted.
+	c.WriteText(stdout, *format == "github")
 	if *summary != "" {
 		f, err := os.OpenFile(*summary, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0o644)
 		if err == nil {
@@ -327,7 +328,9 @@ func runCheck(args []string, stdout, stderr io.Writer) int {
 	return 0
 }
 
-func printSummary(w io.Writer, r *pxta.Result, out string) {
+// printSummary prints the audit's headline. With public set (a CI log),
+// findings are described from their fields instead of their sentences.
+func printSummary(w io.Writer, r *pxta.Result, out string, public bool) {
 	fmt.Fprintf(w, "\n%s: %d high, %d medium, %d low, %d for information\n", r.Site,
 		r.Counts[pxta.SevHigh], r.Counts[pxta.SevMedium], r.Counts[pxta.SevLow], r.Counts[pxta.SevInfo])
 	switch {
@@ -341,7 +344,11 @@ func printSummary(w io.Writer, r *pxta.Result, out string) {
 		if f.Severity == pxta.SevInfo || shown >= 8 {
 			continue
 		}
-		fmt.Fprintf(w, "  %-6s %s\n", strings.ToUpper(f.Severity), f.Sentence)
+		s := f.Sentence
+		if public {
+			s = pxta.PublicLine(pxta.Problem{Code: f.Code, Pass: f.Pass, Page: f.Page, Tracker: f.Tracker, Name: f.Name, Count: f.Count})
+		}
+		fmt.Fprintf(w, "  %-6s %s\n", strings.ToUpper(f.Severity), s)
 		shown++
 	}
 	more := 0

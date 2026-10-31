@@ -328,6 +328,9 @@ func analyze(cat *Catalog, visits []Visit, reqs []Request, emails *Emails, repro
 			id, name, vendor = "unclassified:"+c.Host, c.Host, "unclassified"
 		}
 		pp := shorten(page)
+		// Findings are told apart by the real page, so redaction (which can
+		// make two pages read the same) never merges them.
+		rawPP := pagePath(page)
 		addUse(c.Tracker, id, name, vendor, r.Pass, pp, c.Collect)
 		if !c.Collect {
 			continue
@@ -350,7 +353,7 @@ func analyze(cat *Catalog, visits []Visit, reqs []Request, emails *Emails, repro
 			e := ev
 			e.Highlight = leaks
 			return &Finding{Code: code, Pass: r.Pass, Page: pp, Tracker: id, Name: name, Sentence: s, Evidence: e, Repro: repro,
-				key: code + "|" + r.Pass + "|" + pp + "|" + id + "|" + keyExtra}
+				key: code + "|" + r.Pass + "|" + rawPP + "|" + id + "|" + keyExtra}
 		}
 		if r.Pass != PassAccept {
 			code := CodeTrackerBeforeConsent

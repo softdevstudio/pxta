@@ -78,7 +78,7 @@ func TestCheckCLI(t *testing.T) {
 	if code := run([]string{"check", "--findings", bad, "--format", "github", "--summary", summary}, &out, &errb); code != 1 {
 		t.Errorf("bad: %d %q", code, out.String())
 	}
-	if !strings.Contains(out.String(), "::error title=pxta tracker-before-consent (meta-pixel)::On /, the Meta Pixel") {
+	if !strings.Contains(out.String(), "::error title=pxta tracker-before-consent (meta-pixel)::") {
 		t.Errorf("annotation missing: %q", out.String())
 	}
 	md, _ := os.ReadFile(summary)

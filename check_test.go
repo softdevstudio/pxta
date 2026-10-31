@@ -161,21 +161,21 @@ func TestRulesRejected(t *testing.T) {
 func TestCheckOutputs(t *testing.T) {
 	c := Check(checkFixture(), nil)
 	var b bytes.Buffer
-	c.WriteText(&b)
-	if !strings.Contains(b.String(), "pxta check: fail, 3 problems") {
+	c.WriteText(&b, false)
+	if !strings.Contains(b.String(), "pxta check: fail, 3 problems") || !strings.Contains(b.String(), "personal data") {
 		t.Errorf("text:\n%s", b.String())
 	}
 	b.Reset()
 	res := checkFixture()
-	res.Findings[0].Sentence = "50% sent:\nline two, here"
 	res.Findings[0].Tracker = "a,b:c"
+	res.Findings[0].Name = "Pixel: 50%"
 	Check(res, nil).WriteGitHub(&b)
 	line := strings.SplitN(b.String(), "\n", 2)[0]
-	if line != "::error title=pxta personal-data (a%2Cb%3Ac)::50%25 sent:%0Aline two, here" {
+	if line != "::error title=pxta personal-data (a%2Cb%3Ac)::Pixel: 50%25 sent personal data on /checkout (before an answer), 2 times." {
 		t.Errorf("annotation %q", line)
 	}
 	md := Check(res, nil).Markdown()
-	if !strings.Contains(md, "## PXTA check failed") || !strings.Contains(md, "50% sent: line two, here") {
+	if !strings.Contains(md, "## PXTA check failed") || !strings.Contains(md, "Pixel: 50% sent personal data on /checkout") {
 		t.Errorf("markdown:\n%s", md)
 	}
 	pass := Check(&Result{Tool: "pxta", Site: "s", Analysis: &Analysis{}}, nil)
@@ -184,20 +184,36 @@ func TestCheckOutputs(t *testing.T) {
 	}
 }
 
-func TestPublicSentence(t *testing.T) {
-	in := "On /checkout/confirm?order=1&email=jane@example.com, the Meta Pixel sent a SHA-256 hash of the email address jane@example.com (" +
-		sha("jane@example.com") + ") and " + ProbeEmail + " before the consent banner was answered."
-	got := PublicSentence(in)
-	want := "On /checkout/confirm?..., the Meta Pixel sent a SHA-256 hash of the email address REDACTED (REDACTED) and " + ProbeEmail + " before the consent banner was answered."
-	if got != want {
-		t.Errorf("\n got %s\nwant %s", got, want)
-	}
-	var b bytes.Buffer
+func TestPublicOutputs(t *testing.T) {
+	secret := "jane@example.com"
+	sentence := "On /checkout/confirm (order=1&email=" + secret + "), the Meta Pixel sent " + sha(secret) +
+		" and jane%40example.com and Jane Roe before the consent banner was answered."
 	res := checkFixture()
-	res.Findings[0].Sentence = in
-	Check(res, nil).WriteGitHub(&b)
-	if strings.Contains(b.String(), "jane@") || strings.Contains(Check(res, nil).Markdown(), "jane@") {
-		t.Error("an address reached the annotations or the summary")
+	res.Findings[0].Sentence = sentence
+	res.Findings[0].Page = "/checkout/jane%40example.com/" + sha(secret) + "?email=" + secret
+	res.Findings[1].Tracker = "unclassified:jane.example.net"
+	c := Check(res, nil)
+	var gh, txt bytes.Buffer
+	c.WriteGitHub(&gh)
+	c.WriteText(&txt, true)
+	for name, out := range map[string]string{"annotations": gh.String(), "summary": c.Markdown(), "log": txt.String()} {
+		for _, bad := range []string{"jane", "Jane", sha(secret)[:16], "email="} {
+			if strings.Contains(out, bad) {
+				t.Errorf("%s holds %q:\n%s", name, bad, out)
+			}
+		}
+	}
+	if !strings.Contains(gh.String(), "on /checkout/REDACTED/REDACTED") || !strings.Contains(gh.String(), "An unrecognised tracker") {
+		t.Errorf("annotations:\n%s", gh.String())
+	}
+	if got := PublicPath("/blog/2026/post?x=1#y"); got != "/blog/2026/post" {
+		t.Errorf("PublicPath %q", got)
+	}
+	// Without public, the local text log keeps the full sentence.
+	txt.Reset()
+	c.WriteText(&txt, false)
+	if !strings.Contains(txt.String(), "Jane Roe") {
+		t.Error("local text lost the sentence")
 	}
 }
 

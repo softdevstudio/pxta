@@ -287,3 +287,48 @@ func TestRedactFailureCleansUp(t *testing.T) {
 		}
 	}
 }
+
+// Second review: a short value after a %XX escape is still a whole word,
+// parameter keys are never redacted, an unclassified host loses the
+// personal part of its name, and redaction changes no finding count.
+func TestRedactEdges(t *testing.T) {
+	req := "https://max.other.test/collect?fn=Max&note=hello%20Max%21&max=1&tag=Max_x&email=someone%40example.org"
+	res, dir, err := redactOne(t, "https://shop.test/", req)
+	if err != nil {
+		t.Fatal(err)
+	}
+	har, _ := os.ReadFile(filepath.Join(dir, "requests.har"))
+	fj, _ := os.ReadFile(filepath.Join(dir, "findings.json"))
+	h := string(har)
+	if strings.Contains(h, "%20Max") || strings.Contains(h, "fn=Max") {
+		t.Error("the name after %20 survived")
+	}
+	if !strings.Contains(h, "max=1") || !strings.Contains(h, "Max_x") {
+		t.Error("a key or a longer word was redacted")
+	}
+	if strings.Contains(h, "max.other") || strings.Contains(string(fj), "max.other") {
+		for _, l := range strings.Split(h+string(fj), "\n") {
+			if strings.Contains(l, "max.other") {
+				t.Log(l)
+			}
+		}
+		t.Error("the name survived in the host")
+	}
+	if !strings.Contains(string(fj), "unclassified:REDACTED.other.test") {
+		t.Errorf("tracker ID not redacted: %v", res.Trackers)
+	}
+
+	// The same audit without redaction has the same findings and counts.
+	cat, _ := LoadCatalog("")
+	reqs := []Request{{Pass: PassNone, Page: 0, Time: time.Unix(1, 0), Method: "GET", Type: "Image", Target: "page", Phase: "load", URL: req}}
+	visits := []Visit{{Pass: PassNone, Page: 0, URL: "https://shop.test/", FinalURL: "https://shop.test/", Started: time.Unix(1, 0)}}
+	plain := analyze(cat, visits, reqs, NewEmails(), "pxta audit", func(s string) string { return s })
+	if len(plain.Findings) != len(res.Findings) {
+		t.Errorf("findings: %d plain, %d redacted", len(plain.Findings), len(res.Findings))
+	}
+	for k, v := range plain.Counts {
+		if res.Counts[k] != v {
+			t.Errorf("count %s: %d plain, %d redacted", k, v, res.Counts[k])
+		}
+	}
+}

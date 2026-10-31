@@ -201,6 +201,7 @@ type Problem struct {
 	Pass     string `json:"pass,omitempty"`
 	Page     string `json:"page,omitempty"`
 	Tracker  string `json:"tracker,omitempty"`
+	Name     string `json:"tracker_name,omitempty"`
 	Sentence string `json:"sentence"`
 	Count    int    `json:"count,omitempty"`
 	// AllowedBy is the reason of the allow entry that excused it.
@@ -267,7 +268,7 @@ func Check(res *Result, rules *Rules) *CheckResult {
 		if !fails {
 			continue
 		}
-		judge(Problem{Code: f.Code, Severity: f.Severity, Pass: f.Pass, Page: f.Page, Tracker: f.Tracker,
+		judge(Problem{Code: f.Code, Severity: f.Severity, Pass: f.Pass, Page: f.Page, Tracker: f.Tracker, Name: f.Name,
 			Sentence: f.Sentence, Count: f.Count})
 	}
 	allow := map[string]bool{}
@@ -282,10 +283,10 @@ func Check(res *Result, rules *Rules) *CheckResult {
 		where := firstPage(t)
 		switch {
 		case block[t.ID]:
-			judge(Problem{Code: ProblemTrackerBlocked, Tracker: t.ID, Page: where,
+			judge(Problem{Code: ProblemTrackerBlocked, Tracker: t.ID, Name: t.Name, Page: where,
 				Sentence: fmt.Sprintf("%s is on the site%s, and the rules block it.", t.Name, onPage(where))})
 		case len(allow) > 0 && !allow[t.ID]:
-			judge(Problem{Code: ProblemTrackerNotAllowed, Tracker: t.ID, Page: where,
+			judge(Problem{Code: ProblemTrackerNotAllowed, Tracker: t.ID, Name: t.Name, Page: where,
 				Sentence: fmt.Sprintf("%s is on the site%s, and it isn't on the rules' list of allowed trackers.", t.Name, onPage(where))})
 		}
 	}
@@ -351,13 +352,20 @@ func globPrefix(pattern, p string) bool {
 	return strings.HasPrefix(p, strings.TrimSuffix(pattern, "*"))
 }
 
-// WriteText prints a human summary of a check.
-func (c *CheckResult) WriteText(w io.Writer) {
+// WriteText prints a human summary of a check. With public set (a CI
+// log), problems are written as PublicLine instead of their sentences.
+func (c *CheckResult) WriteText(w io.Writer, public bool) {
+	say := func(p Problem) string {
+		if public {
+			return PublicLine(p)
+		}
+		return p.Sentence
+	}
 	for _, p := range c.Failed {
-		fmt.Fprintf(w, "  FAIL   %-6s %s\n", strings.ToUpper(sevOrDash(p.Severity)), p.Sentence)
+		fmt.Fprintf(w, "  FAIL   %-6s %s\n", strings.ToUpper(sevOrDash(p.Severity)), say(p))
 	}
 	for _, p := range c.Allowed {
-		fmt.Fprintf(w, "  ALLOW  %-6s %s (allowed: %s)\n", strings.ToUpper(sevOrDash(p.Severity)), p.Sentence, p.AllowedBy)
+		fmt.Fprintf(w, "  ALLOW  %-6s %s (allowed: %s)\n", strings.ToUpper(sevOrDash(p.Severity)), say(p), p.AllowedBy)
 	}
 	for _, a := range c.Expired {
 		fmt.Fprintf(w, "  NOTE   an allow entry expired on %s and no longer applies: %s\n", a.Until, a.Reason)
@@ -369,59 +377,110 @@ func (c *CheckResult) WriteText(w io.Writer) {
 	fmt.Fprintf(w, "pxta check: %s, %d %s, %d allowed by the rules\n", verdict, len(c.Failed), plural2(len(c.Failed), "problem"), len(c.Allowed))
 }
 
-var hexRunRe = regexp.MustCompile(`(?i)\b[0-9a-f]{32}(?:[0-9a-f]{32})?\b`)
+var hexRunRe = regexp.MustCompile(`(?i)[0-9a-f]{32,}`)
 
-// PublicSentence is a sentence fit for places anyone with access to the CI
-// run can read (annotations, job summaries): page queries are cut to "?...",
-// email addresses other than the probe and 32- or 64-digit hashes become
-// REDACTED. The full sentence stays in check.json and the report.
-func PublicSentence(s string) string {
-	words := strings.Split(s, " ")
-	for i, w := range words {
-		if strings.HasPrefix(w, "/") {
-			if j := strings.IndexByte(w, '?'); j >= 0 {
-				tail := ""
-				if strings.HasSuffix(w, ",") {
-					tail = ","
-				}
-				words[i] = w[:j] + "?..." + tail
-			}
-		}
-	}
-	s = strings.Join(words, " ")
-	s = emailRe.ReplaceAllStringFunc(s, func(m string) string {
-		if isEmail(m) && !isProbe(m) {
-			return Redacted
-		}
-		return m
-	})
-	return hexRunRe.ReplaceAllStringFunc(s, func(m string) string {
-		if isProbe(m) {
-			return m
-		}
-		return Redacted
-	})
+// publicPhrase says what a problem is without quoting anything the site
+// sent.
+var publicPhrase = map[string]string{
+	CodeTrackerBeforeConsent: "sent data before the consent banner was answered",
+	CodeTrackerAfterReject:   "sent data after the visitor rejected",
+	CodePersonalData:         "sent personal data",
+	CodeSensitivePage:        "got the address or title of a sensitive page",
+	CodeSearchTerm:           "got a site search term",
+	CodeConsentModeGranted:   "reported Consent Mode as granted",
+	CodeConsentModeMismatch:  "sent personal data while Consent Mode said denied",
+	CodeBannerNotHandled:     "PXTA could not answer the consent banner",
+	CodeTrackerPresent:       "is on the site",
+	ProblemTrackerNotAllowed: "is on the site and not on the allowed list",
+	ProblemTrackerBlocked:    "is on the site and the rules block it",
+	ProblemNoBanner:          "the site has trackers but no consent banner",
 }
 
-// WriteGitHub prints GitHub Actions annotations, one per problem. Sentences
-// go through PublicSentence.
+var passPhrase = map[string]string{PassNone: "before an answer", PassReject: "after reject", PassAccept: "after accept", PassNoBanner: "no banner"}
+
+// PublicPath is a page fit for places anyone with access to the CI run
+// can read: the path only, no query, and any segment that holds an
+// address, a hash or an escape replaced.
+func PublicPath(p string) string {
+	if i := strings.IndexAny(p, "?#"); i >= 0 {
+		p = p[:i]
+	}
+	segs := strings.Split(p, "/")
+	for i, s := range segs {
+		u := unescapeAll(s)
+		if strings.Contains(u, "@") || hexRunRe.MatchString(u) || strings.ContainsAny(u, " %") || len(u) > 40 {
+			segs[i] = Redacted
+		}
+	}
+	return strings.Join(segs, "/")
+}
+
+// PublicTracker is a tracker ID fit for public output: an unclassified
+// tracker's ID carries the host it sent to, which can hold personal data.
+func PublicTracker(id string) string {
+	if strings.HasPrefix(id, "unclassified:") {
+		return "unclassified"
+	}
+	return id
+}
+
+// PublicLine describes a problem for annotations, job summaries and the
+// job log: built from the code, tracker, page path and pass, never from the
+// sentence, which quotes what the site sent. The full sentence is in
+// check.json and the report.
+func PublicLine(p Problem) string {
+	who := p.Name
+	if who == "" {
+		who = p.Tracker
+	}
+	if strings.HasPrefix(who, "unclassified:") || (p.Tracker != "" && strings.HasPrefix(p.Tracker, "unclassified:")) {
+		who = "an unrecognised tracker"
+	}
+	what := publicPhrase[p.Code]
+	if what == "" {
+		what = p.Code
+	}
+	var s string
+	switch p.Code {
+	case CodeBannerNotHandled, ProblemNoBanner:
+		s = capitalize(what)
+	default:
+		if who == "" {
+			who = "A tracker"
+		}
+		s = capitalize(who) + " " + what
+	}
+	if p.Page != "" {
+		s += " on " + PublicPath(p.Page)
+	}
+	if pp := passPhrase[p.Pass]; pp != "" {
+		s += " (" + pp + ")"
+	}
+	if p.Count > 1 {
+		s += fmt.Sprintf(", %d times", p.Count)
+	}
+	return s + "."
+}
+
+// WriteGitHub prints GitHub Actions annotations, one per problem, as
+// PublicLine.
 func (c *CheckResult) WriteGitHub(w io.Writer) {
 	for _, p := range c.Failed {
 		title := "pxta " + p.Code
 		if p.Tracker != "" {
-			title += " (" + p.Tracker + ")"
+			title += " (" + PublicTracker(p.Tracker) + ")"
 		}
-		fmt.Fprintf(w, "::error title=%s::%s\n", ghProperty(title), ghData(PublicSentence(p.Sentence)))
+		fmt.Fprintf(w, "::error title=%s::%s\n", ghProperty(title), ghData(PublicLine(p)))
 	}
 	for _, p := range c.Allowed {
-		fmt.Fprintf(w, "::notice title=%s::%s\n", ghProperty("pxta allowed "+p.Code), ghData(PublicSentence(p.Sentence)+" Allowed: "+p.AllowedBy))
+		fmt.Fprintf(w, "::notice title=%s::%s\n", ghProperty("pxta allowed "+p.Code), ghData(PublicLine(p)+" Allowed: "+p.AllowedBy))
 	}
 	for _, a := range c.Expired {
 		fmt.Fprintf(w, "::warning title=pxta expired allowance::%s\n", ghData("Expired on "+a.Until+": "+a.Reason))
 	}
 }
 
-// Markdown is a step summary. Sentences go through PublicSentence.
+// Markdown is a step summary, with problems as PublicLine.
 func (c *CheckResult) Markdown() string {
 	var b strings.Builder
 	verdict := "passed"
@@ -437,7 +496,7 @@ func (c *CheckResult) Markdown() string {
 			b.WriteString("| Severity | Problem | Tracker | Pass |\n|---|---|---|---|\n")
 		}
 		for _, p := range ps {
-			fmt.Fprintf(&b, "| %s | %s | %s | %s |", sevOrDash(p.Severity), mdCell(PublicSentence(p.Sentence)), mdCell(p.Tracker), mdCell(p.Pass))
+			fmt.Fprintf(&b, "| %s | %s | %s | %s |", sevOrDash(p.Severity), mdCell(PublicLine(p)), mdCell(PublicTracker(p.Tracker)), mdCell(p.Pass))
 			if allowed {
 				fmt.Fprintf(&b, " %s |", mdCell(p.AllowedBy))
 			}

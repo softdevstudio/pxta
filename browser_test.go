@@ -625,7 +625,7 @@ func TestBrowserCheck(t *testing.T) {
 	bakery := auditFixture(t, f, "https://www.tidewaterbakery.test/", nil)
 	if c := Check(bakery, nil); !c.Pass {
 		var b strings.Builder
-		c.WriteText(&b)
+		c.WriteText(&b, false)
 		t.Fatalf("the bakery failed the default rules:\n%s", b.String())
 	}
 	// An allow list of trackers catches one that isn't on it.
