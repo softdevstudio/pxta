@@ -1,12 +1,12 @@
 {
   "tool": "pxta",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "catalog": "2026.10.25",
   "site": "https://www.marlowhomeloans.test/",
-  "started": "2026-10-31T17:23:07.38563353Z",
-  "finished": "2026-10-31T17:24:13.297031451Z",
+  "started": "2026-10-31T20:45:38.178826299Z",
+  "finished": "2026-10-31T20:46:44.365306304Z",
   "browser": "Chrome/153.0.8010.12",
-  "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 pxta/0.2.0 (+https://pxta.com)",
+  "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.0.0 Safari/537.36 pxta/0.3.0 (+https://pxta.com)",
   "banner": {
     "found": true,
     "platform": "usercentrics",
@@ -27,7 +27,7 @@
       "url": "https://www.marlowhomeloans.test/",
       "final_url": "https://www.marlowhomeloans.test/",
       "title": "Marlow Home Loans",
-      "started": "2026-10-31T17:23:07.743264759Z",
+      "started": "2026-10-31T20:45:38.542149171Z",
       "requests": 3
     },
     {
@@ -36,7 +36,7 @@
       "url": "https://www.marlowhomeloans.test/loans/debt-consolidation",
       "final_url": "https://www.marlowhomeloans.test/loans/debt-consolidation",
       "title": "Debt consolidation loans | Marlow Home Loans",
-      "started": "2026-10-31T17:23:11.932013174Z",
+      "started": "2026-10-31T20:45:42.7808457Z",
       "requests": 2
     },
     {
@@ -45,7 +45,7 @@
       "url": "https://www.marlowhomeloans.test/calculators/mortgage",
       "final_url": "https://www.marlowhomeloans.test/calculators/mortgage",
       "title": "Mortgage calculator | Marlow Home Loans",
-      "started": "2026-10-31T17:23:15.887906276Z",
+      "started": "2026-10-31T20:45:46.749667789Z",
       "requests": 2
     },
     {
@@ -54,7 +54,7 @@
       "url": "https://www.marlowhomeloans.test/apply",
       "final_url": "https://www.marlowhomeloans.test/apply",
       "title": "Apply | Marlow Home Loans",
-      "started": "2026-10-31T17:23:19.826491141Z",
+      "started": "2026-10-31T20:45:50.762154932Z",
       "requests": 2
     },
     {
@@ -63,7 +63,7 @@
       "url": "https://www.marlowhomeloans.test/search?q=bankruptcy",
       "final_url": "https://www.marlowhomeloans.test/search?q=bankruptcy",
       "title": "Search | Marlow Home Loans",
-      "started": "2026-10-31T17:23:23.831018111Z",
+      "started": "2026-10-31T20:45:54.756357551Z",
       "requests": 2
     },
     {
@@ -72,7 +72,7 @@
       "url": "https://www.marlowhomeloans.test/",
       "final_url": "https://www.marlowhomeloans.test/",
       "title": "Marlow Home Loans",
-      "started": "2026-10-31T17:23:30.411222309Z",
+      "started": "2026-10-31T20:46:01.353303807Z",
       "requests": 8
     },
     {
@@ -81,7 +81,7 @@
       "url": "https://www.marlowhomeloans.test/loans/debt-consolidation",
       "final_url": "https://www.marlowhomeloans.test/loans/debt-consolidation",
       "title": "Debt consolidation loans | Marlow Home Loans",
-      "started": "2026-10-31T17:23:34.426292965Z",
+      "started": "2026-10-31T20:46:05.355099821Z",
       "requests": 8
     },
     {
@@ -90,7 +90,7 @@
       "url": "https://www.marlowhomeloans.test/calculators/mortgage",
       "final_url": "https://www.marlowhomeloans.test/calculators/mortgage",
       "title": "Mortgage calculator | Marlow Home Loans",
-      "started": "2026-10-31T17:23:38.433302205Z",
+      "started": "2026-10-31T20:46:09.349345595Z",
       "requests": 8
     },
     {
@@ -99,7 +99,7 @@
       "url": "https://www.marlowhomeloans.test/apply",
       "final_url": "https://www.marlowhomeloans.test/apply",
       "title": "Apply | Marlow Home Loans",
-      "started": "2026-10-31T17:23:42.473984705Z",
+      "started": "2026-10-31T20:46:13.398561232Z",
       "requests": 8
     },
     {
@@ -108,7 +108,7 @@
       "url": "https://www.marlowhomeloans.test/search?q=bankruptcy",
       "final_url": "https://www.marlowhomeloans.test/search?q=bankruptcy",
       "title": "Search | Marlow Home Loans",
-      "started": "2026-10-31T17:23:46.540428342Z",
+      "started": "2026-10-31T20:46:17.468979111Z",
       "requests": 8
     },
     {
@@ -117,7 +117,7 @@
       "url": "https://www.marlowhomeloans.test/",
       "final_url": "https://www.marlowhomeloans.test/",
       "title": "Marlow Home Loans",
-      "started": "2026-10-31T17:23:53.297977337Z",
+      "started": "2026-10-31T20:46:24.112497065Z",
       "requests": 8
     },
     {
@@ -126,7 +126,7 @@
       "url": "https://www.marlowhomeloans.test/loans/debt-consolidation",
       "final_url": "https://www.marlowhomeloans.test/loans/debt-consolidation",
       "title": "Debt consolidation loans | Marlow Home Loans",
-      "started": "2026-10-31T17:23:57.192556687Z",
+      "started": "2026-10-31T20:46:28.133824107Z",
       "requests": 8
     },
     {
@@ -135,7 +135,7 @@
       "url": "https://www.marlowhomeloans.test/calculators/mortgage",
       "final_url": "https://www.marlowhomeloans.test/calculators/mortgage",
       "title": "Mortgage calculator | Marlow Home Loans",
-      "started": "2026-10-31T17:24:01.183315262Z",
+      "started": "2026-10-31T20:46:32.190952552Z",
       "requests": 8
     },
     {
@@ -144,7 +144,7 @@
       "url": "https://www.marlowhomeloans.test/apply",
       "final_url": "https://www.marlowhomeloans.test/apply",
       "title": "Apply | Marlow Home Loans",
-      "started": "2026-10-31T17:24:05.20235993Z",
+      "started": "2026-10-31T20:46:36.171252376Z",
       "requests": 8
     },
     {
@@ -153,7 +153,7 @@
       "url": "https://www.marlowhomeloans.test/search?q=bankruptcy",
       "final_url": "https://www.marlowhomeloans.test/search?q=bankruptcy",
       "title": "Search | Marlow Home Loans",
-      "started": "2026-10-31T17:24:09.235733116Z",
+      "started": "2026-10-31T20:46:40.229813861Z",
       "requests": 8
     }
   ],
@@ -170,7 +170,7 @@
     "respect_robots": true
   },
   "browser_restarts": 0,
-  "har_sha256": "acca20767b489fdd8c7c732b36550f4a2521a03c6e0d6e8a13dc2ac316fecba1",
+  "har_sha256": "37e22433e3e2db152e3c19dfb2f2bb24542d22c38e9b73d3550e356d44167bc1",
   "findings": [
     {
       "code": "sensitive-page",
@@ -184,7 +184,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026dt=Debt+consolidation+loans+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-31T17:23:34.665Z",
+        "time": "2026-10-31T20:46:05.590Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -268,7 +268,7 @@
       "evidence": {
         "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026tl=Debt+consolidation+loans+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
         "method": "GET",
-        "time": "2026-10-31T17:23:34.671Z",
+        "time": "2026-10-31T20:46:05.590Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -339,7 +339,7 @@
       "evidence": {
         "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
         "method": "GET",
-        "time": "2026-10-31T17:23:34.675Z",
+        "time": "2026-10-31T20:46:05.590Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -406,7 +406,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026dt=Search+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-31T17:23:46.788Z",
+        "time": "2026-10-31T20:46:17.700Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -495,7 +495,7 @@
       "evidence": {
         "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026tl=Search+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
         "method": "GET",
-        "time": "2026-10-31T17:23:46.793Z",
+        "time": "2026-10-31T20:46:17.708Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -571,7 +571,7 @@
       "evidence": {
         "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
         "method": "GET",
-        "time": "2026-10-31T17:23:46.788Z",
+        "time": "2026-10-31T20:46:17.708Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -643,7 +643,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026dt=Search+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-31T17:23:46.788Z",
+        "time": "2026-10-31T20:46:17.700Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -732,7 +732,7 @@
       "evidence": {
         "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026tl=Search+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
         "method": "GET",
-        "time": "2026-10-31T17:23:46.793Z",
+        "time": "2026-10-31T20:46:17.708Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -808,7 +808,7 @@
       "evidence": {
         "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
         "method": "GET",
-        "time": "2026-10-31T17:23:46.788Z",
+        "time": "2026-10-31T20:46:17.708Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -880,7 +880,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2F\u0026dt=Marlow+Home+Loans\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-31T17:23:30.661Z",
+        "time": "2026-10-31T20:46:01.583Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -955,7 +955,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fapply\u0026dt=Apply+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-31T17:23:42.767Z",
+        "time": "2026-10-31T20:46:13.672Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -1030,7 +1030,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fcalculators%2Fmortgage\u0026dt=Mortgage+calculator+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-31T17:23:38.690Z",
+        "time": "2026-10-31T20:46:09.637Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -1105,7 +1105,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026dt=Debt+consolidation+loans+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-31T17:23:34.665Z",
+        "time": "2026-10-31T20:46:05.590Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -1180,7 +1180,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026dt=Search+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-31T17:23:46.788Z",
+        "time": "2026-10-31T20:46:17.700Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -1260,7 +1260,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2F\u0026dt=Marlow+Home+Loans\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-31T17:23:30.661Z",
+        "time": "2026-10-31T20:46:01.583Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -1335,7 +1335,7 @@
       "evidence": {
         "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2F\u0026tl=Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
         "method": "GET",
-        "time": "2026-10-31T17:23:30.682Z",
+        "time": "2026-10-31T20:46:01.584Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1397,7 +1397,7 @@
       "evidence": {
         "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2F\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
         "method": "GET",
-        "time": "2026-10-31T17:23:30.673Z",
+        "time": "2026-10-31T20:46:01.584Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1455,7 +1455,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fapply\u0026dt=Apply+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-31T17:23:42.767Z",
+        "time": "2026-10-31T20:46:13.672Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -1530,7 +1530,7 @@
       "evidence": {
         "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Fapply\u0026tl=Apply+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
         "method": "GET",
-        "time": "2026-10-31T17:23:42.776Z",
+        "time": "2026-10-31T20:46:13.672Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1592,7 +1592,7 @@
       "evidence": {
         "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Fapply\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
         "method": "GET",
-        "time": "2026-10-31T17:23:42.767Z",
+        "time": "2026-10-31T20:46:13.672Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1650,7 +1650,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fcalculators%2Fmortgage\u0026dt=Mortgage+calculator+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-31T17:23:38.690Z",
+        "time": "2026-10-31T20:46:09.637Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -1725,7 +1725,7 @@
       "evidence": {
         "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Fcalculators%2Fmortgage\u0026tl=Mortgage+calculator+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
         "method": "GET",
-        "time": "2026-10-31T17:23:38.718Z",
+        "time": "2026-10-31T20:46:09.637Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1787,7 +1787,7 @@
       "evidence": {
         "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Fcalculators%2Fmortgage\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
         "method": "GET",
-        "time": "2026-10-31T17:23:38.719Z",
+        "time": "2026-10-31T20:46:09.637Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1845,7 +1845,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026dt=Debt+consolidation+loans+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-31T17:23:34.665Z",
+        "time": "2026-10-31T20:46:05.590Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -1920,7 +1920,7 @@
       "evidence": {
         "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026tl=Debt+consolidation+loans+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
         "method": "GET",
-        "time": "2026-10-31T17:23:34.671Z",
+        "time": "2026-10-31T20:46:05.590Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -1982,7 +1982,7 @@
       "evidence": {
         "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
         "method": "GET",
-        "time": "2026-10-31T17:23:34.675Z",
+        "time": "2026-10-31T20:46:05.590Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2040,7 +2040,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026dt=Search+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-31T17:23:46.788Z",
+        "time": "2026-10-31T20:46:17.700Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -2120,7 +2120,7 @@
       "evidence": {
         "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026tl=Search+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
         "method": "GET",
-        "time": "2026-10-31T17:23:46.793Z",
+        "time": "2026-10-31T20:46:17.708Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2187,7 +2187,7 @@
       "evidence": {
         "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
         "method": "GET",
-        "time": "2026-10-31T17:23:46.788Z",
+        "time": "2026-10-31T20:46:17.708Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2250,7 +2250,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026dt=Debt+consolidation+loans+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-31T17:23:57.407Z",
+        "time": "2026-10-31T20:46:28.400Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -2334,7 +2334,7 @@
       "evidence": {
         "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026tl=Debt+consolidation+loans+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
         "method": "GET",
-        "time": "2026-10-31T17:23:57.431Z",
+        "time": "2026-10-31T20:46:28.413Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2405,7 +2405,7 @@
       "evidence": {
         "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Floans%2Fdebt-consolidation\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
         "method": "GET",
-        "time": "2026-10-31T17:23:57.410Z",
+        "time": "2026-10-31T20:46:28.400Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2472,7 +2472,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026dt=Search+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-31T17:24:09.460Z",
+        "time": "2026-10-31T20:46:40.527Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -2561,7 +2561,7 @@
       "evidence": {
         "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026tl=Search+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
         "method": "GET",
-        "time": "2026-10-31T17:24:09.462Z",
+        "time": "2026-10-31T20:46:40.528Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2637,7 +2637,7 @@
       "evidence": {
         "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
         "method": "GET",
-        "time": "2026-10-31T17:24:09.463Z",
+        "time": "2026-10-31T20:46:40.540Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2709,7 +2709,7 @@
       "evidence": {
         "url": "https://region1.google-analytics.com/g/collect?v=2\u0026tid=G-MARLOW1\u0026gcs=G111\u0026cid=1111111111.2222222222\u0026dl=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026dt=Search+%7C+Marlow+Home+Loans\u0026dr=\u0026en=page_view",
         "method": "POST",
-        "time": "2026-10-31T17:24:09.460Z",
+        "time": "2026-10-31T20:46:40.527Z",
         "type": "Ping",
         "target": "page",
         "phase": "load",
@@ -2798,7 +2798,7 @@
       "evidence": {
         "url": "https://bat.bing.com/action/0?ti=187220554\u0026evt=pageLoad\u0026p=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026tl=Search+%7C+Marlow+Home+Loans\u0026r=\u0026mid=fixture-mid",
         "method": "GET",
-        "time": "2026-10-31T17:24:09.462Z",
+        "time": "2026-10-31T20:46:40.528Z",
         "type": "Image",
         "target": "page",
         "phase": "load",
@@ -2874,7 +2874,7 @@
       "evidence": {
         "url": "https://analytics.twitter.com/i/adsct?txn_id=o4l2m\u0026p_id=Twitter\u0026tw_document_href=https%3A%2F%2Fwww.marlowhomeloans.test%2Fsearch%3Fq%3Dbankruptcy\u0026events=%5B%5B%22tw-o4l2m-pageview%22%2Cnull%5D%5D\u0026tpx_cb=twttr.adsct",
         "method": "GET",
-        "time": "2026-10-31T17:24:09.463Z",
+        "time": "2026-10-31T20:46:40.540Z",
         "type": "Image",
         "target": "page",
         "phase": "load",

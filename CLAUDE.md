@@ -201,7 +201,8 @@ Steps:
 2. [x] CLI `diff`; CLI tests
 3. [x] fixture and browser test (exactly the planted change)
 4. [x] Action inputs and action-test cases
-5. [ ] README, ACTION.md, CHANGELOG, independent review, fixes, recording
+5. [x] README, ACTION.md, CHANGELOG, independent review (three rounds),
+       fixes, recording (2026-10-31: 102 tests and subtests, gallery unchanged)
 6. [ ] release 0.3.0 through the workflow, check assets, download job
 7. [ ] pxta.com post and pages, softdevstudio.com note, softdev-plan.md
 
