@@ -265,11 +265,19 @@ run its reject pass never passes quietly. A rules file changes that:
 | `require_banner` | `false` | fail a site that has trackers but no consent banner (`no-banner`) |
 | `trackers.allow` | | when set, any other tracker on the site fails (`tracker-not-allowed`) |
 | `trackers.block` | | these trackers fail wherever they appear (`tracker-blocked`) |
-| `allow` | | exceptions: `code`, `tracker`, `page` (a path, `*` wildcards, `/blog/*` covers everything under /blog/) and `pass` narrow it; `reason` is required; `until` (YYYY-MM-DD) is the last day it applies |
+| `allow` | | exceptions: `code`, `tracker`, `page` (a path, `*` wildcards, `/blog/*` covers everything under /blog/) and `pass` (`none`, `reject`, `accept` or `nobanner`) narrow it; `reason` is required; `until` (YYYY-MM-DD) is the last day it applies |
 
 Allowed problems are still listed, with their reason. An allow entry past
 its `until` date stops matching and is reported, so exceptions don't outlive
-the decision behind them. Unknown fields, codes and severities are errors.
+the decision behind them. Unknown fields, codes, severities, page patterns
+and tracker IDs are errors (`pxta catalog` lists the IDs; a beacon PXTA
+doesn't recognise is `unclassified:<host>`, so an allow list needs those
+too).
+
+`tracker-not-allowed`, `tracker-blocked` and `no-banner` are judged once per
+site, not per page: they carry no pass, and the page they name is the first
+page in alphabetical order where the tracker appeared. An allow entry for
+them should name the code and tracker only.
 
 ### GitHub Action
 
@@ -280,31 +288,49 @@ the decision behind them. Unknown fields, codes and severities are errors.
     rules: pxta-rules.json
 ```
 
-The action downloads PXTA, checks it against SHA256SUMS, runs `pxta check`,
-puts each problem on the run as an annotation and the summary on the job
-page, and uploads the report (redacted by default). Inputs and outputs are
-in [ACTION.md](ACTION.md).
+The action downloads the PXTA release it is pinned to, checks it against
+SHA256SUMS, runs `pxta check`, puts each problem on the run as an
+annotation and the summary on the job page, and uploads the report files
+(redacted by default). Inputs and outputs are in [ACTION.md](ACTION.md).
 
 ## Redacted reports
 
 A report can hold the personal data the audited site leaked, and reports
 from CI get shared. `--redact` (on `audit` and `check`) replaces the
-personal values with `REDACTED` in `findings.json`, `report.html` and
-`requests.har`: email addresses and their hashes, hashed customer fields,
-phone numbers, names, the site's user IDs, tracker client IDs, and cookie
-and authorization headers. Values are found plain, URL-encoded, double
-encoded, inside JSON and inside base64; a parameter or body that hides one
-in a form PXTA can only decode goes whole.
+personal values with `REDACTED` in `findings.json`, `report.html`,
+`requests.har` and `check.json`: email addresses and their hashes, hashed
+customer fields, phone numbers, names, the site's user IDs and tracker
+client IDs. Values are found plain, URL-encoded, double encoded, inside
+JSON, inside base64 and in URL path segments; a parameter, path segment or
+body that hides one in a form PXTA can only decode goes whole. Page
+addresses are redacted before they are shortened for sentences, so no
+cut-off piece of a value is left.
+
+Short values (first names, short IDs) are replaced only where they stand
+as a whole word, so a visitor called Tim doesn't turn "time" into
+"REDACTEDe". Names shorter than three letters and IDs shorter than six
+characters are left alone.
 
 What stays: the trackers, endpoints, parameter names, page paths, search
-terms and sensitive-page words (they describe the site, not a person), and
-the marker values PXTA types itself (`pxta-probe@example.com`, Pat Probe,
-+1 555 0100 123), which are the evidence that a tag scraped a form. The
-findings and their counts are the same as without `--redact`.
+terms and sensitive-page words (they describe the site, not a person),
+PXTA's own codes, tracker IDs and timestamps, and the marker values PXTA
+types itself (`pxta-probe@example.com`, Pat Probe, +1 555 0100 123), which
+are the evidence that a tag scraped a form. The findings, their codes and
+their counts are the same as without `--redact`.
 
-After writing, PXTA reads the files back and looks for every value again in
-every form. If one is left, the audit fails and the files are removed,
-rather than leave a half-redacted report for someone to pass on.
+After writing, PXTA reads the files back and looks again: for long values
+and any email address in the raw text in every encoding, for short values
+in each JSON string, and in every request of `requests.har` decoded the
+way the audit decodes it. If one is left, the audit fails and the report
+and the working files (`state.json`, `requests.jsonl`) are removed, rather
+than leave a half-redacted report for someone to pass on. An audit
+interrupted with Ctrl-C keeps its working files, so `--resume` still works.
+
+GitHub annotations and the job summary are public to anyone who can see
+the run, so `pxta check` always shortens what goes there, with or without
+`--redact`: page queries become `?...`, and email addresses (other than the
+probe) and 32- or 64-digit hashes become `REDACTED`. The full sentences
+are in `check.json` and the report.
 
 ## What PXTA can't see
 

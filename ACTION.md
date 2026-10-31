@@ -36,11 +36,19 @@ jobs:
 | `upload` | `true` | Upload the report folder as an artifact. |
 | `artifact-name` | `pxta-report` | Artifact name. |
 | `fail` | `true` | Fail the step when a rule is broken; `false` reports only. |
-| `version` | `latest` | PXTA release tag to use. |
+| `version` | | PXTA release tag to use, or `latest`. Empty runs the release the action is pinned to (`@v0.2.0` runs pxta 0.2.0); a branch or SHA pin runs the latest. |
+| `pxta-path` | | Use this pxta binary instead of downloading one (for testing the action). |
 
 Outputs: `result` (`pass` or `fail`), `exit-code` (0 pass, 1 rule broken,
 2 usage or rules error, 3 audit could not run) and `report` (the folder).
 A usage error or a failed audit always fails the step, whatever `fail` says.
+
+The artifact holds `report.html`, `findings.json`, `requests.har` and
+`check.json`, and is uploaded only when the check finished (exit 0 or 1).
+`redact` applies to audits the action runs; with `findings`, the file is
+judged as it is and nothing is uploaded. Annotations and the job summary
+always have page queries cut and addresses and hashes hidden. Using the
+action twice in one job needs a different `artifact-name` for each.
 
 The rules file format is in the README under "pxta check".
 
@@ -50,19 +58,25 @@ Every project with a CI use gets its action the same way:
 
 1. `action.yml` in the code repo's root, `runs: using: composite`, so users
    write `uses: <org>/<repo>@vX.Y.Z` and no Docker image is needed.
-2. Install step: map `RUNNER_OS`/`RUNNER_ARCH` to the release archive name
+2. Install step: default to the release the action is pinned to
+   (`github.action_ref` when it is a vX.Y.Z tag), map `RUNNER_OS`/`RUNNER_ARCH` to the release archive name
    (the archives carry no version, so `releases/latest/download` works),
    download it and `SHA256SUMS`, refuse on a mismatch, print the version.
    A `<tool>-path` input skips the download so the repo's own tests can run
    the action against a binary built from the commit.
-3. Run step: build the argument list as a bash array from inputs passed
-   through `env:` (never interpolate inputs into the script), let the tool
+3. Run step: start with `set +e -f` (the runner's bash has -e on, and a
+   broken rule must not end the step before its exit code is recorded),
+   build the argument list as a bash array from inputs passed through
+   `env:` (never interpolate inputs into the script), let the tool
    print `::error`/`::warning` annotations and append Markdown to
    `$GITHUB_STEP_SUMMARY`, record the exit code as an output and exit 0.
-4. Upload step with `if: always()`, so the evidence survives a failure.
+4. Upload step with `if: always()` and the tool's exit code 0 or 1, listing
+   the report files by name, so the evidence survives a broken rule and no
+   working files go out.
 5. Verdict step: exit non-zero for a broken rule only when `fail` is true;
    usage errors and tool failures always fail.
 6. `.github/workflows/action-test.yml` runs the action with `uses: ./` on
    every OS the project ships for, on inputs that must pass and inputs that
-   must fail, and checks the outputs. A `download` job, started by hand
+   must fail, and checks the outputs. (PXTA's real-audit cases run on Linux
+   and macOS; Windows runs the saved-findings cases.) A `download` job, started by hand
    after a release, runs it against the published binaries.

@@ -183,3 +183,44 @@ func TestCheckOutputs(t *testing.T) {
 		t.Error("empty result did not pass")
 	}
 }
+
+func TestPublicSentence(t *testing.T) {
+	in := "On /checkout/confirm?order=1&email=jane@example.com, the Meta Pixel sent a SHA-256 hash of the email address jane@example.com (" +
+		sha("jane@example.com") + ") and " + ProbeEmail + " before the consent banner was answered."
+	got := PublicSentence(in)
+	want := "On /checkout/confirm?..., the Meta Pixel sent a SHA-256 hash of the email address REDACTED (REDACTED) and " + ProbeEmail + " before the consent banner was answered."
+	if got != want {
+		t.Errorf("\n got %s\nwant %s", got, want)
+	}
+	var b bytes.Buffer
+	res := checkFixture()
+	res.Findings[0].Sentence = in
+	Check(res, nil).WriteGitHub(&b)
+	if strings.Contains(b.String(), "jane@") || strings.Contains(Check(res, nil).Markdown(), "jane@") {
+		t.Error("an address reached the annotations or the summary")
+	}
+}
+
+func TestRulesTrackersAndPatterns(t *testing.T) {
+	cat, err := LoadCatalog("")
+	if err != nil {
+		t.Fatal(err)
+	}
+	for doc, ok := range map[string]bool{
+		`{"trackers":{"allow":["meta-pixel","unclassified:cdn.example"]}}`: true,
+		`{"trackers":{"allow":["meta_pixel"]}}`:                            false,
+		`{"trackers":{"block":["tiktok"]}}`:                                false,
+		`{"allow":[{"tracker":"metapixel","reason":"r"}]}`:                 false,
+	} {
+		r, err := ParseRules([]byte(doc))
+		if err != nil {
+			t.Fatal(err)
+		}
+		if err := r.CheckTrackers(cat); (err == nil) != ok {
+			t.Errorf("%s: %v", doc, err)
+		}
+	}
+	if _, err := ParseRules([]byte(`{"allow":[{"page":"/[blog","reason":"r"}]}`)); err == nil {
+		t.Error("bad glob accepted")
+	}
+}

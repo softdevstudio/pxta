@@ -51,9 +51,9 @@ inputs:
     required: false
     default: "true"
   version:
-    description: PXTA release to use, `latest` or a tag such as `v0.2.0`.
+    description: "PXTA release to use, a tag such as v0.2.0, or latest. Empty means the release this action is pinned to (softdevstudio/pxta@v0.2.0 runs pxta 0.2.0), else the latest."
     required: false
-    default: latest
+    default: ""
   pxta-path:
     description: Use this pxta binary instead of downloading one (for testing the action itself).
     required: false
@@ -79,8 +79,12 @@ runs:
       env:
         PXTA_VERSION: ${{ inputs.version }}
         PXTA_PATH: ${{ inputs.pxta-path }}
+        ACTION_REF: ${{ github.action_ref }}
       run: |
         set -euo pipefail
+        if [ -z "$PXTA_VERSION" ]; then
+          if [[ "$ACTION_REF" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then PXTA_VERSION="$ACTION_REF"; else PXTA_VERSION=latest; fi
+        fi
         if [ -n "$PXTA_PATH" ]; then
           echo "bin=$PXTA_PATH" >> "$GITHUB_OUTPUT"
           exit 0
@@ -127,19 +131,22 @@ runs:
         IN_ARGS: ${{ inputs.args }}
         IN_OUT: ${{ inputs.out }}
       run: |
-        set -uo pipefail
+        # The runner starts bash with -e; pxta exiting 1 must not end the step
+        # before the exit code is recorded.
+        set +e -uf
         args=(check)
         if [ -n "$IN_FINDINGS" ]; then
           args+=(--findings "$IN_FINDINGS")
         else
           args+=("$IN_URL" --out "$IN_OUT" --pages "$IN_PAGES" --passes "$IN_PASSES" --quiet)
-          [ "$IN_REDACT" = true ] && args+=(--redact)
+          if [ "$IN_REDACT" = true ]; then args+=(--redact); fi
         fi
-        [ -n "$IN_RULES" ] && args+=(--rules "$IN_RULES")
+        if [ -n "$IN_RULES" ]; then args+=(--rules "$IN_RULES"); fi
         args+=(--format github --summary "$GITHUB_STEP_SUMMARY")
         # IN_ARGS is split on spaces on purpose: it is a list of options.
+        # set -f above keeps a * in it from being expanded as a file pattern.
         # shellcheck disable=SC2206
-        [ -n "$IN_ARGS" ] && args+=($IN_ARGS)
+        if [ -n "$IN_ARGS" ]; then args+=($IN_ARGS); fi
         "$PXTA_BIN" "${args[@]}"
         code=$?
         echo "exit-code=$code" >> "$GITHUB_OUTPUT"
@@ -147,11 +154,17 @@ runs:
         exit 0
 
     - name: Upload the report
-      if: ${{ always() && inputs.upload == 'true' && inputs.findings == '' }}
+      # Only the report files, and only from a finished check: never the
+      # working files an interrupted audit leaves behind.
+      if: ${{ always() && inputs.upload == 'true' && inputs.findings == '' && (steps.check.outputs.exit-code == '0' || steps.check.outputs.exit-code == '1') }}
       uses: actions/upload-artifact@v4
       with:
         name: ${{ inputs.artifact-name }}
-        path: ${{ inputs.out }}
+        path: |
+          ${{ inputs.out }}/report.html
+          ${{ inputs.out }}/findings.json
+          ${{ inputs.out }}/requests.har
+          ${{ inputs.out }}/check.json
         if-no-files-found: ignore
 
     - name: Verdict

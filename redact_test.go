@@ -1,6 +1,7 @@
 package pxta
 
 import (
+	"context"
 	"crypto/md5"
 	"crypto/sha256"
 	"encoding/base64"
@@ -160,5 +161,129 @@ func TestRedactSentencePaths(t *testing.T) {
 	}
 	if got := rd.url("/p?q=" + url.QueryEscape(base64.StdEncoding.EncodeToString([]byte("a.person@mail.test"))) + "&k=v"); got != "/p?q=REDACTED&k=v" {
 		t.Errorf("url: %s", got)
+	}
+}
+
+// redactOne audits nothing: it builds a result around one request to a
+// third-party host, analyses it the way a redacted audit does, writes the
+// report and runs the after-write scan.
+func redactOne(t *testing.T, page, reqURL string) (*Result, string, error) {
+	t.Helper()
+	cat, err := LoadCatalog("")
+	if err != nil {
+		t.Fatal(err)
+	}
+	reqs := []Request{{Pass: PassNone, Page: 0, Time: time.Unix(1, 0), Method: "GET", Type: "Image", Target: "page", Phase: "load", URL: reqURL}}
+	visits := []Visit{{Pass: PassNone, Page: 0, URL: page, FinalURL: page, Started: time.Unix(1, 0)}}
+	emails := NewEmails()
+	res := &Result{Tool: "pxta", Version: Version, Site: "https://shop.test/", Started: time.Date(2026, 10, 31, 12, 0, 0, 0, time.UTC),
+		Passes: []string{PassNone}, Pages: visits, requests: reqs, Settings: Settings{MaxPages: 100, RespectRobot: true}}
+	rd := newRedactor(res, reqs, emails, cat)
+	res.Analysis = analyze(cat, visits, reqs, emails, "pxta audit", rd.url)
+	rd.apply(res, res.requests)
+	res.redactor = rd
+	dir := t.TempDir()
+	if err := WriteOutputs(res, dir); err != nil {
+		t.Fatal(err)
+	}
+	return res, dir, res.VerifyRedacted(dir)
+}
+
+// Short names and IDs match only as whole words: they must not cut into
+// field names, codes, tracker IDs, timestamps or the word REDACTED, and the
+// scan must not fail the run over them.
+func TestRedactShortValues(t *testing.T) {
+	for _, name := range []string{"Tim", "Rob", "Eve", "Ann", "Max", "Ed", "Al"} {
+		res, dir, err := redactOne(t, "https://shop.test/",
+			"https://b.other.test/collect?fn="+name+"&email=someone%40example.org&uid=100200")
+		if err != nil {
+			t.Errorf("%s: %v", name, err)
+			continue
+		}
+		b, _ := os.ReadFile(filepath.Join(dir, "findings.json"))
+		s := string(b)
+		for _, keep := range []string{`"code": "personal-data"`, `"tracker": "unclassified:b.other.test"`, "2026-10-31", `"respect_robots": true`, `"max_pages": 100`} {
+			if !strings.Contains(s, keep) {
+				t.Errorf("%s: findings.json lost %q", name, keep)
+			}
+		}
+		if strings.Contains(s, "RREDACTED") || strings.Contains(s, "REDACTEDACT") {
+			t.Errorf("%s: REDACTED was redacted again", name)
+		}
+		if len(name) >= minName && strings.Contains(s, "fn="+name) {
+			t.Errorf("%s: the name survived", name)
+		}
+		if strings.Contains(s, "someone") {
+			t.Errorf("%s: the address survived", name)
+		}
+		if len(res.Findings) == 0 {
+			t.Errorf("%s: no findings", name)
+		}
+	}
+}
+
+// A long page address is redacted before it's shortened for sentences, so
+// no cut-off piece of an address or hash is left.
+func TestRedactLongPagePaths(t *testing.T) {
+	long := "jonathan.verylongname@example.org"
+	page := "https://shop.test/account/view?ref=" + strings.Repeat("x", 30) + "&email=" + url.QueryEscape(long)
+	_, dir, err := redactOne(t, page, "https://b.other.test/collect?dl="+url.QueryEscape(page)+"&email="+url.QueryEscape(long))
+	if err != nil {
+		t.Fatal(err)
+	}
+	page2 := "https://shop.test/a/b?ref=" + strings.Repeat("y", 40) + "&eh=" + sha(long)
+	_, dir2, err := redactOne(t, page2, "https://b.other.test/collect?dl="+url.QueryEscape(page2)+"&email="+url.QueryEscape(long))
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, d := range []string{dir, dir2} {
+		for _, name := range []string{"findings.json", "report.html"} {
+			b, _ := os.ReadFile(filepath.Join(d, name))
+			if strings.Contains(string(b), "jonathan") || strings.Contains(string(b), sha(long)[:12]) {
+				t.Errorf("%s keeps part of the address or its hash", name)
+			}
+		}
+	}
+}
+
+// base64 in a URL path segment is redacted and, if left, caught.
+func TestRedactPathSegments(t *testing.T) {
+	blob := base64.RawURLEncoding.EncodeToString([]byte(`{"e":"jane@example.org","t":1}`))
+	_, dir, err := redactOne(t, "https://shop.test/",
+		"https://b.other.test/p/"+blob+"/x?email=jane%40example.org")
+	if err != nil {
+		t.Fatal(err)
+	}
+	har, _ := os.ReadFile(filepath.Join(dir, "requests.har"))
+	if strings.Contains(string(har), blob) {
+		t.Error("the base64 path segment survived")
+	}
+	if !strings.Contains(string(har), "b.other.test/p/REDACTED/x") {
+		t.Errorf("path not kept around the segment: %s", har)
+	}
+}
+
+// A redacted audit that fails leaves no raw data in --out, working files
+// included; an unredacted one leaves them for --resume.
+func TestRedactFailureCleansUp(t *testing.T) {
+	for _, redact := range []bool{true, false} {
+		dir := t.TempDir()
+		names := []string{"findings.json", "report.html", "requests.har", "state.json", "requests.jsonl"}
+		for _, n := range names {
+			os.WriteFile(filepath.Join(dir, n), []byte("jane@example.org"), 0o644)
+		}
+		_, err := Audit(context.Background(), Options{StartURL: "ftp://bad", OutDir: dir, Redact: redact})
+		if err == nil {
+			t.Fatal("bad address accepted")
+		}
+		for _, n := range names {
+			_, statErr := os.Stat(filepath.Join(dir, n))
+			if redact && statErr == nil {
+				t.Errorf("redacted failure left %s", n)
+			}
+			if !redact && statErr != nil {
+				t.Errorf("unredacted failure removed %s", n)
+			}
+		}
 	}
 }

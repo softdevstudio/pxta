@@ -13,9 +13,14 @@
   Markdown summary (`--summary`), plus `check.json` in the report folder.
 - `--redact` on `audit` and `check`: personal values replaced by REDACTED in
   every report file, in every encoding PXTA reads, with a scan of the written
-  files that fails the run if one is left. PXTA's own probe values stay.
-- GitHub Action (`uses: softdevstudio/pxta@v0.2.0`), described in ACTION.md,
-  tested on Linux, macOS and Windows runners.
+  files that fails the run, and removes the report and working files, if one
+  is left. PXTA's own probe values stay.
+- Annotations and job summaries always cut page queries and hide addresses
+  and hashes, since anyone who can see the run reads them.
+- GitHub Action (`uses: softdevstudio/pxta@v0.2.0`), described in ACTION.md.
+  It runs the pxta release it is pinned to and uploads only the report files.
+  Tested on Linux and macOS runners with real audits, and on Windows with
+  saved findings.
 - New problem codes in check results: `tracker-not-allowed`,
   `tracker-blocked`, `no-banner`. Finding codes are unchanged.
 

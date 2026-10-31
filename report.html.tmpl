@@ -32,7 +32,7 @@ footer{margin-top:40px;color:var(--muted);font-size:12.5px}
 <main>
 <h1>Tracking audit of {{.Host}}</h1>
 <p class="sub">{{.Started.Format "2 January 2006, 15:04 UTC"}} · {{.PageCount}} page{{if ne .PageCount 1}}s{{end}} · PXTA {{.Version}}, tracker catalog {{.Catalog}}</p>
-{{if .Redacted}}<p class="sub">Personal values found in this audit (email addresses, their hashes, phone numbers, names, user and client IDs, cookies) are replaced by REDACTED. The addresses and names PXTA typed itself are kept as evidence.</p>
+{{if .Redacted}}<p class="sub">Personal values found in this audit (email addresses, their hashes, phone numbers, names, user and client IDs) are replaced by REDACTED. The addresses and names PXTA typed itself are kept as evidence.</p>
 {{end}}
 <div class="tiles">
 <div class="tile sev-high"><b>{{count .Counts "high"}}</b><span>high</span></div>

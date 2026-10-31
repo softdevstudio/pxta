@@ -160,6 +160,19 @@ func (a *auditor) logf(format string, args ...any) { fmt.Fprintf(a.o.Log, format
 // Audit runs a full audit and writes report.html, findings.json and
 // requests.har to o.OutDir.
 func Audit(ctx context.Context, o Options) (*Result, error) {
+	res, err := audit(ctx, o)
+	if err != nil && o.Redact && ctx.Err() == nil && o.OutDir != "" {
+		// A redacted audit that failed leaves nothing unredacted behind: not
+		// the report files, and not the working files that hold every raw
+		// request. An interrupted one keeps them, so --resume works.
+		for _, f := range []string{"findings.json", "report.html", "requests.har", "state.json", "requests.jsonl"} {
+			os.Remove(filepath.Join(o.OutDir, f))
+		}
+	}
+	return res, err
+}
+
+func audit(ctx context.Context, o Options) (*Result, error) {
 	o.defaults()
 	start, err := url.Parse(o.StartURL)
 	if err != nil || (start.Scheme != "http" && start.Scheme != "https") || start.Host == "" {
@@ -307,7 +320,13 @@ func Audit(ctx context.Context, o Options) (*Result, error) {
 	a.res.Pages = a.state.Visits
 	a.res.Restarts = a.state.Restarts
 	a.res.requests = reqs
-	a.res.Analysis = Analyze(a.cat, a.state.Visits, reqs, a.emails, o.ReproBase)
+	var rd *redactor
+	if o.Redact {
+		rd = newRedactor(a.res, reqs, a.emails, a.cat)
+		a.res.Analysis = analyze(a.cat, a.state.Visits, reqs, a.emails, o.ReproBase, rd.url)
+	} else {
+		a.res.Analysis = Analyze(a.cat, a.state.Visits, reqs, a.emails, o.ReproBase)
+	}
 	for p, msg := range a.state.Banner.Problems {
 		a.res.Findings = append(a.res.Findings, &Finding{Code: CodeBannerNotHandled, Severity: SevInfo, Pass: p,
 			Sentence: fmt.Sprintf("PXTA could not %s on the consent banner (%s), so the %s pass was left out.", p, msg, p)})
@@ -316,17 +335,15 @@ func Audit(ctx context.Context, o Options) (*Result, error) {
 	sortFindings(a.res.Findings)
 	a.res.Emails = a.emails.List()
 	a.res.Finished = time.Now().UTC()
-	if o.Redact {
-		a.res.redactor = Redact(a.res, a.emails, a.cat)
+	if rd != nil {
+		rd.apply(a.res, a.res.requests)
+		a.res.redactor = rd
 	}
 	if err := WriteOutputs(a.res, o.OutDir); err != nil {
 		return nil, err
 	}
 	if err := a.res.VerifyRedacted(o.OutDir); err != nil {
-		// Never leave a half-redacted report behind for someone to share.
-		for _, f := range []string{"findings.json", "report.html", "requests.har"} {
-			os.Remove(filepath.Join(o.OutDir, f))
-		}
+		// Audit removes the files: never a half-redacted report to share.
 		return nil, err
 	}
 	// The working files go once the report is written; requests.har holds

@@ -7,6 +7,7 @@ import (
 	"io"
 	"os"
 	"path"
+	"regexp"
 	"sort"
 	"strings"
 	"time"
@@ -146,6 +147,9 @@ func (r *Rules) prepare() error {
 		if a.Page != "" && !strings.HasPrefix(a.Page, "/") {
 			return fmt.Errorf("%s: page %q must start with /", at, a.Page)
 		}
+		if _, err := path.Match(a.Page, "/"); err != nil {
+			return fmt.Errorf("%s: page %q is not a valid pattern", at, a.Page)
+		}
 		if a.Code == "" && a.Tracker == "" && a.Page == "" && a.Pass == "" {
 			return fmt.Errorf("%s: matches everything; name a code, tracker, page or pass", at)
 		}
@@ -155,6 +159,36 @@ func (r *Rules) prepare() error {
 				return fmt.Errorf("%s: until %q: use YYYY-MM-DD", at, a.Until)
 			}
 			a.until = t
+		}
+	}
+	return nil
+}
+
+// CheckTrackers rejects tracker IDs the catalog doesn't know: a typo in an
+// allow list would fail every tracker, and in a block list it would block
+// nothing. Unclassified beacons are named "unclassified:<host>".
+func (r *Rules) CheckTrackers(cat *Catalog) error {
+	known := map[string]bool{}
+	for _, t := range cat.Trackers {
+		known[t.ID] = true
+	}
+	check := func(where string, ids []string) error {
+		for _, id := range ids {
+			if !known[id] && !strings.HasPrefix(id, "unclassified:") {
+				return fmt.Errorf("rules: trackers.%s: unknown tracker %q (see pxta catalog)", where, id)
+			}
+		}
+		return nil
+	}
+	if err := check("allow", r.Trackers.Allow); err != nil {
+		return err
+	}
+	if err := check("block", r.Trackers.Block); err != nil {
+		return err
+	}
+	for i, a := range r.Allow {
+		if a.Tracker != "" && !known[a.Tracker] && !strings.HasPrefix(a.Tracker, "unclassified:") {
+			return fmt.Errorf("rules: allow[%d]: unknown tracker %q (see pxta catalog)", i, a.Tracker)
 		}
 	}
 	return nil
@@ -335,24 +369,59 @@ func (c *CheckResult) WriteText(w io.Writer) {
 	fmt.Fprintf(w, "pxta check: %s, %d %s, %d allowed by the rules\n", verdict, len(c.Failed), plural2(len(c.Failed), "problem"), len(c.Allowed))
 }
 
-// WriteGitHub prints GitHub Actions annotations, one per problem.
+var hexRunRe = regexp.MustCompile(`(?i)\b[0-9a-f]{32}(?:[0-9a-f]{32})?\b`)
+
+// PublicSentence is a sentence fit for places anyone with access to the CI
+// run can read (annotations, job summaries): page queries are cut to "?...",
+// email addresses other than the probe and 32- or 64-digit hashes become
+// REDACTED. The full sentence stays in check.json and the report.
+func PublicSentence(s string) string {
+	words := strings.Split(s, " ")
+	for i, w := range words {
+		if strings.HasPrefix(w, "/") {
+			if j := strings.IndexByte(w, '?'); j >= 0 {
+				tail := ""
+				if strings.HasSuffix(w, ",") {
+					tail = ","
+				}
+				words[i] = w[:j] + "?..." + tail
+			}
+		}
+	}
+	s = strings.Join(words, " ")
+	s = emailRe.ReplaceAllStringFunc(s, func(m string) string {
+		if isEmail(m) && !isProbe(m) {
+			return Redacted
+		}
+		return m
+	})
+	return hexRunRe.ReplaceAllStringFunc(s, func(m string) string {
+		if isProbe(m) {
+			return m
+		}
+		return Redacted
+	})
+}
+
+// WriteGitHub prints GitHub Actions annotations, one per problem. Sentences
+// go through PublicSentence.
 func (c *CheckResult) WriteGitHub(w io.Writer) {
 	for _, p := range c.Failed {
 		title := "pxta " + p.Code
 		if p.Tracker != "" {
 			title += " (" + p.Tracker + ")"
 		}
-		fmt.Fprintf(w, "::error title=%s::%s\n", ghProperty(title), ghData(p.Sentence))
+		fmt.Fprintf(w, "::error title=%s::%s\n", ghProperty(title), ghData(PublicSentence(p.Sentence)))
 	}
 	for _, p := range c.Allowed {
-		fmt.Fprintf(w, "::notice title=%s::%s\n", ghProperty("pxta allowed "+p.Code), ghData(p.Sentence+" Allowed: "+p.AllowedBy))
+		fmt.Fprintf(w, "::notice title=%s::%s\n", ghProperty("pxta allowed "+p.Code), ghData(PublicSentence(p.Sentence)+" Allowed: "+p.AllowedBy))
 	}
 	for _, a := range c.Expired {
 		fmt.Fprintf(w, "::warning title=pxta expired allowance::%s\n", ghData("Expired on "+a.Until+": "+a.Reason))
 	}
 }
 
-// Markdown is a step summary.
+// Markdown is a step summary. Sentences go through PublicSentence.
 func (c *CheckResult) Markdown() string {
 	var b strings.Builder
 	verdict := "passed"
@@ -368,7 +437,7 @@ func (c *CheckResult) Markdown() string {
 			b.WriteString("| Severity | Problem | Tracker | Pass |\n|---|---|---|---|\n")
 		}
 		for _, p := range ps {
-			fmt.Fprintf(&b, "| %s | %s | %s | %s |", sevOrDash(p.Severity), mdCell(p.Sentence), mdCell(p.Tracker), mdCell(p.Pass))
+			fmt.Fprintf(&b, "| %s | %s | %s | %s |", sevOrDash(p.Severity), mdCell(PublicSentence(p.Sentence)), mdCell(p.Tracker), mdCell(p.Pass))
 			if allowed {
 				fmt.Fprintf(&b, " %s |", mdCell(p.AllowedBy))
 			}

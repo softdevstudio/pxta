@@ -262,6 +262,17 @@ func severityFor(code, pass string) string {
 // Analyze turns recorded requests into findings and the tracker inventory.
 // visits gives each page's address per pass.
 func Analyze(cat *Catalog, visits []Visit, reqs []Request, emails *Emails, reproBase string) *Analysis {
+	return analyze(cat, visits, reqs, emails, reproBase, nil)
+}
+
+// analyze is Analyze with a hook that rewrites page addresses before they
+// are shortened for sentences: a redacted audit takes the personal values
+// out first, so no cut-off piece of one is left behind.
+func analyze(cat *Catalog, visits []Visit, reqs []Request, emails *Emails, reproBase string, pageFn func(string) string) *Analysis {
+	shorten := pagePath
+	if pageFn != nil {
+		shorten = func(raw string) string { return pagePath(pageFn(raw)) }
+	}
 	pageOf := map[string]string{}
 	for _, v := range visits {
 		u := v.FinalURL
@@ -316,7 +327,7 @@ func Analyze(cat *Catalog, visits []Visit, reqs []Request, emails *Emails, repro
 		} else {
 			id, name, vendor = "unclassified:"+c.Host, c.Host, "unclassified"
 		}
-		pp := pagePath(page)
+		pp := shorten(page)
 		addUse(c.Tracker, id, name, vendor, r.Pass, pp, c.Collect)
 		if !c.Collect {
 			continue
@@ -367,7 +378,7 @@ func Analyze(cat *Catalog, visits []Visit, reqs []Request, emails *Emails, repro
 				what += " inside the page address"
 			}
 			if code == CodeSensitivePage {
-				what += " (" + pagePath(l.Value) + ")"
+				what += " (" + shorten(l.Value) + ")"
 			}
 			add(mk(code, what, l.Rule+"|"+strings.ToLower(l.Value), []Leak{l}))
 		}

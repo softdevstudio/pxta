@@ -258,6 +258,15 @@ func runCheck(args []string, stdout, stderr io.Writer) int {
 			fmt.Fprintln(stderr, "pxta:", err)
 			return 2
 		}
+		cat, err := pxta.LoadCatalog(*af.catDir)
+		if err != nil {
+			fmt.Fprintln(stderr, "pxta:", err)
+			return 2
+		}
+		if err := r.CheckTrackers(cat); err != nil {
+			fmt.Fprintf(stderr, "pxta: %s: %v\n", *rulesFile, err)
+			return 2
+		}
 		rules = r
 	}
 	var res *pxta.Result
@@ -308,8 +317,8 @@ func runCheck(args []string, stdout, stderr io.Writer) int {
 			}
 		}
 		if err != nil {
-			fmt.Fprintln(stderr, "pxta: summary:", err)
-			return 2
+			// The verdict stands; a summary that couldn't be written is only a warning.
+			fmt.Fprintln(stderr, "pxta: warning: summary not written:", err)
 		}
 	}
 	if !c.Pass {

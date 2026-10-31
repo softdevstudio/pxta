@@ -98,10 +98,13 @@ Design decisions:
   (Markdown, appended, for $GITHUB_STEP_SUMMARY), check.json in --out.
 - `--redact` (audit and check): personal values found anywhere in the
   results (email addresses other than PXTA's own probe, their hashes,
-  hashed customer fields, phone numbers, names, user and client IDs, cookie
-  and authorization headers, addresses given with --email) are replaced by
-  REDACTED in findings.json, report.html and requests.har, in raw,
-  URL-encoded, JSON-escaped and base64-carried forms. The probe values
+  hashed customer fields, phone numbers, names, user and client IDs,
+  addresses given with --email) are replaced by REDACTED in findings.json,
+  report.html and requests.har, in raw, URL-encoded, JSON-escaped and
+  base64-carried forms. Values under 8 characters match only as whole
+  words; names under 3 and IDs under 6 characters are not redacted. PXTA's
+  fixed fields (codes, tracker IDs, timestamps) are never touched. Page
+  addresses are redacted before Analyze shortens them for sentences. The probe values
   PXTA types itself (pxta-probe@example.com, Pat Probe, +1 555 0100 123) stay:
   they are the evidence. After writing, every file is scanned again and the
   run fails rather than leave a value behind. Finding counts don't change.
@@ -130,7 +133,9 @@ Resume from the first unchecked step; pull first.
 
 Known gaps, not planned yet:
 
-- No `pxta check` or `pxta diff` yet (see Next).
+- No `pxta diff` yet (see Next).
+- Check problems about trackers (`tracker-not-allowed`, `tracker-blocked`,
+  `no-banner`) are judged once per site, not per page or pass.
 - No logged-in pages or form submission: the owner left these out of the
   plan on 2026-10-25.
 - No `pxta browser install`: users need Chrome, Chromium or Edge installed.
