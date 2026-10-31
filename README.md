@@ -196,6 +196,7 @@ pxta audit <url> [options]
   --browser path        Chrome, Chromium or Edge to use
   --catalog folder      extra tracker catalog files
   --quiet               print only the summary
+  --redact              replace personal values in the report with REDACTED
 ```
 
 PXTA saves its progress after every page. If an audit is interrupted, run
@@ -205,6 +206,105 @@ carries on.
 
 `pxta audit` exits with 0 when the audit finished (whatever it found), 2 on
 an error, and 130 when interrupted.
+
+## pxta check
+
+`pxta check` runs the same audit and then fails, with exit code 1, when the
+site breaks the rules. It is made for CI: a scheduled job, or a job after
+each deploy, that goes red when a tag starts firing before consent.
+
+```sh
+pxta check https://www.example.com --rules pxta-rules.json
+pxta check --findings pxta-report/findings.json --rules pxta-rules.json
+```
+
+The second form judges an audit that already ran, with no browser.
+`pxta check` takes every `pxta audit` option, plus:
+
+```
+  --rules file          rules file (JSON)
+  --findings file       judge this findings.json instead of auditing
+  --format github       print problems as GitHub Actions annotations too
+  --summary file        append a Markdown summary (use $GITHUB_STEP_SUMMARY)
+```
+
+Exit codes: 0 the rules hold, 1 a rule is broken, 2 a usage or rules-file
+error, 3 the audit could not run, 130 interrupted. After an audit it also
+writes `check.json` next to the report.
+
+Without a rules file, a check fails on any medium or high finding (anything
+sent before the banner was answered or after a reject, and any personal
+data before consent) and on `banner-not-handled`, so a check that couldn't
+run its reject pass never passes quietly. A rules file changes that:
+
+```json
+{
+  "fail_on": "medium",
+  "fail_codes": ["banner-not-handled"],
+  "require_banner": true,
+  "trackers": {
+    "allow": ["google-analytics-4", "meta-pixel"],
+    "block": ["tiktok-pixel"]
+  },
+  "allow": [
+    {
+      "code": "tracker-before-consent",
+      "tracker": "google-analytics-4",
+      "page": "/blog/*",
+      "reason": "Consent Mode cookieless ping, approved by legal (ticket 812)",
+      "until": "2026-12-31"
+    }
+  ]
+}
+```
+
+| Field | Default | Meaning |
+|---|---|---|
+| `fail_on` | `medium` | lowest severity that fails: `high`, `medium`, `low`, `info` or `never` |
+| `fail_codes` | `["banner-not-handled"]` | codes that fail whatever their severity; `[]` for none |
+| `require_banner` | `false` | fail a site that has trackers but no consent banner (`no-banner`) |
+| `trackers.allow` | | when set, any other tracker on the site fails (`tracker-not-allowed`) |
+| `trackers.block` | | these trackers fail wherever they appear (`tracker-blocked`) |
+| `allow` | | exceptions: `code`, `tracker`, `page` (a path, `*` wildcards, `/blog/*` covers everything under /blog/) and `pass` narrow it; `reason` is required; `until` (YYYY-MM-DD) is the last day it applies |
+
+Allowed problems are still listed, with their reason. An allow entry past
+its `until` date stops matching and is reported, so exceptions don't outlive
+the decision behind them. Unknown fields, codes and severities are errors.
+
+### GitHub Action
+
+```yaml
+- uses: softdevstudio/pxta@v0.2.0
+  with:
+    url: https://www.example.com/
+    rules: pxta-rules.json
+```
+
+The action downloads PXTA, checks it against SHA256SUMS, runs `pxta check`,
+puts each problem on the run as an annotation and the summary on the job
+page, and uploads the report (redacted by default). Inputs and outputs are
+in [ACTION.md](ACTION.md).
+
+## Redacted reports
+
+A report can hold the personal data the audited site leaked, and reports
+from CI get shared. `--redact` (on `audit` and `check`) replaces the
+personal values with `REDACTED` in `findings.json`, `report.html` and
+`requests.har`: email addresses and their hashes, hashed customer fields,
+phone numbers, names, the site's user IDs, tracker client IDs, and cookie
+and authorization headers. Values are found plain, URL-encoded, double
+encoded, inside JSON and inside base64; a parameter or body that hides one
+in a form PXTA can only decode goes whole.
+
+What stays: the trackers, endpoints, parameter names, page paths, search
+terms and sensitive-page words (they describe the site, not a person), and
+the marker values PXTA types itself (`pxta-probe@example.com`, Pat Probe,
++1 555 0100 123), which are the evidence that a tag scraped a form. The
+findings and their counts are the same as without `--redact`.
+
+After writing, PXTA reads the files back and looks for every value again in
+every form. If one is left, the audit fails and the files are removed,
+rather than leave a half-redacted report for someone to pass on.
 
 ## What PXTA can't see
 
@@ -221,11 +321,11 @@ as a clean bill of health.
 ## Privacy and politeness
 
 PXTA visits public pages the way a visitor would. It identifies itself in
-the user agent (`pxta/0.1.0 (+https://pxta.com)`), follows robots.txt unless
+the user agent (`pxta/<version> (+https://pxta.com)`), follows robots.txt unless
 told otherwise, waits a second between pages, and sends nothing anywhere
 itself: no telemetry, and the reports stay on your machine. The reports can
 hold personal data the audited site leaked, so treat them as you would the
-site's own logs.
+site's own logs, or write them with `--redact`.
 
 ## How it was tested
 

@@ -1,0 +1,5 @@
+{
+  "allow": [
+    {"code": "tracker-before-consent", "tracker": "meta-pixel", "page": "/", "reason": "Action test: allowed on purpose"}
+  ]
+}

@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.2.0
+
+- `pxta check`: audit a site, or judge a saved `findings.json`, and exit 1
+  when it breaks the rules. Exit codes 0, 1, 2 (usage or rules file),
+  3 (audit could not run), 130.
+- Rules file (JSON): `fail_on` severity, `fail_codes`, tracker allow and
+  block lists, `require_banner`, and `allow` exceptions with a required
+  reason and an optional `until` date. Defaults fail on medium and above and
+  on `banner-not-handled`.
+- Output as text, GitHub Actions annotations (`--format github`) and a
+  Markdown summary (`--summary`), plus `check.json` in the report folder.
+- `--redact` on `audit` and `check`: personal values replaced by REDACTED in
+  every report file, in every encoding PXTA reads, with a scan of the written
+  files that fails the run if one is left. PXTA's own probe values stay.
+- GitHub Action (`uses: softdevstudio/pxta@v0.2.0`), described in ACTION.md,
+  tested on Linux, macOS and Windows runners.
+- New problem codes in check results: `tracker-not-allowed`,
+  `tracker-blocked`, `no-banner`. Finding codes are unchanged.
+
 ## 0.1.0
 
 First release.

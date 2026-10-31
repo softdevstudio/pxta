@@ -1,0 +1,112 @@
+name: Action test
+
+# Runs the GitHub Action in this repo (action.yml) against a pxta built from
+# this commit, on a local page that leaks an address before consent, and on
+# saved findings with and without rules. The download job uses a published
+# release instead; start it by hand after a release.
+on:
+  push:
+    branches: [main]
+    paths: [action.yml, .github/workflows/action-test.yml, "cmd/**", "*.go", "testdata/action/**"]
+  pull_request:
+    paths: [action.yml, .github/workflows/action-test.yml, "cmd/**", "*.go", "testdata/action/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  local:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: stable
+      - name: Build pxta
+        shell: bash
+        run: |
+          ext=""; [ "$RUNNER_OS" = Windows ] && ext=.exe
+          go build -o "$RUNNER_TEMP/pxta$ext" ./cmd/pxta
+          echo "PXTA_BIN=$RUNNER_TEMP/pxta$ext" >> "$GITHUB_ENV"
+
+      # Saved findings: no browser needed, so every OS runs these.
+      - name: Saved findings break the default rules
+        id: saved
+        uses: ./
+        with:
+          findings: testdata/action/findings-bad.json
+          fail: "false"
+          pxta-path: ${{ env.PXTA_BIN }}
+      - name: Saved findings pass with an allow entry
+        id: allowed
+        uses: ./
+        with:
+          findings: testdata/action/findings-bad.json
+          rules: testdata/action/rules-allow.json
+          pxta-path: ${{ env.PXTA_BIN }}
+      - name: Check the saved-findings results
+        shell: bash
+        run: |
+          [ "${{ steps.saved.outputs.result }}" = fail ] && [ "${{ steps.saved.outputs.exit-code }}" = 1 ] || { echo "::error::saved: ${{ steps.saved.outputs.result }} ${{ steps.saved.outputs.exit-code }}"; exit 1; }
+          [ "${{ steps.allowed.outputs.result }}" = pass ] || { echo "::error::allowed: ${{ steps.allowed.outputs.result }}"; exit 1; }
+
+      # A real audit in the runner's Chrome (Linux and macOS runners have it).
+      - name: Serve the test pages
+        if: runner.os != 'Windows'
+        shell: bash
+        run: |
+          (cd testdata/smoke && python3 -m http.server 8123 --bind 127.0.0.1 >/dev/null 2>&1 &)
+          (cd testdata/action/tracked && python3 -m http.server 8125 --bind 127.0.0.1 >/dev/null 2>&1 &)
+          (mkdir -p "$RUNNER_TEMP/sink" && cd "$RUNNER_TEMP/sink" && python3 -m http.server 8124 >/dev/null 2>&1 &)
+          sleep 2
+      - name: A clean page passes
+        if: runner.os != 'Windows'
+        id: clean
+        uses: ./
+        with:
+          url: http://127.0.0.1:8123/
+          pages: "1"
+          out: clean-report
+          artifact-name: clean-report-${{ matrix.os }}
+          args: --idle 1s --delay 0
+          pxta-path: ${{ env.PXTA_BIN }}
+      - name: A page that leaks an address fails, and the report is redacted
+        if: runner.os != 'Windows'
+        id: leak
+        uses: ./
+        with:
+          url: http://127.0.0.1:8125/
+          pages: "1"
+          out: leak-report
+          artifact-name: leak-report-${{ matrix.os }}
+          args: --idle 1s --delay 0
+          fail: "false"
+          pxta-path: ${{ env.PXTA_BIN }}
+      - name: Check the audit results
+        if: runner.os != 'Windows'
+        shell: bash
+        run: |
+          [ "${{ steps.clean.outputs.result }}" = pass ] || { echo "::error::clean page: ${{ steps.clean.outputs.result }} ${{ steps.clean.outputs.exit-code }}"; exit 1; }
+          [ "${{ steps.leak.outputs.exit-code }}" = 1 ] || { echo "::error::leaking page: exit ${{ steps.leak.outputs.exit-code }}"; exit 1; }
+          grep -q '"code": "personal-data"' leak-report/check.json || { echo "::error::no personal-data problem in check.json"; exit 1; }
+          if grep -rl "someone@example.org\|someone%40example.org" leak-report; then echo "::error::the redacted report still holds the address"; exit 1; fi
+          grep -q REDACTED leak-report/requests.har || { echo "::error::no REDACTED marker in requests.har"; exit 1; }
+
+  download:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: The released pxta judges saved findings
+        id: rel
+        uses: ./
+        with:
+          findings: testdata/action/findings-bad.json
+          fail: "false"
+      - shell: bash
+        run: '[ "${{ steps.rel.outputs.exit-code }}" = 1 ] || { echo "::error::released pxta: exit ${{ steps.rel.outputs.exit-code }}"; exit 1; }'

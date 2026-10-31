@@ -1,0 +1,168 @@
+name: PXTA check
+description: Audit a site's tracking pixels and fail the job when a tag fires before consent or personal data goes out.
+author: SoftDevStudio.com
+branding:
+  icon: shield
+  color: orange
+
+inputs:
+  url:
+    description: Address to audit. Leave empty and set `findings` to judge an earlier audit.
+    required: false
+    default: ""
+  findings:
+    description: Path to a findings.json from an earlier audit, judged instead of running one.
+    required: false
+    default: ""
+  rules:
+    description: Path to a rules file (JSON). Empty uses the defaults (fail on medium and above).
+    required: false
+    default: ""
+  pages:
+    description: Most pages to visit.
+    required: false
+    default: "20"
+  passes:
+    description: Consent passes to run.
+    required: false
+    default: "none,reject,accept"
+  redact:
+    description: Replace personal values in the report with REDACTED (recommended when the report is uploaded).
+    required: false
+    default: "true"
+  args:
+    description: More `pxta check` options, as one string (for example `--ignore-robots --depth 2`).
+    required: false
+    default: ""
+  out:
+    description: Folder for the report.
+    required: false
+    default: pxta-report
+  upload:
+    description: Upload the report folder as a workflow artifact.
+    required: false
+    default: "true"
+  artifact-name:
+    description: Name of the uploaded artifact.
+    required: false
+    default: pxta-report
+  fail:
+    description: Fail the step when a rule is broken. Set to false to report only.
+    required: false
+    default: "true"
+  version:
+    description: PXTA release to use, `latest` or a tag such as `v0.2.0`.
+    required: false
+    default: latest
+  pxta-path:
+    description: Use this pxta binary instead of downloading one (for testing the action itself).
+    required: false
+    default: ""
+
+outputs:
+  result:
+    description: pass or fail
+    value: ${{ steps.check.outputs.result }}
+  exit-code:
+    description: pxta check's exit code (0 pass, 1 rule broken, 2 usage or rules error, 3 audit failed)
+    value: ${{ steps.check.outputs.exit-code }}
+  report:
+    description: Folder holding report.html, findings.json, requests.har and check.json
+    value: ${{ inputs.out }}
+
+runs:
+  using: composite
+  steps:
+    - name: Install pxta
+      id: install
+      shell: bash
+      env:
+        PXTA_VERSION: ${{ inputs.version }}
+        PXTA_PATH: ${{ inputs.pxta-path }}
+      run: |
+        set -euo pipefail
+        if [ -n "$PXTA_PATH" ]; then
+          echo "bin=$PXTA_PATH" >> "$GITHUB_OUTPUT"
+          exit 0
+        fi
+        case "$RUNNER_OS" in
+          Linux) os=linux ;; macOS) os=darwin ;; Windows) os=windows ;;
+          *) echo "::error::pxta has no build for $RUNNER_OS"; exit 1 ;;
+        esac
+        case "$RUNNER_ARCH" in
+          X64) arch=amd64 ;; ARM64) arch=arm64 ;;
+          *) echo "::error::pxta has no build for $RUNNER_ARCH"; exit 1 ;;
+        esac
+        if [ "$os" = windows ] && [ "$arch" != amd64 ]; then echo "::error::pxta has no Windows $arch build"; exit 1; fi
+        ext=tar.gz; [ "$os" = windows ] && ext=zip
+        name="pxta_${os}_${arch}.${ext}"
+        if [ "$PXTA_VERSION" = latest ]; then
+          base="https://github.com/softdevstudio/pxta/releases/latest/download"
+        else
+          base="https://github.com/softdevstudio/pxta/releases/download/${PXTA_VERSION}"
+        fi
+        dir="$RUNNER_TEMP/pxta-bin"
+        mkdir -p "$dir"
+        cd "$dir"
+        curl -fsSL --retry 3 -o "$name" "$base/$name" || { echo "::error::could not download $base/$name"; exit 1; }
+        curl -fsSL --retry 3 -o SHA256SUMS "$base/SHA256SUMS" || { echo "::error::could not download SHA256SUMS"; exit 1; }
+        want=$(awk -v n="$name" '$2==n || $2=="*"n {print $1}' SHA256SUMS)
+        if command -v sha256sum >/dev/null; then got=$(sha256sum "$name" | cut -d' ' -f1); else got=$(shasum -a 256 "$name" | cut -d' ' -f1); fi
+        if [ -z "$want" ] || [ "$want" != "$got" ]; then echo "::error::$name does not match SHA256SUMS"; exit 1; fi
+        if [ "$ext" = zip ]; then unzip -oq "$name"; bin="$dir/pxta.exe"; else tar -xzf "$name"; bin="$dir/pxta"; fi
+        "$bin" version
+        echo "bin=$bin" >> "$GITHUB_OUTPUT"
+
+    - name: Run pxta check
+      id: check
+      shell: bash
+      env:
+        PXTA_BIN: ${{ steps.install.outputs.bin }}
+        IN_URL: ${{ inputs.url }}
+        IN_FINDINGS: ${{ inputs.findings }}
+        IN_RULES: ${{ inputs.rules }}
+        IN_PAGES: ${{ inputs.pages }}
+        IN_PASSES: ${{ inputs.passes }}
+        IN_REDACT: ${{ inputs.redact }}
+        IN_ARGS: ${{ inputs.args }}
+        IN_OUT: ${{ inputs.out }}
+      run: |
+        set -uo pipefail
+        args=(check)
+        if [ -n "$IN_FINDINGS" ]; then
+          args+=(--findings "$IN_FINDINGS")
+        else
+          args+=("$IN_URL" --out "$IN_OUT" --pages "$IN_PAGES" --passes "$IN_PASSES" --quiet)
+          [ "$IN_REDACT" = true ] && args+=(--redact)
+        fi
+        [ -n "$IN_RULES" ] && args+=(--rules "$IN_RULES")
+        args+=(--format github --summary "$GITHUB_STEP_SUMMARY")
+        # IN_ARGS is split on spaces on purpose: it is a list of options.
+        # shellcheck disable=SC2206
+        [ -n "$IN_ARGS" ] && args+=($IN_ARGS)
+        "$PXTA_BIN" "${args[@]}"
+        code=$?
+        echo "exit-code=$code" >> "$GITHUB_OUTPUT"
+        if [ $code = 0 ]; then echo "result=pass" >> "$GITHUB_OUTPUT"; else echo "result=fail" >> "$GITHUB_OUTPUT"; fi
+        exit 0
+
+    - name: Upload the report
+      if: ${{ always() && inputs.upload == 'true' && inputs.findings == '' }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ inputs.artifact-name }}
+        path: ${{ inputs.out }}
+        if-no-files-found: ignore
+
+    - name: Verdict
+      shell: bash
+      env:
+        CODE: ${{ steps.check.outputs.exit-code }}
+        FAIL: ${{ inputs.fail }}
+      run: |
+        case "$CODE" in
+          0) echo "pxta check passed" ;;
+          1) if [ "$FAIL" = true ]; then echo "::error::pxta check: rules broken, see the annotations and the job summary"; exit 1; fi
+             echo "pxta check found problems (fail: false, so the step passes)" ;;
+          *) echo "::error::pxta check could not finish (exit $CODE)"; exit "${CODE:-2}" ;;
+        esac

@@ -1,0 +1,6 @@
+<!doctype html><html><head><meta charset="utf-8"><title>PXTA action test</title></head>
+<body><h1>Action test</h1><p>A page that sends a customer's address to another host before any consent, for the GitHub Action test.</p>
+<script>
+  // localhost is a different host from 127.0.0.1, so this is a third-party beacon.
+  new Image().src = 'http://localhost:8124/collect?ev=PageView&uid=a1b2c3&email=' + encodeURIComponent('someone@example.org');
+</script></body></html>
